@@ -1,3 +1,5 @@
+import numpy as np
+
 import sys
 import re
 import genanki
@@ -25,21 +27,29 @@ from PIL import ImageTk, Image
 import csv
 import os
 
+from ankiarticle import *
+
 #from ankiarticle import *
+text_filename = 'podFoundmyfitnessCovid2'
 
 root = Tk() 
 root.title('Miug')
 root.geometry('400x400')
 root.resizable(0, 0)
 
+deck = genanki.Deck(round(time.time()),text_filename)
+
+
+freq_threshold = 2
+
+
 # file select
 # language/article
 # threshold inputs
 # a button that prints all words and shows their frequency to help select frequency thresholds
-# either a unique deck id input or hook it up to current date/time
+
 # for language, have a src and dest language input with dropdown
 
-#closing tk window should end program
 
 def printtest():
 	print('test')
@@ -54,8 +64,8 @@ def browseFiles():
                                                         "*.*"))) 	
 	filename_string = filename.split(':')[1]
 	print(filename_string)
-	to_return = os.path.splitext(os.path.basename(filename_string))[0]
-	return to_return
+	text_filename = os.path.splitext(os.path.basename(filename_string))[0]
+	return text_filename
 
 def file_browse_button_clicked():
 	file_name = browseFiles()
@@ -68,10 +78,41 @@ def text_type_radiobutton_changed(*args):
     if text_type_language_or_article.get() == 'article':
         print('article')
 
+
+def show_frequencies():
+	with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
+		source_text = file.read().replace('\n', ' ')
+	if source_text:
+		word_frequency_dictionary = dict()
+		clean = re.sub(r"[,.;@#?¿!¡\-\"&$\[\]\)\(]+\ *", " ", source_text)
+		words = clean.split()
+		for word in words:
+			if not word.isdigit():
+				word_frequency_dictionary[word] = round(zipf_frequency(word, "es"),1)
+		for x in np.arange(0, 10, 0.1):
+			clean_x = round(x,1)
+			words_with_x_freq = []
+			for word, freq in word_frequency_dictionary.items():
+				if freq == x:
+					words_with_x_freq.append(word)
+			if words_with_x_freq:
+				print(clean_x)
+				print(words_with_x_freq)
+
+def run_clicked():
+	print('run_clicked', text_type_language_or_article.get())
+	if text_type_language_or_article.get() == 'language':
+		print('language')
+	if text_type_language_or_article.get() == 'article':
+		print('article')
+		run_article_program(text_filename, deck)
+
+
+
 file_browse_button = ttk.Button(root, text="Click to Start Process", command=file_browse_button_clicked)
 file_browse_button.place(x=30,y=30)
 
-file_name_label = ttk.Label(root, text='')
+file_name_label = ttk.Label(root, text=text_filename)
 file_name_label.place(x=180,y=30)
 
 
@@ -86,12 +127,16 @@ text_type_language_or_article.trace('w', text_type_radiobutton_changed)
 
 frequency_thresholds_label = ttk.Label(root, text='frequency thresholds:')
 frequency_thresholds_label.place(x=30,y=90)
-frequency_thresholds_low_entry = Entry(root, bd =5)
-frequency_thresholds_low_entry.place(x=130,y=90)
-frequency_thresholds_high_entry = Entry(root, bd =5)
-frequency_thresholds_high_entry.place(x=180,y=90)
+frequency_thresholds_low_entry = Entry(root, bd =1, width=3)
+frequency_thresholds_low_entry.place(x=160,y=90)
+frequency_thresholds_high_entry = Entry(root, bd =1, width=3)
+frequency_thresholds_high_entry.place(x=190,y=90)
 
+show_frequencies_button = ttk.Button(root, text="Show frequencies", command=show_frequencies)
+show_frequencies_button.place(x=230,y=90)
 
+run_button = ttk.Button(root, text="Run", command=run_clicked)
+run_button.place(x=330,y=90)
 
 
 

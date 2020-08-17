@@ -15,18 +15,12 @@ from tkinter import filedialog
 from tkinter import Tk 
 import os
 
-
-media_name = ''
-#4)create a unique deck ID number
-unique_deck_id = 3059290121
-my_deck = genanki.Deck(unique_deck_id,media_name)
-
+article_deck = None
+freq_threshold = 2
+text_filename = ''
 lemmatizer = WordNetLemmatizer()
 stemmer = SnowballStemmer("english")
 wiki_wiki = wikipediaapi.Wikipedia('en')
-freq_threshold = 2
-print_added = True
-print_commons = False
 
 def get_google_definition(word_to_define):
 	#print('getD',word_to_define)
@@ -234,9 +228,9 @@ def create_definitions_cards(dictionary):
 		if dictionary[word] != 'rejected!' and dictionary[word] != 'alt word form used.':
 			my_note = genanki.Note(
 				model=definition_model,
-				tags=media_name,
+				tags=text_filename,
 				fields=[word, dictionary[word][0]])
-			my_deck.add_note(my_note)
+			article_deck.add_note(my_note)
 
 def get_words_sentence_from_text(word, article_text, show_word):
 	#article_text = article_text.lower()
@@ -272,14 +266,14 @@ def create_fill_in_the_blank_cards(dictionary, article_text):
 			for sentence in sentences_with_word:
 				my_note = genanki.Note(
 					model=definition_model,
-					tags=media_name,
+					tags=text_filename,
 					fields=[sentence, dictionary[word][1]])
-				my_deck.add_note(my_note)
+				article_deck.add_note(my_note)
 
 def create_anki_deck(dictionary, article_text):
 	create_definitions_cards(dictionary)
 	create_fill_in_the_blank_cards(dictionary, article_text)
-	genanki.Package(my_deck).write_to_file(media_name+'.apkg')
+	genanki.Package(article_deck).write_to_file(text_filename+'.apkg')
 
 def browseFiles(): 
 	Tk().withdraw()
@@ -294,10 +288,16 @@ def browseFiles():
 	to_return = os.path.splitext(os.path.basename(filename_string))[0]
 	return to_return
 
-def run_program():
-	media_name = browseFiles()
+def set_frequency_threshold(freq_type, threshold_number):
+	if freq_type == 'low':
+		freq_threshold = threshold_number
+
+def run_article_program(filename, deck):
+	text_filename = filename
+	global article_deck
+	article_deck = deck
 	complete_dictionary = dict()
-	with open(media_name+'.txt', encoding="utf8") as file:
+	with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
 		article_text = file.read().replace('\n', ' ')
 	complete_dictionary, more_words_to_define = build_dictionary_with_user(complete_dictionary, article_text, article_text)
 	still_building_dictionary = True
@@ -321,6 +321,5 @@ def run_program():
 	for word in complete_dictionary:
 		if complete_dictionary[word] != "rejected!" and complete_dictionary[word] != 'alt word form used.':
 			print('\n',word.upper(), '-', complete_dictionary[word][0])
-	print('\n','Deck created:',media_name)
+	print('\n','Deck created:',text_filename)
 
-run_program()
