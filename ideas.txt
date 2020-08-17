@@ -1,0 +1,13 @@
+
+make it so all info is put in in command and no code needs to be changed
+
+make input for excluding the most common number of or percent of words so we dont keep on adding words that are too easy
+
+article_card_maker
+	it gets the most uncommon(not just uncommon in the article, in normal usage) words and presents them individually to the user
+		and the ones the user chooses get made into definitional cards (ab and ba)
+	it makes fill in the blank cards by taking sentences that contain the user chosen words (aaaa_aaaa b)
+	this will be especially good for podcast transcripts with heavy vocab
+
+look into medium article 'automated keyword extraction from articles'
+	this may be able to be used in conjuction with some sort of definition mining library to make automated flashcards for articles. look into pyDictionary

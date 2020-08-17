@@ -1,0 +1,62 @@
+Summary
+Nearly four months have passed since the World Health Organization declared COVID-19, the disease caused by the novel coronavirus SARS-CoV-2, a Public Health Emergency of International Concern. Yet how long the virus resides in the human body and how the disease progresses remain unknown. Case reports and retrospective studies indicate that symptoms appear in a person four to seven days after infection and peak four to five days after onset — at which point the person is most infectious. Ten days after the onset of symptoms, viral genetic material is still detectable in their sputum, but the risk of spreading the virus is minimal. 
+
+Concerns about the potential for re-infection began circulating in the media after COVID-19 patients in Korea tested positive for the virus shortly after recovering from the disease. The  Korea Centers for Disease Control and Prevention traced the close contacts of people who retested positive and found that none of them became infected. Furthermore, respiratory samples from a subset of the re-positive cases did not contain any intact viral particles.
+
+The promise of immunity
+As more and more people are infected and recover, questions about immunity have emerged. Upon infection with a virus, the body produces virus-specific antibodies to guard against future infections. Currently, how long antibodies generated against SARS-CoV-2 last and to what extent they confer protection are unclear.
+
+Some evidence suggests that people infected with SARS-CoV-2 develop antibodies against the virus, but whether those antibodies neutralize the virus is still unknown. The evidence for immunity has been bolstered by successes observed in studies that have administered convalescent plasma from recovered COVID-19 patients to severely ill patients and noted that the virus cleared within a week. The immune response to SARS-CoV-2 is an active area of investigation, and large serological surveys are underway to estimate the prevalence of SARS-CoV-2 antibodies in the population — a necessary step toward herd immunity.
+
+Multifactorial aspects of the varied immune response to SARS-CoV-2
+The symptoms associated with SARS-CoV-2 infection range from non-existent to life-threatening respiratory and cardiovascular complications. Scientists have posited numerous explanations for the diverse ways that people respond to this virus, but at the moment, everything remains speculation. A healthy person's immune response to any infection varies, subject to a vast array of factors, including genetics, previous exposure to pathogens, sleep patterns, microbiome composition, exercise, nutrition, gender, and biological age, among others.
+
+Possible roles for genetics in immune function
+Individual variations in genes, known as single nucleotide polymorphisms, or SNPs, might influence how a person responds to a viral infection. Several SNPs have been identified that affect how the immune system responds to viruses. These include polymorphisms in genes related to how the virus gains entry into the host cell, such as the ACE2 receptor, a critical protease enzyme TMPRSS2, and IFITM3, a protein that interrupts the fusion between a virus and the cell membrane. Some SNPs affect general viral replication, while others impact the host's immune response, including cytokine production and viral-induced inflammation. Other SNPs affect acute respiratory distress syndrome, a severe complication of COVID-19. Genetically low plasma vitamin D levels are associated with higher mortality from respiratory infections, and three SNPs in the vitamin D receptor are associated with a higher risk of respiratory tract infections in both adults and children. 
+
+If you have used a consumer genetic testing service like 23andMe or AncestryDNA and want to learn more about whether or not the data indicates your specific genotype on these SNPs, check out our free viral report here.
+Previous viral exposure and the relevance for cross immunity against SARS-CoV-2
+Previous exposure to viruses has an impact on immunity. SARS-CoV-2 belongs to the betacoronavirus genus of coronaviruses, which includes SARS-CoV-1, MERS-CoV, and two other human coronaviruses (HCoV-OC43 and HCoV-HKU1), which are responsible for some forms of the “common cold.” The betacoronaviruses can induce immune responses against one another. Some research demonstrated that SARS-CoV-2-reactive CD4+ T cells were present in 40 to 60 percent of unexposed people, suggesting cross-reactive T cell recognition between circulating common cold coronaviruses and SARS-CoV-2. The results suggest that there could be some lingering immunity from the common cold but more data is needed to confirm.
+
+Antibody-dependent enhancement and SARS-CoV-2 relevance
+A concern for many studying the SARS-CoV-2 virus is antibody-dependent enhancement, or ADE, a phenomenon that occurs when low quality, low quantity, non-neutralizing antibodies bind to virus particles and, rather than neutralizing the virus, increase inflammation and tissue injury. Other coronaviruses such as SARS-CoV-1 and MERS-CoV exhibit ADE. Several factors determine whether antibodies will neutralize a virus and protect the host or cause ADE and produce acute inflammation, including specificity, concentration, affinity, and isotype of an antibody.
+
+Micronutrient inadequacies might promote immune dysregulation
+"Deficiencies or insufficiencies in micronutrients negatively affect immune function and can decrease resistance to infections." - Rhonda Patrick, PhD.CLICK TO TWEET
+Nutrition plays an essential role in immune function. Most people living in the United States obtain sufficient protein, carbohydrates, and fats in their diet. However, many people lack essential vitamins and minerals, which must be obtained from our diets since we cannot make them. Several vitamins, including vitamins A, B6, B12, C, D, E, and folate; and trace elements, including zinc, iron, selenium, magnesium, and copper, play important and complementary roles in supporting both the innate and adaptive immune systems. Deficiencies or insufficiencies in micronutrients negatively affect immune function and can decrease resistance to infections.
+
+Vitamin A
+Vitamin A is important for the maturation of various cells of the innate immune system. Vitamin A deficiency can impair protective barriers such as the skin and mucosal layers, can impair the response to vaccination, and might predispose people to respiratory infections.
+
+Vitamin C
+Vitamin C is highly concentrated in immune cells, where it serves as a potent antioxidant. Vitamin C also appears to boost the immune system by promoting the proliferation of T cells and preventing T cell death. T cells play a major role in driving an immune response against pathogens such as bacteria or viruses. 
+
+Learn more about the role of vitamin C in common colds and other aspects of human health in this episode featuring Dr. Rhonda Patrick.
+Vitamin D
+Vitamin D is a steroid hormone that serves as a major regulator of immune function and plays a particularly important role in preventing respiratory tract infections. Vitamin D activates the innate immune system, which elicits an early antiviral response. The vitamin binds to receptors on neutrophils, macrophages, and natural killer cells and stimulates them to produce microbial peptides that have antiviral activity. Vitamin D also increases T-regulatory cells, which play a major role in keeping the immune system in check, particularly when it comes to autoimmune diseases. Vitamin D inhibits the production of proinflammatory cytokines, which can play a role in a cytokine storm — a serious complication of COVID-19. 
+
+Learn more about the role of vitamin D in preventing lung injury in this clip featuring Dr. Rhonda Patrick.
+Zinc
+Deficiency of the trace element zinc is rare in the United States, although up to 45 percent of people 60 years and older have inadequate zinc intake. People who consume alcohol or follow a vegetarian diet might require more zinc. Studies indicate that mild zinc deficiency can decrease immune function, including dysfunctional cytokine production in T cells and absence of CD4+ T cell regeneration. A randomized controlled trial reported that older adults were less likely to contract pneumonia if they took a multivitamin containing zinc. Another meta-analysis found that people who supplemented with zinc acetate lozenges had a three-fold faster recovery rate from the common cold compared to those who took a placebo.
+
+Omega-3
+The omega-3 fatty acids eicosapentaenoic acid, or EPA, and docosahexaenoic acid, or DHA, support an effective immune system by helping to resolve inflammation after an infection has subsided. Deficiencies in these micronutrients can delay this response, which could be important in the cytokine storm seen with severe COVID-19 patients. Preclinical models illustrate how EPA and DHA are converted into specialized pro-resolving mediators that are associated with protection against acute lung injury.
+
+Sleep patterns, exercise, and other factors can influence immune function
+Clinical studies indicate that partial and chronic sleep deprivation can have detrimental effects on immune function. Learn more about the importance of sleep on health, including immune function in our interview with sleep expert Dr. Matthew Walker. 
+
+A large body of evidence suggests that the microbiota, the diverse population of bacteria harbored by the human body, plays a key role in immunity. Many studies suggest that short-chain fatty acids derived from the gut microbiota promote the expansion of T-regulatory cells, maintain gut barrier function, regulate cytokine production, and support immune cell populations. 
+
+Exercise, typically regarded as a health-promoting activity, can be detrimental to the immune system in some instances. Studies suggest that moderate exercise of one hour a day for five days per week improves immune function. People performing moderate endurance exercise experienced fewer respiratory illnesses, while athletes performing intense endurance exercise of longer than two hours had an increased risk of illness.
+
+Sex hormones mediate the body's immune response. For example, women mount stronger immune responses to vaccinations than men, possibly because estrogen enhances humoral immunity while testosterone is a suppressor. Concerning COVID-19, data suggest that men and women are equally likely to get the disease, but men are more likely to die. In a case series study of a subset of patients who died of COVID-19 in Wuhan, China, 75 percent were male. 
+
+Increasing evidence suggests that the rate at which people age is variable starting in early life, and people with the same chronological age can have vastly different biological ages, due to both genetic and lifestyle factors. Data comparing the response to vaccination suggest that biological age is a predictor of a better immune response than chronological age.
+
+Antihypertensive drugs and COVID-19
+Some researchers have hypothesized that since antihypertensive drugs like ACE inhibitors and angiotensin II receptor blockers, or ARBs, increase ACE2, they might alter the risk of severe COVID-19 disease.
+
+Several cardiovascular societies recommend that patients who take ACE inhibitors and ARBs should continue to do so, arguing that the increased protection from severe disease that these drugs might provide is worth the possible increased risk of infection. A case-population study found that compared to other antihypertensive drugs, ACE inhibitors and ARBs were not associated with an increased risk of COVID-19 requiring admission to the hospital.
+
+Long-term lung damage associated with COVID-19
+Complications from severe COVID-19, such as pneumonia and ARDS can lead to irreversible lung damage. In patients with ARDS, fluid leaks into tiny air sacs in the lungs and prevents air exchange. This promotes the buildup of scar tissue in the lungs, a condition known as pulmonary fibrosis, which decreases the quality of life and can lead to death. Patients who develop ARDS are much more likely to die. In 191 confirmed coronavirus patients in Wuhan, China, researchers found 50 of the 54 patients who died had developed ARDS while only nine of the 137 survivors had ARDS.

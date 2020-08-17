@@ -1,0 +1,71 @@
+GUI
+one gui for both anki programs
+file select
+language/article
+threshold inputs
+a button that prints all words and shows their frequency to help select frequency thresholds
+either a unique deck id input or hook it up to current date/time
+for language, have a src and dest language input with dropdown
+--
+to do this, copy gui code from miug
+combine both programs into one folder and make (at least) 3 seperate files each with their own class
+	gui
+	article
+	language
+
+for subtitles, make a tag that 'allEpisodes' and/or 'almostAllEpisodes'
+
+make githubs of either project
+
+anki article
+maybe split at 'are'
+pay attention in testing that coronaviruses is working properly, it may be weird.
+
+
+
+
+
+
+ankiarticle todo
+
+remove word from definition? would be better to just make it editable once the user selects it
+remove any /n from definitions
+
+tell output file name when completed
+
+make this definitions into flashcards
+make fill in the blanks for the words that are being defined
+consider going a second level with the definitions, meaning get the definitions of the rare words in the definitions
+	make a function that is get_rare_words(str) - str can be the original article as well as a str of all the definitions gathered
+make instructions/rarity variables
+
+ideas
+freq threshold could somehow be dynamic by asking the user to y/n words to be used
+
+it presents a word and asks y/n?
+	if y, it gets the definition if it can
+		if it cannot, it asks you to input definition
+	if n, it goes to the next word
+once all words have been presented, it asks if definitions should be mined for rare words and defined y/n?
+	if y, repeat process
+		once all words have been presented, ask if it should go another level(being sure to exclude any repeats)
+	if n, use all current keywords to make fill in the blanks from sentences in the article
+
+making fake functions of anything that uses internet will allow for continuing to work with no internet
+	this could also be done with a try/except setup that tells the user they need internet
+
+
+
+ankisub todo
+change folder name of this
+quit usiing lower and use uppercases that are not at the begining of a sentence/phrase to indicate that a word is probably  aproper title and should not be translated
+
+add progress bar
+organize code better, make things into functions
+make decks of more movies
+incorporate mediaName into the open file instead of captions
+see if there is a library for detecting names
+see if there are any alternatives to google translation or find some way to know how well google tranlate worked for a particle running of the program
+	maybe a way to make it run better is to occasionally give it a "long" rest if it gets too many dupes in a row or something
+
+redo 2,3,4 or club de cuervos
