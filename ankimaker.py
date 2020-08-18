@@ -28,8 +28,11 @@ import csv
 import os
 
 from ankiarticle import *
+from langCodes import *
 
-#from ankiarticle import *
+#look into quillionz and python library question-generation for making questions
+
+#hook up language inputs and get rid of dest optionmenu if article is selected
 text_filename = 'podFoundmyfitnessCovid2'
 
 root = Tk() 
@@ -39,17 +42,9 @@ root.resizable(0, 0)
 
 deck = genanki.Deck(round(time.time()),text_filename)
 
-
 freq_threshold = 2
 
-
-# file select
-# language/article
-# threshold inputs
-# a button that prints all words and shows their frequency to help select frequency thresholds
-
 # for language, have a src and dest language input with dropdown
-
 
 def printtest():
 	print('test')
@@ -105,11 +100,11 @@ def run_clicked():
 		print('language')
 	if text_type_language_or_article.get() == 'article':
 		print('article')
-		run_article_program(text_filename, deck)
+		run_article_program(text_filename, deck, str(src_lang.get()))
 
 
 
-file_browse_button = ttk.Button(root, text="Click to Start Process", command=file_browse_button_clicked)
+file_browse_button = ttk.Button(root, text="Select file", command=file_browse_button_clicked)
 file_browse_button.place(x=30,y=30)
 
 file_name_label = ttk.Label(root, text=text_filename)
@@ -122,21 +117,38 @@ path_point_language_radiobutton = Radiobutton(root, text='language', variable=te
 path_point_language_radiobutton.place(x=30,y=60)
 text_type_article_radiobutton = Radiobutton(root, text='article', variable=text_type_language_or_article, value='article', font=('Courier', 10))
 text_type_article_radiobutton.place(x=180, y=60)
-text_type_language_or_article.set('instances')
+text_type_language_or_article.set('article')
 text_type_language_or_article.trace('w', text_type_radiobutton_changed)
 
+language_choice = {"a","b","c","d","e","f"}
+source_language_label = ttk.Label(root, text='source language:')
+source_language_label.place(x=30,y=90)
+src_lang = ttk.StringVar(root)
+src_lang.set('english')
+source_language_optionmenu = ttk.OptionMenu(root, src_lang, *language_choices)
+source_language_optionmenu.place(x=130,y=90)
+source_language_optionmenu.config(width=10)
+destination_language_label = ttk.Label(root, text='target language:')
+destination_language_label.place(x=30,y=120)
+dest_lang = ttk.StringVar(root)
+dest_lang.set('spanish')
+destination_language_optionmenu = ttk.OptionMenu(root, dest_lang, *language_choices)
+destination_language_optionmenu.place(x=130,y=120)
+destination_language_optionmenu.config(width=10)
+
+
 frequency_thresholds_label = ttk.Label(root, text='frequency thresholds:')
-frequency_thresholds_label.place(x=30,y=90)
+frequency_thresholds_label.place(x=30,y=150)
 frequency_thresholds_low_entry = Entry(root, bd =1, width=3)
-frequency_thresholds_low_entry.place(x=160,y=90)
+frequency_thresholds_low_entry.place(x=160,y=150)
 frequency_thresholds_high_entry = Entry(root, bd =1, width=3)
-frequency_thresholds_high_entry.place(x=190,y=90)
+frequency_thresholds_high_entry.place(x=190,y=150)
 
 show_frequencies_button = ttk.Button(root, text="Show frequencies", command=show_frequencies)
-show_frequencies_button.place(x=230,y=90)
+show_frequencies_button.place(x=230,y=150)
 
 run_button = ttk.Button(root, text="Run", command=run_clicked)
-run_button.place(x=330,y=90)
+run_button.place(x=330,y=150)
 
 
 

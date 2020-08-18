@@ -15,6 +15,8 @@ from tkinter import filedialog
 from tkinter import Tk 
 import os
 
+from langCodes import *
+
 article_deck = None
 freq_threshold = 2
 text_filename = ''
@@ -292,10 +294,29 @@ def set_frequency_threshold(freq_type, threshold_number):
 	if freq_type == 'low':
 		freq_threshold = threshold_number
 
-def run_article_program(filename, deck):
-	text_filename = filename
+def get_lang_code(lang_submitted):
+	print('lang_submitted',lang_submitted)
+	lang_code_to_return = ''
+	for lang_code, language_name in lang_pairs.items(): 
+		print('lang_code',lang_code)
+		if language_name == lang_submitted:
+			lang_code_to_return = lang_code
+	return lang_code_to_return
+
+def set_global_variables(deck, src_language):
 	global article_deck
 	article_deck = deck
+	global stemmer
+	try:
+		stemmer = SnowballStemmer(src_language)
+	except:
+		stemmer = SnowballStemmer('english')
+	global wiki_wiki
+	wiki_wiki = wikipediaapi.Wikipedia(get_lang_code(src_language))
+
+def run_article_program(filename, deck, src_language):
+	text_filename = filename
+	set_global_variables(deck, src_language)
 	complete_dictionary = dict()
 	with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
 		article_text = file.read().replace('\n', ' ')
