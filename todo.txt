@@ -1,33 +1,18 @@
-GUI
-one gui for both anki programs
-file select
-language/article
-threshold inputs
-a button that prints all words and shows their frequency to help select frequency thresholds
-either a unique deck id input or hook it up to current date/time
-for language, have a src and dest language input with dropdown
---
-to do this, copy gui code from miug
-combine both programs into one folder and make (at least) 3 seperate files each with their own class
-	gui
-	article
-	language
-
+clean todo
+figure out why tab in ankilang is 2 dots
+hook up freq inputs to article and lang
+do thurough test
+make many decks of foundmyfitness podcasts for when on the road
+#look into quillionz and python library question-generation for making questions
+#make a help button that prints out an explanation of how to set up txt files
+clean up imports and find out if we need the same ones in different files
 for subtitles, make a tag that 'allEpisodes' and/or 'almostAllEpisodes'
 
-make githubs of either project
-
-anki article
 maybe split at 'are'
 pay attention in testing that coronaviruses is working properly, it may be weird.
 
 
-set deck id to time.time()
-
-
-
-ankiarticle todo
-
+NEEDS ORGANIZED/CLEANED
 remove word from definition? would be better to just make it editable once the user selects it
 remove any /n from definitions
 

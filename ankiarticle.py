@@ -294,15 +294,6 @@ def set_frequency_threshold(freq_type, threshold_number):
 	if freq_type == 'low':
 		freq_threshold = threshold_number
 
-def get_lang_code(lang_submitted):
-	print('lang_submitted',lang_submitted)
-	lang_code_to_return = ''
-	for lang_code, language_name in lang_pairs.items(): 
-		print('lang_code',lang_code)
-		if language_name == lang_submitted:
-			lang_code_to_return = lang_code
-	return lang_code_to_return
-
 def set_global_variables(deck, src_language):
 	global article_deck
 	article_deck = deck
