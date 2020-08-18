@@ -1,13 +1,7 @@
 
-make it so all info is put in in command and no code needs to be changed
+freq threshold could somehow be dynamic by asking the user to y/n words to be used
 
-make input for excluding the most common number of or percent of words so we dont keep on adding words that are too easy
+making fake functions of anything that uses internet will allow for continuing to work with no internet
+	this could also be done with a try/except setup that tells the user they need internet
 
-article_card_maker
-	it gets the most uncommon(not just uncommon in the article, in normal usage) words and presents them individually to the user
-		and the ones the user chooses get made into definitional cards (ab and ba)
-	it makes fill in the blank cards by taking sentences that contain the user chosen words (aaaa_aaaa b)
-	this will be especially good for podcast transcripts with heavy vocab
-
-look into medium article 'automated keyword extraction from articles'
-	this may be able to be used in conjuction with some sort of definition mining library to make automated flashcards for articles. look into pyDictionary
+use uppercase in the middle of sentence as indication that word is a proper word
