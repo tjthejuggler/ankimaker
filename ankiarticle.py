@@ -18,7 +18,6 @@ import os
 from langCodes import *
 
 article_deck = None
-freq_threshold = 2
 text_filename = ''
 lemmatizer = WordNetLemmatizer()
 stemmer = SnowballStemmer("english")
@@ -109,17 +108,20 @@ def animated_loading(loading_message):
         time.sleep(.1)
         sys.stdout.flush()
 
-def convert_text_to_keywords(text):
+def convert_text_to_keywords(text, low_freq, src_lang):
 	clean = re.sub(r"[,.;@#?¿!¡\-\"&$\[\]\)\(]+\ *", " ", text)
 	lowerString = clean.lower()
 	words = lowerString.split()
 	keywords = []
 	for word in words:
+		print('lowf', word, zipf_frequency(word, get_lang_code(src_lang)))
+
 		if (not word.isdigit() and 
 			"/" not in word and
 			"\\" not in word and
 			len(word) > 1 and
-			zipf_frequency(word, "en") < freq_threshold):
+			zipf_frequency(word, get_lang_code(src_lang)) < low_freq):
+				print('keyw', word)
 				keywords.append(word)
 	return keywords
 
@@ -174,8 +176,8 @@ def get_users_definition_decision(word, article):
 
 	return word_definition, word_is_rejected, word
 
-def build_dictionary_with_user(dictionary, text, original_article):
-	words = convert_text_to_keywords(text)
+def build_dictionary_with_user(dictionary, text, original_article, low_freq, src_lang):
+	words = convert_text_to_keywords(text, low_freq, src_lang)
 	more_words_to_define = False
 	for word in words:
 		if word not in dictionary:			
@@ -290,11 +292,7 @@ def browseFiles():
 	to_return = os.path.splitext(os.path.basename(filename_string))[0]
 	return to_return
 
-def set_frequency_threshold(freq_type, threshold_number):
-	if freq_type == 'low':
-		freq_threshold = threshold_number
-
-def set_global_variables(deck, src_language):
+def set_global_variables(deck, src_lang):
 	global article_deck
 	article_deck = deck
 	global stemmer
@@ -303,15 +301,15 @@ def set_global_variables(deck, src_language):
 	except:
 		stemmer = SnowballStemmer('english')
 	global wiki_wiki
-	wiki_wiki = wikipediaapi.Wikipedia(get_lang_code(src_language))
+	wiki_wiki = wikipediaapi.Wikipedia(get_lang_code(src_lang))
 
-def run_article_program(filename, deck, src_language):
+def run_article_program(filename, deck, src_lang, low_freq):
 	text_filename = filename
-	set_global_variables(deck, src_language)
+	set_global_variables(deck, src_lang)
 	complete_dictionary = dict()
 	with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
 		article_text = file.read().replace('\n', ' ')
-	complete_dictionary, more_words_to_define = build_dictionary_with_user(complete_dictionary, article_text, article_text)
+	complete_dictionary, more_words_to_define = build_dictionary_with_user(complete_dictionary, article_text, article_text, low_freq, src_lang)
 	still_building_dictionary = True
 	while still_building_dictionary and more_words_to_define:
 		print(" \nDefine keywords from next level of definitions?(y/n)")
@@ -324,7 +322,7 @@ def run_article_program(filename, deck, src_language):
 			if user_decision_definition.upper() == 'Y':
 				user_decision_definition_made = True
 				string_of_definitions = concatenate_all_definitions_to_string(complete_dictionary)
-				dictionary_additions, more_words_to_define = build_dictionary_with_user(complete_dictionary, string_of_definitions, article_text)
+				dictionary_additions, more_words_to_define = build_dictionary_with_user(complete_dictionary, string_of_definitions, article_text, low_freq, src_lang)
 				complete_dictionary = {**complete_dictionary, **dictionary_additions}
 			elif user_decision_definition.upper() == 'N':
 				user_decision_definition_made = True

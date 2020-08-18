@@ -34,7 +34,7 @@ from ankilang import *
 
 
 text_filename = 'podFoundmyfitnessCovid2'
-text_filename = 'sample'
+#text_filename = 'sample'
 
 root = Tk() 
 root.title('Miug')
@@ -44,9 +44,6 @@ root.resizable(0, 0)
 deck = genanki.Deck(round(time.time()),text_filename)
 
 # for language, have a src and dest language input with dropdown
-
-def printtest():
-	print('test')
 
 def browseFiles(): 
 	Tk().withdraw()
@@ -89,7 +86,7 @@ def show_frequencies():
 		words = clean.split()
 		for word in words:
 			if not word.isdigit():
-				word_frequency_dictionary[word] = round(zipf_frequency(word, "es"),1)
+				word_frequency_dictionary[word] = round(zipf_frequency(word, get_lang_code(str(src_lang.get()))),1)
 		for x in np.arange(0, 10, 0.1):
 			clean_x = round(x,1)
 			words_with_x_freq = []
@@ -104,10 +101,10 @@ def run_clicked():
 	print('run_clicked', text_type_language_or_article.get())
 	if text_type_language_or_article.get() == 'language':
 		print('language')
-		run_language_program(text_filename, deck, str(src_lang.get()), str(dest_lang.get()), int(frequency_low.get()), int(frequency_high.get()))
+		run_language_program(text_filename, deck, str(src_lang.get()), str(dest_lang.get()), float(frequency_low.get()), float(frequency_high.get()))
 	if text_type_language_or_article.get() == 'article':
 		print('article')
-		run_article_program(text_filename, deck, str(src_lang.get()))
+		run_article_program(text_filename, deck, str(src_lang.get()), float(frequency_low.get()))
 
 file_browse_button = ttk.Button(root, text="Select file", command=file_browse_button_clicked)
 file_browse_button.place(x=30,y=30)
