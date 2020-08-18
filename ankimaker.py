@@ -21,7 +21,6 @@ from tkinter import *
 import tkinter as ttk
 from tkinter.scrolledtext import ScrolledText
 from tkinter import messagebox
-from tkinter import filedialog
 from PIL import ImageTk, Image
 
 import csv
@@ -29,6 +28,10 @@ import csv
 from ankiarticle import *
 from langCodes import *
 from ankilang import *
+
+#freq_threshold = 7 #7 is probably good for spanish, #10 for turkish
+#rare_freq_threshold = -1 #1 is probably good for spanish, -1 for turkish
+
 
 text_filename = 'podFoundmyfitnessCovid2'
 text_filename = 'sample'
@@ -101,7 +104,7 @@ def run_clicked():
 	print('run_clicked', text_type_language_or_article.get())
 	if text_type_language_or_article.get() == 'language':
 		print('language')
-		run_language_program(text_filename, deck, str(src_lang.get()), str(dest_lang.get()))
+		run_language_program(text_filename, deck, str(src_lang.get()), str(dest_lang.get()), int(frequency_low.get()), int(frequency_high.get()))
 	if text_type_language_or_article.get() == 'article':
 		print('article')
 		run_article_program(text_filename, deck, str(src_lang.get()))
@@ -137,9 +140,11 @@ destination_language_optionmenu.config(width=10)
 
 frequency_thresholds_label = ttk.Label(root, text='frequency thresholds:')
 frequency_thresholds_label.place(x=30,y=150)
-frequency_thresholds_low_entry = Entry(root, bd =1, width=3)
+frequency_low = StringVar(root, value=0)
+frequency_thresholds_low_entry = Entry(root, textvariable = frequency_low, bd =1, width=3)
 frequency_thresholds_low_entry.place(x=160,y=150)
-frequency_thresholds_high_entry = Entry(root, bd =1, width=3)
+frequency_high = StringVar(root, value=10)
+frequency_thresholds_high_entry = Entry(root, textvariable = frequency_high,bd =1, width=3)
 frequency_thresholds_high_entry.place(x=190,y=150)
 
 show_frequencies_button = ttk.Button(root, text="Show frequencies", command=show_frequencies)
