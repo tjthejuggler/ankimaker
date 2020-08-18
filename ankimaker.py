@@ -1,29 +1,26 @@
 import numpy as np
-
 import sys
 import re
 import genanki
 import time
 from wordfreq import zipf_frequency
-import requests
-from requests.exceptions import HTTPError
-import msvcrt
-import wikipediaapi
-from nltk.stem.snowball import SnowballStemmer
-from nltk.stem import WordNetLemmatizer
-import queue
-from threading import Thread
-from tkinter import filedialog 
-from tkinter import Tk 
+# import requests
+# from requests.exceptions import HTTPError
+#import msvcrt
+#import wikipediaapi
+# from nltk.stem.snowball import SnowballStemmer
+# from nltk.stem import WordNetLemmatizer
+# import queue
+# from threading import Thread
+# from tkinter import filedialog 
+# from tkinter import Tk 
 import os
-
 from tkinter import *
 import tkinter as ttk
-from tkinter.scrolledtext import ScrolledText
-from tkinter import messagebox
-from PIL import ImageTk, Image
-
-import csv
+# from tkinter.scrolledtext import ScrolledText
+# from tkinter import messagebox
+# from PIL import ImageTk, Image
+# import csv
 
 from ankiarticle import *
 from langCodes import *
@@ -34,7 +31,7 @@ from ankilang import *
 
 
 text_filename = 'podFoundmyfitnessCovid2'
-#text_filename = 'sample'
+text_filename = 'sample'
 
 root = Tk() 
 root.title('Miug')
@@ -42,8 +39,6 @@ root.geometry('400x400')
 root.resizable(0, 0)
 
 deck = genanki.Deck(round(time.time()),text_filename)
-
-# for language, have a src and dest language input with dropdown
 
 def browseFiles(): 
 	Tk().withdraw()
@@ -74,8 +69,6 @@ def text_type_radiobutton_changed(*args):
 		print('article')
 		destination_language_label.place(x=1030,y=120)
 		destination_language_optionmenu.place(x=1030,y=120)
-        
-
 
 def show_frequencies():
 	with open('sources/'+text_filename+'.txt', encoding="utf8") as file:

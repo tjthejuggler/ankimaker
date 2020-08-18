@@ -90,6 +90,50 @@ def get_src_words_and_phrases(str,low_freq,high_freq,src_langcode):
 	sortedDict = sorted(src_list.items(), key=lambda x: x[1])
 	return sortedDict
 
+def get_translation(src_text, dest_langcode, src_langcode):
+	dest_text = str(translator.translate(src_text, dest=dest_langcode, src=src_langcode).text)
+	word_src_freq = 0
+	word_dest_freq = 0
+	should_make_note = True
+	if src_text == dest_text:
+		translation_attempt = 1#look into using turkey vpn instead of this sleep
+		word_src_freq = zipf_frequency(src_text, src_langcode)
+		word_dest_freq = zipf_frequency(src_text, dest_langcode)
+		if word_src_freq >= word_dest_freq:
+			while translation_attempt < 5:
+				time.sleep(translation_attempt)
+				dest_text = str(translator.translate(src_text, dest=dest_langcode, src=src_langcode).text)
+				if src_text == dest_text:
+					translation_attempt += translation_attempt
+				else:
+					translation_attempt = 5
+		else:
+			should_make_note = False
+			print('rejected because more common in dest:', src_text, word_src_freq,word_dest_freq )
+	if not should_make_note:
+		dest_text = ''
+	return dest_text
+
+def create_anki_note(src_text, dest_text, dupe_counter, translations_counter, language_deck):
+	if src_text == dest_text:
+		dupe_counter += 1
+	translations_counter += 1
+	word_tags = []
+	is_sentence = ''
+	if len(src_text.split()) > 1:
+		is_sentence = 's'
+	for tag in item[1]:
+		word_tags.append(text_filename+tag+is_sentence)
+	my_note = genanki.Note(
+		model=language_model,
+		tags=word_tags,
+		fields=[src_text, dest_text])
+	language_deck.add_note(my_note)
+	if print_made_cards:
+		print(src_text)
+		print(dest_text)
+		print(word_tags)
+	return dupe_counter, translations_counter, language_deck
 
 def run_language_program(text_filename, language_deck, src_lang, dest_lang, low_freq, high_freq):
 	translator = Translator()
@@ -103,45 +147,9 @@ def run_language_program(text_filename, language_deck, src_lang, dest_lang, low_
 	translations_counter = 0
 	for item in src_words_and_phrases:
 		src_text = item[0]
-		dest_text = str(translator.translate(src_text, dest=dest_langcode, src=src_langcode).text)
-		word_src_freq = 0
-		word_dest_freq = 0
-		should_make_note = True
-		if src_text == dest_text:
-			translation_attempt = 1#look into using turkey vpn instead of this sleep
-			word_src_freq = zipf_frequency(src_text, src_langcode)
-			word_dest_freq = zipf_frequency(src_text, dest_langcode)
-			if word_src_freq >= word_dest_freq:
-				while translation_attempt < 5:
-					time.sleep(translation_attempt)
-					dest_text = str(translator.translate(src_text, dest=dest_langcode, src=src_langcode).text)
-					if src_text == dest_text:
-						translation_attempt += translation_attempt
-					else:
-						translation_attempt = 5
-			else:
-				should_make_note = False
-				print('rejected because more common in dest:', src_text, word_src_freq,word_dest_freq )
-		if should_make_note:
-			if src_text == dest_text:
-				print('dupe',src_text,word_src_freq,word_dest_freq)
-				dupe_counter += 1
-			translations_counter += 1
-			word_tags = []
-			is_sentence = ''
-			if len(src_text.split()) > 1:
-				is_sentence = 's'
-			for tag in item[1]:
-				word_tags.append(text_filename+tag+is_sentence)
-			my_note = genanki.Note(
-				model=language_model,
-				tags=word_tags,
-				fields=[src_text, dest_text])
-			language_deck.add_note(my_note)
-			if print_made_cards:
-				print(src_text)
-				print(dest_text)
-				print(word_tags)
+		dest_text = get_translation(src_text, dest_langcode, src_langcode)
+		if dest_text:
+			dupe_counter, translations_counter, language_deck = create_anki_note(src_text, dest_text, dupe_counter, translations_counter, language_deck)
 	print("dupes",dupe_counter)
 	print("translations",translations_counter)
 	print("My program took", time.time() - start_time, "to run")
