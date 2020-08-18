@@ -9,6 +9,7 @@ for subtitles, make a tag that 'allEpisodes' and/or 'almostAllEpisodes'
 tell output file name upon completion in language
 clean language program code
 
+either hook up high frequency to article or remove it as an option
 maybe split at 'are' in article like we did 'is'
 pay attention in testing that coronaviruses is working properly, it may be weird.
 put try/excepts anywhere that may prevent a big loss of work

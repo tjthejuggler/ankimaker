@@ -106,6 +106,21 @@ def run_clicked():
 		print('article')
 		run_article_program(text_filename, deck, str(src_lang.get()), float(frequency_low.get()))
 
+def help_clicked():
+	print('Article: copy and paste an article into a txt file and then browse to it.')
+	print('Language: copy and paste subtitles from a show/movie in a txt file, if it is')
+	print('a show, seperate every episode with .ep#. where # is the episode number. This')
+	print('is to make anki tags for each episode. If the filename is showCheers, then the')
+	print('tag for episode 1 will be showCheersEp1.')
+	print('In both cases, article and language, the name of the .apkg will be the same as')
+	print('the original text file. You can use the threshold inputs to limit which words')
+	print('will be used, the first threshold filters out rare words, and the second threshold')
+	print('filters common words. Click the button next to the threshold inputs to see all')
+	print('threshold numbers.')
+
+file_browse_button = ttk.Button(root, text="?", command=help_clicked)
+file_browse_button.place(x=360,y=10)
+
 file_browse_button = ttk.Button(root, text="Select file", command=file_browse_button_clicked)
 file_browse_button.place(x=30,y=30)
 
