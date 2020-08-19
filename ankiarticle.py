@@ -330,6 +330,6 @@ def run_article_program(filename, deck, src_lang, low_freq):
 	create_anki_deck(complete_dictionary, article_text)
 	for word in complete_dictionary:
 		if complete_dictionary[word] != "rejected!" and complete_dictionary[word] != 'alt word form used.':
-			print('\n',word.upper(), '-', complete_dictionary[word][0])
+			print('\n',word.upper(), '=', complete_dictionary[word][0])
 	print('\n','Deck created:',text_filename)
 

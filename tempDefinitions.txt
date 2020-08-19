@@ -1,0 +1,81 @@
+ CORONAVIRUS = coronaviruses are a group of related rna viruses that cause diseases in mammals and birds.
+
+ SARS = Severe acute respiratory syndrome, a viral respiratory disease identified in the early 2000s caused by sars-cov-1.
+
+ SPUTUM = Mucus that is coughed up from the lower airways (the trachea and bronchi).
+
+ CONVALESCENT = The gradual recovery of health and strength after illness or injury.
+
+ SEROLOGICAL = The scientific study of serum and other body fluids.
+
+ MICROBIOME = ecological communities of commensal, symbiotic and pathogenic microorganisms found in and on all multicellular organisms studied to date from plants to animals.
+
+ NUCLEOTIDE = organic molecules consisting of a nucleoside and a phosphate.
+
+ POLYMORPHISMS = The condition of occurring in several different forms.
+
+ ACE2 = the receptor for the SARS-CoV-2 virus and allows it to infect the cell.
+
+ PROTEASE = An enzyme which breaks down proteins and peptides.
+
+ TMPRSS2 = a critical protease enzyme.
+
+ IFITM3 = a protein that interrupts the fusion between a virus and the cell membrane.
+
+ CYTOKINE = a broad and loose category of small proteins (~5-20 kda) important in cell signaling.
+
+ GENOTYPE = An organism’s complete set of heritable genes, or genes that can be passed down from parents to offspring.
+
+ BETACORONAVIRUS = are one of four genera  (alpha-, beta-, gamma-, and delta-) of coronaviruses.
+
+ HCOV = a coronavirus responsible for some forms of the common cold.
+
+ HCOV-OC43 = A member of the species betacoronavirus 1, which infects humans and cattle.
+
+ HCOV-HKU1 = A species of coronavirus which originated from infected mice.
+
+ CD4+ = A cell-surface protein structurally related to the immunoglobulins, which is associated especially with helper T lymphocytes, and is the main cellular receptor for the human immunodeficiency virus (HIV); chiefly attributive.
+
+ ADE = antibody-dependent enhancement, a phenomenon that occurs when low quality, low quantity, non-neutralizing antibodies bind to virus particles and, rather than neutralizing the virus, increase inflammation and tissue injury.
+
+ ISOTYPE = a duplicate of the holotype of a species.
+
+ MICRONUTRIENT = A chemical element or substance required in trace amounts for the normal growth and development of living organisms.
+
+ FOLATE = One of the b vitamins.
+
+ ANTIOXIDANT = antioxidants are compounds that inhibit oxidation.
+
+ NEUTROPHILS = the most abundant type of granulocytes and make up 40% to 70% of all white blood cells in humans.
+
+ MACROPHAGES = a type of white blood cell of the immune system that engulfs and digests cellular debris, foreign substances, microbes, cancer cells, and anything else that does not have the type of proteins specific to healthy body cells on its surface in a process called phagocytosis.
+
+ PEPTIDES = A compound consisting of two or more amino acids linked in a chain, the carboxyl group of each acid being joined to the amino group of the next by a bond of the type OCNH.
+
+ AUTOIMMUNE = The system of immune responses of an organism against its own healthy cells and tissues.
+
+ HUMORAL = The aspect of immunity that is mediated by macromolecules found in extracellular fluids such as secreted antibodies, complement proteins, and certain antimicrobial peptides.
+
+ ANTIHYPERTENSIVE = a class of drugs that are used to treat hypertension (high blood pressure).
+
+ ANGIOTENSIN = A peptide hormone that causes vasoconstriction and an increase in blood pressure.
+
+ FIBROSIS = The thickening and scarring of connective tissue, usually as a result of injury.
+
+ TRACHEA = A large membranous tube reinforced by rings of cartilage, extending from the larynx to the bronchial tubes and conveying air to and from the lungs; the windpipe.
+
+ BRONCHI = Any of the major air passages of the lungs which diverge from the windpipe.
+
+ COMMENSAL = A long-term biological interaction (symbiosis) in which members of one species gain benefits while those of the other species neither benefit nor are harmed.
+
+ IMMUNOGLOBULINS = Any of a class of proteins present in the serum and cells of the immune system, which function as antibodies.
+
+ LYMPHOCYTES = One of the subtypes of a white blood cell in a vertebrate's immune system.
+
+ HOLOTYPE = A single physical example (or illustration) of an organism, known to have been used when the species (or lower-ranked taxon) was formally described.
+
+ GRANULOCYTES = granulocytes are a category of white blood cells in the innate immune system characterized by the presence of granules in their cytoplasm.
+
+ PHAGOCYTOSIS = is the process by which a cell uses its plasma membrane to engulf a large particle.
+
+ VASOCONSTRICTION = The constriction of blood vessels, which increases blood pressure.
