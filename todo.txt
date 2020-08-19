@@ -2,6 +2,9 @@
 
 do thorough test
 
+fill in the blank should work even if capitalization doesnt match
+check to see if language is actually making decks and naming them and putting them in the right folder
+
 #look into quillionz and python library question-generation for making questions
 
 for subtitles, make a tag that 'allEpisodes' and/or 'almostAllEpisodes'

@@ -274,10 +274,10 @@ def create_fill_in_the_blank_cards(dictionary, article_text):
 					fields=[sentence, dictionary[word][1]])
 				article_deck.add_note(my_note)
 
-def create_anki_deck(dictionary, article_text):
+def create_anki_deck(dictionary, article_text, filename):
 	create_definitions_cards(dictionary)
 	create_fill_in_the_blank_cards(dictionary, article_text)
-	genanki.Package(article_deck).write_to_file(text_filename+'.apkg')
+	genanki.Package(article_deck).write_to_file('ankidecks/'+filename+'.apkg')
 
 def browseFiles(): 
 	Tk().withdraw()
@@ -327,7 +327,7 @@ def run_article_program(filename, deck, src_lang, low_freq):
 			elif user_decision_definition.upper() == 'N':
 				user_decision_definition_made = True
 				still_building_dictionary = False
-	create_anki_deck(complete_dictionary, article_text)
+	create_anki_deck(complete_dictionary, article_text, filename)
 	for word in complete_dictionary:
 		if complete_dictionary[word] != "rejected!" and complete_dictionary[word] != 'alt word form used.':
 			print('\n',word.upper(), '=', complete_dictionary[word][0])
