@@ -15,8 +15,8 @@ with sr.AudioFile(AUDIO_FILE) as source:
 
 # recognize speech using Sphinx
 try:
-    #print("Sphinx thinks you said " + r.recognize_sphinx(audio))
-    print("Google thinks you said " + r.recognize_google(audio))
+    print("Sphinx thinks you said " + r.recognize_sphinx(audio))
+    recognize_google()
 except sr.UnknownValueError:
     print("Sphinx could not understand audio")
 except sr.RequestError as e:

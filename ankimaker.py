@@ -38,7 +38,7 @@ root.title('Miug')
 root.geometry('400x400')
 root.resizable(0, 0)
 
-deck = genanki.Deck(round(time.time()),text_filename)
+
 
 def browseFiles(): 
 	Tk().withdraw()
@@ -91,6 +91,7 @@ def show_frequencies():
 				print(words_with_x_freq)
 
 def run_clicked():
+	deck = genanki.Deck(round(time.time()),text_filename)
 	print('run_clicked', text_type_language_or_article.get())
 	if text_type_language_or_article.get() == 'language':
 		print('language')

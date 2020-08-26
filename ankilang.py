@@ -8,6 +8,8 @@ from langCodes import *
 
 start_time = time.time()
 
+translator = Translator()
+
 print_rejected_words = True
 print_added = True
 print_made_cards = False
@@ -38,6 +40,7 @@ def get_src_words_and_phrases(str,low_freq,high_freq,src_langcode):
 	src_list = dict()
 	rejected_words = []
 	current_episode = 'ep1'
+	episode_count = 0
 	clean = re.sub(r"[,.;@#?¿!¡\-\"&$\[\]]+\ *", " ", str)
 	lowerString = clean.lower()
 	words = lowerString.split()
@@ -46,6 +49,7 @@ def get_src_words_and_phrases(str,low_freq,high_freq,src_langcode):
 		word.strip()
 		if word in episodes:
 			current_episode = word
+			episode_count += 1
 		else:
 			if (not word.isdigit() and 
 				word not in rejected_words):
@@ -88,7 +92,7 @@ def get_src_words_and_phrases(str,low_freq,high_freq,src_langcode):
 						print('phrase added', phrase)
 					src_list[phrase] = [current_episode]
 	sortedDict = sorted(src_list.items(), key=lambda x: x[1])
-	return sortedDict
+	return episode_count, sortedDict
 
 def get_translation(src_text, dest_langcode, src_langcode):
 	dest_text = str(translator.translate(src_text, dest=dest_langcode, src=src_langcode).text)
@@ -114,7 +118,7 @@ def get_translation(src_text, dest_langcode, src_langcode):
 		dest_text = ''
 	return dest_text
 
-def create_anki_note(src_text, dest_text, dupe_counter, translations_counter, language_deck):
+def create_anki_note(episode_count, filename, item, src_text, dest_text, dupe_counter, translations_counter, language_deck):
 	if src_text == dest_text:
 		dupe_counter += 1
 	translations_counter += 1
@@ -123,11 +127,13 @@ def create_anki_note(src_text, dest_text, dupe_counter, translations_counter, la
 	if len(src_text.split()) > 1:
 		is_sentence = 's'
 	for tag in item[1]:
-		word_tags.append(text_filename+tag+is_sentence)
+		word_tags.append(filename+tag+is_sentence)
+	if episode_count == len(item[1]):
+		word_tags.append(filename+'AllEp')
 	my_note = genanki.Note(
 		model=language_model,
 		tags=word_tags,
-		fields=[src_text, dest_text])
+		fields=[src_text + ' (' + filename + ')', dest_text + ' (' + filename + ')'])
 	language_deck.add_note(my_note)
 	if print_made_cards:
 		print(src_text)
@@ -135,13 +141,13 @@ def create_anki_note(src_text, dest_text, dupe_counter, translations_counter, la
 		print(word_tags)
 	return dupe_counter, translations_counter, language_deck
 
-def run_language_program(text_filename, language_deck, src_lang, dest_lang, low_freq, high_freq):
+def run_language_program(filename, language_deck, src_lang, dest_lang, low_freq, high_freq):
 	translator = Translator()
 	src_langcode = get_lang_code(src_lang)
 	dest_langcode = get_lang_code(dest_lang)
-	with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
+	with open('sources/'+filename+'.txt', encoding="utf8") as file:
 		data = file.read().replace('\n', ' ')
-	src_words_and_phrases = get_src_words_and_phrases(data, low_freq, high_freq, src_langcode)
+	episode_count, src_words_and_phrases = get_src_words_and_phrases(data, low_freq, high_freq, src_langcode)
 	print('begin making cards',time.time() - start_time)
 	dupe_counter = 0
 	translations_counter = 0
@@ -149,8 +155,8 @@ def run_language_program(text_filename, language_deck, src_lang, dest_lang, low_
 		src_text = item[0]
 		dest_text = get_translation(src_text, dest_langcode, src_langcode)
 		if dest_text:
-			dupe_counter, translations_counter, language_deck = create_anki_note(src_text, dest_text, dupe_counter, translations_counter, language_deck)
+			dupe_counter, translations_counter, language_deck = create_anki_note(episode_count, filename, item, src_text, dest_text, dupe_counter, translations_counter, language_deck)
 	print("dupes",dupe_counter)
 	print("translations",translations_counter)
 	print("My program took", time.time() - start_time, "to run")
-	genanki.Package(language_deck).write_to_file(text_filename+'.apkg')
+	genanki.Package(language_deck).write_to_file('ankidecks/'+filename+'.apkg')
