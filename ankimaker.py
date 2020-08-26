@@ -63,12 +63,21 @@ def file_browse_button_clicked():
 def text_type_radiobutton_changed(*args):
 	if text_type_language_or_article.get() == 'language':
 		print('language')
-		destination_language_label.place(x=30,y=120)
-		destination_language_optionmenu.place(x=130,y=120)
+		src_lang.set('spanish')
+		dest_lang.set('english')
+		#destination_language_label.place(x=30,y=120)
+		#destination_language_optionmenu.place(x=130,y=120)
+		destination_language_optionmenu.configure(state='normal')
+		frequency_thresholds_low_entry.configure(state='normal')
+		#frequency_thresholds_low_entry.place(x=160,y=150)
 	if text_type_language_or_article.get() == 'article':
 		print('article')
-		destination_language_label.place(x=1030,y=120)
-		destination_language_optionmenu.place(x=1030,y=120)
+		src_lang.set('english')
+		#destination_language_label.place(x=1030,y=120)
+		#destination_language_optionmenu.place(x=1030,y=120)
+		destination_language_optionmenu.configure(state='disable')
+		#frequency_thresholds_low_entry.place(x=160,y=1150)
+		frequency_thresholds_low_entry.configure(state='disable')
 
 def show_frequencies():
 	with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
@@ -98,7 +107,7 @@ def run_clicked():
 		run_language_program(text_filename, deck, str(src_lang.get()), str(dest_lang.get()), float(frequency_low.get()), float(frequency_high.get()))
 	if text_type_language_or_article.get() == 'article':
 		print('article')
-		run_article_program(text_filename, deck, str(src_lang.get()), float(frequency_low.get()))
+		run_article_program(text_filename, deck, str(src_lang.get()), float(frequency_high.get()))
 
 def help_clicked():
 	print('Article: copy and paste an article into a txt file and then browse to it.')
@@ -137,17 +146,19 @@ source_language_optionmenu = ttk.OptionMenu(root, src_lang, *language_choices)
 source_language_optionmenu.place(x=130,y=90)
 source_language_optionmenu.config(width=10)
 destination_language_label = ttk.Label(root, text='target language:')
-destination_language_label.place(x=1030,y=120)
+destination_language_label.place(x=30,y=120)
 dest_lang = ttk.StringVar(root)
 dest_lang.set('spanish')
 destination_language_optionmenu = ttk.OptionMenu(root, dest_lang, *language_choices)
-destination_language_optionmenu.place(x=1030,y=120)
+destination_language_optionmenu.place(x=130,y=120)
+destination_language_optionmenu.configure(state='disable')
 destination_language_optionmenu.config(width=10)
 
 frequency_thresholds_label = ttk.Label(root, text='frequency thresholds:')
 frequency_thresholds_label.place(x=30,y=150)
 frequency_low = StringVar(root, value=0)
 frequency_thresholds_low_entry = Entry(root, textvariable = frequency_low, bd =1, width=3)
+frequency_thresholds_low_entry.configure(state='disable')
 frequency_thresholds_low_entry.place(x=160,y=150)
 frequency_high = StringVar(root, value=10)
 frequency_thresholds_high_entry = Entry(root, textvariable = frequency_high,bd =1, width=3)

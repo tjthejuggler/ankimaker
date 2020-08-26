@@ -133,7 +133,7 @@ def create_anki_note(episode_count, filename, item, src_text, dest_text, dupe_co
 	my_note = genanki.Note(
 		model=language_model,
 		tags=word_tags,
-		fields=[src_text + ' (' + filename + ')', dest_text + ' (' + filename + ')'])
+		fields=[src_text + ' ('+str(round(time.time()))+')', dest_text])
 	language_deck.add_note(my_note)
 	if print_made_cards:
 		print(src_text)

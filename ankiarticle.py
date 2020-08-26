@@ -233,7 +233,7 @@ def create_definitions_cards(dictionary):
 			my_note = genanki.Note(
 				model=definition_model,
 				tags=text_filename,
-				fields=[word, dictionary[word][0]])
+				fields=[word + ' ('+str(round(time.time()))+')', dictionary[word][0]])
 			article_deck.add_note(my_note)
 
 def get_words_sentence_from_text(word, article_text, show_word):
@@ -242,7 +242,7 @@ def get_words_sentence_from_text(word, article_text, show_word):
 	sentences_with_word = []
 	for sentence in all_sentences:
 		sentence_without_punctuation = re.sub(r"[,.;@#?¿!¡\-\"&$\[\]\)\(]+\ *", " ", sentence)
-		if ' ' + word+ ' ' in sentence_without_punctuation.lower() :
+		if ' ' + word.lower() in sentence_without_punctuation.lower() :
 			if not show_word:
 				sentence = sentence.replace(word, '_____')
 			sentences_with_word.append(sentence + '.')
@@ -271,7 +271,7 @@ def create_fill_in_the_blank_cards(dictionary, article_text):
 				my_note = genanki.Note(
 					model=definition_model,
 					tags=text_filename,
-					fields=[sentence, dictionary[word][1]])
+					fields=[sentence + ' ('+str(round(time.time()))+')', dictionary[word][1]])
 				article_deck.add_note(my_note)
 
 def create_anki_deck(dictionary, article_text, filename):

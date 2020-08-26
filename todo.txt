@@ -1,18 +1,11 @@
-
+auto set some languages when type changes, lang and article
 
 do thorough test
 
-fill in the blank should work even if capitalization doesnt match
-check to see if language is actually making decks and naming them and putting them in the right folder
-
 #look into quillionz and python library question-generation for making questions
 
-for subtitles, make a tag that 'allEpisodes' and/or 'almostAllEpisodes'
-tell output file name upon completion in language
-
-
-either hook up high frequency to article or remove it as an option
 maybe split at 'are' in article like we did 'is'
+
 pay attention in testing that coronaviruses is working properly, it may be weird.
 
 put try/excepts anywhere that may prevent a big loss of work
