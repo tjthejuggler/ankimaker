@@ -1,0 +1,81 @@
+David A. Sinclair, PhD, is a professor in the Department of Genetics at Harvard Medical School and co-director of the Paul F. Glenn Center for the Biological Mechanisms of Aging. He is the co-founder of the journal Aging, where he serves as co-chief editor. Dr. Sinclair's work focuses on understanding the mechanisms that drive human aging and identifying ways to slow or reverse aging's effects. In particular, he has examined the role of sirtuins in disease and aging, with special emphasis on how sirtuin activity is modulated by compounds produced by the body as well as those consumed in the diet, such as resveratrol. His work has implications for human metabolism, mitochondrial and neurological health, and cancer. Dr. Sinclair obtained his doctoral degree in molecular genetics at the University of New South Wales, Sydney, in 1995. Since then, he has been the recipient of more than 25 prestigious honors and awards and in 2014 was named as one of TIME Magazine’s 100 most influential people in the world. Dr. Sinclair recently authored the book Lifespan: Why We Age – and Why We Don't Have To.Aging – a process that began the moment we were born – is generally thought of as inevitable. Although aging isn't a disease, it is the primary risk factor for developing many chronic diseases, including cardiovascular disease, Alzheimer's disease, and cancer. In turn, many of these conditions hasten the aging process, setting up a vicious cycle of cellular damage and systemic loss of function. A growing field of research, led by a few innovative scientists proposing radical, contrarian ideas, suggests that aging might not be as inevitable as once thought.In this episode, Dr. David Sinclair discusses exciting new findings in the field of aging research, with special emphasis on the roles of sirtuins, resveratrol, and NAD+. Burgeoning research identifies longevity genesIn recent decades, scientists have identified genes that control aging – so-called longevity genes – that are present in nearly every life form on Earth. One group of genes, the sirtuins, encode a class of enzymes that control gene expression to regulate a variety of metabolic processes essential to maintain proper cellular function, including the release of insulin, mobilization of lipids, and response to stress. Sirtuins are among what is now appreciated to be a network that includes other familiar players like IGF-1 and mTOR to influence aging and longevity. The activity of these players is impacted by familiar healthspan interventions, even those actively researched among longevity scientists in the research community, such as caloric restriction and prolonged fasting, but also things we just generally think of as healthful, like exercise and more. Perhaps more importantly, sirtuins also modulate lifespan in lower organisms by interacting with pathways conserved in and relevant to human biology by directing the activities of multiple molecular pathways.DNA damage interferes with the sirtuins' role in gene regulation in a manner similar to agingA critical aspect of aging is genomic instability – a wide range of alterations that occur in our DNA and irreversibly change the information carried in our genome. In this episode, Dr. Sinclair describes sirtuins as some of the first responders to the site of DNA damage within a cell, where they direct gene expression to promote DNA repair. However, as DNA damage accumulates over time, sirtuins become distracted by having to facilitate DNA repair to properly regulate gene activity. As a result, this leads to a breakdown in the cell's ability to properly regulate which genes are switched on and off during the aging process. Accompanying the sirtuins' response is the activation of another class of enzymes, the poly-ADP-ribose-polymerases, or PARPs. Their activation depletes cellular levels of nicotinamide adenine dinucleotide, or NAD+, a coenzyme that participates in the production of cellular energy, serving as a kind of "double hit" that accompanies aging by potentially reducing other important NAD+ processes, like those required for healthy mitochondrial function.Lifestyle behaviors facilitate a cellular reset
+
+
+
+
+                "What we've discovered is that when you go for a run or you're fasting, the reason that those are beneficial is actually because they trigger those longevity genes to repair your body and make sure that you don't get as old as you would otherwise.” - @davidasinclair
+                
+
+
+                Click To Tweet
+              
+
+
+Certain lifestyle behaviors such as exercise, intermittent fasting, and caloric restriction trigger the activity of sirtuins, restoring normal gene regulation, resetting the cell's activity, and slowing the aging process. These behaviors moderately stress the body and induce shifts in metabolism that drive changes in sirtuin gene expression – sometimes as much as five- to ten-fold – highlighting the links between sirtuins, nutrient levels, and key metabolic pathways. Cellular energy stress drives sirtuin regulation
+
+
+
+
+                "If you have a lot of sirtuins, you get the benefits of calorie restriction or dieting and other types of little stresses on the cell like heat and a bit of a lack of amino acids. And if you get rid of the sirtuin or SIR2 gene, the real breakthrough was that calorie restriction doesn't work anymore." - @davidasinclair
+                
+
+
+                Click To Tweet
+              
+
+
+The mechanisms that drive sirtuin activity come into play when a cell senses changes in cellular levels of NAD+, a coenzyme that participates in the production of cellular energy. Low energy levels, such as would occur during exercising, fasting, or caloric restriction, stress the cell. In turn, NAD+ levels rise, switching on energy-generating pathways and activating enzymes such as sirtuins. Caloric restriction – the practice of long-term restriction of dietary intake, typically characterized by a 20 to 50 percent reduction in energy intake below habitual levels – has long been associated with higher NAD+ levels and sirtuin activity. However, other forms of lifestyle modification likely have similar effects – and greater sustainability. For example, intermittent fasting, a broad term that describes periods of voluntary abstention from food and (non-water) drinks, lasting several hours to days, may be sufficient to elicit cellular energy stress and drive sirtuin activation without the need for prolonged adherence to a highly restrictive dietary pattern. Similarly, exercise induces changes in skeletal muscle fuel utilization to preserve glycogen stores and blood glucose levels for glucose-dependent tissues, switching from glucose to fat as the primary energy source. This change in glucose availability stresses the cell, promoting alterations in gene expression via NAD+-dependent sirtuin activation.Levels of NAD+ vary according to nutrient intake, activity, and even time of day. In fact, the body's circadian rhythms, which control nearly 15 percent of gene expression in the body, are subject to NAD+ levels, which drive the body's master "clock." Altered NAD+ levels may be the root cause of jet lag as well as the overall loss of energy we experience as we age. Enhancing sirtuin activity with resveratrol, a sirtuin-activating compound
+
+
+
+
+                "These sirtuin pathways exist in plants as well and they get turned on in response to stress. And we call this xenohormesis, the idea that when we eat stressed plants, we get those molecules and they help our bodies.” - @davidasinclair
+                
+
+
+                Click To Tweet
+              
+
+
+Energy stress isn't the only activator of sirtuins. Some naturally occurring and synthetic compounds, called sirtuin-activating compounds, or STACs, may provide a way to tap into the benefits of this biology as well. For example, resveratrol, a naturally occurring compound found in red grapes and other plants, is a potent STAC. It protects the plants in which it is found from environmental stressors and disease. When ingested by humans, resveratrol binds to sirtuins, altering their affinity for NAD+ and their protein substrates, thereby increasing sirtuins' activity. As such, resveratrol presents a promising therapeutic strategy to ameliorate age-related diseases and extend healthspan. Resveratrol is a "dirty molecule," however, known for its multiple cellular targets, so teasing out all the ramifications of this plant-based compound's use has proven problematic. Manipulation of cellular levels of NAD+ as a strategy for slowing aging
+
+
+
+
+                "We’ve shown that NMN and others have shown for NR that it also helps with blood flow and actually mimics exercise and regrows the vascular system.” - @davidasinclair
+                
+
+
+                Click To Tweet
+              
+
+
+As we age, however, the NAD+ levels in our bodies decline, reducing resveratrol's potency. A few candidates have emerged as a means to manipulate or "boost" NAD+ levels in the body. The most well-studied NAD+ boosters are nicotinamide riboside and nicotinamide mononucleotide, which have been shown to ameliorate age-associated diseases in animal studies. Some preliminary human studies have shown that nicotinamide riboside can raise NAD+ levels in plasma, but whether this will translate into health benefits remains to be determined.The future of aging researchUnderstanding aging is a burgeoning field of research, rife with unanswered questions. A small group of scientists is currently working to identify the doses, targets, and potential complications associated with altering the aging process. Although much of the data comes from animal studies, substantial progress has been made in human trials, and many more discoveries will likely come in the next decade or so. 
+
+Learn more about sirtuins in this overview article.
+Learn more about resveratrol in this overview article.
+Learn more about various forms of fasting in this overview article.
+Learn more about NAD+ in this overview article.
+Learn more about nicotinamide riboside in this overview article.
+Learn more about nicotinamide mononucleotide in this overview article.
+
+People Mentioned:
+
+Andrew Dillin
+Matt Kaeberlein
+Juan Carlos Izpisua Belmonte
+Steve Horvath
+Shinya Yamanaka
+Anne Brunet
+Shelley Berger
+Jessica Tyler
+John Gurdon
+R. Scott Turner
+Manuel Serrano
+
+Learn more about Dr. David Sinclair
+
+Lifespan: Why We Age – and Why We Don't Have To by Dr. David A. Sinclair.
+The Sinclair Lab at Harvard Medical School
+Twitter Profile
+

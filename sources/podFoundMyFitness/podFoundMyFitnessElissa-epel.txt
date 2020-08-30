@@ -1,0 +1,128 @@
+Elissa Epel, PhD, is a Professor in the Department of Psychiatry at the University of California, San Francisco. She serves in many roles, including director of the Aging, Metabolism, and Emotions Center; director of the Consortium for Obesity Assessment, Study, & Treatment, (COAST); Associate Director of the Center for Health and Community; president-elect of the Academy of Behavioral Medicine Research; and steering council member for the Mind & Life Institute.Dr. Epel's research centers on the mechanisms of healthy aging and the associations between stress, telomere length, addiction, eating, and metabolic health. She and her colleagues are currently collaborating in clinical trials investigating the effects of self-regulation and mindfulness training on cellular aging, weight, diet, and glucose control.In 2017, she co-authored the New York Times best-selling book The Telomere Effect with Nobel Prize winner Dr. Elizabeth Blackburn. Click here for an Amazon affiliate link to The Telomere Effect.
+
+Learn more about Dr. Epel from her profile at UCSF Aging, Metabolism, and Emotions (AME) Center.
+
+Telomere length as a biomarker for cellular aging.
+
+
+
+
+                "So when you think of our linear chromosomes, they're all capped at the end with this wound up strings of DNA, repeating DNA called telomeres. And they are protecting the genome from damage." - Dr. Elissa Epel
+                
+
+
+                Click To Tweet
+              
+
+
+Telomeres are distinctive structures comprised of short, repetitive sequences of DNA present on the ends of our chromosomes. They form a protective "cap" – a sort of disposable buffer that gradually shortens with age – that prevents chromosomes from losing genes or sticking to other chromosomes during cell division. When the telomeres on a cell's chromosomes get too short, the chromosome reaches a "critical length," and the cell enters senescence or undergoes apoptosis. Telomere length is measured in base pairs – the coupled building block units that make up the ladder-like rungs of our DNA. In childhood, our telomeres are about 15,000 base pairs long; by the time we reach old age, our telomeres have shortened to about 3,000 base pairs, a loss of about two dozen base pairs every year. Lifestyle factors such as poor nutrition and smoking can alter the math, however, by generating oxidative stress. For example, the oxidative damage inflicted by smoking a pack of cigarettes every day severs another five pairs each year. Smoke for 40 years, and the losses add up, robbing a smoker of more than seven years of life. Obesity has similar effects: The telomeres of obese women may be as much as 240 base pairs shorter later in life than those of lean women, roughly equivalent to about nine years of life.Other stressors, both physiological and psychological ones, can also shorten telomeres and promote disease pathology. For example, the DNA of workers exposed to high levels of carcinogens exhibit genetic and chromosomal alterations and shorter telomeres than those who work in indoor spaces. And women under psychological stress have higher levels of glucocorticoid hormones, which reduce levels of anti-inflammatory cytokines. This in turn increases oxidative stress and accelerates telomere shortening. A proxy measure for past life exposures and behaviors.
+
+
+
+
+                "There's a growing literature on chemical exposure. So this is very, very disturbing because we're all exposed to these chemicals like BPA." - Dr. Elissa Epel
+                
+
+
+                Click To Tweet
+              
+
+
+In most population-based studies, telomere length is measured in leukocytes, a type of white blood cell. Leukocytes are readily available in circulating blood and provide insights into a person's cumulative history of exposure to factors that shorten telomeres. This history, coined the "exposome," is the totality of non-genetic exposures that a person experiences during a lifetime. The exposome comprises both tangible and intangible exposures, ranging from food, air, water, microbes, and chemicals to psychological trauma, stress, education level, and financial status. It likely has myriad effects on human health. Assessing and quantifying the exposome presents challenges, but telomere length may be at least one suitable proxy for investigating it.
+
+Learn more about telomere length as a proxy measure for the exposome from 2015 review by Drs. Blackburn, Epel, and Lin.
+
+Slowing the attrition and increasing telomere length.
+
+
+
+
+                "Small moderate health behaviors add up over decades to mean better longevity, longer telomeres, lower inflammation." - Dr. Elissa Epel
+                
+
+
+                Click To Tweet
+              
+
+
+Although the inexorable tide of aging seems unyielding, a growing body of research suggests that telomere shortening can be slowed or even reversed through lifestyle modifications. Behavioral. Exercise is one of those important lifestyle modifications that not only has been shown to stave off telomere attrition but also lengthen telomeres. For example, in a study involving 2400 twins, those who were less physically active had shorter telomeres than those who were more active, with the most active subjects having telomeres the same length as sedentary individuals up to 10 years younger, on average. An intervention study found that aerobic exercise (120 minutes per week) significantly lengthened telomeres in leukocytes after 24 weeks in previously inactive, highly stressed older adults.Meditation also has been shown to buffer the stress that shortens telomeres and activates the gene that encodes for the enzyme telomerase (necessary for rebuilding truncated telomeres).Micronutrients, essential fatty acids, and diet. Micronutrients such as omega-3 fatty acids and vitamin D have also been shown to impact telomere length. Supplemental fish oil (2.5g/day) slows telomere shortening with each 1-standard deviation increase in blood levels associated with a 32% reduction in the odds of telomere shortening and also reduced evidence of oxidation in blood cells compared to placebo (overweight middle-aged and older adults). Two different observational studies on twins have shown that those individuals with the lowest levels of vitamin D had shorter telomeres that were associated with 5 years of aging. The anti-inflammatory properties of vitamin D are thought to be responsible for delaying telomere shortening. A randomized controlled trial found that vitamin D supplementation (2,000 IU/day) increased telomerase activity by 19.2% in blood cells from a population of people that were deficient in vitamin D.For more discussion on supplements and some specific concerns about supplements marketed as telomerase activators skip to 00:43:38.Also discussed in this podcast...
+
+00:01:03 - Some of the cellular mechanisms that can be measured and looked at in the cell that affect how quickly the cells wear down compared to the pace of chronological time.
+00:01:37 - A recent publication demonstrating the power of 10 biomarkers as predictive of the pace of biological age over the course of 12-years. Study. Published biomarkers: C-reactive protein, Serum creatinine, Glycated hemoglobin, Serum albumin, Serum total cholesterol, Cytomegalovirus optical density, Serum urea nitrogen, Serum alkaline phosphatase SI, Forced expiratory volume, Systolic blood pressure. NHANES Biomarker Algorithm.
+00:02:31 - The distinction, in the field of aging, between looking at when people die, as in maximum lifespan, versus when the healthful period of life is over and chronic disease sets in, the so-called measure of healthspan, which is influenced by fundamental processes active throughout life and wear down with poor health and years of living.
+00:02:55 - The trend towards overall increases in human longevity that has been ongoing this century.
+00:03:23 - The compression of the so-called morbidity window to a short period of time at the end of life as an important secondary goal alongside increasing lifespan. Read more about compression of morbidity as a goal of lifespan extension.
+00:04:29 - Dr. Epel's thoughts on the levers that control aging and the cumulative nature of the impact that various aspects of a healthy lifestyle in mid-life have on telomere length and longevity decades later.
+00:05:18 - The importance of certain forms of positive stress, both psychological and physiological, as well as the importance of being integrated within a supportive, positive web of social interactions.
+00:05:47 - The genome-protective function of the telomere caps found at the end of our chromosomes, - special focus of Dr. Epel's - which makes telomere function an important tie-in for both the biology of aging and the biology of stress tolerance. Relevant review.
+00:07:03 - A discussion of telomere length as a biomarker for aging versus its place as an actual regulator of aging. See also 0:03:01.
+00:07:32 - Replicative senescence, a process governed and forestalled by telomeres, which describes the number of divisions a cell can occur as a function of aging.
+00:07:52 - The importance of telomere function in stem cell populations where their ability to continue dividing and replenishing tissues over time is maintained through the telomere-lengthening telomerase enzyme, but ultimately still balanced against the needs for cellular cancer resistance. Relevant review.
+00:09:16 - How a specialized enzyme called telomerase has the ability to re-build telomeres after they've been shortened by adding back base pairs. Review on biology of telomeres and telomerase.
+00:09:55 - The crucial discovery by Drs. Elizbeth Blackburn and Carol Greider that knocking down telomerase ultimately results in the inability for cells to divide, referred to as cell cycle arrest, while upregulation of telomerase effectively immortalizes cells. Study.
+00:10:36 - The new techniques Dr. Epel's colleagues have pioneered that enable scientists to assay the extremely low-levels of the telomere-rebuilding telomerase enzyme found in normal circulating blood cells, the expression of which requires greater sensitivity to detect than in stem cells but broadly associates with health. Study.
+00:10:57 - The enormous, ten-fold difference in telomerase enzyme expression between what is found in cancer cells, which is hijacking and overexpressing the enzyme as an immortalization strategy, versus what is ordinarily in blood cells.
+00:12:30 - The homeostatic sort of balance evolution seems to have optimizing around when it comes to telomere length, as evidenced in the somewhat conflicting associations of greater length with better metabolic health and cardiovascular disease versus the observation that longer telomere length is sometimes associated with a greater risk of certain cancers. Meta-analysis.
+00:13:15 - The challenges of studying telomere biology in rodents, which have ultra-long telomeres often requiring scientists to artificially shorten the telomeres in order to make any model of disease closer to what might be seen in humans.
+00:13:39 - How telomere diseases where exaggerated shortening of telomeres or defects in genes associated with the management of telomere length produce an advanced aging phenotype, as in Werner syndrome, or other problems like bone marrow failure and fibrosis of the lungs and liver. Werner study; Telomere diseases review.
+00:14:10 - How telomere diseases may impact offspring even without direct transmission of an affected gene allele, because of the unique transmissible quality of telomere length where it is heritable from parents via epigenetic means.
+00:15:10 - The recent Mendelian randomization studies that have connected both cardiovascular disease and dementia risks to telomere length. Alzheimer's MR study; CHD MR Study.
+00:15:56 - A special concept Dr. Epel refers to as the "exposome" which makes up the totality of non-genetic exposures that may influence telomere length and healthspan and can include everything from food, stressors, education and financial status, chemical exposures, and more.
+00:16:45 - The emerging link between certain environmental heavy metal and chemical exposures diseases of aging and corresponding telomere attrition. BPA study; Heavy metal study.
+00:17:35 - The emerging science of air pollution, where some evidence suggests that small particle exposure may increase telomere attrition. Study.
+00:18:30 - The impact of diet on telomere length and what some of the strongest factors are that seem to associate with either shorter or longer telomeres.
+00:19:04 - The association of caffeinated coffee consumption with longer telomere length. Study.
+00:19:17 - The impact sugar-sweetened beverage consumption may disproportionately have on telomere length where one study showed as much as 4.6 years of additional aging. Press release; Study.
+00:20:16 - The relationship with sugar-sweetened beverages and refined sugar with metabolic syndrome, obesity, and diabetes.
+00:20:31 - The aggressive approach the UCSF campus took as part of the so-called Healthy Beverage Initiative to completely eliminate the on-campus sale of sugar-sweetened beverages altogether and the results that had. SugarScience at UCSF.
+00:23:14 - Some of Elissa's thoughts on the place metformin has in the broader anti-aging strategy and the behavioral pitfall of not making proper lifestyle adjustment.
+00:23:48 - The distinction between various forms of short-term stress, which may have minimal effect on telomere length, versus the more harmful longer-term variety associated with a profile of chronic demoralization.
+00:28:34 - The beneficial impact of aerobic exercise on telomere length and as a reducer of stress and ruminative thinking. Study. See also 0:24:32.
+00:29:05 - The impact of sex-differences when it comes to lifespan and some of the mechanisms that may be driving a part of that.
+00:31:14 - How estrogen, which upregulates telomerase and improves mitochondrial health, may be one of the factors in the advantage women have in telomere length and the cellular robustness of female aging biology -- an advantage that starts at birth, but may be undermined by sharing a uterine environment with a male fraternal twin.
+00:32:49 - The association of later menopause and longer reproductive years with better telomere length in later life.
+00:33:48 - The emerging science of how a mother's mental health or stress may impact the uterine environment and influence newborn telomere length. Study.
+00:35:20 - The special importance of pre-conception health which may impact the aging program of offspring through the transmission of epigenetic signals conferred by the germline.
+00:37:22 - How human obesity has been associated with epigenetic changes in sperm DNA that impact genes associated with both metabolism and even cognition, but may be reversible by weight loss. Study.
+00:38:31 - How paternal obesity may promote type 1 diabetes in offspring, a phenomenon demonstrated in animal research. Study.
+00:39:20 - The counter-intuitive phenomenon whereby older males accumulate a subset of germ-line stem cells that produce sperm with longer telomeres that are actually heritable and get passed on to their offspring. Study.
+00:39:57 - The influence of the parameters of aging, such as telomere length, that are now understood to be influenced by certain starting conditions at birth.
+00:42:01 - How increased education has an especially strong association with increased telomere length.
+00:43:04 - How the cord blood of infants born to more educated mothers have longer telomeres. Study.
+00:43:38 - Dr. Epel's concerns surrounding the potential cancer and aging trade-off of longer telomeres and the shadow that might cast over supplements marketed to directly boost telomerase activity, which do not yet have a clinically proven profile of safety. Relevant review.
+00:44:53 - How marine omega-3 fatty acids EPA and DHA may be one of the safest supplements to delay telomere attrition, with each 1-standard deviation increase in levels associated with a 32% reduction in the odds of telomere shortening and how one four-month double-blinded supplementation study showed that omega-3 could even lengthen telomeres. Study 1; Study 2.
+00:45:44 - The association of higher serum vitamin D status with longer leukocyte telomere length. Study.
+00:45:58 - The overall strength of exercise as a direct modifier of long-term telomere maintenance. Aerobic exercise study 1, Weight loss study 2.
+00:47:31 - How losing 10% of bodyweight amongst and then keeping it off for over 12-months was shown to lengthen telomeres in obese participants (BMI range 30-45). Study.
+00:48:09 - General metabolic health as a focal point that supersedes the importance of weight loss when it comes to maintaining telomere health.
+00:48:27 - Inflammation as a harmful state sometimes mitigated by positive lifestyle changes and may be a unifying factor that brings together many of the promising avenues for boosting healthy telomere maintenance.
+00:50:06 - Determining personalized response to diet through continuous glucose monitors like the Dexcom and FreeStyle Libre and the evidence that glycemic response to food is extremely unique from individual to individual and determined by factors such as the content of the microbiome, genetics, and more. Weizmann Institute study, Personalized Nutrition Project, DayTwo.
+00:51:51 - The beneficial impact of dietary fiber on post-prandial glucose response.
+00:53:07 - How psychological stress promotes intestinal permeability through the activation of immune cells localized to the gut through the release of a hormone called corticotropin-releasing hormone, a hormone also implicated in the broader behavioral, autonomic, and visceral responses to stress. Study.
+00:53:46 - Dr. Epel's tips on making sustainable lifestyle changes that have "stickiness" and help us to stay on the path to better aging.
+00:56:16 - How psychological stress in caregivers is highly related to shorter telomere length, but how exercise seems to breakdown this relationship by acting as a crucial buffer against the negative effects of stress. Study.
+00:56:04 - The non-linearity of the dose-response relationship between exercise and longer telomeres where even a little effort pays off but may have diminishing returns after a certain point. 
+00:56:55 - The interesting question of whether so-called "biohacks" like intermittent fasting will ultimately be found to promote longer telomere length or not.
+00:57:40 - The powerful telomere lengthening impact of a three-week meditation retreat, a benefit that seemed especially pronounced in personalities higher on the neuroticism scale. Study.
+00:58:48 - The influence of mind-body practices like yoga on what is known as "vagal tone" and how some of the benefits may be non-overlapping with aerobic exercise.
+01:00:36 - Some of the concerns surrounding the validity and accuracy of consumer available telomere tests, as well as the difficulty in interpreting results from a single snapshot from individual versus a population - the latter of which may be a more useful context.
+01:03:13 - Rhonda's surprising experience of extremely erratic results from consumer-available telomere tests and the potential technical changes these tests may have outside of a research laboratory setting.
+
+People mentioned
+
+Ashley Mason, Ph.D.
+Carol Greider, Ph.D.
+Eli Puterman, Ph.D.
+Elizabeth Blackburn, Ph.D.
+Janet Wojcicki, Ph.D.
+Janice Kiecolt-Glaser, Ph.D.
+Jue Lin, Ph.D.
+
+Learn more about Dr. Elissa Epel
+
+The Telomere Effect by Nobel Prize winner Dr. Elizabeth Blackburn and Dr. Elissa Epel - Amazon affiliate link
+AME Center at UCSF
+Twitter Profile
+UCSF Profile
+Stress Resilience Study (currently recruiting)
+

@@ -1,0 +1,41 @@
+Eric M. Verdin, M.D. is the fifth president and chief executive officer of the Buck Institute for Research on Aging and is a professor of Medicine at UCSF. Dr. Verdin's laboratory focuses on the role of epigenetic regulators in the aging process, the role of metabolism and diet in aging and on the chronic diseases of aging, including Alzheimer’s, proteins that play a central role in linking caloric restriction to increased healthspan, and more recently a topic near and dear to many of you, ketogenesis. He's held faculty positions at the University of Brussels, the NIH and the Picower Institute for Medical Research.A cyclic ketogenic diet and its effects on memory and longevity.In this podcast, we talk broadly about many interesting areas in the field of aging, but of special interest is his lab’s recent publication on a cyclic ketogenic diet (alternating between keto and a regular diet) that was able to improve longevity and memory in mice when started in mid-life. 
+
+
+
+
+                "The most remarkable thing we saw is that these older mice on the ketogenic diet showed actually better memory than younger mice, and we did not see the loss of memory function that one would normally see associated with the aging process." - @EricVerdin
+                
+
+
+                Click To Tweet
+              
+
+
+Some of the key topics discussed in this episode include...
+
+The effects of a low protein cyclic ketogenic diet beginning in midlife (12 months of age) in male mice. The result? Increased healthspan and improved memory. Dr. Verdin explains how the cyclic ketogenic diet decreased insulin, IGF-1, and mTOR signaling and decreased fatty acid synthesis, and increased PPAR-alpha (which promotes beta-oxidation and mitochondrial biogenesis in muscle).
+How this diet shares some qualities with fasting.
+Some of the possible reasons why the cyclic ketogenic diet created such a striking improvement in memory even when compared to younger mice.
+How beta-hydroxybutyrate, which is the major circulating ketone body during fasting and nutritional ketosis, may, in addition to being an energy source, regulate inflammation and gene expression by acting as a signaling molecule by inhibiting what are known as class 1 histone deacetylases (HDACs).
+How this inhibition of class 1 HDACs leads to the increased expression of notorious longevity gene Foxo3, which may help explain why mice given an exogenous beta-hydroxybutyrate ester had lower markers of inflammation and oxidative damage, which are physiological contributors to the aging process. 
+The role of the nicotinamide adenine dinucleotide (NAD+) in the aging process and how replacing declining levels (or preventing them from declining in the first place) may prove to be an important anti-aging strategy.
+Some of the reasons why NAD+ might be declining with age, its role in DNA damage repair via an enzyme known as PARP, and what the literature says about the NAD+ precursor nicotinamide riboside.
+How a special class of enzymes called sirtuins, also known to be activated by caloric restriction and caloric restriction mimetic resveratrol, is tightly correlated with the level of NAD+ and how this "energetic currency" rises in response to fasting. 
+The role of the sirtuin enzymes in regulating mitochondrial function, neuronal functions, stem cell rejuvenation and why they may be important in delaying the aging process. 
+
+Learn more about Dr. Eric Verdin
+
+@EricVerdin on Twitter
+Eric Verdin, M.D., President and CEO - Buck Profile
+Verdin Lab - Buck Institute for Research on Aging
+List of Publications
+Wikipedia Profile on Eric Verdin, M.D.
+
+Relevant publications
+
+Ketogenic Diet Reduces Midlife Mortality and Improves Memory in Aging Mice
+A Ketogenic Diet Extends Longevity and Healthspan in Adult Mice
+Suppression of oxidative stress by β-hydroxybutyrate, an endogenous histone deacetylase inhibitor.
+Long-term calorie restriction in humans is not associated with indices of delayed immunologic aging: A descriptive study
+NAD+ in aging, metabolism, and neurodegeneration
+

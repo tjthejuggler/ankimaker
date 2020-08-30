@@ -1,0 +1,93 @@
+Matthew Walker, Ph.D., is a professor of neuroscience and psychology at the University of California, Berkeley, and serves as the Director of the Center for Human Sleep Science. Formerly, Dr. Walker served as a professor of psychiatry at the Harvard Medical School. Walker's research examines the impact of sleep on human health and disease. One area of interest focuses on identifying "vulnerability windows" during a person's life that make them more susceptible to amyloid-beta deposition from loss of slow wave sleep and, subsequently, Alzheimer's disease later in life.Dr. Walker earned his undergraduate degree in neuroscience from the University of Nottingham, UK, and his Ph.D. in neurophysiology from the Medical Research Council, London, UK. He is the author of the New York Times best-selling book Why We Sleep: Unlocking the Power of Sleep and Dreams.Sleep as foundational bedrock for our ability to learn from experience
+
+
+
+
+                "You can't pull the all-nighter and hope to be able to continue to learn." - Matthew Walker, Ph.D.
+                
+
+
+                Click To Tweet
+              
+
+
+In some ways, the highly conserved nature of sleep across the animal kingdom seems like a paradox: Whereas closing our eyes to sleep obviously leaves us and the rest of the animal kingdom vulnerable for long stretches of the twenty-four-hour day, not sleeping must carry even more risk when we consider that it has not been weeded out in spite of this. Without sufficient sleep, our ability to learn – the acquisition of new memories – begins to rapidly break down. And yet, this is only one of the major roles we now appreciate that sleep has. In this episode, sleep expert Dr. Matt Walker describes how sleep is critical to learning and survival because it facilitates a process he likens to the input, storage, and transfer of data in a computer. Sleep preps the brain for information inputThe formation, or "encoding," of memories occurs when the brain engages with new information – ideas, actions, or images – and leads to the formation of a representation of this information in the brain. Sleep preps the brain so that it can assimilate this new information and lay down the framework for new memory traces. Without sufficient sleep – in particular, the slow wave sleep that occurs during the stage of non-rapid eye movement, or NREM – the brain's ability to receive new input is markedly impaired. This phenomenon has critical implications in students and has been observed when college students who were deprived of sleep experienced dramatic deficits in their ability to learn new information.Sleep facilitates information storageSleep also facilitates the more permanent storage of new information that has been stored in the hippocampus – the region of the brain responsible for the formation and consolidation of short-term memories. Sleep that occurs after exposure to new information fulfills the role of the brain's "save button."Poor sleep, however, inhibits the brain's ability to form memories. Dr. Walker and his colleagues believe that this might be a quality of a time-limited capacity for hippocampal storage. Wakefulness that exceeds the typical 16-hour day might effectively outstrip this region's capacity for short-term storage of information.Sleep provides a mechanism for information transfer and the formation of long-term memoriesThe intake and storage of mere short-term information are insufficient for optimal learning, however. The final, and perhaps most critical, way in which sleep aids in learning is that it provides a mechanism by which new information can be permanently stored – the formation of long-term memories via transfer to the brain's cortex, where they can be retained and then retrieved for future use. Without this transfer phase, we run the risk of hippocampal-associated memory impairment – a problem readily observed in older adults who experience loss of slow-wave sleep and subsequently demonstrate difficulty retaining memories overnight.A fascinating new strategy to selectively enhance memories during sleepWhen we sleep, memories and their associated events acquired during periods of wakefulness are reactivated. Essentially, the brain "replays" the events that occurred prior to sleeping, a process that stabilizes memories by serving as a pruning mechanism, selectively strengthening strongly associated memories and weakening weakly associated ones. A surprising fact is that this process can be amplified by "cueing" the reactivation during sleep with sub-awakening threshold sounds, odors, or other sensory cues – based on the context of the learning received the previous day.Learn more about this fascinating mechanism in Rudoy et al. paper Strengthening Individual Memories by Reactivating Them During SleepA common thread between aging-associated loss of slow-wave sleep, accumulation of amyloid-beta, and impairment of hippocampal-dependent of memory
+
+
+
+
+                "If you look at how amyloid builds up in the brain, and if you look at the trajectory of Alzheimer's disease, it is a nonlinear exponential curve. It fits exactly what the sleep-dependent model of amyloid clearance would predict." - Matthew Walker, Ph.D.
+                
+
+
+                Click To Tweet
+              
+
+
+The decline of deep, slow wave sleep begins much earlier in life than most people would expect, with losses occurring as early as the late 20s. By the time a person reaches 50, they've lost roughly half of their deep sleep, and by the time they're 80, deep sleep brain waves are almost undetectable, according to Dr. Walker. Small wonder, then, that aging is accompanied by cognitive decline and substantive memory loss, especially in age-related disorders such as Alzheimer's disease.  Sleep disruption is integrally associated with Alzheimer's disease and its pathophysiology, with characteristic changes in sleep emerging well before the clinical onset of the disease. A key player in the development of Alzheimer's disease is amyloid-beta, a toxic protein that aggregates and forms plaques in the brain. Insufficient sleep increases the production of amyloid-beta, and amyloid-beta deposition, in turn, impairs sleep – in a vicious, self-perpetuating loop.Recent studies indicate that the lion's share of amyloid-beta accumulates in the medial prefrontal cortex – an area Dr. Walker refers to as the "electrical epicenter" for the brain waves of deep, slow-wave sleep – and the severity of accumulation significantly predicts the degree and extent of cognitive decline associated with Alzheimer's. The accompanying loss of deep sleep impairs overnight memory consolidation and retention, further impairing hippocampal-dependent memory consolidation. Dr. Walker's research suggests that quality of sleep in later life may actually confer a kind of resilience, staving off the cognitive decline commonly associated with aging. Sleep facilitates the brain's self-cleaning mechanism: the glymphatic systemOne of the reasons slow-wave sleep, in particular, seems to be so important is because it facilitates the proper functioning of the glymphatic system, a system crucial for clearing the brain of metabolites and other waste. The glymphatic system comprises a vast arrangement of interstitial fluid-filled cavities surrounding the small blood vessels that serve the brain. These perivascular structures are formed by astroglial cells and expedite the removal of proteins and metabolites from the central nervous system. During sleep, these interstitial spaces increase by more than 60 percent. This allows a "flushing" operation in which waste products can be more efficiently eliminated. The glymphatic system also facilitates the distribution of essential nutrients such as glucose, lipids, and amino acids, as well as other substances, such as growth factors and neuromodulators. Our biological need for sleep may reflect a need for an essential downtime that enables the elimination of potentially neurotoxic waste products, including amyloid-beta, a toxic protein that aggregates and forms plaques in the brain. During deep, slow-wave sleep, the glymphatic system clears as much as 40 percent of the total amyloid-beta accumulation. A mere 36 hours of sleep deprivation, however, increases amyloid levels by 25 to 30 percent. This fascinating emerging story on a crucial function of sleep is just one more incremental discovery that helps us understand the existence of sleep in the midst of the evolutionary conundrum mentioned earlier. While many things may help us prevent the build-up of amyloid plaques by boosting our capacity for glymphatic clearance — such as exercise and adequate intake of omega-3 — by far, the most important factor is sufficient sleep, especially slow-wave sleep.Much of this underscores the need for developing non-pharmacological strategies for addressing sleep loss or enhancement of slow-wave sleep. A strong candidate is transcranial direct current stimulation, a non-invasive, brain stimulation treatment that uses direct electrical currents to the brain to enhance deep sleep and improve memory capacity in older adults, and even doubling it in young adults. Other strategies involve auditory closed-loop stimulation – the delivery of tones in synchrony with endogenous slow-wave oscillations in the brain – and slow, rhythmic bed rocking.Learn more in Dr. Walker's publication Sleep: A novel mechanistic pathway, biomarker, and treatment target in the pathology of Alzheimer's disease?
+ Loneliness as a contagion promoted by sleep loss
+
+
+
+
+                "We have not been able to discover a single psychiatric condition in which sleep is normal." - Matthew Walker, Ph.D.
+                
+
+
+                Click To Tweet
+              
+
+
+Another, somewhat troubling, consequence of sleep deprivation is that it triggers the onset of a "loneliness phenotype." Lack of sleep induces critical changes within the brain, altering behavior and emotions, while also disturbing essential metabolic processes and influencing the expression of immune-related genes. The end result is that people who are sleep-deprived avoid social interaction. This asocial profile is recognizable by other people, who, in turn, shun the sleep-deprived people in a psychosocial loop that perpetuates in a vicious cycle of loneliness and other mental health disorders. Impairment of glucose regulation and the promotion of an obesogenic profileFor anyone who habitually tracks their glucose levels, the importance of sleep can quickly become obvious. As Dr. Walker reveals in this episode, even a few days of impaired sleep, particularly loss of slow-wave sleep, manifests itself in a rather remarkable way: a change from potentially good glucose management, to something akin to a rapid onset of pre-diabetes. This is real-world observable.In fact, sleeping less than seven hours per night has been associated with either having diabetes or eventually developing the condition. The problem is multifactorial. Not only does lost sleep cause our pancreatic beta islet cells that produce insulin to become less responsive to glucose signals, but muscle and other cells also become less responsive to insulin. These adverse changes from sleep loss are then compounded by deleterious alterations in the body's levels of appetite hormones leptin and ghrelin, which lead to, as Dr. Walker terms it, an obesogenic profile of energy consumption as a consequence of potentially chronic sleep loss.Sleep plays a vital role in maintaining optimal mental and physical health throughout life. Listen to Dr. Walker explain how sleep is critical to our survival. Learn more in Van Cauter et al. paper Metabolic consequences of sleep and sleep lossDiscussed in this episode…
+
+00:06:27 - How pulling an all-nighter decreases learning capacity by 40 percent. Study.
+00:09:07 - How sleep is important for long-term memory because during sleep, we shift memories from the hippocampus, the brain’s vulnerable, short-term storage reservoir, and we move them out to the cortex, the brain’s long-term storage site. 
+00:13:22 - How sounds, when played at sub-awakening volume and coupled with certain learning can be used to contextually strengthen memories during sleep… a bizarre and fascinating phenomenon. Study.
+00:16:42 - On a similar note, how exposure to odors during learning and then again during sleep can create this exact same selective-enhancement of retention. That's right — smells and even sounds can reinforce memories even while we sleep. Study.
+00:24:27 - We also talk about a possible explanation as to why we do not remember dreams.
+00:26:37 - Dr. Walker's research showing how loneliness is a type of viral social contagion that is promoted by sleep loss, which was demonstrated by experiments that showed people who were sleep-deprived distanced themselves from social interactions, and were, in turn, shunned by other people. Study.
+00:35:57 - We discuss how the amygdala, the brain's emotional center, is 60 percent more reactive after sleep deprivation due to a dampening down of prefrontal cortex function. Study.
+00:39:37 - The effect that genetics plays in anxiety and poor sleep.
+00:40:52 - How the body's fight-or-flight mechanism is amplified in people who have insomnia. 
+00:45:57 - The role of daylight during the day and darkness during the night in improving sleep and circadian rhythms and strategies for using this to our advantage.
+00:56:07 - The fascinating way heat can manipulate the production of crucial slow-wave sleep which has been demonstrated by changes as small as fractions of a degree.
+01:09:57 - How shorter sleep duration has been shown to reduce natural killer cell activity to 70 percent of normal, which, due to the function of natural killer T cells, really suggests chronic sleep deprivation may increase cancer risk. Study.
+01:12:07 - How people averaging less than six hours of sleep at night are four times more likely to become ill after being exposed to the flu virus. Study.
+01:16:27 - How poor sleep overall increases sickness rates, impairs glucose metabolism, and even decreases testosterone levels.
+01:29:55 - How people deprived of sleep for 36 hours show an increase in the amount of amyloid-beta found in their cerebrospinal fluid by as much as 25 to 30 percent and the crucial role that slow-wave sleep plays in helping us clear amyloid-beta. Study. 
+01:36:17 - The importance of deep, slow-wave sleep, which begins to decline as early as our 20s, ultimately being cut in half by our 50s, and declining even more — to the point that it is almost undetectable by the time we're in our 80s, according to Dr. Walker. Study.
+01:40:38 - Some of the limitations of most sleep trackers when compared to polysomnography, the gold standard of sleep science diagnostic tools.
+02:00:53 - How the beta cells in the pancreas become less sensitive to high glucose levels and other cells in the body become less sensitive to insulin when a person doesn't get enough sleep. Study 1; Study 2. 
+02:05:37 - How people who sleep poorly tend to eat 200 to 300 calories more per sitting than those who sleep well and overall have more desire for caloric rich food — a phenomenon that, overall, tracks with a generalized pro-metabolic disorder quality that is associated with poor sleep and shorter sleep durations. Study 1; Study 2.
+02:10:17 - How certain dietary macronutrients may differentially affect sleep. Study.
+02:11:17 - How poor sleep disrupts the gut microbiome. Study.
+02:21:17 - How one cup of coffee in the evening can decrease deep sleep by about 20 percent — an amount that Dr. Walker suggests is equivalent to aging by 10 or 15 years.
+02:23:02 - How alcohol may have a short-lived sedative effect, it tends to fragment sleep, and suppresses REM sleep.
+02:29:37 - How Ambien-induced sleep resulted in a 50 percent loss in the learned connections made during the day in a specialized rodent test of neural plasticity, as well as some of Dr. Walker's other concerns about sleeping pill use in general. Study.
+
+Check the timeline tab for an even more comprehensive breakdown of the discussion.People mentioned
+
+Eve Van Cauter, Ph.D.
+Molly Crockett, Ph.D.
+Maiken Nedergaard, MD, DMSc
+Marcos Frank, Ph.D.
+Eus JW Van Someren, Ph.D.
+Aric A Prather, Ph.D.
+Peter Attia, M.D.
+
+Episode: Peter Attia, M.D. on Macronutrient Thresholds for Longevity and Performance, Cancer & More
+
+Satchin Panda, Ph.D.
+
+Episode: Satchin Panda, Ph.D. on Time-Restricted Feeding and Its Effects on Obesity, Muscle Mass & Heart Health
+Episode: Satchin Panda, Ph.D. on Practical Implementation of Time-Restricted Eating & Shift Work Strategies
+
+
+Learn more about Dr. Matt Walker
+
+Why We Sleep: Unlocking the Power of Sleep and Dreams
+Dr. Walker's Personal Website
+Twitter Profile
+Wikipedia Profile
+UC Berkeley Profile
+

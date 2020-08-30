@@ -1,0 +1,1536 @@
+<html lang="en" class=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<script type="text/javascript" src="https://bam.nr-data.net/1/800dbbec6b?a=16718374&amp;v=1177.96a4d39&amp;to=IVoNTUBZVVsDE0xFUAZQEFBVWAsHV1hMUkULRgxdV0UWVhQCC15DBw%3D%3D&amp;rst=5158&amp;ck=1&amp;ref=https://www.foundmyfitness.com/episodes/archive&amp;qt=2&amp;ap=161&amp;be=388&amp;fe=5006&amp;dc=1991&amp;perf=%7B%22timing%22:%7B%22of%22:1598560975130,%22n%22:0,%22u%22:299,%22ue%22:299,%22f%22:4,%22dn%22:4,%22dne%22:4,%22c%22:4,%22ce%22:4,%22rq%22:11,%22rp%22:278,%22rpe%22:289,%22dl%22:310,%22di%22:1986,%22ds%22:1986,%22de%22:2825,%22dc%22:5005,%22l%22:5005,%22le%22:5018%7D,%22navigation%22:%7B%7D%7D&amp;fp=1125&amp;fcp=3260&amp;jsonp=NREUM.setToken"></script><script src="https://js-agent.newrelic.com/nr-1177.min.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/gtm/js?id=GTM-P9JC4CR&amp;cid=514436888.1583617563"></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://connect.facebook.net/en_US/sdk.js?hash=73abf66197436b00fd336a208ae4f753&amp;ua=modern_es6" async="" crossorigin="anonymous"></script><script src="/cdn-cgi/apps/head/mfCeZLQjhmOLiRBvsYAufgGoMPQ.js"></script><script src="/cdn-cgi/apps/body/bKKVP4RI3U_I6j384wRDDODDykE.js"></script><script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"800dbbec6b","applicationID":"16718374","transactionName":"IVoNTUBZVVsDE0xFUAZQEFBVWAsHV1hMUkULRgxdV0UWVhQCC15DBw==","queueTime":2,"applicationTime":161,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"800dbbec6b",applicationID:"16718374"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(c(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(5),c=e(6),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,n){s[n]=i(p+n,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(l+"tracer",[u.now(),e,t],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&d("lcp",[t[t.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var n=Math.round(e.timeStamp),t={type:e.type};n<=p.now()?t.fid=p.now()-n:n>p.offset&&n<=Date.now()?(n-=p.offset,t.fid=p.now()-n):n=p.now(),g=!0,d("timing",["fi",n,t])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(4),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e){function n(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,n,!1)}n.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],5:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],6:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],7:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function t(t,r,i,o){if(!p.aborted||o){e&&e(t,r,i);for(var a=n(i),c=v(t),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[t]];return d&&d.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(t)}function y(e,n){u(e,function(e,t){n=n||"feature",w[t]=n,n in s||(s[n]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(5),s={},d={},p=n.exports=i();p.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(w,function(n,t){e[n]||(e[n]=t)});var t=a();f("mark",["onload",t+E.offset],null,"api"),f("timing",["load",t]);var r=l.createElement("script");r.src="https://"+e.agent,n.parentNode.insertBefore(r,n)}}function i(){"complete"===l.readyState&&o()}function o(){f("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-E.offset}var c=(new Date).getTime(),f=e("handle"),u=e(5),s=e("ee"),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,y=g&&g.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var h=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1177.min.js"},b=g&&y&&y[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:c,now:a,origin:h,features:{},xhrWrappable:b,userAgent:d};e(1),e(2),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),f("mark",["firstbyte",c],null,"api");var x=0,O=e(7)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(6),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof t?t(r,a):t||{}}catch(u){p([u,"",[r,a,i],c])}s(n+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(n+"err",[r,a,d],c),d}finally{s(n+"end",[r,a,f],c)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<n.length;f++)c=n[f],a=e[c],r(a)||(e[c]=t(a,u?c+i:i,o,c))}function s(t,r,i){if(!f||n){var o=f;f=!0;try{e.emit(t,r,i,n)}catch(a){p([a,t,r,i])}f=o}}function d(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){p([r])}for(var i in e)c.call(e,i)&&(n[i]=e[i]);return n}function p(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+      <meta name="description" content="A collection of interviews and topic &quot;deep dives&quot; focused on the science of aging, health, nutrition, fitness, and well-being.
+">
+  <meta property="og:description" content="A collection of interviews and topic &quot;deep dives&quot; focused on the science of aging, health, nutrition, fitness, and well-being.
+">
+  <meta name="twitter:description" content="A collection of interviews and topic &quot;deep dives&quot; focused on the science of aging, health, nutrition, fitness, and well-being.
+">
+
+    <title>FoundMyFitness Episode Archive</title>
+    <script src="https://kit.fontawesome.com/aff92bbfa8.js"></script><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://apis.google.com/js/platform.js" gapi_processed="true"></script>
+    <script src="https://w.soundcloud.com/player/api.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
+
+
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="4tfTnqf9+rdL+uzKSMn/m9HaglubOGpijbphPOmSX+rALktcISdtbQncnfz6shPElQO9oSfkiHMUUxn8zENtyA==">
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      autoLogAppEvents : true,
+      xfbml            : true,
+      cookie           : true,
+      status           : true,
+      version          : 'v4.0'
+    });
+  };
+</script>
+<script async="" defer="" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+    <link rel="stylesheet" media="screen" href="/packs/css/styles-d1707fb0.css">
+    <script src="/packs/js/redesign2019/application-1f0dd2711ca4d79aa2ec.js"></script>
+    <link rel="stylesheet" media="screen" href="/packs/css/redesign2019/styles-c554fd9a.css">
+
+    <style>.async-hide { opacity: 0 !important}</style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-P9JC4CR':true});</script><link rel="stylesheet" href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwPSJjZi1hdXRoLWJhciJdIHsKICBkaXNwbGF5OiBibG9jazsKICBkaXNwbGF5OiAtd2Via2l0LWJveDsKICBkaXNwbGF5OiAtbXMtZmxleGJveDsKICBkaXNwbGF5OiBmbGV4OwogIGZvbnQtd2VpZ2h0OiA3MDA7CiAgbGV0dGVyLXNwYWNpbmc6IC4wOGVtOwogIHBvaW50ZXItZXZlbnRzOiBub25lOwogIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7CiAgd2hpdGUtc3BhY2U6IG5vd3JhcDsKICBwb3NpdGlvbjogZml4ZWQ7CiAgdG9wOiAwOwogIGxlZnQ6IDA7CiAgcmlnaHQ6IDA7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcD0iY2YtYXV0aC1iYXIiXVtkYXRhLWhvcml6b250YWwtYWxpZ249ImxlZnQiXSB7CiAgLXdlYmtpdC1ib3gtcGFjazogc3RhcnQ7CiAgICAgIC1tcy1mbGV4LXBhY2s6IHN0YXJ0OwogICAgICAgICAganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0Owp9CmNsb3VkZmxhcmUtYXBwW2FwcD0iY2YtYXV0aC1iYXIiXVtkYXRhLWhvcml6b250YWwtYWxpZ249ImxlZnQiXSBjZi1jb250ZW50IHsKICBib3JkZXItcmFkaXVzOiAwIDAgLjNlbSAwOwp9CgpjbG91ZGZsYXJlLWFwcFthcHA9ImNmLWF1dGgtYmFyIl1bZGF0YS1ob3Jpem9udGFsLWFsaWduPSJjZW50ZXIiXSB7CiAgLXdlYmtpdC1ib3gtcGFjazogY2VudGVyOwogICAgICAtbXMtZmxleC1wYWNrOiBjZW50ZXI7CiAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsKfQpjbG91ZGZsYXJlLWFwcFthcHA9ImNmLWF1dGgtYmFyIl1bZGF0YS1ob3Jpem9udGFsLWFsaWduPSJjZW50ZXIiXSBjZi1jb250ZW50IHsKICBib3JkZXItcmFkaXVzOiAwIDAgLjNlbSAuM2VtOwp9CgpjbG91ZGZsYXJlLWFwcFthcHA9ImNmLWF1dGgtYmFyIl1bZGF0YS1ob3Jpem9udGFsLWFsaWduPSJyaWdodCJdIHsKICAtd2Via2l0LWJveC1wYWNrOiBlbmQ7CiAgICAgIC1tcy1mbGV4LXBhY2s6IGVuZDsKICAgICAgICAgIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7Cn0KY2xvdWRmbGFyZS1hcHBbYXBwPSJjZi1hdXRoLWJhciJdW2RhdGEtaG9yaXpvbnRhbC1hbGlnbj0icmlnaHQiXSBjZi1jb250ZW50IHsKICBib3JkZXItcmFkaXVzOiAwIDAgMCAuM2VtOwp9CgpjbG91ZGZsYXJlLWFwcFthcHA9ImNmLWF1dGgtYmFyIl0gY2YtY29udGVudCB7CiAgZGlzcGxheTogLXdlYmtpdC1ib3g7CiAgZGlzcGxheTogLW1zLWZsZXhib3g7CiAgZGlzcGxheTogZmxleDsKICAtbXMtZmxleC1saW5lLXBhY2s6IGNlbnRlcjsKICAgICAgYWxpZ24tY29udGVudDogY2VudGVyOwogIC13ZWJraXQtYm94LXBhY2s6IGNlbnRlcjsKICAgICAgLW1zLWZsZXgtcGFjazogY2VudGVyOwogICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7CiAgLXdlYmtpdC1ib3gtb3JpZW50OiBob3Jpem9udGFsOwogIC13ZWJraXQtYm94LWRpcmVjdGlvbjogbm9ybWFsOwogICAgICAtbXMtZmxleC1mbG93OiByb3cgd3JhcDsKICAgICAgICAgIGZsZXgtZmxvdzogcm93IHdyYXA7CiAgcGFkZGluZzogMCAxZW07CiAgbGluZS1oZWlnaHQ6IDIuNTsKICBwb2ludGVyLWV2ZW50czogYWxsOwp9CgpjbG91ZGZsYXJlLWFwcFthcHA9ImNmLWF1dGgtYmFyIl0gY2YtZW50cmllcyB7CiAgZGlzcGxheTogLXdlYmtpdC1ib3g7CiAgZGlzcGxheTogLW1zLWZsZXhib3g7CiAgZGlzcGxheTogZmxleDsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwPSJjZi1hdXRoLWJhciJdIGNmLWVudHJ5IHsKICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7CiAgLXdlYmtpdC1ib3gtZmxleDogMDsKICAgICAgLW1zLWZsZXg6IDAgMCBhdXRvOwogICAgICAgICAgZmxleDogMCAwIGF1dG87Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcD0iY2YtYXV0aC1iYXIiXSBjZi1lbnRyeSArIGNmLWVudHJ5IHsKICBtYXJnaW4tbGVmdDogMWVtOwp9CgpjbG91ZGZsYXJlLWFwcFthcHA9ImNmLWF1dGgtYmFyIl0gY2YtYWN0aW9ucyB7CiAgZGlzcGxheTogLXdlYmtpdC1ib3g7CiAgZGlzcGxheTogLW1zLWZsZXhib3g7CiAgZGlzcGxheTogZmxleDsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwPSJjZi1hdXRoLWJhciJdIGEgewogIHRleHQtZGVjb3JhdGlvbjogbm9uZTsKfQoKQG1lZGlhIChtaW4td2lkdGg6IDc2OHB4KSB7CiAgY2xvdWRmbGFyZS1hcHBbYXBwPSJjZi1hdXRoLWJhciJdIGNmLWVudHJpZXMgKyBjZi1hY3Rpb25zIHsKICAgIG1hcmdpbi1sZWZ0OiAxZW07CiAgfQp9CgpAbWVkaWEgKG1heC13aWR0aDogNzY4cHgpIHsKICBjbG91ZGZsYXJlLWFwcFthcHA9ImNmLWF1dGgtYmFyIl0gewogICAgZm9udC1zaXplOiAuOWVtICFpbXBvcnRhbnQ7CiAgfQoKICBjbG91ZGZsYXJlLWFwcFthcHA9ImNmLWF1dGgtYmFyIl0gY2YtY29udGVudCB7CiAgICAtd2Via2l0LWJveC1vcmllbnQ6IHZlcnRpY2FsOwogICAgLXdlYmtpdC1ib3gtZGlyZWN0aW9uOiBub3JtYWw7CiAgICAgICAgLW1zLWZsZXgtZmxvdzogY29sdW1uOwogICAgICAgICAgICBmbGV4LWZsb3c6IGNvbHVtbjsKICAgIGJvcmRlci1yYWRpdXM6IDAgIWltcG9ydGFudDsKICAgIHdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7CiAgfQoKICBjbG91ZGZsYXJlLWFwcFthcHA9ImNmLWF1dGgtYmFyIl0gY2YtZW50cmllcyB7CiAgICAtd2Via2l0LWJveC1wYWNrOiBjZW50ZXI7CiAgICAgICAgLW1zLWZsZXgtcGFjazogY2VudGVyOwogICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsKICAgIC13ZWJraXQtYm94LW9yaWVudDogaG9yaXpvbnRhbDsKICAgIC13ZWJraXQtYm94LWRpcmVjdGlvbjogbm9ybWFsOwogICAgICAgIC1tcy1mbGV4LWZsb3c6IHJvdyB3cmFwOwogICAgICAgICAgICBmbGV4LWZsb3c6IHJvdyB3cmFwOwogIH0KCiAgY2xvdWRmbGFyZS1hcHBbYXBwPSJjZi1hdXRoLWJhciJdIGNmLWFjdGlvbnMgewogICAgLXdlYmtpdC1ib3gtcGFjazogY2VudGVyOwogICAgICAgIC1tcy1mbGV4LXBhY2s6IGNlbnRlcjsKICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7CiAgfQoKICBjbG91ZGZsYXJlLWFwcFthcHA9ImNmLWF1dGgtYmFyIl0gY2YtYWN0aW9ucyBhIHsKICAgIGRpc3BsYXk6IGJsb2NrOwogICAgLXdlYmtpdC1ib3gtZmxleDogMTsKICAgICAgICAtbXMtZmxleDogMSAwIGF1dG87CiAgICAgICAgICAgIGZsZXg6IDEgMCBhdXRvOwogICAgdGV4dC1hbGlnbjogY2VudGVyOwogIH0KfQoK">
+
+<script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-436993-5', {
+      cookieDomain: 'foundmyfitness.com'
+    });
+    ga('require', 'GTM-P9JC4CR');
+    ga('send', 'pageview');
+      ga('set', 'userId', '195775'); // Set the user ID using signed-in user_id.
+</script>
+
+<!-- Hotjar Tracking Code for www.foundmyfitness.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1405051,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script><script async="" src="https://static.hotjar.com/c/hotjar-1405051.js?sv=6"></script>
+
+
+    <script>
+var _rollbarConfig = {
+    accessToken: "c9d83a8f60b947188044db2269b3a1b0",
+    captureUncaught: 'true' == 'true',
+    captureUnhandledRejections: true,
+    payload: {
+      environment: "production"
+    },
+    enabled: 'true' == 'true'
+};
+// Rollbar Snippet
+!function(r){function o(n){if(e[n])return e[n].exports;var t=e[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,o),t.loaded=!0,t.exports}var e={};return o.m=r,o.c=e,o.p="",o(0)}([function(r,o,e){"use strict";var n=e(1),t=e(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.5.2/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,o,e){"use strict";function n(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}function t(r,o){this.options=r,this._rollbarOldOnError=null;var e=s++;this.shimId=function(){return e},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[e]={handler:o,messages:[]})}function a(r,o){if(r){var e=o.globalAlias||"Rollbar";if("object"==typeof r[e])return r[e];r._rollbarShims={},r._rollbarWrappedError=null;var t=new p(o);return n(function(){o.captureUncaught&&(t._rollbarOldOnError=r.onerror,i.captureUncaughtExceptions(r,t,!0),i.wrapGlobals(r,t,!0)),o.captureUnhandledRejections&&i.captureUnhandledRejections(r,t,!0);var n=o.autoInstrument;return o.enabled!==!1&&(void 0===n||n===!0||"object"==typeof n&&n.network)&&r.addEventListener&&(r.addEventListener("load",t.captureLoad.bind(t)),r.addEventListener("DOMContentLoaded",t.captureDomContentLoaded.bind(t))),r[e]=t,t})()}}function l(r){return n(function(){var o=this,e=Array.prototype.slice.call(arguments,0),n={shim:o,method:r,args:e,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)})}var i=e(2),s=0,d=e(3),c=function(r,o){return new t(r,o)},p=function(r){return new d(c,r)};t.prototype.loadFull=function(r,o,e,t,a){var l=function(){var o;if(void 0===r._rollbarDidLoad){o=new Error("rollbar.js did not load");for(var e,n,t,l,i=0;e=r._rollbarShims[i++];)for(e=e.messages||[];n=e.shift();)for(t=n.args||[],i=0;i<t.length;++i)if(l=t[i],"function"==typeof l){l(o);break}}"function"==typeof a&&a(o)},i=!1,s=o.createElement("script"),d=o.getElementsByTagName("script")[0],c=d.parentNode;s.crossOrigin="",s.src=t.rollbarJsUrl,e||(s.async=!0),s.onload=s.onreadystatechange=n(function(){if(!(i||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){s.onload=s.onreadystatechange=null;try{c.removeChild(s)}catch(r){}i=!0,l()}}),c.insertBefore(s,d)},t.prototype.wrap=function(r,o,e){try{var n;if(n="function"==typeof o?o:function(){return o||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){e&&"function"==typeof e&&e.apply(this,arguments);try{return r.apply(this,arguments)}catch(e){var o=e;throw o&&("string"==typeof o&&(o=new String(o)),o._rollbarContext=n()||{},o._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=o),o}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(o){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<u.length;++f)t.prototype[u[f]]=l(u[f]);r.exports={setupShim:a,Rollbar:p}},function(r,o){"use strict";function e(r,o,e){if(r){var t;if("function"==typeof o._rollbarOldOnError)t=o._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;o._rollbarOldOnError=t}var a=function(){var e=Array.prototype.slice.call(arguments,0);n(r,o,t,e)};e&&(a._rollbarOldOnError=t),r.onerror=a}}function n(r,o,e,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null),o.handleUncaughtException.apply(o,n),e&&e.apply(r,n)}function t(r,o,e){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var e,n,t;try{e=r.reason}catch(r){e=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!e&&t&&(e=t.reason,n=t.promise)}catch(r){}e||(e="[unhandledrejection] error getting `reason` from event"),o&&o.handleUnhandledRejection&&o.handleUnhandledRejection(e,n)};n.belongsToShim=e,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}function a(r,o,e){if(r){var n,t,a="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<a.length;++n)t=a[n],r[t]&&r[t].prototype&&l(o,r[t].prototype,e)}}function l(r,o,e){if(o.hasOwnProperty&&o.hasOwnProperty("addEventListener")){for(var n=o.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(o,e,t){n.call(this,o,r.wrap(e),t)};t._rollbarOldAdd=n,t.belongsToShim=e,o.addEventListener=t;for(var a=o.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,o,e){a.call(this,r,o&&o._rollbar_wrapped||o,e)};l._rollbarOldRemove=a,l.belongsToShim=e,o.removeEventListener=l}}r.exports={captureUncaughtExceptions:e,captureUnhandledRejections:t,wrapGlobals:a}},function(r,o){"use strict";function e(r,o){this.impl=r(o,this),this.options=o,n(e.prototype)}function n(r){for(var o=function(r){return function(){var o=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,o)}},e="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<e.length;n++)r[e[n]]=o(e[n])}e.prototype._swapAndProcessMessages=function(r,o){this.impl=r(this.options);for(var e,n,t;e=o.shift();)n=e.method,t=e.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],e.ts]):this[n].apply(this,t));return this},r.exports=e},function(r,o){"use strict";r.exports=function(r){return function(o){if(!o&&!window._rollbarInitialized){r=r||{};for(var e,n,t=r.globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;e=window._rollbarShims[i++];)n||(n=e.handler),e.handler._swapAndProcessMessages(l,e.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+// End Rollbar Snippet
+
+
+Rollbar.configure({
+  payload: {
+    person: {
+      id: 195775,
+      username: "Tjthejuggler",
+      email: "tjthejuggler@gmail.com"
+    }
+  }
+});
+</script>
+    <!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2209163732710376');
+    fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+               src="https://www.facebook.com/tr?id=2209163732710376&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+    <meta property="fb:app_id" content="227565902747">
+    <meta property="og:title" content="FoundMyFitness Episode Archive">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.foundmyfitness.com/assets/fmf-og-image-ea0753d5747e5f3f2d5c98120e661c780d85d41d4c40ed8cd4f93931bbec22a5.jpg">
+    <meta property="og:site_name" content="FoundMyFitness">
+    <meta property="og:description" content="A collection of interviews and topic &quot;deep dives&quot; focused on the science of aging, health, nutrition, fitness, and well-being.
+">
+    <meta property="og:url" content="https://www.foundmyfitness.com/episodes/archive">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@foundmyfitness">
+    <meta name="twitter:creator" content="@foundmyfitness">
+    <meta name="twitter:title" content="FoundMyFitness Episode Archive">
+    <meta name="twitter:description" content="A collection of interviews and topic &quot;deep dives&quot; focused on the science of aging, health, nutrition, fitness, and well-being.
+">
+    <meta name="twitter:image" content="https://www.foundmyfitness.com/assets/fmf-og-image-ea0753d5747e5f3f2d5c98120e661c780d85d41d4c40ed8cd4f93931bbec22a5.jpg">
+
+    <script src="/assets/cable-980a4b8fec16731ad86d4a56b8576d1c656ecf2d38eee2c6236faf7b7c9be6fe.js"></script>
+
+  
+
+  <style type="text/css" data-emotion=""></style><style>
+      cloudflare-app[app="cf-auth-bar"] {
+        font-size: 0.7em;
+        z-index: 1;
+      }
+
+      cloudflare-app[app="cf-auth-bar"] cf-content {
+        background-color: #f38020;
+        color: #fcd5b3;
+      }
+
+      cloudflare-app[app="cf-auth-bar"] a {
+        color: #ffffff;
+      }
+    </style><style type="text/css" data-fbcssmodules="css:fb.css.basecss:fb.css.dialog css:fb.css.iframewidget">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style><script async="" src="https://script.hotjar.com/modules.6d94817c31cfe823a518.js" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style></head>
+  <body>
+    
+    
+
+    
+
+
+    <a href="/aliquot">
+<div class="bg-green-600 font-alternative text-sm md:text-lg font-bold text-center" style="background: #AAF984; color: #3C5A75;">
+  <div class="container mx-auto px-8 py-3 flex items-center justify-center">
+    <img class="w-8 h-8 mr-4 hidden md:block" src="/packs/media/redesign2019/assets/images/dna-638d8d6dcffb0e7d2bcbb0dc74f58547.png">
+    <div>
+    Check out our new podcast <span class="underline">The Aliquot</span> for a curated dive into the best of FoundMyFitness with Rhonda →
+    </div>
+    <img class="w-8 h-8 ml-4 hidden md:block" src="/packs/media/redesign2019/assets/images/microscope-a526d5dc8ef4a88c2b3dd5635edc12dc.png">
+  </div>
+</div>
+</a>
+
+    <div>
+      <div class="topbar">
+  <div class="container mx-auto px-8 sm:px-0 lg:px-8">
+    <div class="flex flex-wrap w-full justify-center">
+      <div class="w-full lg:w-1/4">
+        <div class="topbar_logo">
+          <a href="/">
+            <svg width="225" height="39" viewBox="0 0 225 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M74.2726 34.237C74.2726 34.237 73.7984 33.3498 74.4964 33.0536C75.1943 32.7575 75.6425 32.6596 75.7318 32.6227C75.8211 32.5876 77.3968 31.8793 78.0948 31.3855C78.7927 30.8924 80.9144 29.6455 81.8723 29.4038C82.8303 29.162 84.5707 29.0677 85.8465 28.7311C87.1218 28.3945 88.2764 27.3858 89.2163 26.9283C90.1561 26.4713 91.3102 25.6367 91.3102 25.6367C91.3102 25.6367 91.8483 22.8934 93.3914 22.3283C94.9357 21.7633 94.3711 20.9292 94.2649 20.4584C94.1569 19.9876 91.8211 16.7463 91.2167 16.3426C90.6122 15.9395 89.2742 14.9211 89.2121 14.7688C89.1487 14.6165 88.9346 14.715 88.8399 14.9435C88.7458 15.1725 87.2557 16.6786 85.9937 15.9528C84.7323 15.2257 83.8727 13.8006 83.8323 13.7057C83.7919 13.612 83.7382 12.9122 83.6579 12.7647C83.5771 12.616 83.5234 12.6837 83.5361 12.5356C83.55 12.3882 83.3889 11.863 83.6042 11.6877C83.8184 11.513 83.886 11.4598 83.886 11.4598C83.886 11.4598 84.336 10.3762 84.7993 10.1888C85.2626 9.99967 85.4906 9.91989 85.5238 9.84616C85.5576 9.77182 85.8797 9.0653 85.8863 9.04476C85.8936 9.02481 85.9732 8.91723 86.1276 8.97163C86.2827 9.02481 86.3231 9.03932 86.3231 9.03932C86.3231 9.03932 85.8327 8.3189 85.6511 8.21797C85.4701 8.11704 84.3022 7.43107 83.9065 7.11498C83.5101 6.79889 82.3284 5.62157 82.2011 5.54119C82.0732 5.4602 80.3479 4.18194 80.1132 4.10821C79.878 4.03448 78.8579 4.13541 78.7571 4.06832C78.657 4.00124 78.3843 4.01816 78.3137 4.00486C78.2432 3.99036 77.9078 4.00123 77.69 3.99398C77.4716 3.98733 77.1561 3.76553 77.4945 3.6102C77.8342 3.45548 78.0224 3.49356 78.2468 3.50262C78.4724 3.5135 78.7071 3.44642 78.6799 3.37571C78.6534 3.30439 78.5828 3.05901 78.435 2.94599C78.2872 2.83116 78.0996 2.63232 77.9681 2.55134C77.8378 2.47095 77.0855 2.00377 76.9444 1.91311C76.8032 1.82185 76.4913 1.48522 76.6488 1.34742C76.8068 1.21022 77.0083 1.36736 77.1525 1.45258C77.2973 1.53659 77.5114 1.69373 77.6459 1.74752C77.7799 1.80191 77.7937 1.78196 77.9047 1.87202C78.0157 1.96388 78.3674 2.15849 78.3879 2.16212C78.4078 2.16574 78.5255 2.13794 78.4217 2.04366C78.318 1.94938 77.8782 1.70037 77.801 1.63994C77.7238 1.5801 77.6827 1.47857 77.5892 1.43566C77.4945 1.39093 77.0119 1.05853 76.9745 1.00413C76.9377 0.950947 76.7797 0.658429 76.9781 0.625188C77.176 0.590739 77.3244 0.722493 77.4378 0.7926C77.5524 0.863312 77.8209 1.0555 77.9886 1.15946C78.1563 1.26341 78.321 1.39456 78.3843 1.43203C78.4489 1.46829 78.5924 1.55291 78.7233 1.59642C78.8549 1.63994 78.9049 1.66048 78.8917 1.61274C78.8778 1.5662 78.5388 1.11594 78.4519 1.06517C78.3644 1.01441 78.0387 0.62821 77.9379 0.513983C77.8378 0.399756 77.6592 0.13383 77.7799 0.0667441C77.9017 -0.00034165 78.0592 0.0159765 78.2667 0.210586C78.4754 0.406404 78.8102 0.785348 78.8814 0.83672C78.952 0.886883 79.0226 1.00836 79.0756 1.07545C79.1299 1.14253 79.3441 1.45923 79.4587 1.34379C79.5727 1.23017 79.4653 1.09237 79.4448 1.02831C79.4249 0.964243 79.2874 0.630627 79.2675 0.594365C79.247 0.557498 78.9321 0.119929 79.0461 0.0558654C79.1607 -0.00759417 79.3139 0.00268024 79.4485 0.221465C79.583 0.439644 79.7646 0.857268 79.9184 1.12924C80.0728 1.40181 80.3684 1.64719 80.4897 1.79828C80.6097 1.94938 80.7273 2.15124 80.842 2.35673C80.9554 2.56221 81.701 2.86803 82.1009 3.04632C82.5003 3.22461 85.5304 5.02384 85.8194 5.1979C86.1077 5.37257 86.4709 5.5013 86.6519 5.89777C86.8328 6.29484 86.8865 6.34138 87.263 6.55654C87.6388 6.77291 88.7126 8.46032 89.3846 8.87734C90.0554 9.29376 91.163 10.1121 91.271 10.1592C90.6001 9.86671 91.6788 10.3563 92.358 10.5231C92.6596 10.5962 94.0899 11.3456 94.5997 11.3583C95.11 11.3728 96.258 11.6412 97.0163 12.3404C97.7752 13.0403 97.809 13.2017 98.1715 14.4261C98.5341 15.65 98.6415 16.6931 98.9166 17.3991C99.1922 18.105 99.6821 20.9159 99.7484 21.3329C99.8166 21.75 99.5409 23.3642 99.5409 23.3642C99.5409 23.3642 102.582 23.5595 103.924 24.0502C105.267 24.5416 106.838 24.622 107.335 25.5968C107.831 26.5717 107.57 27.6009 107.53 27.6487C107.489 27.6958 106.764 32.975 106.791 33.0899C106.818 33.2035 106.711 35.3152 107.154 35.8065C107.597 36.2973 108.698 36.9434 108.966 37.0975C109.235 37.2522 109.497 37.4166 109.617 37.4903C109.738 37.5641 110.087 37.6964 110.244 37.7369C110.401 37.7768 110.43 37.7502 110.485 37.7907C110.541 37.8306 110.745 38.1425 110.456 38.2047C110.168 38.2688 109.66 38.2543 109.55 38.1938C109.44 38.1334 109.17 38.1177 108.935 38.1092C108.699 38.1002 108.203 38.1273 108.042 37.9539C107.881 37.7816 107.316 37.8379 106.825 37.8717C106.333 37.9049 106.44 38.0029 106.034 38.0439C105.63 38.0844 104.31 38.2996 104.247 37.5979C104.184 36.8956 104.397 36.5288 104.5 36.1831C104.603 35.8374 104.558 34.6685 104.553 34.5736C104.548 34.4793 103.918 31.0991 103.904 29.5911C103.891 28.0856 104.214 28.0312 104.214 28.0312C104.214 28.0312 103.314 27.8433 102.629 28.1388C101.944 28.435 99.3937 28.9064 97.7414 28.6634C96.0903 28.4217 96.3051 28.4761 96.144 28.583C95.9823 28.6906 92.4919 31.1528 90.6394 31.3142C88.7868 31.4756 85.4834 32.1881 83.9801 32.4166C82.4762 32.6457 79.294 33.3316 78.4887 33.7619C77.6827 34.1923 77.2001 34.5549 77.2532 35.1206C77.3069 35.6851 77.3678 36.5596 77.69 36.8159C78.0121 37.0709 77.9379 37.0177 78.2667 37.118C78.5961 37.2196 78.6835 37.3199 78.6636 37.3731C78.6425 37.4269 78.6498 37.5345 78.5086 37.6088C78.6298 37.7164 78.6359 37.8034 78.4078 37.8173C78.1665 37.8312 78.1931 37.8777 78.1931 37.8777C78.1931 37.8777 78.2003 37.9726 77.9651 37.9726C77.7298 37.9726 77.623 37.9315 77.623 37.9315C77.623 37.9315 77.6091 37.9998 77.3341 37.9853C77.059 37.9726 76.9781 37.9182 76.9781 37.9182C76.9781 37.9182 77.1259 37.8644 76.7634 37.8777C76.4008 37.891 76.3266 37.8107 76.1457 37.6825C75.9647 37.555 75.28 36.721 75.1521 35.9208C75.0242 35.1206 74.4204 34.3627 74.2726 34.237Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.80308 24.3821H9.25265L9.16941 27.2976H4.80308C4.82359 28.8394 4.86582 30.5685 4.86582 32.3393H0.041021C0.041021 32.3393 0.145987 28.2773 0.145987 25.1315C0.145987 22.8609 0 17.8403 0 17.8403H9.46078C9.5024 19.3609 9.79317 21.4237 9.79317 21.4237L4.90744 21.2569C4.86582 22.2565 4.82359 23.2985 4.80308 24.3821Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17.7784 29.5891C19.3372 29.5891 19.6907 28.2565 19.6907 26.7564C19.6907 25.2358 19.2129 23.7152 17.6535 23.7152C16.26 23.7152 15.8027 24.7777 15.8027 26.569C15.8027 28.3399 16.3842 29.5891 17.7784 29.5891ZM24.5776 26.653C24.5776 30.2974 22.0198 32.7149 17.7572 32.7149C13.5369 32.7149 10.9375 30.2974 10.9375 26.653C10.9375 22.9446 13.5369 20.6733 17.7572 20.6733C22.0198 20.6733 24.5776 22.9446 24.5776 26.653Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M39.111 29.7567C39.111 30.5267 39.1948 31.2773 39.3396 32.3392H34.5371L34.3495 30.4022C33.8301 31.7348 32.728 32.7151 30.5243 32.7151C28.133 32.7151 26.6562 31.1727 26.6562 28.2149C26.6562 26.2356 26.7395 22.3821 26.6774 21.0488H31.5631C31.5426 22.3615 31.4593 24.8818 31.4593 26.6732C31.4593 28.4645 31.7091 29.6104 32.9771 29.6104C34.2246 29.6104 34.3911 28.1732 34.3911 26.6732C34.3911 24.944 34.2874 22.4238 34.2246 21.0488H39.2569C39.2569 21.0488 39.111 25.6113 39.111 29.7567Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M49.8198 32.3396C49.8403 31.0269 49.9236 28.5067 49.9236 26.7147C49.9236 24.9445 49.5496 23.778 48.2188 23.778C46.8669 23.778 46.6172 25.2152 46.6172 26.7147C46.6172 28.4444 46.701 30.9647 46.7638 32.3396H41.7725C41.7725 32.3396 41.9184 27.7772 41.9184 23.6318C41.9184 22.8612 41.9184 21.9655 41.8979 21.0487H46.742C46.7215 21.7358 46.701 22.4031 46.6799 22.9857C47.2204 21.653 48.5307 20.6733 50.7138 20.6733C53.458 20.6733 54.7273 22.3402 54.7273 24.8194C54.7273 28.3193 54.831 31.0064 54.872 32.3396H49.8198Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M63.8763 29.6522C65.4357 29.6522 65.9557 28.2355 65.9557 26.7149C65.9557 25.2148 65.4357 23.7776 63.8763 23.7776C62.4834 23.7776 61.9633 24.9441 61.9633 26.7149C61.9633 28.5063 62.4834 29.6522 63.8763 29.6522ZM62.0677 20.6735C63.8135 20.6735 65.1027 21.6532 65.6438 22.9859C65.581 19.8407 65.3319 14.8413 65.3319 14.8413C65.3319 14.8413 68.2848 14.9658 70.6134 14.8413C70.6134 14.8413 70.4052 20.4239 70.4052 23.6314C70.4052 25.1103 70.4052 26.6526 70.4257 28.0058C70.4674 30.4439 70.8004 32.3392 70.8004 32.3392H65.8308C65.8308 31.9639 65.7687 30.485 65.7687 30.152C65.394 31.2979 64.2509 32.7145 62.1298 32.7145C59.0527 32.7145 56.9521 30.4227 56.9521 26.7149C56.9521 23.0276 58.9899 20.6735 62.0677 20.6735Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M127.675 25.1943C127.675 27.1313 127.716 29.6727 127.716 32.3392H122.914C122.914 32.3809 123.018 27.9019 123.018 24.8812C122.083 26.6109 120.377 29.4648 119.483 30.9014C119.005 30.3188 117.196 26.736 115.928 24.715C115.928 26.9022 115.969 29.4436 115.969 32.3392H112.559C112.559 32.3392 112.663 28.2778 112.663 25.1314C112.663 22.8614 112.497 17.8408 112.497 17.8408H117.092C117.716 18.7988 119.545 23.1944 120.419 24.6938C120.959 23.5486 123.059 19.1118 123.704 17.8408H127.925C127.925 17.8408 127.675 22.9031 127.675 25.1943Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M141.358 21.0487C141.358 31.3605 134.704 38.9219 125.971 38.9219L124.911 35.9846C129.963 35.9846 133.352 34.36 133.352 30.5059C133.352 26.5068 128.757 25.6111 128.757 25.6111L129.797 20.6733C129.797 20.6733 137.096 21.8609 137.096 28.7768C137.74 27.0278 138.114 24.9439 137.802 21.0487H141.358Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M150.217 24.3821H154.667L154.583 27.2976H150.217C150.238 28.8394 150.28 30.5685 150.28 32.3393H145.455C145.455 32.3393 145.559 28.2773 145.559 25.1315C145.559 22.8609 145.414 17.8403 145.414 17.8403H154.875C154.916 19.3609 155.207 21.4237 155.207 21.4237L150.32 21.2569C150.28 22.2565 150.238 23.2985 150.217 24.3821Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M156.872 32.3394C156.872 32.3394 157.017 29.0897 157.017 26.5894C157.017 24.2776 156.809 21.0485 156.809 21.0485C159.138 21.1736 162.008 21.0485 162.008 21.0485C162.008 21.0485 161.758 24.3193 161.758 26.6933C161.758 28.9017 161.737 27.9861 161.841 32.3394H156.872ZM159.409 19.7575C157.953 19.7575 156.768 18.5911 156.768 17.1115C156.768 15.6538 157.953 14.4668 159.409 14.4668C160.864 14.4668 162.048 15.6538 162.048 17.1115C162.048 18.5911 160.864 19.7575 159.409 19.7575Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M173.901 31.6939C173.09 32.256 171.801 32.7147 170.013 32.7147C167.268 32.7147 165.085 31.4026 165.085 28.2562C165.085 27.0692 165.106 24.9032 165.127 24.2148C164.044 24.2359 163.483 24.2359 163.483 24.2359L163.546 22.7159L168.516 17.4663H170.013L170.033 21.0491H173.339L173.111 24.1525C173.111 24.1525 171.613 24.1525 169.95 24.132C169.909 25.5486 169.888 27.8193 169.888 28.0489C169.888 29.1108 169.971 29.6524 171.031 29.6524C171.946 29.6524 172.57 29.2359 172.965 29.0274L173.901 31.6939Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M183.403 32.3396C183.424 31.0269 183.508 28.5067 183.508 26.7147C183.508 24.9445 183.133 23.778 181.802 23.778C180.45 23.778 180.201 25.2152 180.201 26.7147C180.201 28.4444 180.284 30.9647 180.347 32.3396H175.356C175.356 32.3396 175.502 27.7772 175.502 23.6318C175.502 22.8612 175.502 21.9655 175.481 21.0487H180.326C180.305 21.7358 180.284 22.4031 180.263 22.9857C180.804 21.653 182.113 20.6733 184.297 20.6733C187.041 20.6733 188.31 22.3402 188.31 24.8194C188.31 28.3193 188.414 31.0064 188.455 32.3396H183.403Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M195.443 26.1733C196.358 26.3818 198.187 26.3818 198.187 24.4019C198.187 23.6524 197.854 23.34 197.251 23.34C196.004 23.34 195.505 24.6938 195.443 26.1733ZM202.116 31.4434C200.994 32.2551 199.06 32.7144 196.793 32.7144C193.176 32.7144 190.535 31.0893 190.535 26.7148C190.535 22.5899 193.093 20.6729 196.711 20.6729C199.954 20.6729 201.763 22.1107 201.763 24.4859C201.763 27.4443 198.207 28.4439 195.505 27.7144C195.505 28.7564 195.858 29.8606 197.356 29.8606C198.852 29.8606 200.225 29.2774 201.202 28.7564L202.116 31.4434Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M212.139 24.5274C212.139 24.5274 209.997 23.4444 208.687 23.4444C208.188 23.4444 207.96 23.778 207.96 24.1322C207.96 25.4231 213.428 25.069 213.428 28.8808C213.428 31.1315 211.495 32.7149 208.583 32.7149C204.674 32.7149 202.74 30.7568 202.74 30.7568L203.863 28.2359C203.863 28.2359 206.275 29.881 207.938 29.881C208.396 29.881 208.625 29.6103 208.625 29.2772C208.625 27.8394 203.51 28.1525 203.51 24.4023C203.51 21.9232 205.86 20.6733 208.501 20.6733C211.286 20.6733 213.012 21.9232 213.012 21.9232L212.139 24.5274Z" fill="white"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M223.554 24.5274C223.554 24.5274 221.413 23.4444 220.102 23.4444C219.604 23.4444 219.374 23.778 219.374 24.1322C219.374 25.4231 224.843 25.069 224.843 28.8808C224.843 31.1315 222.91 32.7149 219.999 32.7149C216.09 32.7149 214.156 30.7568 214.156 30.7568L215.279 28.2359C215.279 28.2359 217.691 29.881 219.354 29.881C219.812 29.881 220.04 29.6103 220.04 29.2772C220.04 27.8394 214.925 28.1525 214.925 24.4023C214.925 21.9232 217.275 20.6733 219.915 20.6733C222.701 20.6733 224.427 21.9232 224.427 21.9232L223.554 24.5274Z" fill="white"></path>
+</svg>
+</a>          <button id="nav-toggle" class="outline-none appearance-none focus:outline-none text-white ml-4 md:hidden m-0 pt-3">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 md:w-3/5 hidden md:flex flex-wrap justify-center text-center" data-nav="true">
+        <ul class="topbar_navigation">
+          <li>
+            <a class="button minimal small inverted" href="/genetics">Genetic Reports</a>
+          </li>
+          <li>
+            <a class="button minimal small inverted" href="/episodes">Episodes</a>
+          </li>
+          <li>
+            <a class="button minimal small inverted" href="/about">About Rhonda</a>
+          </li>
+          <li>
+            <span data-react-class="core/Dropdown" data-react-props="{&quot;label&quot;:&quot;Topics&quot;,&quot;links&quot;:[{&quot;title&quot;:&quot;Autophagy&quot;,&quot;url&quot;:&quot;/topics/autophagy&quot;},{&quot;title&quot;:&quot;Berberine&quot;,&quot;url&quot;:&quot;/topics/berberine&quot;},{&quot;title&quot;:&quot;Breast milk and breastfeeding &quot;,&quot;url&quot;:&quot;/topics/breastfeeding&quot;},{&quot;title&quot;:&quot;Caloric Restriction&quot;,&quot;url&quot;:&quot;/topics/caloric-restriction&quot;},{&quot;title&quot;:&quot;Creatine&quot;,&quot;url&quot;:&quot;/topics/creatine&quot;},{&quot;title&quot;:&quot;Depression&quot;,&quot;url&quot;:&quot;/topics/depression&quot;},{&quot;title&quot;:&quot;Epigenetic aging clocks&quot;,&quot;url&quot;:&quot;/topics/epigenetic-clocks&quot;},{&quot;title&quot;:&quot;Fasting &quot;,&quot;url&quot;:&quot;/topics/fasting&quot;},{&quot;title&quot;:&quot;FOXO&quot;,&quot;url&quot;:&quot;/topics/foxo&quot;},{&quot;title&quot;:&quot;Metformin&quot;,&quot;url&quot;:&quot;/topics/metformin&quot;},{&quot;title&quot;:&quot;NAD+&quot;,&quot;url&quot;:&quot;/topics/nad&quot;},{&quot;title&quot;:&quot;Neu5Gc&quot;,&quot;url&quot;:&quot;/topics/neu5gc&quot;},{&quot;title&quot;:&quot;Nicotinamide mononucleotide&quot;,&quot;url&quot;:&quot;/topics/nicotinamide-mononucleotide&quot;},{&quot;title&quot;:&quot;Nicotinamide riboside&quot;,&quot;url&quot;:&quot;/topics/nicotinamide-riboside&quot;},{&quot;title&quot;:&quot;Quercetin&quot;,&quot;url&quot;:&quot;/topics/quercetin&quot;},{&quot;title&quot;:&quot;Resveratrol&quot;,&quot;url&quot;:&quot;/topics/resveratrol&quot;},{&quot;title&quot;:&quot;Salmon Roe&quot;,&quot;url&quot;:&quot;/topics/salmon-roe&quot;},{&quot;title&quot;:&quot;Sauna&quot;,&quot;url&quot;:&quot;/topics/sauna&quot;},{&quot;title&quot;:&quot;Sirtuins&quot;,&quot;url&quot;:&quot;/topics/sirtuin&quot;},{&quot;title&quot;:&quot;Time-restricted eating&quot;,&quot;url&quot;:&quot;/topics/time-restricted-eating&quot;},{&quot;title&quot;:&quot;Vitamin C&quot;,&quot;url&quot;:&quot;/topics/vitamin-c&quot;},{&quot;title&quot;:&quot;Whole-body hyperthermia&quot;,&quot;url&quot;:&quot;/topics/whole-body-hyperthermia&quot;},{&quot;title&quot;:&quot;Zinc&quot;,&quot;url&quot;:&quot;/topics/zinc&quot;}],&quot;subscription_amount&quot;:0,&quot;logged_in_email&quot;:&quot;tjthejuggler@gmail.com&quot;,&quot;is_premium_subscriber&quot;:false}" data-react-cache-id="core/Dropdown-0"><button aria-haspopup="true" aria-controls="menu--1" class="dropdown_button small whitespace-no-wrap" data-reach-menu-button="" type="button" id="menu-button--menu--1">Topics<i aria-hidden="true" class="ml-2 fas fa-chevron-down"></i></button></span>
+          </li>
+        </ul>
+      </div>
+      <div class="w-full lg:w-1/4 md:w-2/5 relative hidden md:block" data-nav="true">
+          <div class="topbar_actions">
+              <a class="button primary small whitespace-no-wrap inline-block" href="/crowdsponsor">
+                Become a member
+</a>              <span data-react-class="core/Dropdown" data-react-props="{&quot;label&quot;:&quot;My Account&quot;,&quot;links&quot;:[{&quot;title&quot;:&quot;Member Dashboard&quot;,&quot;url&quot;:&quot;/dashboard&quot;},{&quot;title&quot;:&quot;My Genetic Dashboard&quot;,&quot;url&quot;:&quot;/genetic_dashboard&quot;},{&quot;title&quot;:&quot;User Settings&quot;,&quot;url&quot;:&quot;/news/settings&quot;},{&quot;title&quot;:&quot;Manage Subscription&quot;,&quot;url&quot;:&quot;/manage_subscription&quot;},{&quot;title&quot;:&quot;Sign out&quot;,&quot;url&quot;:&quot;/users/sign_out&quot;,&quot;method&quot;:&quot;DELETE&quot;}],&quot;subscription_amount&quot;:0,&quot;logged_in_email&quot;:&quot;tjthejuggler@gmail.com&quot;,&quot;is_premium_subscriber&quot;:false}" data-react-cache-id="core/Dropdown-0"><button aria-haspopup="true" aria-controls="menu--7" class="dropdown_button small whitespace-no-wrap" data-reach-menu-button="" type="button" id="menu-button--menu--7">My Account<i aria-hidden="true" class="ml-2 fas fa-chevron-down"></i></button></span>
+            <a href="/search">
+              <button class="button small minimal inverted">
+                <i class="i fa fa-search" aria-hidden="true"></i>
+                <span class="md:hidden">Search</span>
+              </button>
+</a>          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var toggle = document.getElementById("nav-toggle");
+  function toggleMenu() {
+    var navs = document.querySelectorAll("[data-nav='true']");
+    navs.forEach(function(nav) {
+      nav.classList.toggle('hidden');
+    });
+  }
+  toggle.addEventListener("click", toggleMenu);
+</script>
+      
+
+
+
+
+<div class="container mx-auto py-8 px-8">
+  <div class="mx-auto">
+    <h2 class="text-4xl mb-8">Episode archive</h2>
+    <div class="flex mb-8">
+      <a class="uppercase tracking-wider text-sm font-semibold mr-4 hover:underline underline text-gray-700" href="/episodes/archive">Recent episodes</a>
+      <a class="uppercase tracking-wider text-sm font-semibold  mr-4 hover:underline text-gray-500" href="/episodes/interviews/archive">Interviews</a>
+      <a class="uppercase tracking-wider text-sm font-semibold mr-4 hover:underline text-gray-500" href="/episodes/clips/archive">Clips</a>
+    </div>
+    <div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/breast-milk">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        The Biology of Breast Milk
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    August 25th 2020
+    (2 days)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="A comprehensive overview describing the nutritional and non-nutritional components of breast milk and the health benefits – to mother and infant – associated with breastfeeding.%">
+    A comprehensive overview describing the nutritional and non-nutritional components of breast milk and the health benefits – to mother and infant – associated with breastfeeding.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/covid-19-episode-2">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        COVID-19 Q&amp;A #2 - Antibody-Dependent Enhancement, Cross-Immunity, Immunity Duration &amp; More
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    June 10th 2020
+    (3 months)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="The second in a multi-part series of COVID-19 related Q&amp;As addressed by Rhonda Patrick, Ph.D. as a result of questions submitted by newsletter subscribers.%">
+    The second in a multi-part series of COVID-19 related Q&amp;As addressed by Rhonda Patrick, Ph.D. as a result of questions submitted by newsletter subscribers.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/jre-1474">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Joe Rogan Experience #1474 - Dr. Rhonda Patrick
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    May 17th 2020
+    (3 months)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick makes her ninth appearance on the Joe Rogan Experience.
+%">
+    Dr. Rhonda Patrick makes her ninth appearance on the Joe Rogan Experience.
+
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/vitamin-c">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Vitamin C: Oral vs. Intravenous, Immune Effects, Cancer, Exercise Adaptation &amp; More
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    May 12th 2020
+    (4 months)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="In this video Dr. Rhonda Patrick discusses all things vitamin C, covering oral and intravenous vitamin C bioavailability; immune cell function; protection against the common cold and other viral infections; lung function; sepsis; pneumonia; inflammation; intravenous vitamin C and cancer; effects in exercise; safety concerns, and so, so much more!%">
+    In this video Dr. Rhonda Patrick discusses all things vitamin C, covering oral and intravenous vitamin C bioavailability; immune cell function; protection against the common cold and other viral infections; lung function; sepsis; pneumonia; inflammation; intravenous vitamin C and cancer; effects in exercise; safety concerns, and so, so much more!
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/covid-19-episode-1">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        COVID-19 Q&amp;A #1 with Rhonda Patrick, Ph.D.
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    April 14th 2020
+    (5 months)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="The first in a multi-part series of COVID-19 related Q&amp;As addressed by Rhonda Patrick, Ph.D. as a result of questions submitted by newsletter subscribers.%">
+    The first in a multi-part series of COVID-19 related Q&amp;As addressed by Rhonda Patrick, Ph.D. as a result of questions submitted by newsletter subscribers.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/nad-nr-nmn">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        NAD+ in Aging: Role of Nicotinamide Riboside and Nicotinamide Mononucleotide
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 29th 2020
+    (7 months)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="In this episode, Rhonda explains what NAD+, why it is so important for aging and why it declines with age. She discusses some of the popular NAD+ boosters like nicotinamide riboside and nicotinamide mononucleotide, what animal and human data says and some concluding thoughts.%">
+    In this episode, Rhonda explains what NAD+, why it is so important for aging and why it declines with age. She discusses some of the popular NAD+ boosters like nicotinamide riboside and nicotinamide mononucleotide, what animal and human data says and some concluding thoughts.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/rhonda-krs-2">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        New Omega-3, sulforaphane research, and more! [Kevin Rose Show]
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 8th 2020
+    (8 months)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick visits the Kevin Rose Show to discuss metformin, magnesium L-threonate, fish oil and brain health, sulforaphane, goitrogenic activity of isothiocyanates, sauna, and more.%">
+    Dr. Rhonda Patrick visits the Kevin Rose Show to discuss metformin, magnesium L-threonate, fish oil and brain health, sulforaphane, goitrogenic activity of isothiocyanates, sauna, and more.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/resveratrol-longevity">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Is Resveratrol a Longevity Compound?
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    December 30th 2019
+    (8 months)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="The science of resveratrol including its effects in animals and humans, the mechanisms behind how it works, and the bottom line on resveratrol supplementation and safety.%">
+    The science of resveratrol including its effects in animals and humans, the mechanisms behind how it works, and the bottom line on resveratrol supplementation and safety.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/david-sinclair">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. David Sinclair on Informational Theory of Aging, Nicotinamide Mononucleotide, Resveratrol &amp; More
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    November 6th 2019
+    (10 months)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="David Sinclair, PhD, is a professor in the Department of Genetics at Harvard Medical School and co-director of the Paul F. Glenn Center for the Biological Mechanisms of Aging. His work focuses on understanding the mechanisms that drive human aging and identifying ways to slow or reverse aging's effects.%">
+    David Sinclair, PhD, is a professor in the Department of Genetics at Harvard Medical School and co-director of the Paul F. Glenn Center for the Biological Mechanisms of Aging. His work focuses on understanding the mechanisms that drive human aging and identifying ways to slow or reverse aging's effects.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/sauna-heart-presentation">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Sauna Use as an Exercise Mimetic for Heart and Healthspan
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    September 10th 2019
+    (12 months)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Sauna use has emerged as a means to increase lifespan and improve overall health, based on compelling data from observational, interventional, and mechanistic studies.%">
+    Sauna use has emerged as a means to increase lifespan and improve overall health, based on compelling data from observational, interventional, and mechanistic studies.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/exercise-depression">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Exercise as a Treatment for Depression
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    August 5th 2019
+    (about 1 year)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Patrick discusses some of the compelling evidence that suggests exercise is a tool for preventing or managing the symptoms of depression.%">
+    Dr. Patrick discusses some of the compelling evidence that suggests exercise is a tool for preventing or managing the symptoms of depression.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/elissa-epel">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Elissa Epel on Telomeres and the Role of Stress Biology in Cellular Aging
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    June 10th 2019
+    (about 1 year)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Elissa Epel, PhD, is a Professor in the Department of Psychiatry at the University of California, San Francisco where she serves as the director of the Aging, Metabolism, and Emotions Center. Her research centers on the mechanisms of healthy aging and the associations between stress, telomere length, addiction, eating, and metabolic health.%">
+    Elissa Epel, PhD, is a Professor in the Department of Psychiatry at the University of California, San Francisco where she serves as the director of the Aging, Metabolism, and Emotions Center. Her research centers on the mechanisms of healthy aging and the associations between stress, telomere length, addiction, eating, and metabolic health.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/melatonin-insulin-response">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Late-night eating and melatonin may impair insulin response
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    April 2nd 2019
+    (over 1 year)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="The production of melatonin begins to increase 2-3 hours before our normative bedtime, which may be a signal to the pancreas to begin suppressing the production of insulin.%">
+    The production of melatonin begins to increase 2-3 hours before our normative bedtime, which may be a signal to the pancreas to begin suppressing the production of insulin.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/sleep-loss-glucose-regulation">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Sleep loss impairs glucose regulation (but exercise helps)
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    March 13th 2019
+    (over 1 year)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Several studies have established causation showing that sleep duration is a major determinant of insulin sensitivity.%">
+    Several studies have established causation showing that sleep duration is a major determinant of insulin sensitivity.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/matthew-walker">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Matthew Walker on Sleep for Enhancing Learning, Creativity, Immunity, and Glymphatic System
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    February 28th 2019
+    (over 1 year)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Matthew Walker, Ph.D., is a professor of neuroscience and psychology at the University of California, Berkeley, and serves as the Director of the Center for Human Sleep Science. Formerly, Dr. Walker served as a professor of psychiatry at the Harvard Medical School. He is the author of the New York Times best-selling book _Why We Sleep: Unlocking the Power of Sleep and Dreams_.%">
+    Matthew Walker, Ph.D., is a professor of neuroscience and psychology at the University of California, Berkeley, and serves as the Director of the Center for Human Sleep Science. Formerly, Dr. Walker served as a professor of psychiatry at the Harvard Medical School. He is the author of the New York Times best-selling book _Why We Sleep: Unlocking the Power of Sleep and Dreams_.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/zero-fasting-qa">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Fasting Q&amp;A with Dr. Rhonda Patrick and Mike Maser
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 17th 2019
+    (over 1 year)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="This episode features a Q&amp;A session on fasting-related topics with Dr. Rhonda Patrick and Mike Maser of Zero Fasting Tracker.%">
+    This episode features a Q&amp;A session on fasting-related topics with Dr. Rhonda Patrick and Mike Maser of Zero Fasting Tracker.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/cooked-broccoli-myrosinase">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        STUDY: Increasing sulforaphane bioavailability from broccoli through exogenous myrosinase.
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 5th 2019
+    (over 1 year)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="%">
+    
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/jre-1178">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Joe Rogan Experience #1178 - Dr. Rhonda Patrick
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    October 2nd 2018
+    (almost 2 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick makes her eighth appearance on the Joe Rogan Experience.%">
+    Dr. Rhonda Patrick makes her eighth appearance on the Joe Rogan Experience.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/dale-bredesen">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Dale Bredesen on Preventing and Reversing Alzheimer's Disease
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    October 1st 2018
+    (almost 2 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Bredesen’s is known for his work in translating his scientific research into effective treatments for Alzheimer’s disease. He is the author of the book The End of Alzheimer's and the ReCODE protocol – reversal of cognitive decline – a protocol that offers a new approach to treatment that has reversed symptoms in patients with mild cognitive impairment and Alzheimer’s disease.%">
+    Dr. Bredesen’s is known for his work in translating his scientific research into effective treatments for Alzheimer’s disease. He is the author of the book The End of Alzheimer's and the ReCODE protocol – reversal of cognitive decline – a protocol that offers a new approach to treatment that has reversed symptoms in patients with mild cognitive impairment and Alzheimer’s disease.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/salmon-roe-stacks">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Salmon Roe Stacks Recipe
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    August 31st 2018
+    (almost 2 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="This short recipe video shows a fun, tasty way to eat salmon roe. Salmon roe is rich in the omega-3 fatty acid, docosahexaenoic acid, in its phospholipid form.%">
+    This short recipe video shows a fun, tasty way to eat salmon roe. Salmon roe is rich in the omega-3 fatty acid, docosahexaenoic acid, in its phospholipid form.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/valter-longo-2">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Valter Longo on Resetting Autoimmunity and Rejuvenating Systems with Prolonged Fasting &amp; the FMD
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    July 9th 2018
+    (about 2 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Round 2 with Dr. Valter Longo. Valter Longo, PhD, is a biochemist and professor of gerontology and biological sciences at the University of Southern California (USC). He directs the USC Longevity Institute as well as the Oncology and Longevity Program at the Institute of Molecular Oncology Foundation in Milan, Italy.%">
+    Round 2 with Dr. Valter Longo. Valter Longo, PhD, is a biochemist and professor of gerontology and biological sciences at the University of Southern California (USC). He directs the USC Longevity Institute as well as the Oncology and Longevity Program at the Institute of Molecular Oncology Foundation in Milan, Italy.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/charles-raison">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Charles Raison on Depression, the Immune-Brain Interface &amp; Whole-Body Hyperthermia
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    March 19th 2018
+    (over 2 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Charles Raison’s research focuses on inflammation and the development of depression in response to illness and stress. He also examines the physical and behavioral effects of compassion training on the brain, inflammatory processes, and behavior as well as the effect of heat stress as a potentially therapeutic intervention major depressive disorder.%">
+    Dr. Charles Raison’s research focuses on inflammation and the development of depression in response to illness and stress. He also examines the physical and behavioral effects of compassion training on the brain, inflammatory processes, and behavior as well as the effect of heat stress as a potentially therapeutic intervention major depressive disorder.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/jre-1054">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Joe Rogan Experience #1054 - Dr. Rhonda Patrick
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    December 21st 2017
+    (over 2 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick makes her seventh appearance on the Joe Rogan Experience.%">
+    Dr. Rhonda Patrick makes her seventh appearance on the Joe Rogan Experience.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/eric-verdin">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Eric Verdin on Ketogenic Diet Longevity, Beta-Hydroxybutyrate, HDAC Inhibitors &amp; NAD+
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    December 13th 2017
+    (over 2 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Eric M. Verdin, M.D. is the fifth president and chief executive officer of the Buck Institute for Research on Aging and is a professor of Medicine at UCSF.%">
+    Eric M. Verdin, M.D. is the fifth president and chief executive officer of the Buck Institute for Research on Aging and is a professor of Medicine at UCSF.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/saturated-fat">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Does Saturated Fat Cause Heart Disease?
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    November 27th 2017
+    (over 2 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Several associative studies that have found a link between saturated fat and heart disease... should we be concerned?%">
+    Several associative studies that have found a link between saturated fat and heart disease... should we be concerned?
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/sfn-maximize">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        How To Increase Sulforaphane in Broccoli Sprouts by ~3.5-fold
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    November 16th 2017
+    (almost 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="This is a video on how to plausibly increase the sulforaphane created from the glucoraphanin in your broccoli sprouts by up to 3.5-fold.%">
+    This is a video on how to plausibly increase the sulforaphane created from the glucoraphanin in your broccoli sprouts by up to 3.5-fold.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/ihmc-talk-1">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Nutrigenomics, Epigenetics, and Stress Tolerance (IHMC Talk #1)
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    November 8th 2017
+    (almost 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Our genes influence the way we absorb and metabolize micronutrients. Nutrigenomics looks at the influence genetic variation has over micronutrient absorption/metabolism and the biological consequences of this dynamic relationship.%">
+    Our genes influence the way we absorb and metabolize micronutrients. Nutrigenomics looks at the influence genetic variation has over micronutrient absorption/metabolism and the biological consequences of this dynamic relationship.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/lemon-tart">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Low-Carb Lemon Tart Dessert (High Citrate &amp; Choline)
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    November 8th 2017
+    (almost 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="In this video Dr. Rhonda Patrick shares her recipe for low-carb lemon tart and demonstrates how to make it.%">
+    In this video Dr. Rhonda Patrick shares her recipe for low-carb lemon tart and demonstrates how to make it.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/dan-pardi">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Sleep, Daylight Anchoring, and Effects on Memory &amp; Obesity with Dan Pardi
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    November 8th 2017
+    (almost 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dan Pardi is a Ph.D candidate that researches sleep neurobiology at Stanford and University of Leiden. He is also co-founder of Dan’s Plan, an online wellness and technology company.%">
+    Dan Pardi is a Ph.D candidate that researches sleep neurobiology at Stanford and University of Leiden. He is also co-founder of Dan’s Plan, an online wellness and technology company.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/hack-your-genes-sf-nerd-nite">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        "Hacking Your Genes" at SF Nerd Nite
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    November 8th 2017
+    (almost 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick talks about transgenerational effects of caloric restriction on longevity, B-vitamins silencing bad genes, cognitive stimulation reversing neurodegenerative disease, exercise increases neurogenesis, and ways in which vitamin D might influence aging.%">
+    Dr. Rhonda Patrick talks about transgenerational effects of caloric restriction on longevity, B-vitamins silencing bad genes, cognitive stimulation reversing neurodegenerative disease, exercise increases neurogenesis, and ways in which vitamin D might influence aging.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/satchin-round-2">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Satchin Panda on Practical Implementation of Time-Restricted Eating &amp; Shift Work Strategies
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    October 30th 2017
+    (almost 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="It's time to abandon ad libitum! This is an almost two-hour round 2 episode with Dr. Satchin Panda focused on practical implementation of time-restricted eating, various circadian insights, and much more.%">
+    It's time to abandon ad libitum! This is an almost two-hour round 2 episode with Dr. Satchin Panda focused on practical implementation of time-restricted eating, various circadian insights, and much more.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/guido-kroemer">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Guido Kroemer on Autophagy, Caloric Restriction Mimetics, Fasting &amp; Protein Acetylation 
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    July 31st 2017
+    (about 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Guido Kroemer is a professor at the University of Paris Descartes and an expert in immunology, cancer biology, aging, and autophagy.%">
+    Dr. Guido Kroemer is a professor at the University of Paris Descartes and an expert in immunology, cancer biology, aging, and autophagy.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/jari-laukkanen">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Jari Laukkanen on Sauna Use for the Prevention of Cardiovascular &amp; Alzheimer’s Disease
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    June 15th 2017
+    (about 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Laukkanen has been conducting long-term trials looking at the health effects of sauna use in a population of over 2,000 middle-aged men in Finland. The results? Massive reductions in mortality and memory disease in a dose-dependent fashion at 20-year follow-up.%">
+    Dr. Laukkanen has been conducting long-term trials looking at the health effects of sauna use in a population of over 2,000 middle-aged men in Finland. The results? Massive reductions in mortality and memory disease in a dose-dependent fashion at 20-year follow-up.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/judy-campisi">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Judith Campisi, Ph.D., on Cellular Senescence, Mitochondrial Dysfunction, Cancer &amp; Aging
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    April 28th 2017
+    (over 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Judith Campisi is a professor of biogerontology at the Buck Institute for Research on Aging, a co-editor in chief of the _Aging Journal_ and an expert on the role of cellular senescence in the aging process and development of cancer.%">
+    Dr. Judith Campisi is a professor of biogerontology at the Buck Institute for Research on Aging, a co-editor in chief of the _Aging Journal_ and an expert on the role of cellular senescence in the aging process and development of cancer.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/gordon-j-lithgow">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Gordon Lithgow, Ph.D. on Protein Aggregation, Iron Overload &amp; the Search for Longevity Compounds
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    April 7th 2017
+    (over 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Gordon Lithgow is a professor of gerontology at the Buck Institute for Research on Aging. The topic of conversation in this episode is especially focused on Dr. Lithgow's work with C. elegans, which a tiny nematode worm he uses to interrogate questions involving the aging process and lifespan extension.%">
+    Dr. Gordon Lithgow is a professor of gerontology at the Buck Institute for Research on Aging. The topic of conversation in this episode is especially focused on Dr. Lithgow's work with C. elegans, which a tiny nematode worm he uses to interrogate questions involving the aging process and lifespan extension.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/refined-sugar">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Refined Sugar and Its Effects on Mortality, the Brain, Cancer, Hormones, &amp; More
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    March 18th 2017
+    (over 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="What does the science say about the consumption of refined sugar? This episode covers mortality and aging, brain function, memory, neuroinflammation, development of cancer, sex hormones, addiction, &amp; more.%">
+    What does the science say about the consumption of refined sugar? This episode covers mortality and aging, brain function, memory, neuroinflammation, development of cancer, sex hormones, addiction, &amp; more.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/inflammation-depression">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        The Underlying Mechanisms of Depression
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    March 18th 2017
+    (over 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Systemic inflammation is an important mechanism that research shows may have a very interesting relationship with depression.%">
+    Systemic inflammation is an important mechanism that research shows may have a very interesting relationship with depression.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/jed-w-fahey">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Jed Fahey, ScD, on Isothiocyanates, the Nrf2 Pathway, Moringa, &amp; Sulforaphane Supplementation
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 19th 2017
+    (over 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Jed W. Fahey is a nutritional biochemist with deep experience researching isothiocyanates like sulforaphane.%">
+    Dr. Jed W. Fahey is a nutritional biochemist with deep experience researching isothiocyanates like sulforaphane.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/roland-griffiths">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Roland Griffiths, Ph.D. on Psilocybin, Psychedelic Therapies &amp; Mystical Experiences
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 19th 2017
+    (over 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Roland Griffiths is a clinical pharmacologist at Johns Hopkins and one of the world's foremost researchers on the psychedelic compound psilocybin.%">
+    Dr. Roland Griffiths is a clinical pharmacologist at Johns Hopkins and one of the world's foremost researchers on the psychedelic compound psilocybin.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/jre-901">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Joe Rogan Experience #901 - Dr. Rhonda Patrick
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 19th 2017
+    (over 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick makes her fifth appearance on the Joe Rogan Experience.%">
+    Dr. Rhonda Patrick makes her fifth appearance on the Joe Rogan Experience.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/sulforaphane">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Sulforaphane and Its Effects on Cancer, Mortality, Aging, Brain and Behavior, Heart Disease, &amp; More
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    December 14th 2016
+    (over 3 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="This podcast is about one of the most important biological pathways you could possibly take the time to learn about: the NRF2 pathway.%">
+    This podcast is about one of the most important biological pathways you could possibly take the time to learn about: the NRF2 pathway.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/valter-longo">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Valter Longo, Ph.D. on the Fasting-Mimicking Diet &amp; Fasting for Longevity, Cancer &amp; Multiple Sclerosis
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    October 4th 2016
+    (almost 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick speaks with Dr. Valter Longo, a professor of gerontology and biological sciences and director of the longevity institute at the University of Southern California.%">
+    Dr. Rhonda Patrick speaks with Dr. Valter Longo, a professor of gerontology and biological sciences and director of the longevity institute at the University of Southern California.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/ruth-patterson">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Ruth Patterson, PhD, on Time-Restricted Eating in Humans &amp; Breast Cancer Prevention
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    July 8th 2016
+    (about 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="This episode features Dr. Ruth Patterson, a professor in the UC San Diego Department of Family Medicine and Public Health as well as Associate Director of Population Sciences and leader of the Cancer Prevention program at Moores Cancer Center at UC San Diego Health.%">
+    This episode features Dr. Ruth Patterson, a professor in the UC San Diego Department of Family Medicine and Public Health as well as Associate Director of Population Sciences and leader of the Cancer Prevention program at Moores Cancer Center at UC San Diego Health.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/satchin-panda">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Satchin Panda, Ph.D. on Time-Restricted Feeding and Its Effects on Obesity, Muscle Mass &amp; Heart Health
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    July 1st 2016
+    (about 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick speaks with Dr. Satchin Panda, a professor at the Salk Institute for Biological Studies in La Jolla California. Satchin's work deals specifically with the timing of food and it's relationship with our biological clocks, which are governed by a circadian rhythm.%">
+    Dr. Rhonda Patrick speaks with Dr. Satchin Panda, a professor at the Salk Institute for Biological Studies in La Jolla California. Satchin's work deals specifically with the timing of food and it's relationship with our biological clocks, which are governed by a circadian rhythm.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/micronutrient-smoothie-2">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Smoothie #2: Prebiotics, Phytochemicals, "Anti-Nutrients" &amp; Hydrolyzed Collagen
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    May 31st 2016
+    (about 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="A modest change on the &quot;micronutrient smoothie&quot; that also talks about the beneficial compounds that don't qualify as micronutrients.%">
+    A modest change on the "micronutrient smoothie" that also talks about the beneficial compounds that don't qualify as micronutrients.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/ray-cronise">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Ray Cronise on Cold Thermogenesis, Intermittent Fasting, Weight Loss &amp; Healthspan
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    May 4th 2016
+    (over 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick speaks with Ray Cronise, a former NASA material scientist and co-founder of zero gravity, a company that offers weightless parabolic flights to consumers and researchers.%">
+    Dr. Rhonda Patrick speaks with Ray Cronise, a former NASA material scientist and co-founder of zero gravity, a company that offers weightless parabolic flights to consumers and researchers.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/dominic-dagostino">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dominic D'Agostino, Ph.D. on Modified Atkins Diet, Ketosis, Supplemental Ketones and More
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    April 10th 2016
+    (over 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="This podcast is with Dr. Dominic D'Agostino, an assistant professor at the University of South Florida in Tampa and all around expert on ketosis.%">
+    This podcast is with Dr. Dominic D'Agostino, an assistant professor at the University of South Florida in Tampa and all around expert on ketosis.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/peter-attia">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Peter Attia, M.D. on Macronutrient Thresholds for Longevity and Performance, Cancer &amp; More
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    March 14th 2016
+    (over 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Peter Attia is the founder of Attia Medical, a medical practice with offices in San Diego and New York City, focusing on the applied science of longevity and optimal performance.%">
+    Dr. Peter Attia is the founder of Attia Medical, a medical practice with offices in San Diego and New York City, focusing on the applied science of longevity and optimal performance.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/cold-stress-hormesis">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        How Cryotherapy Affects the Brain, the Immune System, Metabolism, and Athletic Performance
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    February 12th 2016
+    (over 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick explains how cold shock may be a type of hormesis – a stressor that, in the right dose, is enough to shock the body and kick off adaptive processes and response mechanisms that exceed what was needed to counter the initial stimuli and, ultimately, promote resilience. %">
+    Dr. Rhonda Patrick explains how cold shock may be a type of hormesis – a stressor that, in the right dose, is enough to shock the body and kick off adaptive processes and response mechanisms that exceed what was needed to counter the initial stimuli and, ultimately, promote resilience. 
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/rich-roll">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Rich Roll on Self-Transformation, Environmental Impact of Food, and the Plant-Based Diet
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 24th 2016
+    (over 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="This podcast features Rich Roll. Rich is an author, a podcaster, as well as founder and first person to complete the EPIC5 Challenge. %">
+    This podcast features Rich Roll. Rich is an author, a podcaster, as well as founder and first person to complete the EPIC5 Challenge. 
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/darya-and-kevin-rose">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Darya and Kevin Rose Talk Meditation Retreats, Diet, Seasonal Eating, and More
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 3rd 2016
+    (over 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Darya Rose &amp; husband Kevin Rose join Rhonda for a chat about multi-day silent meditation retreats, Kevin's experiments with a ketogenic diet, and some ideas and other projects he's working.%">
+    Dr. Darya Rose &amp; husband Kevin Rose join Rhonda for a chat about multi-day silent meditation retreats, Kevin's experiments with a ketogenic diet, and some ideas and other projects he's working.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/pierre-capel">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Pierre Capel on the Power of the Mind &amp; the Science of Wim Hof
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 3rd 2016
+    (over 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick interviews Dr. Pierre Capel, professor emeritus in experimental immunology at the Utrecht University in the Netherlands where he researched a wide range of topics from genetic modification to cancer immunotherapy.%">
+    Dr. Rhonda Patrick interviews Dr. Pierre Capel, professor emeritus in experimental immunology at the Utrecht University in the Netherlands where he researched a wide range of topics from genetic modification to cancer immunotherapy.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/wim-hof">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Wim Hof (the Iceman) on Defeating Extreme Cold &amp; Attenuating the Immune Response
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 3rd 2016
+    (over 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick interviews Wim Hof and discusses the 2014 study on his technique with him.%">
+    Dr. Rhonda Patrick interviews Wim Hof and discusses the 2014 study on his technique with him.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/orthomolecular-congress-bussum-2015">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        PRESENTATION: Rhonda Speaks at the Orthomolecular Congress in Bussum, Netherlands
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 3rd 2016
+    (over 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick delivers the keynote lecture at the Orthomolecular Medicine Congress in Bussum, Netherlands (MBOG Congres 2015). Discussion: prevalency of micronutrient inadequacy &amp; Dr. Bruce Ames' triage theory.%">
+    Dr. Rhonda Patrick delivers the keynote lecture at the Orthomolecular Medicine Congress in Bussum, Netherlands (MBOG Congres 2015). Discussion: prevalency of micronutrient inadequacy &amp; Dr. Bruce Ames' triage theory.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/biohacker-summit-2016">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Sauna Use and Building Resilience to Stress with Dr. Rhonda Patrick
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 3rd 2016
+    (over 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="This episode is a presentation Dr. Rhonda Patrick delivered at the Biohacker Summit in Helsinki, Finland in 2016.%">
+    This episode is a presentation Dr. Rhonda Patrick delivered at the Biohacker Summit in Helsinki, Finland in 2016.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/the-sonnenburgs">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        How The Gut Microbiota Affects Our Health with Dr. Erica &amp; Dr. Justin Sonnenburg
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 3rd 2016
+    (over 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Drs. Erica and Justin Sonnenburg both research the interaction between diet and the trillions of bacteria in the gut.%">
+    Drs. Erica and Justin Sonnenburg both research the interaction between diet and the trillions of bacteria in the gut.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/ronald-krauss">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Ronald Krauss on LDL Cholesterol, Particle Size, Heart Disease &amp; Atherogenic Dyslipidemia
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    January 3rd 2016
+    (over 4 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Ronald Krauss, M.D., is the director of atherosclerosis research at Children’s Hospital Oakland Research Institute and an adjunct professor at UCSF and UC Berkeley.%">
+    Ronald Krauss, M.D., is the director of atherosclerosis research at Children’s Hospital Oakland Research Institute and an adjunct professor at UCSF and UC Berkeley.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/meditation-solocast">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Buffering the Negative Effects of Chronic Stress with Meditation
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    September 25th 2015
+    (almost 5 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="In this podcast, Rhonda discusses some of the mechanisms by which chronic stress (and rumination) affect the brain and brain aging, the gut and inflammation, the immune system, and biological aging through acceleration of telomere shortening. She talks about how meditation can buffer these negative effects of stress and improve cognitive performance, brain aging, and biological aging in general.%">
+    In this podcast, Rhonda discusses some of the mechanisms by which chronic stress (and rumination) affect the brain and brain aging, the gut and inflammation, the immune system, and biological aging through acceleration of telomere shortening. She talks about how meditation can buffer these negative effects of stress and improve cognitive performance, brain aging, and biological aging in general.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/aubrey-de-grey">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Aubrey de Grey and Dr. Rhonda Patrick Talk Aging
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    August 13th 2015
+    (about 5 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Aubrey de Grey is a biomedical gerontologist and the founder of the SENS research foundation which aims to find technologies that can repair the various types of damage that occur during the aging process.%">
+    Dr. Aubrey de Grey is a biomedical gerontologist and the founder of the SENS research foundation which aims to find technologies that can repair the various types of damage that occur during the aging process.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/tim-ferriss">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Tim Ferriss on Biomarkers, Ketosis, Microbiome, and Lyme Disease
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    July 21st 2015
+    (about 5 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Tim Ferriss, notorious self-experimenter, angel investor, startup advisor, NY Times bestselling author (3x), and much more.%">
+    Tim Ferriss, notorious self-experimenter, angel investor, startup advisor, NY Times bestselling author (3x), and much more.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/choribar-weight-loss">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Bruce Ames Talks CHORI-Bar Weight Loss
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    July 4th 2015
+    (about 5 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick speaks with Dr. Bruce Ames, about a micronutrient- and fiber-dense nutrition bar (referred to as the CHORI bar) that was developed in the Ames laboratory.%">
+    Dr. Rhonda Patrick speaks with Dr. Bruce Ames, about a micronutrient- and fiber-dense nutrition bar (referred to as the CHORI bar) that was developed in the Ames laboratory.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/jim-kean">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Jim Kean Talks Biomarkers, Building a Spectator Sport
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    July 4th 2015
+    (about 5 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Jim Kean is the CEO of National Pro Grid League (NPGL) and founder of WellnessFX.%">
+    Jim Kean is the CEO of National Pro Grid League (NPGL) and founder of WellnessFX.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/sauna-longevity">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        How Sauna Use May Boost Longevity
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    April 28th 2015
+    (over 5 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="In this video, Dr. Rhonda Patrick summarizes a recent study that found that frequency of sauna use was associated with increased decreased risk of death. Using the sauna 2-3 times per week was associated with 24% lower all-cause mortality and 4-7 times per week decreased all-cause mortality by 40%.%">
+    In this video, Dr. Rhonda Patrick summarizes a recent study that found that frequency of sauna use was associated with increased decreased risk of death. Using the sauna 2-3 times per week was associated with 24% lower all-cause mortality and 4-7 times per week decreased all-cause mortality by 40%.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/personalize-your-nutrition-based-on-genetics">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Personalize Your Nutrition Based On Genetics
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    March 23rd 2015
+    (over 5 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="This video breaks down, point-by-point what gene polymorphisms you might look at, and how they relate to very specific micronutrients.%">
+    This video breaks down, point-by-point what gene polymorphisms you might look at, and how they relate to very specific micronutrients.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/cancer-bad-luck">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        DEBUNKED: 2/3rds of Cancer "Just Bad Luck"
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    February 12th 2015
+    (over 5 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Is cancer just bad luck? To some degree, yes... but there's also a very, very large environmental and lifestyle component.%">
+    Is cancer just bad luck? To some degree, yes... but there's also a very, very large environmental and lifestyle component.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/bruce-ames">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Bruce Ames on Triage Theory, Longevity Vitamins &amp; Micronutrients
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    February 12th 2015
+    (over 5 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Bruce Ames discusses his triage theory, which he proposes that the body has developed a rationing response to shortages of micronutrients (vitamins and minerals) throughout evolution.%">
+    Dr. Bruce Ames discusses his triage theory, which he proposes that the body has developed a rationing response to shortages of micronutrients (vitamins and minerals) throughout evolution.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/frans-kuypers">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Frans Kuypers on Placenta as a Source of Bankable Stem Cells
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    December 17th 2014
+    (over 5 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Frans Kuypers and his lab pioneered a technique that helps retrieve pluripotent stem cells from placental tissue, which is routinely needless discarded worldwide.%">
+    Dr. Frans Kuypers and his lab pioneered a technique that helps retrieve pluripotent stem cells from placental tissue, which is routinely needless discarded worldwide.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/george-brooks">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        George Brooks, PhD, on Lactate Shuttle Theory, Relevance for Traumatic Brain Injury, &amp; More
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    December 3rd 2014
+    (over 5 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Contrary to commonly held beliefs, lactate is not the cause of muscle fatigue. Rather, it's an essential source of energy itself, greedily metabolized with a greater degree of preference than many other sources of energy, including glucose. Recent research suggests that the lactate metabolic pathway plays a critical role in the context of recovery from traumatic brain injury.%">
+    Contrary to commonly held beliefs, lactate is not the cause of muscle fatigue. Rather, it's an essential source of energy itself, greedily metabolized with a greater degree of preference than many other sources of energy, including glucose. Recent research suggests that the lactate metabolic pathway plays a critical role in the context of recovery from traumatic brain injury.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/jre-568">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Joe Rogan Experience #568 - Dr. Rhonda Patrick
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    October 27th 2014
+    (almost 6 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick makes her third appearance on the Joe Rogan Experience.%">
+    Dr. Rhonda Patrick makes her third appearance on the Joe Rogan Experience.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/dha-krill-oil">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        The Phospholipid Brain-DHA Advantage
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    September 29th 2014
+    (almost 6 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="There may be something special about sources of omega-3 that are richer in the phosphatidylcholine form of DHA.%">
+    There may be something special about sources of omega-3 that are richer in the phosphatidylcholine form of DHA.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/do-antioxidants-cause-cancer">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Do Antioxidants Cause Cancer?
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    August 5th 2014
+    (about 6 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick explains what antioxidants are, why they are important, and how they prevent DNA damage, a well-known cancer initiator.%">
+    Dr. Rhonda Patrick explains what antioxidants are, why they are important, and how they prevent DNA damage, a well-known cancer initiator.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/terry-wahls">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Dr. Terry Wahls Discusses Her Multiple Sclerosis Protocol
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    July 22nd 2014
+    (about 6 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Terry Wahls discusses the protocol she used to reverse her secondary-progressive multiple sclerosis.%">
+    Dr. Terry Wahls discusses the protocol she used to reverse her secondary-progressive multiple sclerosis.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/tim-ferriss-show-eps-12">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        The Tim Ferriss Show Ep. 12: Dr. Rhonda Patrick on Life Extension, Performance, and More
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    June 21st 2014
+    (about 6 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick is on The Tim Ferriss Show in episode #12 entitled &quot;Rhonda Patrick on Life Extension, Performance, and More&quot;.%">
+    Dr. Rhonda Patrick is on The Tim Ferriss Show in episode #12 entitled "Rhonda Patrick on Life Extension, Performance, and More".
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/3-mechanisms-for-magnesium-deficiency">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        3 Mechanisms for Magnesium Deficiency
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    May 16th 2014
+    (over 6 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Decreased consumption of chlorophyll containing vegetables, decreased absorption, and increased excretion is largely the primary reasons why apprximately 45% of US population is deficient in magnesium.%">
+    Decreased consumption of chlorophyll containing vegetables, decreased absorption, and increased excretion is largely the primary reasons why apprximately 45% of US population is deficient in magnesium.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/maximizing-mitochondria-with-magnesium">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Maximizing Your Mitochondria with Magnesium
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    May 16th 2014
+    (over 6 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Patrick describes how magnesium, an essential mineral that ~56% of the US population is deficient in, can help you maximize your mitochondria to increase oxidative capacity and, potentially, enhance exercise performance.%">
+    Dr. Patrick describes how magnesium, an essential mineral that ~56% of the US population is deficient in, can help you maximize your mitochondria to increase oxidative capacity and, potentially, enhance exercise performance.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/jre-502">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Joe Rogan Experience #502 - Dr. Rhonda Patrick
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    May 16th 2014
+    (over 6 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick makes her second appearance on the Joe Rogan Experience.%">
+    Dr. Rhonda Patrick makes her second appearance on the Joe Rogan Experience.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/hyperthermic-conditioning">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Hyperthermic Conditioning for Hypertrophy, Endurance, and Neurogenesis
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    April 10th 2014
+    (over 6 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick discusses how conditioning the body to heat stress through sauna use, called &quot;hyperthermic conditioning&quot; may cause adaptations that increase athletic endurance (by increasing plasma volume and blood flow to heart and muscles) and potentially even muscle mass.%">
+    Dr. Rhonda Patrick discusses how conditioning the body to heat stress through sauna use, called "hyperthermic conditioning" may cause adaptations that increase athletic endurance (by increasing plasma volume and blood flow to heart and muscles) and potentially even muscle mass.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/jre-459">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Joe Rogan Experience #459 - Dr. Rhonda Patrick
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    February 20th 2014
+    (over 6 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="Dr. Rhonda Patrick makes her first appearance on the Joe Rogan Experience.%">
+    Dr. Rhonda Patrick makes her first appearance on the Joe Rogan Experience.
+  </p>
+</div><div class="w-full">
+  <div class="inline-flex items-center">
+    <a href="/episodes/rebuttal-to-editorial-enough-is-enough">
+      <h2 class="font-bold text-xl mb-1 hover:underline">
+        Rebuttal to Anti-Vitamin Editorial: "Enough is Enough"
+      </h2>
+</a>  </div>
+  <div class="text-sm text-gray-500 mb-2">
+    Posted on
+    February 1st 2014
+    (over 6 years)
+  </div>
+  <p class="text-sm text-gray-600 mb-4 max-w-xl" ,="" alt="In this podcast, we discuss and critically analyze a recent headline-grabbing editorial that was published in the Annals of Internal Medicine that reviewed three studies on the topic of multivitamins and chronic disease prevention. We analyze the important shortcomings of the studies and talk about the mechanism.%">
+    In this podcast, we discuss and critically analyze a recent headline-grabbing editorial that was published in the Annals of Internal Medicine that reviewed three studies on the topic of multivitamins and chronic disease prevention. We analyze the important shortcomings of the studies and talk about the mechanism.
+  </p>
+</div>
+  </div>
+</div>
+
+
+      <footer class="footer">
+  <div class="container mx-auto p-8">
+    <div class="flex flex-wrap w-100">
+      <!-- Sitemap -->
+      <div class="w-full md:w-1/5">
+        <h3 class="footer_section-title">
+          Explore More
+        </h3>
+        <ul class="footer_section-content">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">Our team</a></li>
+          <li><a href="/genetics">Genetics Report</a></li>
+          <li><a href="/episodes">Episodes</a></li>
+          <li><a href="/aliquot">The Aliquot Podcast</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/crowdsponsor">Support Us</a></li>
+        </ul>
+      </div>
+      <!-- End Sitemap -->
+      <!-- About and Questions -->
+      <div class="w-full md:w-2/5 md:pr-4">
+        <h3 class="footer_section-title">
+          FoundMyFitness
+        </h3>
+        <p class="footer_section-content max-w-sm">
+          Promoting strategies to increase healthspan, well-being, cognitive and physical performance through deeper understandings of biology. <a class="underline" href="/about">Learn more about Dr. Rhonda Patrick</a>.
+        </p>
+        <h3 class="footer_section-title">
+          Questions?
+        </h3>
+        <p class="footer_section-content">Send us a message <a class="underline" href="/contact">here</a></p>
+      </div>
+      <!-- End About and Questions -->
+      <!-- Search -->
+      <div class="w-full md:w-2/5">
+        <h3 class="footer_section-title">
+          Search 
+        </h3>
+        <form action="/search" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="4tfTnqf9+rdL+uzKSMn/m9HaglubOGpijbphPOmSX+rALktcISdtbQncnfz6shPElQO9oSfkiHMUUxn8zENtyA==">
+        <div class="input-group small w-full">
+          <input required="required" placeholder="Enter a keyword..." class="input-group_input" type="text" name="search[email]" id="search_email">
+        
+        <button class="button primary input-group_button whitespace-no-wrap">
+          Search
+        </button>
+      </div></form>
+      <h3 class="footer_section-title mt-4">
+        Rhonda regularly updates
+      </h3>
+      <ul class="list-style-none inline-block">
+        <li class="mr-2 inline-block text-sm underline">
+          <a target="_blank" href="https://www.instagram.com/foundmyfitness">Instagram</a>
+        </li>
+        <li class="mr-2 inline-block text-sm underline">
+          <a target="_blank" href="https://twitter.com/foundmyfitness">Twitter</a>
+        </li>
+        <li class="mr-2 inline-block text-sm underline">
+          <a target="_blank" href="https://www.facebook.com/foundmyfitness/">Facebook</a>
+        </li>
+      </ul>
+      <h3 class="footer_section-title mt-4">
+        Episodes found at
+      </h3>
+      <ul class="list-style-none inline-block">
+        <li class="mr-2 inline-block text-sm underline">
+          <a target="_blank" href="https://www.youtube.com/user/FoundMyFitness">YouTube</a>
+        </li>
+        <li class="mr-2 inline-block text-sm underline">
+          <a target="_blank" href="https://podcasts.apple.com/us/podcast/foundmyfitness/id818198322">iTunes</a>
+        </li>
+        <li class="mr-2 inline-block text-sm underline">
+          <a target="_blank" href="https://open.spotify.com/show/5QjpaU0o1Q2MkVZwwG3y7d?si=rmiPWfFlRRGfIopUW3KWDA">Spotify</a>
+        </li>
+      </ul>
+    </div>
+    <!-- End Search -->
+  </div>
+</div>
+</footer>
+
+    </div>
+    <div data-react-class="views/GeneticReportWizard" data-react-props="{&quot;subscription_amount&quot;:0,&quot;logged_in_email&quot;:&quot;tjthejuggler@gmail.com&quot;,&quot;is_premium_subscriber&quot;:false}" data-react-cache-id="views/GeneticReportWizard-0"><div></div></div>
+    <script src="/assets/rails-a0d112b318f7dbde03915fa20e10cd536823045a74ca70631f4ae9ca55a4f0f0.js"></script>
+  
+
+<iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeMetricsController0" allowpaymentrequest="true" src="https://js.stripe.com/v3/m-outer-93be17fde268c6ff50c5aed9122214d2.html#url=https%3A%2F%2Fwww.foundmyfitness.com%2Fepisodes%2Farchive&amp;title=FoundMyFitness%20Episode%20Archive&amp;referrer=https%3A%2F%2Fwww.foundmyfitness.com%2Fepisodes%2Fclips%2Farchive&amp;muid=5ec6080f-5993-4749-a39d-37f01a664dffba6bba&amp;sid=1f9e339e-60f2-4dce-8a0f-c596aeacf65fbfd2f8&amp;version=6&amp;preview=false" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><reach-portal><div data-reach-popover="" data-reach-menu="" data-reach-menu-popover="" hidden="" style="position: absolute; left: 0px; top: 0px;"><div aria-labelledby="menu-button--menu--1" role="menu" tabindex="-1" class="dropdown_list" data-reach-menu-list="" data-reach-menu-items="" id="menu--1"><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/autophagy" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Autophagy" id="option-0--menu--1">Autophagy</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/berberine" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Berberine" id="option-1--menu--1">Berberine</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/breastfeeding" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Breast milk and breastfeeding " id="option-2--menu--1">Breast milk and breastfeeding </a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/caloric-restriction" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Caloric Restriction" id="option-3--menu--1">Caloric Restriction</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/creatine" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Creatine" id="option-4--menu--1">Creatine</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/depression" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Depression" id="option-5--menu--1">Depression</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/epigenetic-clocks" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Epigenetic aging clocks" id="option-6--menu--1">Epigenetic aging clocks</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/fasting" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Fasting " id="option-7--menu--1">Fasting </a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/foxo" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="FOXO" id="option-8--menu--1">FOXO</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/metformin" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Metformin" id="option-9--menu--1">Metformin</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/nad" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="NAD+" id="option-10--menu--1">NAD+</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/neu5gc" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Neu5Gc" id="option-11--menu--1">Neu5Gc</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/nicotinamide-mononucleotide" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Nicotinamide mononucleotide" id="option-12--menu--1">Nicotinamide mononucleotide</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/nicotinamide-riboside" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Nicotinamide riboside" id="option-13--menu--1">Nicotinamide riboside</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/quercetin" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Quercetin" id="option-14--menu--1">Quercetin</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/resveratrol" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Resveratrol" id="option-15--menu--1">Resveratrol</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/salmon-roe" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Salmon Roe" id="option-16--menu--1">Salmon Roe</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/sauna" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Sauna" id="option-17--menu--1">Sauna</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/sirtuin" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Sirtuins" id="option-18--menu--1">Sirtuins</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/time-restricted-eating" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Time-restricted eating" id="option-19--menu--1">Time-restricted eating</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/vitamin-c" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Vitamin C" id="option-20--menu--1">Vitamin C</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/whole-body-hyperthermia" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Whole-body hyperthermia" id="option-21--menu--1">Whole-body hyperthermia</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/topics/zinc" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Zinc" id="option-22--menu--1">Zinc</a></div></div></div></reach-portal><reach-portal><div data-reach-popover="" data-reach-menu="" data-reach-menu-popover="" hidden="" style="position: absolute; left: 0px; top: 0px;"><div aria-labelledby="menu-button--menu--7" role="menu" tabindex="-1" class="dropdown_list" data-reach-menu-list="" data-reach-menu-items="" id="menu--7"><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/dashboard" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Member Dashboard" id="option-0--menu--7">Member Dashboard</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/genetic_dashboard" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="My Genetic Dashboard" id="option-1--menu--7">My Genetic Dashboard</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/news/settings" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="User Settings" id="option-2--menu--7">User Settings</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/manage_subscription" data-method="GET" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Manage Subscription" id="option-3--menu--7">Manage Subscription</a></div><div role="none" tabindex="-1"><a role="menuitem" tabindex="-1" href="/users/sign_out" data-method="DELETE" class="dropdown_link" data-reach-menu-link="" data-reach-menu-item="" data-valuetext="Sign out" id="option-4--menu--7">Sign out</a></div></div></div></reach-portal><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="https://vars.hotjar.com/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe></body></html>

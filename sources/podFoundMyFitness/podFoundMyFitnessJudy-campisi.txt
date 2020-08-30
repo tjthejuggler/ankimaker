@@ -1,0 +1,40 @@
+Judith Campisi, PhD, is a professor of biogerontology at the Buck Institute for Research on Aging. She is an expert in understanding why age is the greatest risk factor for developing a wide array of diseases, from neurodegeneration to cancer. Dr. Campisi is widely known for her groundbreaking research in the field of cellular senescence – a state of irreversible growth arrest in cells – and its role in tumor suppression and aging. Her research merges the varied genetic, environmental, and evolutionary forces that drive aging and age-related diseases, and identifies modifiable pathways that can mitigate basic aging processes. Dr. Campisi has contributed to several discoveries that continue to challenge and alter current thinking about the science of aging. She is perhaps best known for her research into understanding what happens when cells that are damaged (especially those that undergo mitochondrial dysfunction-associated senescence, or MiDAS) acquire the senescence-associated secretory phenotype, or SASP, which is a characteristic secretory pattern that senescent cells adapt and has the ability to promote tumor progression.Dr. Campisi earned her PhD in biochemistry from the State University New York at Stony Brook and completed postdoctoral training at the Harvard Medical School. She is an advisory board member of the SENS Research Foundation and an advisor at the Lifeboat Foundation. She is co-editor in chief of the Aging Journal. In this episode, Dr. Campisi tells us about the role of cellular senescence in the aging process and cancer, what causes senescence, and how strategies that address senescence may ultimately inform ways to improve lifespan, or at the very least, healthspan, in humans. These strategies might include lifestyle interventions that clear senescent cells, such as fasting and exercise; pharmacological treatments that alter the phenotype of senescent cells by suppressing their inflammatory qualities, such as rapamycin; and the use of senolytic drugs that kill senescent cells.Cellular senescence as both protector and instigator.
+
+
+
+
+                "Anything that persistent damage to the genome will drive cells into senescence. It makes sense because that puts you at risk for mutations. Mutation puts you at risk for cancer, so the cells want to shut that damaged cell down." - Dr. Judith Campisi
+                
+
+
+                Click To Tweet
+              
+
+
+As our cells accumulate damage, which naturally happens as we age (even as a consequence of energy-generating processes and immune cell activation), there are only so many outcomes that we can expect. The first possibility is that the cells can die. The second is that they can become senescent – where they stop dividing, but stay alive, all-the-while secreting molecules that influence surrounding tissue. Or, the worst of all possible outcomes, the cells can go off the rails and become malignant. Senescence as a response to stress.Our bodies’ cells are subject to myriad stressors, from dietary indiscretions to environmental toxins to the metabolic byproducts of day-to-day living. Over time, stressed cells lose their ability to divide. These are senescent cells, and over time they begin to accumulate. Very few senescent cells are found in young people, but after about the fourth or fifth decade of life, the number increases rapidly. In this way, the senescence stress response is like a double-edged sword, with both favorable and unfavorable outcomes. Favorable outcomes include, for example, avoiding division of an already damaged cell that could otherwise be on its own way to malignancy. Unfavorable outcomes include, for example, changing the behavior of our tissues and promoting a tissue and cellular milieu that promotes a problem known in the aging field as inflammaging. Recent research suggests that suppression of chronic, low-grade inflammation may be one of the most important factors in successful longevity that actually increases in importance with advancing age.Mitigating the effects of senescence as a potential boon to aging.
+
+
+
+
+                "Exercise is probably the single most important intervention that cuts across multiple diseases." - Dr. Judith Campisi
+                
+
+
+                Click To Tweet
+              
+
+
+What's interesting is that, while accumulating senescent cells is inevitable, there are varying strategies for tackling senescence, and this is of great interest to the field of aging. There are ways to clear out senescent cells with drugs or even dietary and lifestyle interventions. Some of these strategies include periodic fasting, which serves as a sort of “housekeeping” function – ridding the body of senescent cells from time to time, and exercise, which acts as a hormetic factor – a low-level stressor that primes your body to respond more effectively to larger ones and may also be especially suited to tuning up the mitochondria, the dysfunction of which can promote cellular senescence.There are also ways to influence what sort of molecules senescent cells produce, possibly limiting the inflammatory ones, even without killing them. The outcome of these interventions is an extension of healthspan – the years of a person’s life spent free of disease. Although we all eventually succumb to aging and death, we might be able to live healthier longer.  Finally, of course, we can also try to prevent them, which poses the question of what causes them in the first place. As we'll learn from Dr. Campisi, senescent cells exhibit more than one so-called phenotype, and they arrive at these different cellular phenotypes as a consequence of different types of cellular stress or dysfunction. Some of the factors contributing to these variable phenotypes include persistent damage to our DNA and mitochondrial dysfunction, driven by an altered NAD:NADH ratio, the latter of which has recently been shown to be improved by certain dietary supplements like nicotinamide riboside. Notably, NAD+ is a substrate for an enzyme called PARP, which repairs single-strand breaks in DNA. DNA damage is an aging-associated burden that accumulates, at least partially, due to the failing capacity of our own enzymes to keep up with damage. The secretions of senescent cells can have profound effects on stem cell proliferation and function. Understanding how cells become senescent and how we might prevent or slow those processes is critical to improving our overall health and longevity.Learn more about Dr. Judy Campisi
+
+Judith Campisi - Buck Profile
+Judith Campisi - USC Leonard Davis School of Gerontology
+Wikipedia Profile on Judith Campisi, Ph.D.
+List of publications
+
+People mentioned
+
+Claudio Franceschi
+Elissa Epel
+Elizabeth Blackburn
+Valter Longo - episode with Dr. Longo
+

@@ -1,0 +1,99 @@
+This episode is a round 2 podcast. Click here to see the first episode recorded with Dr. Valter Longo.Valter Longo, PhD, is a biochemist and professor of gerontology and biological sciences at the University of Southern California (USC). He directs the USC Longevity Institute as well as the Oncology and Longevity Program at the Institute of Molecular Oncology Foundation in Milan, Italy. His research centers on understanding the fundamental genetic and biochemical mechanisms of aging in yeast, mice, and humans. Dr. Longo seeks to identify shared molecular pathways in simple organisms and humans that can be modulated to protect against multiple stresses and treat or prevent age-related diseases such as cancer, Alzheimer’s disease, and others. A path to longevity or at least reducing age-related disease.
+
+
+
+
+                "We knew from mice, from the work of John Kopchick and Andrzej Bartke, that mice that have either growth hormone receptor deficiency or growth hormone deficiency live about 40% longer. They also live much healthier." - Dr. Valter Longo
+                
+
+
+                Click To Tweet
+              
+
+
+Caloric restriction has long been the focus of promising aging research and research into the amelioration of age-related diseases. Early findings illuminated the role of calorie restriction in modulating adaptive cytoprotective mechanisms that enhance metabolic response and reduce oxidative damage and inflammation – factors related to increased longevity and decreased risk of age-related disease.Research in animals has shown impressive results with studies in mice and rats showing chronic caloric restriction able to extend lifespan by up to 40%, showing the ability in some animal studies to virtually eliminate type 2 diabetes, and dramatically reduce cancer incidence. Similarly, increases in disease-free lifespan have also shown some promise in primate studies of caloric restriction as well.Chronic caloric restriction, perhaps unsurprisingly, is not wholly without undesirable qualities such as slowed wound healing and altered immune function that can lead to increased susceptibility to infection according to some animal research. Not to mention being notoriously hard to practice with long-term human caloric restricters inadequately restricting protein and ultimately failing at reproducing some of the cellular signaling changes that seem to be important: namely, reductions in an important growth factor known as IGF-1.But what if we could achieve some of the benefits of caloric restriction without living a life of constant, chronic deficit?That is a special question that Dr. Longo’s research is especially poised to answer through his research into periodic prolonged fasting and, more recently, a fasting-mimicking diet that has been shown to achieve many of the same effects of multiple days of water-only fasting. What sets this approach apart from that of chronic caloric restriction is that, rather than undergoing constant restriction, we can approach it as something that can be cycled periodically to achieve a persistence of effects, which the Longo lab's research indicates can last for at least several months after a 4 or 5-day cycle. These effects include the driving down of many biomarkers related to aging, including blood pressure, metabolic indices, and inflammatory markers.Cycles of renewal that our environment has forgotten but our genes remember.
+
+
+
+
+                "These [renewal] programs, which may have been frequently activated under the normal conditions in which famine periods were commonly encountered, may remain dormant in individuals constantly exposed to food intake." - Dr. Valter Longo
+                
+
+
+                Click To Tweet
+              
+
+
+In this episode, Dr. Longo explains the origins of his fasting-mimicking diet and one of the most important things that differentiate it from the concept of caloric restriction: the refeed. His research has shown that mice on a version of his fasting-mimicking diet exhibit a shrinking of entire organs, such as the liver and kidneys, but this effect reverses without obvious pathological effects after the end of the cycle of fasting.This characteristic cycle of targeted destruction and renewal that accompanies periodic fasting through the fasting-mimicking diet or FMD holds the greatest promise for diseases of autoimmunity, particularly multiple sclerosis. Dr. Longo’s work has shown that, in an animal model of multiple sclerosis called experimental autoimmune encephalomyelitis, the fasting-mimicking diet temporarily reduces the total white blood cells - lymphocytes, monocytes, and granulocytes -- by 40% to 50%. This shrinking of pathological markers activates stem cells, leading to the proliferation of oligodendrocyte precursors (myelin producing cells) and, ultimately, remyelination. Upon refeed, immune cells return naïve or at lower levels than controls -- in other words, with reduced autoimmunity.It is the sophisticated nature of this process of breakdown and rapid rebuilding that suggests it might be a way tapping into an ancient program of self-repair mostly lost to us because of the general abundance of food and utter lack of famine that most of us enjoy. Our genes, however, shaped by the feasts and famine of the past, remember.Exploiting the inability of cancer cells to adapt to extreme environments.
+
+
+
+
+                "We started testing in cancer patients but realized that they didn't want to fast. They gave us an opportunity and the motivation to look for a fasting-mimicking diet; a diet that works as well as fasting, but allows patients to eat." - Dr. Valter Longo
+                
+
+
+                Click To Tweet
+              
+
+
+Periodic fasting holds great promise as a complementary therapy for cancer because when coupled with chemotherapy, fasting induces differential stress resistance – a phenomenon in which healthy cells experience increased protection from stress, while cancer cells are simultaneously made more sensitive to it. This quality of fasting may be particularly useful when used in conjunction with treatments that can have toxic side effects, helping to ameliorate side effects while potentially also enhancing the therapeutic impact. This reduction in flexibility of cancer cells may be a consequence of accumulating mutations in growth signaling pathways (IGF-1 receptor and downstream proteins Ras and Akt are very common) which may cause a reduced ability for the cancer cells to switch to a "fasting-induced protected mode."In this episode, we also discuss...
+
+00:01:00 - The problems with using non-specific terms like “intermittent fasting” and a general exploration of what each of the terms that describe types of dietary restriction means, whether we’re talking about intermittent fasting, caloric restriction, time-restricted eating or periodic prolonged fasting. The latter of which is a special focus of Dr. Longo.
+00:04:11 - What two seminal studies on chronic caloric restriction in primates from the 80s teach us about caloric restriction as a preventer of age-related disease, and how the effects of caloric restriction may actually be stronger when the diet that is being restricted is an unhealthy one – similar, in some ways, to the typical western diet.
+00:07:34 - How the shift between normal metabolism and what Dr. Longo refers to ketogenic mode is subject to individual variation and the type of restriction practiced. Of particular importance is the protein or essential amino acid consumption.
+00:08:06 - How the suppression of the IGF-1 pathway, typically a hallmark of prolonged fasting and caloric restriction studies and potentially needed for some of the benefits, may fail to be achieved in human caloric restricters that eat too much protein. 
+00:09:34 - How certain macronutrients influence the insulin/IGF-1/growth hormone axis interact to modulate aging in many cell types.
+00:10:43 - How mice and humans who have growth hormone receptor deficiencies have low circulating IGF-1 – as little as 10% of normal levels – and have reduced risk of diseases like cancer, diabetes, and age-related cognitive decline, hinting at what future research might reveal about the beneficial effects of prolonged fasting and fasting-mimicking diets through the downstream effects of periodic deprival of growth-related factors.
+00:11:05 - How the growth hormone /  IGF-1 axis got a big boost early on in scientific  interest when it was revealed that mice that have either deficiency in growth hormone itself or the growth hormone receptor live up to 40% longer and how this is accomplished through what is essentially a delaying of the decrepitudes of old age.
+00:13:42 - The clever experiment design where human epithelial cells were incubated either in serum taken from controls or the serum taken from growth hormone receptor-deficient Laron’s patients showed that the reduction in growth factors ultimately lead to the cells manifesting qualities of cancer resistance, like fewer DNA breaks but an increase in cell death, which is also an important protection against cancer known as apoptosis.
+00:15:02 - The origins of what Dr. Longo calls the fasting-mimicking diet – a 5-day diet focused on recapitulating some of the benefits of prolonged fasting, like dramatic changes in metabolic biomarkers, but without some of the drawbacks like reduced compliance and other risks that can come with multiple days of grueling strict water fasting in large, heterogeneous populations.
+00:15:42 - How periodic prolonged fasting or the fasting-mimicking diet may be able to render cancer cells more vulnerable while conferring stress resistance to healthy cells, a quality known as differential stress resistance. This can happen because of the way fasting interferes with what is known as oncogenic signaling. Also refer to 00:25:22.
+00:21:41 - The mixed results associated with the use of the ketogenic diet in treatment of cancer and how some cancers seem to be hurt by the metabolic switch of utilizing ketone bodies, which creates oxidative stress from the use of mitochondria, while other cancers seem to be able to use ketones effectively as an energy source, potentially accelerating their growth.
+00:22:54 - Some of the early but promising pre-trial clinical anecdata suggesting potential complementary roles for the ketogenic diet and the fasting-mimicking diet (FMD) used in conjunction with conventional treatments like chemotherapy or radiotherapy for certain cancers like gliomas.
+00:28:05 - How oncologists might approach incorporating the fasting-mimicking diet, which is still seeking further clinical validation and approval, into their patients’ care (if they choose to).
+00:30:44 - In the context of aging, how the fasting mimicking diet has been shown to “reset” metabolism, driving down biomarkers associated with poor metabolic health, inflammation, and cardiovascular health.
+00:31:45 -  How, in contrast to chronic caloric restriction, the fasting-mimicking diet seems to normalize biomarkers like blood pressure and fasting glucose rather than continuing to drive them down into ranges lower than might be considered healthy.
+00:34:09 - The prospect of using emerging ways of measuring aging objectively, such as through DNA methylation profiles, to tell whether or not an intervention like fasting is having an effect on aging as a whole.
+00:35:14 - How long the metabolic effects of the fasting-mimicking diet tend to stick around and how often Dr. Longo thinks the fasting-mimicking diet should be done for most people and what sort of factors influence that.
+00:38:33 - The fasting-mimicking diet as a boon for the psychology of weight loss where, due to its cyclical nature, adherents can enjoy potential benefits like the reduction of harmful fat known as visceral fat while sparing subcutaneous fat and lean mass, without completely overhauling all other areas of their life the rest of the time. 
+00:40:09 - How the fasting-mimicking diet, due to the shortness of the interval, seems to avoid the deleterious and generally undesirable effect of slowing the metabolism down in the way so-called yo-yo diets seem to.
+00:44:24 - How fasting, through the shrinking and then re-expansion of whole systems like the liver, kidneys, heart, and immune cells may represent a type of whole-system renewal that originated as a three billion-year-old self-repair mode that was only activated during periods of famine or inconsistent food availability, but might now be dormant in people living in a modern world of regular food intake.
+00:45:39 - How Dr. Longo’s group has shown that, in animal models of multiple sclerosis and pharmacologically-induced type 1 diabetes, several cycles of the fasting-mimicking diet is able to reverse disease and restore healthful function. This mechanism also may generalize to erasing other diseases of autoimmunity through the destruction of autoimmune immune cells that are essentially reset through fresh differentiation from progenitors untainted by autoimmunity. A very exciting area of continued inquiry!
+00:46:17 - How shorter fasts may fail to approach some of the effects of periodic fasting and the fasting-mimicking diet by failing to achieve adequate glycogen depletion and ketogenesis.
+00:53:04 - How clinical trials demonstrated that the effects of IGF-1 are probably context dependent, exhibiting a sort of “Goldilocks principle,” in which too much IGF-1 promotes cancer, but too little (as in the case of chronic, long-term caloric restriction) negatively affects the immune system. But the refeeding that follows fasting mimicking creates an environment that may be just right: it switches on IGF-1, promoting the regeneration of healthy cells, even restoring full organ systems. 
+00:55:05 - The importance of adequate protein during the refeeding phase following prolonged fasting or the fasting-mimicking to promote proper growth signaling to restore systems that have been broken down.
+00:56:01 - Dr. Longo’s “top picks” for assessing biological age – markers a person can ask their doctor to measure to gauge how well they’re aging. 
+
+People mentioned
+
+Roy Walford
+Richard Weindruch
+Luigi Fontana
+John Kopchick
+Andrzej Bartke
+Morgan Levine
+Steve Horvath
+
+Learn more about Dr. Valter Longo
+
+The Longevity Diet (his book)
+ProLonFMD 5 Day Meal Program
+Facebook Fan Page
+Wikipedia
+University of Southern California Faculty Page
+
+Relevant articles
+
+Growth-stunting gene may spare people from dementia
+Diet that mimics fasting may also reduce multiple sclerosis symptoms
+Fasting triggers stem cell regeneration of damaged, old immune system
+Diet that mimics fasting appears to slow aging
+Fasting-like diet turns the immune system against cancer
+Fasting during chemotherapy may offset some side effects of cancer-fighting drugs
+Scientifically designed fasting diet lowers risks for major diseases
+Fasting-mimicking diet may reverse diabetes
+Fasting improves efficacy of radiation therapy
+Fasting and less-toxic cancer drug could be alternative to chemotherapy
+He wants to sell you a $300 ‘fasting diet’ to prolong your life. It might not be as crazy as it sounds
+
