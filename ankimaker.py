@@ -21,6 +21,9 @@ import tkinter as ttk
 # from tkinter import messagebox
 # from PIL import ImageTk, Image
 # import csv
+from epub_conversion.utils import open_book, convert_epub_to_lines
+import os.path
+from os import path
 
 from ankiarticle import *
 from langCodes import *
@@ -44,10 +47,9 @@ def browseFiles():
 	Tk().withdraw()
 	filename = filedialog.askopenfilename(initialdir = "/", 
                                           title = "Select a File", 
-                                          filetypes = (("Text files", 
-                                                        "*.txt*"), 
-                                                       ("all files", 
-                                                        "*.*"))) 	
+                                          filetypes = (("all files", 
+                                                        "*.*"),("Text files", 
+                                                        "*.txt*"))) 	
 	filename_string = filename.split(':')[1]
 	print(filename_string)
 	text_filename = os.path.splitext(os.path.basename(filename_string))[0]
@@ -80,11 +82,17 @@ def text_type_radiobutton_changed(*args):
 		frequency_thresholds_low_entry.configure(state='disable')
 
 def show_frequencies():
-	with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
-		source_text = file.read().replace('\n', ' ')
+	source_text = None
+	if path.exists('sources/'+text_filename+".txt"):
+		with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
+			source_text = file.read().replace('\n', ' ')
+	elif path.exists('sources/'+text_filename+".epub"):
+		book = open_book('sources/'+text_filename+".epub")
+		convertedBook = convert_epub_to_lines(book)
+		source_text = ' '.join(convertedBook)
 	if source_text:
 		word_frequency_dictionary = dict()
-		clean = re.sub(r"[,.;@#?¿!¡\-\"&$\[\]\)\(]+\ *", " ", source_text)
+		clean = re.sub(r"[,.'`’'|—;:@#?¿!¡<>_\-\"”“&$\[\]\)\(\\\/]+\ *", " ", source_text)
 		words = clean.split()
 		for word in words:
 			if not word.isdigit():

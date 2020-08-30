@@ -1,6 +1,13 @@
 when deck is created it should either close the tkinter or totally reset everything
 	right now after article we have to do ctr c
 
+make the list of characters to be re.subbed somewhere as a constant variable so we dont need to change it in both places(subtitles is different)
+
+THESE SHOULD ALL BE REMOVED EVEN WHEN SHOWING FREQ RATINGS
+make a 'words that have been skipped' file
+make an 'exclude this format' input for things like ch01note34
+make the option to exclude proper nouns(first letter capitalized and not at the begining of a sentence, make sure it doesnt exclude if the whole word is cacpital)
+
 #look into quillionz and python library question-generation for making questions
 
 maybe split at 'are' in article like we did 'is'
@@ -9,3 +16,9 @@ put try/excepts anywhere that may prevent a big loss of work
 
 make many decks of foundmyfitness podcasts for when on the road
 redo 2,3,4 or club de cuervos
+
+scrape transcriptions:
+	https://tim.blog/2018/09/20/all-transcripts-from-the-tim-ferriss-show/
+
+	PAID:
+		https://peterattiamd.com/ (show notes only, not exact transcription)

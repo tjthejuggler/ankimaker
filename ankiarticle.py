@@ -14,6 +14,7 @@ from threading import Thread
 from tkinter import filedialog 
 from tkinter import Tk 
 import os
+from epub_conversion.utils import open_book, convert_epub_to_lines
 
 from langCodes import *
 
@@ -109,7 +110,7 @@ def animated_loading(loading_message):
         sys.stdout.flush()
 
 def convert_text_to_keywords(text, low_freq, src_lang):
-	clean = re.sub(r"[,.;@#?¿!¡\-\"&$\[\]\)\(]+\ *", " ", text)
+	clean = re.sub(r"[,.'`’'|—;:@#?¿!¡<>_\-\"”“&$\[\]\)\(\\\/]+\ *", " ", text)
 	lowerString = clean.lower()
 	words = lowerString.split()
 	keywords = []
@@ -303,12 +304,22 @@ def set_global_variables(deck, src_lang):
 	global wiki_wiki
 	wiki_wiki = wikipediaapi.Wikipedia(get_lang_code(src_lang))
 
-def run_article_program(filename, deck, src_lang, low_freq):
-	text_filename = filename
+def get_text(filename):
+	article_text = ''
+	if path.exists('sources/'+text_filename+".txt"):
+		with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
+			article_text = file.read().replace('\n', ' ')
+	if path.exists('sources/'+text_filename+".epub"):
+		book = open_book('sources/'+text_filename+".epub")
+		convertedBook = convert_epub_to_lines(book)
+		article_text = ' '.join(convertedBook)
+	return article_text
+
+def run_article_program(deck, src_lang, low_freq):
+	filename = filename
 	set_global_variables(deck, src_lang)
 	complete_dictionary = dict()
-	with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
-		article_text = file.read().replace('\n', ' ')
+	article_text = get_text(filename)
 	complete_dictionary, more_words_to_define = build_dictionary_with_user(complete_dictionary, article_text, article_text, low_freq, src_lang)
 	still_building_dictionary = True
 	while still_building_dictionary and more_words_to_define:
@@ -331,5 +342,5 @@ def run_article_program(filename, deck, src_lang, low_freq):
 	for word in complete_dictionary:
 		if complete_dictionary[word] != "rejected!" and complete_dictionary[word] != 'alt word form used.':
 			print('\n',word.upper(), '=', complete_dictionary[word][0])
-	print('\n','Deck created:',text_filename)
+	print('\n','Deck created:',filename)
 
