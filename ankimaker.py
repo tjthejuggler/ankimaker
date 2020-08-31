@@ -67,19 +67,28 @@ def text_type_radiobutton_changed(*args):
 		print('language')
 		src_lang.set('spanish')
 		dest_lang.set('english')
-		#destination_language_label.place(x=30,y=120)
-		#destination_language_optionmenu.place(x=130,y=120)
 		destination_language_optionmenu.configure(state='normal')
 		frequency_thresholds_low_entry.configure(state='normal')
-		#frequency_thresholds_low_entry.place(x=160,y=150)
+		exclude_var_entry.configure(state='disable')
 	if text_type_language_or_article.get() == 'article':
 		print('article')
 		src_lang.set('english')
-		#destination_language_label.place(x=1030,y=120)
-		#destination_language_optionmenu.place(x=1030,y=120)
 		destination_language_optionmenu.configure(state='disable')
-		#frequency_thresholds_low_entry.place(x=160,y=1150)
 		frequency_thresholds_low_entry.configure(state='disable')
+		exclude_var_entry.configure(state='normal')
+def word_excluded(word):
+	should_exclude = False
+	lower_word = word.lower()
+	if exclude_var.get():
+		for item in exclude_var.get().split(','):
+			item_clean = item.lower().strip()
+			if len(item_clean) == len(lower_word):
+				should_exclude = True
+				for c in range(0, len(item_clean)):
+					if item_clean[c] != '*':
+						if item_clean[c] != lower_word[c]:
+							should_exclude = False
+	return should_exclude
 
 def show_frequencies():
 	source_text = None
@@ -91,14 +100,18 @@ def show_frequencies():
 		convertedBook = convert_epub_to_lines(book)
 		source_text = ' '.join(convertedBook)
 	if source_text:
+		excluded_words = []
 		word_frequency_dictionary = dict()
 		clean = re.sub(r"[,.'`’'|—;:@#?¿!¡<>_\-\"”“&$\[\]\)\(\\\/]+\ *", " ", source_text)
 		words = clean.split()
 		for word in words:
-			if not word.isdigit():
+			if word_excluded(word):
+				if not word in excluded_words:
+					excluded_words.append(word)
+			elif not word.isdigit():
 				word_frequency_dictionary[word] = round(zipf_frequency(word, get_lang_code(str(src_lang.get()))),1)
 		for x in np.arange(0, 10, 0.1):
-			clean_x = round(x,1)
+			clean_x = round(10-x,1)
 			words_with_x_freq = []
 			for word, freq in word_frequency_dictionary.items():
 				if freq == x:
@@ -106,6 +119,9 @@ def show_frequencies():
 			if words_with_x_freq:
 				print(clean_x)
 				print(words_with_x_freq)
+		if excluded_words:
+			print('EXCLUDED:')
+			print(excluded_words)
 
 def run_clicked():
 	deck = genanki.Deck(round(time.time()),text_filename)
@@ -128,6 +144,9 @@ def help_clicked():
 	print('will be used, the first threshold filters out rare words, and the second threshold')
 	print('filters common words. Click the button next to the threshold inputs to see all')
 	print('threshold numbers.')
+	print('Excludes - Enter a pattern to be ignored using *s, for example to ignore CH01,')
+	print('CH02, CH03.. input CH**. You can input as many patterns as you want seperated by')
+	print('commas.')
 
 file_browse_button = ttk.Button(root, text="?", command=help_clicked)
 file_browse_button.place(x=360,y=10)
@@ -175,7 +194,14 @@ frequency_thresholds_high_entry.place(x=190,y=150)
 show_frequencies_button = ttk.Button(root, text="Show frequencies", command=show_frequencies)
 show_frequencies_button.place(x=230,y=150)
 
+exclude_label = ttk.Label(root, text='Excludes:')
+exclude_label.place(x=30,y=180)
+exclude_var = StringVar(root, value='')
+exclude_var_entry = Entry(root, textvariable = exclude_var, bd =1, width=30)
+exclude_var_entry.configure(state='normal')
+exclude_var_entry.place(x=100,y=180)
+
 run_button = ttk.Button(root, text="Run", command=run_clicked)
-run_button.place(x=30,y=180)
+run_button.place(x=30,y=210)
 
 root.mainloop()
