@@ -3,6 +3,8 @@ from googletrans import Translator
 import genanki
 import time
 from wordfreq import zipf_frequency
+import os
+import sys
 
 from langCodes import *
 
@@ -160,3 +162,4 @@ def run_language_program(filename, language_deck, src_lang, dest_lang, low_freq,
 	print("translations",translations_counter)
 	print("My program took", time.time() - start_time, "to run")
 	genanki.Package(language_deck).write_to_file('ankidecks/'+filename+'.apkg')
+	sys.exit()

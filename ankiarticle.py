@@ -343,4 +343,5 @@ def run_article_program(deck, src_lang, low_freq):
 		if complete_dictionary[word] != "rejected!" and complete_dictionary[word] != 'alt word form used.':
 			print('\n',word.upper(), '=', complete_dictionary[word][0])
 	print('\n','Deck created:',filename)
+	sys.exit()
 

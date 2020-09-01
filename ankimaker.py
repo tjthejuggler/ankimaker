@@ -76,6 +76,7 @@ def text_type_radiobutton_changed(*args):
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
+		
 def word_excluded(word):
 	should_exclude = False
 	lower_word = word.lower()
@@ -100,6 +101,7 @@ def show_frequencies():
 		convertedBook = convert_epub_to_lines(book)
 		source_text = ' '.join(convertedBook)
 	if source_text:
+		source_text = source_text.lower()
 		excluded_words = []
 		word_frequency_dictionary = dict()
 		clean = re.sub(r"[,.'`’'|—;:@#?¿!¡<>_\-\"”“&$\[\]\)\(\\\/]+\ *", " ", source_text)
@@ -111,7 +113,8 @@ def show_frequencies():
 			elif not word.isdigit():
 				word_frequency_dictionary[word] = round(zipf_frequency(word, get_lang_code(str(src_lang.get()))),1)
 		for x in np.arange(0, 10, 0.1):
-			clean_x = round(10-x,1)
+			x = 10 - x
+			clean_x = round(x,1)
 			words_with_x_freq = []
 			for word, freq in word_frequency_dictionary.items():
 				if freq == x:
