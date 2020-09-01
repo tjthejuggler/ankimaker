@@ -36,9 +36,7 @@ language_model = genanki.Model(
 		}
 	])
 
-episodes = ('ep1','ep2','ep3','ep4','ep5','ep6','ep7','ep8','ep9','ep10','ep11','ep12','ep13','ep14','ep15')
-
-def get_src_words_and_phrases(str,low_freq,high_freq,src_langcode):
+def get_src_words_and_phrases(str,low_freq,high_freq,src_langcode,splitters):
 	src_list = dict()
 	rejected_words = []
 	current_episode = 'ep1'
@@ -49,7 +47,7 @@ def get_src_words_and_phrases(str,low_freq,high_freq,src_langcode):
 
 	for word in words:
 		word.strip()
-		if word in episodes:
+		if word in splitters:
 			current_episode = word
 			episode_count += 1
 		else:
@@ -78,7 +76,7 @@ def get_src_words_and_phrases(str,low_freq,high_freq,src_langcode):
 	clean_phrases_punct = re.sub(r"[,.;@#?¿!¡\-\"&$]+\ *", ".", clean_phrases)
 	phrases = clean_phrases_punct.split(".")
 	for phrase in phrases:
-		if phrase in episodes:
+		if phrase in splitters:
 			current_episode = phrase
 		else:
 			if len(phrase.split()) > 1 and phrase:
@@ -143,13 +141,13 @@ def create_anki_note(episode_count, filename, item, src_text, dest_text, dupe_co
 		print(word_tags)
 	return dupe_counter, translations_counter, language_deck
 
-def run_language_program(filename, language_deck, src_lang, dest_lang, low_freq, high_freq):
+def run_language_program(filename, language_deck, src_lang, dest_lang, low_freq, high_freq, splitters):
 	translator = Translator()
 	src_langcode = get_lang_code(src_lang)
 	dest_langcode = get_lang_code(dest_lang)
 	with open('sources/'+filename+'.txt', encoding="utf8") as file:
 		data = file.read().replace('\n', ' ')
-	episode_count, src_words_and_phrases = get_src_words_and_phrases(data, low_freq, high_freq, src_langcode)
+	episode_count, src_words_and_phrases = get_src_words_and_phrases(data, low_freq, high_freq, src_langcode, splitters)
 	print('begin making cards',time.time() - start_time)
 	dupe_counter = 0
 	translations_counter = 0

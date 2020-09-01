@@ -42,6 +42,11 @@ root.geometry('400x400')
 root.resizable(0, 0)
 
 
+def get_splitters_options():
+	splitter_options = ['ep1,ep2,ep3,ep4,ep5,ep6,ep7,ep8,ep9,ep10,ep11,ep12,ep13,ep14,ep15']
+	splitter_options.append('BOOK I,BOOK II,BOOK III')
+
+	return splitter_options
 
 def browseFiles(): 
 	Tk().withdraw()
@@ -76,7 +81,7 @@ def text_type_radiobutton_changed(*args):
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
-		
+
 def word_excluded(word):
 	should_exclude = False
 	lower_word = word.lower()
@@ -129,12 +134,13 @@ def show_frequencies():
 def run_clicked():
 	deck = genanki.Deck(round(time.time()),text_filename)
 	print('run_clicked', text_type_language_or_article.get())
+	splitters = splitters_var.get().split(',')
 	if text_type_language_or_article.get() == 'language':
 		print('language')
-		run_language_program(text_filename, deck, str(src_lang.get()), str(dest_lang.get()), float(frequency_low.get()), float(frequency_high.get()))
+		run_language_program(text_filename, deck, str(src_lang.get()), str(dest_lang.get()), float(frequency_low.get()), float(frequency_high.get()), splitters)
 	if text_type_language_or_article.get() == 'article':
 		print('article')
-		run_article_program(text_filename, deck, str(src_lang.get()), float(frequency_high.get()))
+		run_article_program(text_filename, deck, str(src_lang.get()), float(frequency_high.get()), splitters)
 
 def help_clicked():
 	print('Article: copy and paste an article into a txt file and then browse to it.')
@@ -204,7 +210,16 @@ exclude_var_entry = Entry(root, textvariable = exclude_var, bd =1, width=30)
 exclude_var_entry.configure(state='normal')
 exclude_var_entry.place(x=100,y=180)
 
+splitters_choices = get_splitters_options()
+
+splitters_label = ttk.Label(root, text='Splitters:')
+splitters_label.place(x=30,y=210)
+splitters_var = StringVar(root, value='')
+splitters_optionmenu = ttk.OptionMenu(root, splitters_var, *splitters_choices)
+splitters_optionmenu.place(x=100,y=210)
+splitters_optionmenu.config(width=30)
+
 run_button = ttk.Button(root, text="Run", command=run_clicked)
-run_button.place(x=30,y=210)
+run_button.place(x=30,y=240)
 
 root.mainloop()

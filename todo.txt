@@ -1,6 +1,8 @@
 
-we want to be able to put in our own splitters for tags, like 'Book I, Book II' or
-	a way to save past splitters would be good as well, a dropdown would be good for this, just save any new way that is used to a text file
+test new splitters system
+
+hook splitters up to a the text file made for it
+	-maybe allow splitters to be created in the app
 
 input for additional tags
 

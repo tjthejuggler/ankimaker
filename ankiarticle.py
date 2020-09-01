@@ -315,7 +315,7 @@ def get_text(filename):
 		article_text = ' '.join(convertedBook)
 	return article_text
 
-def run_article_program(deck, src_lang, low_freq):
+def run_article_program(deck, src_lang, low_freq, splitters):
 	filename = filename
 	set_global_variables(deck, src_lang)
 	complete_dictionary = dict()
