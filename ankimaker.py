@@ -4,23 +4,10 @@ import re
 import genanki
 import time
 from wordfreq import zipf_frequency
-# import requests
-# from requests.exceptions import HTTPError
-#import msvcrt
-#import wikipediaapi
-# from nltk.stem.snowball import SnowballStemmer
-# from nltk.stem import WordNetLemmatizer
-# import queue
-# from threading import Thread
-# from tkinter import filedialog 
-# from tkinter import Tk 
+import json
 import os
 from tkinter import *
 import tkinter as ttk
-# from tkinter.scrolledtext import ScrolledText
-# from tkinter import messagebox
-# from PIL import ImageTk, Image
-# import csv
 from epub_conversion.utils import open_book, convert_epub_to_lines
 import os.path
 from os import path
@@ -42,10 +29,9 @@ root.geometry('400x400')
 root.resizable(0, 0)
 
 
-def get_splitters_options():
-	splitter_options = ['ep1,ep2,ep3,ep4,ep5,ep6,ep7,ep8,ep9,ep10,ep11,ep12,ep13,ep14,ep15']
-	splitter_options.append('BOOK I,BOOK II,BOOK III')
-
+def get_custom_splitters():
+	with open('custom_splitters.txt', 'r') as filehandle:
+	    splitter_options = json.load(filehandle)
 	return splitter_options
 
 def browseFiles(): 
@@ -210,7 +196,7 @@ exclude_var_entry = Entry(root, textvariable = exclude_var, bd =1, width=30)
 exclude_var_entry.configure(state='normal')
 exclude_var_entry.place(x=100,y=180)
 
-splitters_choices = get_splitters_options()
+splitters_choices = get_custom_splitters()
 
 splitters_label = ttk.Label(root, text='Splitters:')
 splitters_label.place(x=30,y=210)
