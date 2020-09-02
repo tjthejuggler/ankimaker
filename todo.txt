@@ -1,26 +1,24 @@
 
 test new splitters system
 
-hook splitters up to a the text file made for it
-	-maybe allow splitters to be created in the app
+add youtube
+	hook up transcript api
+		https://pypi.org/project/youtube-transcript-api/
+	hook up title api
+		https://stackoverflow.com/questions/8738916/how-to-extract-the-title-of-a-youtube-video-using-python
 
 input for additional tags
-
-remove 1 and 2 letter words from show freq
-	also make everything lower
 
 make the list of characters to be re.subbed somewhere as a constant variable so we dont need to change it in both places(subtitles is different)
 
 THESE SHOULD ALL BE REMOVED EVEN WHEN SHOWING FREQ RATINGS
-make a 'words that have been skipped' file
+?make a 'words that have been skipped' file
 	if we do this then we should show words that will be skipped due to it make optional
 make the option to exclude proper nouns(first letter capitalized and not at the begining of a sentence, make sure it doesnt exclude if the whole word is capital)
 
 #look into quillionz and python library question-generation for making questions
 
 maybe split at 'are' in article like we did 'is'
-
-put try/excepts anywhere that may prevent a big loss of work
 
 make many decks of foundmyfitness podcasts for when on the road
 redo 2,3,4 or club de cuervos

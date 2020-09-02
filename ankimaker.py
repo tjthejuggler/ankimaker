@@ -11,6 +11,10 @@ import tkinter as ttk
 from epub_conversion.utils import open_book, convert_epub_to_lines
 import os.path
 from os import path
+import urllib.request
+import urllib
+from youtube_title_parse import get_artist_title
+
 
 from ankiarticle import *
 from langCodes import *
@@ -53,20 +57,55 @@ def file_browse_button_clicked():
 	file_name_label.configure(text=file_name)
 	file_name_label.update()
 
+def show_file_browser_widgets():
+	file_browse_button.place(x=30,y=30)
+	url_entry.place(x=1030,y=30)
+	url_entry_button.place(x=1200,y=30)
+
+def show_url_entry():
+	file_browse_button.place(x=1030,y=30)
+	url_entry.place(x=30,y=30)
+	url_entry_button.place(x=360,y=30)
+
 def text_type_radiobutton_changed(*args):
-	if text_type_language_or_article.get() == 'language':
+	if text_type.get() == 'language':
 		print('language')
+		show_file_browser_widgets()
 		src_lang.set('spanish')
 		dest_lang.set('english')
 		destination_language_optionmenu.configure(state='normal')
 		frequency_thresholds_low_entry.configure(state='normal')
 		exclude_var_entry.configure(state='disable')
-	if text_type_language_or_article.get() == 'article':
+	if text_type.get() == 'article':
 		print('article')
+		show_file_browser_widgets()
 		src_lang.set('english')
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
+	if text_type.get() == 'youtube':
+		show_url_entry()
+
+def url_button_clicked():
+	global text_filename
+	try:
+		VideoID = url_entry.get().split('=')[1]
+		params = {"format": "json", "url": "https://www.youtube.com/watch?v=%s" % VideoID}
+		url = "https://www.youtube.com/oembed"
+		query_string = urllib.parse.urlencode(params)
+		url = url + "?" + query_string
+		with urllib.request.urlopen(url) as response:
+			response_text = response.read()
+			data = json.loads(response_text.decode())
+
+
+			artist, title = get_artist_title(data['title'])
+
+			text_filename = title
+	except:
+		text_filename = 'invalid url'
+	file_name_label.configure(text=text_filename)
+	file_name_label.update()
 
 def word_excluded(word):
 	should_exclude = False
@@ -119,12 +158,12 @@ def show_frequencies():
 
 def run_clicked():
 	deck = genanki.Deck(round(time.time()),text_filename)
-	print('run_clicked', text_type_language_or_article.get())
+	print('run_clicked', text_type.get())
 	splitters = splitters_var.get().split(',')
-	if text_type_language_or_article.get() == 'language':
+	if text_type.get() == 'language':
 		print('language')
 		run_language_program(text_filename, deck, str(src_lang.get()), str(dest_lang.get()), float(frequency_low.get()), float(frequency_high.get()), splitters)
-	if text_type_language_or_article.get() == 'article':
+	if text_type.get() == 'article':
 		print('article')
 		run_article_program(text_filename, deck, str(src_lang.get()), float(frequency_high.get()), splitters)
 
@@ -179,19 +218,27 @@ def remove_from_custom_splitters():
 file_browse_button = ttk.Button(root, text="?", command=help_clicked)
 file_browse_button.place(x=360,y=10)
 
+file_name_label = ttk.Label(root, text=text_filename)
+file_name_label.place(x=30,y=5)
+
 file_browse_button = ttk.Button(root, text="Select file", command=file_browse_button_clicked)
 file_browse_button.place(x=30,y=30)
 
-file_name_label = ttk.Label(root, text=text_filename)
-file_name_label.place(x=180,y=30)
+url_entry_var = StringVar(root, value='')
+url_entry = Entry(root, textvariable = url_entry_var,bd =1, width=50)
+url_entry.place(x=1030,y=30)
+url_entry_button = ttk.Button(root, text="ok", command=url_button_clicked)
+url_entry_button.place(x=1200,y=30)
 
-text_type_language_or_article = StringVar()
-path_point_language_radiobutton = Radiobutton(root, text='language', variable=text_type_language_or_article, value='language', font=('Courier', 10))
-path_point_language_radiobutton.place(x=30,y=60)
-text_type_article_radiobutton = Radiobutton(root, text='article', variable=text_type_language_or_article, value='article', font=('Courier', 10))
-text_type_article_radiobutton.place(x=180, y=60)
-text_type_language_or_article.set('article')
-text_type_language_or_article.trace('w', text_type_radiobutton_changed)
+text_type = StringVar()
+text_type_language_radiobutton = Radiobutton(root, text='language', variable=text_type, value='language', font=('Courier', 10))
+text_type_language_radiobutton.place(x=30,y=60)
+text_type_article_radiobutton = Radiobutton(root, text='article', variable=text_type, value='article', font=('Courier', 10))
+text_type_article_radiobutton.place(x=140, y=60)
+text_type_youtube_radiobutton = Radiobutton(root, text='youtube', variable=text_type, value='youtube', font=('Courier', 10))
+text_type_youtube_radiobutton.place(x=250, y=60)
+text_type.set('article')
+text_type.trace('w', text_type_radiobutton_changed)
 
 source_language_label = ttk.Label(root, text='source language:')
 source_language_label.place(x=30,y=90)
