@@ -309,10 +309,14 @@ def get_text(filename):
 	if path.exists('sources/'+text_filename+".txt"):
 		with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
 			article_text = file.read().replace('\n', ' ')
-	if path.exists('sources/'+text_filename+".epub"):
+	elif path.exists('sources/'+text_filename+".epub"):
 		book = open_book('sources/'+text_filename+".epub")
 		convertedBook = convert_epub_to_lines(book)
 		article_text = ' '.join(convertedBook)
+	elif path.exists('sources/'+text_filename+".pdf"):
+		raw = parser.from_file('sources/'+text_filename+".pdf")
+		print(raw['content'])
+		article_text = raw['content']
 	return article_text
 
 def run_article_program(deck, src_lang, low_freq, splitters):

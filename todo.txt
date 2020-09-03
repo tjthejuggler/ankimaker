@@ -1,11 +1,12 @@
 
 test new splitters system
 
-add youtube
-	hook up transcript api
-		https://pypi.org/project/youtube-transcript-api/
-	hook up title api
-		https://stackoverflow.com/questions/8738916/how-to-extract-the-title-of-a-youtube-video-using-python
+get pdf working with ankiarticle
+
+hook up youtube to ankiarticle
+	test with AIZ
+
+get splitters working with ankiarticle
 
 input for additional tags
 

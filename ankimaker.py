@@ -15,6 +15,8 @@ import urllib.request
 import urllib
 from youtube_title_parse import get_artist_title
 from youtube_transcript_api import YouTubeTranscriptApi
+#import pdftotext
+from tika import parser
 
 from ankiarticle import *
 from langCodes import *
@@ -135,6 +137,10 @@ def show_frequencies():
 		book = open_book('sources/'+text_filename+".epub")
 		convertedBook = convert_epub_to_lines(book)
 		source_text = ' '.join(convertedBook)
+	elif path.exists('sources/'+text_filename+".pdf"):
+		raw = parser.from_file('sources/'+text_filename+".pdf")
+		print(raw['content'])
+		source_text = raw['content']
 	if source_text:
 		source_text = source_text.lower()
 		excluded_words = []
