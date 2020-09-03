@@ -14,7 +14,7 @@ from os import path
 import urllib.request
 import urllib
 from youtube_title_parse import get_artist_title
-
+from youtube_transcript_api import YouTubeTranscriptApi
 
 from ankiarticle import *
 from langCodes import *
@@ -86,26 +86,31 @@ def text_type_radiobutton_changed(*args):
 	if text_type.get() == 'youtube':
 		show_url_entry()
 
+def get_text_from_youtube_transcription(video_id):
+	transcription_text = ''
+	transcription = YouTubeTranscriptApi.get_transcript(video_id)
+	for line in transcription:
+		transcription_text = transcription_text + line['text'] + ' '
+	return transcription_text
+
 def url_button_clicked():
 	global text_filename
 	try:
-		VideoID = url_entry.get().split('=')[1]
-		params = {"format": "json", "url": "https://www.youtube.com/watch?v=%s" % VideoID}
+		video_id = url_entry.get().split('=')[1]
+		params = {"format": "json", "url": "https://www.youtube.com/watch?v=%s" % video_id}
 		url = "https://www.youtube.com/oembed"
 		query_string = urllib.parse.urlencode(params)
 		url = url + "?" + query_string
 		with urllib.request.urlopen(url) as response:
 			response_text = response.read()
 			data = json.loads(response_text.decode())
-
-
 			artist, title = get_artist_title(data['title'])
-
-			text_filename = title
+			text_filename = title #data['title'] is the whole title
 	except:
 		text_filename = 'invalid url'
 	file_name_label.configure(text=text_filename)
 	file_name_label.update()
+	print(get_text_from_youtube_transcription(video_id))
 
 def word_excluded(word):
 	should_exclude = False
