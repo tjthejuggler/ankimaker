@@ -15,11 +15,12 @@ from tkinter import filedialog
 from tkinter import Tk 
 import os
 from epub_conversion.utils import open_book, convert_epub_to_lines
+import os.path
+from os import path
 
 from langCodes import *
 
 article_deck = None
-text_filename = ''
 lemmatizer = WordNetLemmatizer()
 stemmer = SnowballStemmer("english")
 wiki_wiki = wikipediaapi.Wikipedia('en')
@@ -115,14 +116,11 @@ def convert_text_to_keywords(text, low_freq, src_lang):
 	words = lowerString.split()
 	keywords = []
 	for word in words:
-		print('lowf', word, zipf_frequency(word, get_lang_code(src_lang)))
-
 		if (not word.isdigit() and 
 			"/" not in word and
 			"\\" not in word and
 			len(word) > 1 and
 			zipf_frequency(word, get_lang_code(src_lang)) < low_freq):
-				print('keyw', word)
 				keywords.append(word)
 	return keywords
 
@@ -208,7 +206,7 @@ def build_dictionary_with_user(dictionary, text, original_article, low_freq, src
 				dictionary[word] = 'rejected!'
 	return dictionary, more_words_to_define
 
-def create_definitions_cards(dictionary):
+def create_definitions_cards(dictionary, text_filename):
 	definition_model = genanki.Model(
 		1607392319,
 		'Simple Model',
@@ -237,6 +235,9 @@ def create_definitions_cards(dictionary):
 				fields=[word + ' ('+str(round(time.time()))+')', dictionary[word][0]])
 			article_deck.add_note(my_note)
 
+def reduce_sentence_length(word, sentence):
+	print('sentence too long')
+
 def get_words_sentence_from_text(word, article_text, show_word):
 	#article_text = article_text.lower()
 	all_sentences = article_text.split('.')
@@ -246,10 +247,16 @@ def get_words_sentence_from_text(word, article_text, show_word):
 		if ' ' + word.lower() in sentence_without_punctuation.lower() :
 			if not show_word:
 				sentence = sentence.replace(word, '_____')
+				#todo check if the sentence is huge, if it is then we need 
+				#	to go through and find every instance of the word and 
+				#	make the sentence be from 10 words before and after the
+				#	word
+			if len(sentence.split()) > 29:
+				sentence = reduce_sentence_length(word, sentence)
 			sentences_with_word.append(sentence + '.')
 	return sentences_with_word
 
-def create_fill_in_the_blank_cards(dictionary, article_text):
+def create_fill_in_the_blank_cards(dictionary, article_text, text_filename):
 	definition_model = genanki.Model(
 		1607392320,
 		'Simple Model',
@@ -275,23 +282,10 @@ def create_fill_in_the_blank_cards(dictionary, article_text):
 					fields=[sentence + ' ('+str(round(time.time()))+')', dictionary[word][1]])
 				article_deck.add_note(my_note)
 
-def create_anki_deck(dictionary, article_text, filename):
-	create_definitions_cards(dictionary)
-	create_fill_in_the_blank_cards(dictionary, article_text)
-	genanki.Package(article_deck).write_to_file('ankidecks/'+filename+'.apkg')
-
-def browseFiles(): 
-	Tk().withdraw()
-	filename = filedialog.askopenfilename(initialdir = "/", 
-                                          title = "Select a File", 
-                                          filetypes = (("Text files", 
-                                                        "*.txt*"), 
-                                                       ("all files", 
-                                                        "*.*"))) 	
-	filename_string = filename.split(':')[1]
-	print(filename_string)
-	to_return = os.path.splitext(os.path.basename(filename_string))[0]
-	return to_return
+def create_anki_deck(dictionary, article_text, text_filename):
+	create_definitions_cards(dictionary, text_filename)
+	create_fill_in_the_blank_cards(dictionary, article_text, text_filename)
+	genanki.Package(article_deck).write_to_file('ankidecks/'+text_filename+'.apkg')
 
 def set_global_variables(deck, src_lang):
 	global article_deck
@@ -304,7 +298,7 @@ def set_global_variables(deck, src_lang):
 	global wiki_wiki
 	wiki_wiki = wikipediaapi.Wikipedia(get_lang_code(src_lang))
 
-def get_text(filename):
+def get_text(text_filename):
 	article_text = ''
 	if path.exists('sources/'+text_filename+".txt"):
 		with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
@@ -319,11 +313,10 @@ def get_text(filename):
 		article_text = raw['content']
 	return article_text
 
-def run_article_program(deck, src_lang, low_freq, splitters):
-	filename = filename
+def run_article_program(text_filename, deck, src_lang, low_freq, splitters):
 	set_global_variables(deck, src_lang)
 	complete_dictionary = dict()
-	article_text = get_text(filename)
+	article_text = get_text(text_filename)
 	complete_dictionary, more_words_to_define = build_dictionary_with_user(complete_dictionary, article_text, article_text, low_freq, src_lang)
 	still_building_dictionary = True
 	while still_building_dictionary and more_words_to_define:
@@ -342,10 +335,10 @@ def run_article_program(deck, src_lang, low_freq, splitters):
 			elif user_decision_definition.upper() == 'N':
 				user_decision_definition_made = True
 				still_building_dictionary = False
-	create_anki_deck(complete_dictionary, article_text, filename)
+	create_anki_deck(complete_dictionary, article_text, text_filename)
 	for word in complete_dictionary:
 		if complete_dictionary[word] != "rejected!" and complete_dictionary[word] != 'alt word form used.':
 			print('\n',word.upper(), '=', complete_dictionary[word][0])
-	print('\n','Deck created:',filename)
+	print('\n','Deck created:',text_filename)
 	sys.exit()
 

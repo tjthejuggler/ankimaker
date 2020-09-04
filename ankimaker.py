@@ -28,6 +28,7 @@ from ankilang import *
 
 text_filename = 'podFoundmyfitnessCovid2'
 text_filename = 'sample'
+video_id = ''
 
 root = Tk() 
 root.title('Miug')
@@ -61,13 +62,21 @@ def file_browse_button_clicked():
 
 def show_file_browser_widgets():
 	file_browse_button.place(x=30,y=30)
+	file_name_label.place(x=30,y=5)
 	url_entry.place(x=1030,y=30)
 	url_entry_button.place(x=1200,y=30)
+	youtube_file_name_entry.place(x=1030,y=5)
+	youtube_file_name_label.place(x=1030,y=5)
+	youtube_file_url_label.place(x=1030,y=30)
 
 def show_url_entry():
 	file_browse_button.place(x=1030,y=30)
-	url_entry.place(x=30,y=30)
+	file_name_label.place(x=1030,y=5)
+	url_entry.place(x=80,y=30)
 	url_entry_button.place(x=360,y=30)
+	youtube_file_name_entry.place(x=80,y=5)
+	youtube_file_name_label.place(x=30,y=5)
+	youtube_file_url_label.place(x=30,y=30)
 
 def text_type_radiobutton_changed(*args):
 	if text_type.get() == 'language':
@@ -86,7 +95,12 @@ def text_type_radiobutton_changed(*args):
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
 	if text_type.get() == 'youtube':
+		print('youtube')
 		show_url_entry()
+		src_lang.set('english')
+		destination_language_optionmenu.configure(state='disable')
+		frequency_thresholds_low_entry.configure(state='disable')
+		exclude_var_entry.configure(state='normal')
 
 def get_text_from_youtube_transcription(video_id):
 	transcription_text = ''
@@ -95,8 +109,21 @@ def get_text_from_youtube_transcription(video_id):
 		transcription_text = transcription_text + line['text'] + ' '
 	return transcription_text
 
+def youtubeTitleFormatted(title):
+	lower_title = title.lower()
+	print('lowe', lower_title)
+	no_symbol_title = re.sub(r"[,.'`’'|—;:@#?¿!¡<>_\-\"”“&$\[\]\)\(\\\/]+\ *", " ", lower_title)
+	print(no_symbol_title)
+	split_title = no_symbol_title.split(sep=None)
+	print(split_title)
+	formatted_title = ''
+	for word in split_title:
+		formatted_title = formatted_title + word.capitalize()
+	return formatted_title
+
 def url_button_clicked():
 	global text_filename
+	global video_id
 	try:
 		video_id = url_entry.get().split('=')[1]
 		params = {"format": "json", "url": "https://www.youtube.com/watch?v=%s" % video_id}
@@ -107,12 +134,13 @@ def url_button_clicked():
 			response_text = response.read()
 			data = json.loads(response_text.decode())
 			artist, title = get_artist_title(data['title'])
-			text_filename = title #data['title'] is the whole title
+			print('title', title)
+			youtube_file_name_var.set(youtubeTitleFormatted(title)) #data['title'] is the whole title
 	except:
-		text_filename = 'invalid url'
+		youtube_file_name_var.set('invalid url')
 	file_name_label.configure(text=text_filename)
 	file_name_label.update()
-	print(get_text_from_youtube_transcription(video_id))
+	#print(get_text_from_youtube_transcription(video_id))
 
 def word_excluded(word):
 	should_exclude = False
@@ -129,6 +157,8 @@ def word_excluded(word):
 	return should_exclude
 
 def show_frequencies():
+	if text_type.get() == 'youtube':
+		createTextFileFromYoutube()
 	source_text = None
 	if path.exists('sources/'+text_filename+".txt"):
 		with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
@@ -167,6 +197,14 @@ def show_frequencies():
 			print('EXCLUDED:')
 			print(excluded_words)
 
+def createTextFileFromYoutube():
+	global video_id
+	text = get_text_from_youtube_transcription(video_id)
+	print('cr',text_filename)
+	fileToWrite = open('sources/'+text_filename+'.txt',"w+", encoding="utf8")
+	fileToWrite.write(text)
+	fileToWrite.close()
+
 def run_clicked():
 	deck = genanki.Deck(round(time.time()),text_filename)
 	print('run_clicked', text_type.get())
@@ -174,10 +212,16 @@ def run_clicked():
 	if text_type.get() == 'language':
 		print('language')
 		run_language_program(text_filename, deck, str(src_lang.get()), str(dest_lang.get()), float(frequency_low.get()), float(frequency_high.get()), splitters)
-	if text_type.get() == 'article':
+	elif text_type.get() == 'article':
 		print('article')
 		run_article_program(text_filename, deck, str(src_lang.get()), float(frequency_high.get()), splitters)
-
+	elif text_type.get() == 'youtube':
+		if text_filename != 'invalid url':
+			print('youtube valid')
+			createTextFileFromYoutube()
+			run_article_program(text_filename, deck, str(src_lang.get()), float(frequency_high.get()), splitters)
+		else:
+			print('youtube not valid')
 def help_clicked():
 	print('Article: copy and paste an article into a txt file and then browse to it.')
 	print('Language: copy and paste subtitles from a show/movie in a txt file, if it is')
@@ -224,20 +268,32 @@ def remove_from_custom_splitters():
 	splitters_optionmenu['menu'].delete(0, 'end')
 	for splitter_choice in all_splitters:
 		splitters_optionmenu['menu'].add_command(label=splitter_choice, command=ttk._setit(splitters_var, splitter_choice))
-	
+
+def youtube_file_name_var_callback():
+	global text_filename
+	text_filename = youtube_file_name_var.get()
+	print(youtube_file_name_var.get())
 
 file_browse_button = ttk.Button(root, text="?", command=help_clicked)
 file_browse_button.place(x=360,y=10)
 
 file_name_label = ttk.Label(root, text=text_filename)
 file_name_label.place(x=30,y=5)
+youtube_file_name_label = ttk.Label(root, text='name')
+youtube_file_name_label.place(x=1030,y=5)
+youtube_file_name_var = StringVar(root, value='')
+youtube_file_name_var.trace("w", lambda name, index, mode, youtube_file_name_var=youtube_file_name_var: youtube_file_name_var_callback())
+youtube_file_name_entry = ttk.Entry(root, text=youtube_file_name_var,bd =1, width=45)
+youtube_file_name_entry.place(x=1050,y=5)
 
 file_browse_button = ttk.Button(root, text="Select file", command=file_browse_button_clicked)
 file_browse_button.place(x=30,y=30)
 
+youtube_file_url_label = ttk.Label(root, text='url')
+youtube_file_url_label.place(x=1030,y=30)
 url_entry_var = StringVar(root, value='')
-url_entry = Entry(root, textvariable = url_entry_var,bd =1, width=50)
-url_entry.place(x=1030,y=30)
+url_entry = Entry(root, textvariable = url_entry_var,bd =1, width=45)
+url_entry.place(x=1050,y=30)
 url_entry_button = ttk.Button(root, text="ok", command=url_button_clicked)
 url_entry_button.place(x=1200,y=30)
 

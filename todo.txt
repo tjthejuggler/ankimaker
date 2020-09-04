@@ -1,10 +1,10 @@
 
-test new splitters system
+test new splitters system in language
 
-get pdf working with ankiarticle
+test pdf
 
 hook up youtube to ankiarticle
-	test with AIZ
+	https://www.youtube.com/watch?v=3I7TxBT8FmI
 
 get splitters working with ankiarticle
 
