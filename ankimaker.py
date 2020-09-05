@@ -222,6 +222,7 @@ def run_clicked():
 			run_article_program(text_filename, deck, str(src_lang.get()), float(frequency_high.get()), splitters)
 		else:
 			print('youtube not valid')
+			
 def help_clicked():
 	print('Article: copy and paste an article into a txt file and then browse to it.')
 	print('Language: copy and paste subtitles from a show/movie in a txt file, if it is')

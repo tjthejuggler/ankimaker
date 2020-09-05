@@ -5,7 +5,10 @@ import time
 from wordfreq import zipf_frequency
 import requests
 from requests.exceptions import HTTPError
-import msvcrt
+if sys.platform == 'linux':
+	import getch
+else:
+	import msvcrt
 import wikipediaapi
 from nltk.stem.snowball import SnowballStemmer
 from nltk.stem import WordNetLemmatizer
@@ -142,7 +145,10 @@ def get_user_definition_decision_int(definitions):
 	user_definition_decision = ''
 	while user_definition_decision not in possible_definition_decisions:
 		try:
-			user_definition_decision = msvcrt.getch().decode('ASCII') #ignore inputs that are not an appropriate number
+			if sys.platform == 'linux':
+				user_definition_decision = getch().decode('ASCII')
+			else:
+				user_definition_decision = msvcrt.getch().decode('ASCII') #ignore inputs that are not an appropriate number
 		except:
 			pass
 	return int(user_definition_decision)
@@ -185,7 +191,10 @@ def build_dictionary_with_user(dictionary, text, original_article, low_freq, src
 			user_decided_to_define = False
 			while user_decided_to_define == False:
 				try:
-					users_decision_to_define = msvcrt.getch().decode('ASCII')
+					if sys.platform == 'linux':
+						user_definition_decision = getch().decode('ASCII')
+					else:
+						user_definition_decision = msvcrt.getch().decode('ASCII')
 				except:
 					pass
 				if users_decision_to_define.upper() == 'Y':
@@ -332,7 +341,10 @@ def run_article_program(text_filename, deck, src_lang, low_freq, splitters):
 		user_decision_definition_made = False
 		while user_decision_definition_made == False:
 			try:
-				user_decision_definition = msvcrt.getch().decode('ASCII')
+				if sys.platform == 'linux':
+					user_definition_decision = getch().decode('ASCII')
+				else:
+					user_definition_decision = msvcrt.getch().decode('ASCII')
 			except:
 				pass
 			if user_decision_definition.upper() == 'Y':

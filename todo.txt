@@ -1,4 +1,7 @@
 
+
+on phone - pip install numpy is next, then run and find out which module breaks it next
+
 test new splitters system in language
 
 test pdf
@@ -8,6 +11,8 @@ make 'fill in the blank' cards a togglable option
 get splitters working with ankiarticle
 
 input for additional tags
+
+figure out why closing the main tkinter window after ankiarticle is used gives weird warning
 
 make the list of characters to be re.subbed somewhere as a constant variable so we dont need to change it in both places(subtitles is different)
 
