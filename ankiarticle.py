@@ -192,9 +192,9 @@ def build_dictionary_with_user(dictionary, text, original_article, low_freq, src
 			while user_decided_to_define == False:
 				try:
 					if sys.platform == 'linux':
-						user_definition_decision = getch().decode('ASCII')
+						users_decision_to_define = getch().decode('ASCII')
 					else:
-						user_definition_decision = msvcrt.getch().decode('ASCII')
+						users_decision_to_define = msvcrt.getch().decode('ASCII')
 				except:
 					pass
 				if users_decision_to_define.upper() == 'Y':
@@ -342,9 +342,9 @@ def run_article_program(text_filename, deck, src_lang, low_freq, splitters):
 		while user_decision_definition_made == False:
 			try:
 				if sys.platform == 'linux':
-					user_definition_decision = getch().decode('ASCII')
+					user_decision_definition = getch().decode('ASCII')
 				else:
-					user_definition_decision = msvcrt.getch().decode('ASCII')
+					user_decision_definition = msvcrt.getch().decode('ASCII')
 			except:
 				pass
 			if user_decision_definition.upper() == 'Y':

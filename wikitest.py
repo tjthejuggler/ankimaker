@@ -2,6 +2,8 @@ from wordfreq import zipf_frequency
 import wikipediaapi
 import sys
 
+print(sys.platform)
+
 print(zipf_frequency("money", "en"))
 
 wiki_wiki = wikipediaapi.Wikipedia('en')
