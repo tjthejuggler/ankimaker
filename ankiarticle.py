@@ -17,6 +17,7 @@ import os
 from epub_conversion.utils import open_book, convert_epub_to_lines
 import os.path
 from os import path
+import math
 
 from langCodes import *
 
@@ -245,15 +246,22 @@ def get_words_sentence_from_text(word, article_text, show_word):
 	for sentence in all_sentences:
 		sentence_without_punctuation = re.sub(r"[,.;@#?¿!¡\-\"&$\[\]\)\(]+\ *", " ", sentence)
 		if ' ' + word.lower() in sentence_without_punctuation.lower() :
-			if not show_word:
-				sentence = sentence.replace(word, '_____')
-				#todo check if the sentence is huge, if it is then we need 
-				#	to go through and find every instance of the word and 
-				#	make the sentence be from 10 words before and after the
-				#	word
 			if len(sentence.split()) > 29:
-				sentence = reduce_sentence_length(word, sentence)
-			sentences_with_word.append(sentence + '.')
+				split_sentence = sentence.split(' ')
+				for i in range(0,len(split_sentence)):
+					if word.lower() in split_sentence[i].lower():
+						surrounding_words = ''
+						for j in range(max(0,i-10),min(i+10,len(split_sentence))):
+							if not show_word and i == j:
+								word_to_add = '_____'
+							else:
+								word_to_add = split_sentence[j]
+							surrounding_words = surrounding_words + word_to_add + ' '
+						sentences_with_word.append('...' + surrounding_words + '...')
+			else:
+				if not show_word:
+					sentence = sentence.replace(word, '_____')
+				sentences_with_word.append(sentence + '.')
 	return sentences_with_word
 
 def create_fill_in_the_blank_cards(dictionary, article_text, text_filename):

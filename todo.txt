@@ -3,8 +3,7 @@ test new splitters system in language
 
 test pdf
 
-hook up youtube to ankiarticle
-	https://www.youtube.com/watch?v=3I7TxBT8FmI
+make 'fill in the blank' cards a togglable option
 
 get splitters working with ankiarticle
 
