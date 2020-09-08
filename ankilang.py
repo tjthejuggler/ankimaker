@@ -5,6 +5,7 @@ import time
 from wordfreq import zipf_frequency
 import os
 import sys
+import tkinter as ttk
 
 from langCodes import *
 

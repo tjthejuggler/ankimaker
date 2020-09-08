@@ -3,9 +3,15 @@ either find out how to run a program on pydroid and access the console and tkint
 	this can also be done in a way that leaves everything as is for windows, but in pydroid 
 		makes it all in tkinter
 
-make tkinter look nice, this may involve that 'push' thing or whatever it is for tkinter
+either:
+	stay inside the first file to use the tkinter there
+	figure out how to make a completely new tkniter in new file
+	something else
 
-on phone - pip install numpy is next, then run and find out which module breaks it next
+make an option to run deck/anki after deck is created
+
+move ankiarticle into a tkinter setup
+	competely copy the file and then change it piece by piece, can probably make a scrolling label that behaves just like console and juust have buttons and/or an entry
 
 test new splitters system in language
 

@@ -21,6 +21,8 @@ from epub_conversion.utils import open_book, convert_epub_to_lines
 import os.path
 from os import path
 import math
+from tkinter import *
+import tkinter as ttk
 
 from langCodes import *
 
@@ -361,4 +363,10 @@ def run_article_program(text_filename, deck, src_lang, low_freq, splitters):
 			print('\n',word.upper(), '=', complete_dictionary[word][0])
 	print('\n','Deck created:',text_filename)
 	sys.exit()
+
+
+
+
+
+
 

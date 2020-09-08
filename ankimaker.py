@@ -74,6 +74,7 @@ def text_type_radiobutton_changed(*args):
 		show_file_browser_widgets()
 		src_lang.set('spanish')
 		dest_lang.set('english')
+		chooseDefinitionsFrame.grid_forget()
 		destination_language_optionmenu.configure(state='normal')
 		frequency_thresholds_low_entry.configure(state='normal')
 		exclude_var_entry.configure(state='disable')
@@ -83,11 +84,13 @@ def text_type_radiobutton_changed(*args):
 		src_lang.set('english')
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
+		chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
 		exclude_var_entry.configure(state='normal')
 	if text_type.get() == 'youtube':
 		print('youtube')
 		show_url_entry()
 		src_lang.set('english')
+		chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
@@ -195,21 +198,30 @@ def createTextFileFromYoutube():
 	fileToWrite.write(text)
 	fileToWrite.close()
 
-def run_clicked():
+def change_name_label(change_to):
+	file_name_label.configure(text=change_to)
+	file_name_label.update()
+
+def create_deck_clicked():
 	deck = genanki.Deck(round(time.time()),text_filename)
-	print('run_clicked', text_type.get())
+	print('create_deck_clicked', text_type.get())
+	src_lng = str(src_lang.get())
+	dst_lng = str(src_lang.get())
+	frq_l = float(frequency_low.get())
+	frq_h = float(frequency_high.get())
 	splitters = splitters_var.get().split(',')
 	if text_type.get() == 'language':
 		print('language')
-		run_language_program(text_filename, deck, str(src_lang.get()), str(dest_lang.get()), float(frequency_low.get()), float(frequency_high.get()), splitters)
+		run_language_program(text_filename, deck, src_lng, dst_lng, frq_l, frq_h, splitters)
 	elif text_type.get() == 'article':
 		print('article')
-		run_article_program(text_filename, deck, str(src_lang.get()), float(frequency_high.get()), splitters)
+		root.destroy()
+		run_article_program(text_filename, deck, src_lng, frq_h, splitters)		
 	elif text_type.get() == 'youtube':
 		if text_filename != 'invalid url':
 			print('youtube valid')
 			createTextFileFromYoutube()
-			run_article_program(text_filename, deck, str(src_lang.get()), float(frequency_high.get()), splitters)
+			run_article_program(text_filename, deck, src_lng, frq_h, splitters)
 		else:
 			print('youtube not valid')
 
@@ -267,14 +279,22 @@ def youtube_file_name_var_callback():
 	file_name_label.update()
 	print(youtube_file_name_var.get())
 
-nameAndHelpFrame = Frame(root)
-nameAndHelpFrame.pack(fill=X)
-file_name_label = ttk.Label(nameAndHelpFrame, text=text_filename)
-file_name_label.pack(side='left')
-help_button = ttk.Button(nameAndHelpFrame, text="?", command=help_clicked)
-help_button.pack(side="right")
+def choose_definitions_clicked():
+	setupFrame.grid_forget()
+	chooseDefinitionsButtonFrame.pack_forget()
+	print('choose definitions')
 
-textTypeFrame = Frame(root)
+nameAndHelpFrame = Frame(root)
+nameAndHelpFrame.grid(row=0, column=0, sticky="ew")
+file_name_label = ttk.Label(nameAndHelpFrame, text=text_filename)
+file_name_label.pack(side='left', anchor=W)
+help_button = ttk.Button(nameAndHelpFrame, text="?", command=help_clicked)
+help_button.pack(side='right', anchor=E)
+
+setupFrame = Frame(root)
+setupFrame.grid(row=1, column=0, sticky=W)
+
+textTypeFrame = Frame(setupFrame)
 textTypeFrame.pack()
 text_type = StringVar()
 text_type_language_radiobutton = Radiobutton(textTypeFrame, text='language', variable=text_type, value='language', font=('Courier', 10))
@@ -286,7 +306,7 @@ text_type_youtube_radiobutton.pack(side="left")
 text_type.set('article')
 text_type.trace('w', text_type_radiobutton_changed)
 
-outsideDataFrame = Frame(root)
+outsideDataFrame = Frame(setupFrame)
 outsideDataFrame.pack(fill=X)
 
 youtubeInfoFrame = Frame(outsideDataFrame)
@@ -310,7 +330,7 @@ fileBrowseFrame.pack(fill=X)
 file_browse_button = ttk.Button(fileBrowseFrame, text="Select file", command=file_browse_button_clicked)
 file_browse_button.pack(side="left")
 
-languageFrame = Frame(root)
+languageFrame = Frame(setupFrame)
 languageFrame.pack(fill=X)
 source_language_label = ttk.Label(languageFrame, text='source language:')
 source_language_label.grid(row=0, column=0, sticky=E)
@@ -328,7 +348,7 @@ destination_language_optionmenu.grid(row=1, column=1)
 destination_language_optionmenu.configure(state='disable')
 destination_language_optionmenu.config(width=10)
 
-frequencyFrame = Frame(root)
+frequencyFrame = Frame(setupFrame)
 frequencyFrame.pack(fill=X)
 frequency_thresholds_label = ttk.Label(frequencyFrame, text='frequency thresholds:')
 frequency_thresholds_label.pack(side="left")
@@ -342,7 +362,7 @@ frequency_thresholds_high_entry.pack(side="left")
 show_frequencies_button = ttk.Button(frequencyFrame, text="Show frequencies", command=show_frequencies)
 show_frequencies_button.pack(side="left")
 
-excludesFrame = Frame(root)
+excludesFrame = Frame(setupFrame)
 excludesFrame.pack(fill=X)
 exclude_label = ttk.Label(excludesFrame, text='Excludes:')
 exclude_label.pack(side="left")
@@ -351,7 +371,7 @@ exclude_var_entry = Entry(excludesFrame, textvariable = exclude_var, bd =1, widt
 exclude_var_entry.configure(state='normal')
 exclude_var_entry.pack(side="left")
 
-splittersFrame = Frame(root)
+splittersFrame = Frame(setupFrame)
 splittersFrame.pack(fill=X)
 splitters_choices = get_custom_splitters()
 splitters_label = ttk.Label(splittersFrame, text='Splitters:')
@@ -365,9 +385,23 @@ add_splitters.pack(side="left")
 remove_spllitters = ttk.Button(splittersFrame, text="-", command=remove_from_custom_splitters)
 remove_spllitters.pack(side="left")
 
-runFrame = Frame(root)
-runFrame.pack(fill=X)
-run_button = ttk.Button(runFrame, text="Run", command=run_clicked)
+chooseDefinitionsFrame = Frame(root)
+chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
+chooseDefinitionsButtonFrame = Frame(chooseDefinitionsFrame)
+chooseDefinitionsButtonFrame.pack(fill=X)
+choose_definitions_button = ttk.Button(chooseDefinitionsButtonFrame, text="Choose Definitions", command=choose_definitions_clicked)
+choose_definitions_button.pack(side="left")
+
+chooseDefinitionsLabelFrame = Frame(chooseDefinitionsFrame)
+chooseDefinitionsLabelFrame.pack(fill=X)
+choose_definitions_label = ttk.Label(chooseDefinitionsLabelFrame, text='choose_definitions_label_text')
+choose_definitions_label.pack(side='left')
+
+createDeckFrame = Frame(root)
+createDeckFrame.grid(row=3, column=0, sticky=W)
+run_button = ttk.Button(createDeckFrame, text="Create Deck", command=create_deck_clicked)
 run_button.pack(side="left")
 
 root.mainloop()
+
+#create deck button(only visible when lang file is input or all definitions have been decided)
