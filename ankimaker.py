@@ -75,7 +75,7 @@ def text_type_radiobutton_changed(*args):
 		show_file_browser_widgets()
 		src_lang.set('spanish')
 		dest_lang.set('english')
-		chooseDefinitionsFrame.grid_forget()
+		chooseDefinitionsButtonFrame.pack_forget()
 		destination_language_optionmenu.configure(state='normal')
 		frequency_thresholds_low_entry.configure(state='normal')
 		exclude_var_entry.configure(state='disable')
@@ -85,13 +85,13 @@ def text_type_radiobutton_changed(*args):
 		src_lang.set('english')
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
-		chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
+		chooseDefinitionsButtonFrame.pack(side='left')
 		exclude_var_entry.configure(state='normal')
 	if text_type.get() == 'youtube':
 		print('youtube')
 		show_url_entry()
 		src_lang.set('english')
-		chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
+		chooseDefinitionsButtonFrame.pack(side='left')
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
@@ -394,36 +394,30 @@ choose_definitions_button.pack(side="left")
 chooseDefinitionsFrame = Frame(root)
 chooseDefinitionsFrame.grid_forget()
 
-chooseDefinitionsLabelFrame = Frame(chooseDefinitionsFrame, height=200)
-chooseDefinitionsLabelFrame.pack(fill=X)
+chooseDefinitionsTextFrame = Frame(chooseDefinitionsFrame)
+chooseDefinitionsTextFrame.pack(fill=X)
 
-#canvas = Canvas(chooseDefinitionsLabelFrame)
-
-#scrollbar = ttk.Scrollbar(chooseDefinitionsLabelFrame, orient="vertical", command=canvas.yview)
-scrollbar = Scrollbar(chooseDefinitionsLabelFrame)
+scrollbar = Scrollbar(chooseDefinitionsTextFrame)
 scrollbar.pack(side=RIGHT, fill = Y)
 
-
-#scrollableChooseDefinitionsFrame = Frame(canvas)
-
-choose_definitions_label = ttk.Text(chooseDefinitionsLabelFrame, 
+choose_definitions_text = ttk.Text(chooseDefinitionsTextFrame, 
 		height = 4,
+		width = 55,
 		bg = 'black', 
 		fg = 'white', 
 		borderwidth = 5,
 		relief="sunken",
 		wrap='char',
 		yscrollcommand = scrollbar.set)
-choose_definitions_label.insert(END,'choose_definitions_label_text this is a test to see what \
-			lots of text will look like in this label box. so now i am \
-			just typing whatevr i want to. choose_definitions_label_text this\
-			choose_definitions_label_text this is a test to see what \
-			lots of text will look like in this label box. so now i am \
-			just typing whatevr i want to. choose_definitions_label_text this')
-choose_definitions_label.pack(side='left')
+choose_definitions_text.insert(END,'choose_definitions_text_text this is a test to see what \
+	lots of text will look like in this label box. so now i am \
+	just typing whatevr i want to. choose_definitions_text_text this\
+	choose_definitions_text_text this is a test to see what \
+	lots of text will look like in this label box. so now i am \
+	just typing whatevr i want to. choose_definitions_text_text this')
+choose_definitions_text.pack(side='left')
 
-scrollbar.config(command=choose_definitions_label.yview)
-
+scrollbar.config(command=choose_definitions_text.yview)
 
 createDeckFrame = Frame(root)
 createDeckFrame.grid(row=3, column=0, sticky=W)
