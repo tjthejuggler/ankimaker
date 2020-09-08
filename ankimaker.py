@@ -33,7 +33,7 @@ video_id = ''
 root = Tk() 
 root.title('Miug')
 #root.geometry('400x400')
-root.resizable(0, 0)
+root.resizable()
 #root.maxsize(500, 500) 
 
 
@@ -394,25 +394,36 @@ choose_definitions_button.pack(side="left")
 chooseDefinitionsFrame = Frame(root)
 chooseDefinitionsFrame.grid_forget()
 
-chooseDefinitionsLabelFrame = Frame(chooseDefinitionsFrame)
+chooseDefinitionsLabelFrame = Frame(chooseDefinitionsFrame, height=200)
 chooseDefinitionsLabelFrame.pack(fill=X)
-choose_definitions_label = ttk.Label(chooseDefinitionsLabelFrame, 
+
+#canvas = Canvas(chooseDefinitionsLabelFrame)
+
+#scrollbar = ttk.Scrollbar(chooseDefinitionsLabelFrame, orient="vertical", command=canvas.yview)
+scrollbar = Scrollbar(chooseDefinitionsLabelFrame)
+scrollbar.pack(side=RIGHT, fill = Y)
+
+
+#scrollableChooseDefinitionsFrame = Frame(canvas)
+
+choose_definitions_label = ttk.Text(chooseDefinitionsLabelFrame, 
+		height = 4,
 		bg = 'black', 
 		fg = 'white', 
 		borderwidth = 5,
 		relief="sunken",
-		wraplengt=200,
-		text='choose_definitions_label_text this is a test to see what \
+		wrap='char',
+		yscrollcommand = scrollbar.set)
+choose_definitions_label.insert(END,'choose_definitions_label_text this is a test to see what \
 			lots of text will look like in this label box. so now i am \
 			just typing whatevr i want to. choose_definitions_label_text this\
 			choose_definitions_label_text this is a test to see what \
 			lots of text will look like in this label box. so now i am \
 			just typing whatevr i want to. choose_definitions_label_text this')
 choose_definitions_label.pack(side='left')
-choose_definitions_label_scroll = ttk.Scrollbar(chooseDefinitionsLabelFrame, 
-		orient='verticle',
-		command=choose_definitions_label.yview)
-choose_definitions_label.config(yscrollcommand=choose_definitions_label_scroll.set)
+
+scrollbar.config(command=choose_definitions_label.yview)
+
 
 createDeckFrame = Frame(root)
 createDeckFrame.grid(row=3, column=0, sticky=W)

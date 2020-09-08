@@ -4,6 +4,10 @@ either find out how to run a program on pydroid and access the console and tkint
 		makes it all in tkinter
 
 new gui:
+	radiobuttons shouldnt show choose definitions frame
+	figure out why choose definitions label is the width it is
+	change name of choose definitions label
+	test nayout on phone
 	hide create button unless is usable
 	make cd label a set size and scrollable
 	make entry for cd to be used as # selector as well as word/def entry
