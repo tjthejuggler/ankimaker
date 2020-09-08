@@ -3,10 +3,10 @@ either find out how to run a program on pydroid and access the console and tkint
 	this can also be done in a way that leaves everything as is for windows, but in pydroid 
 		makes it all in tkinter
 
-either:
-	stay inside the first file to use the tkinter there
-	figure out how to make a completely new tkniter in new file
-	something else
+new gui:
+	hide create button unless is usable
+	make cd label a set size and scrollable
+	make entry for cd to be used as # selector as well as word/def entry
 
 make an option to run deck/anki after deck is created
 

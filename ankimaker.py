@@ -34,6 +34,7 @@ root = Tk()
 root.title('Miug')
 #root.geometry('400x400')
 root.resizable(0, 0)
+#root.maxsize(500, 500) 
 
 
 def get_custom_splitters():
@@ -281,7 +282,7 @@ def youtube_file_name_var_callback():
 
 def choose_definitions_clicked():
 	setupFrame.grid_forget()
-	chooseDefinitionsButtonFrame.pack_forget()
+	chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
 	print('choose definitions')
 
 nameAndHelpFrame = Frame(root)
@@ -385,17 +386,33 @@ add_splitters.pack(side="left")
 remove_spllitters = ttk.Button(splittersFrame, text="-", command=remove_from_custom_splitters)
 remove_spllitters.pack(side="left")
 
-chooseDefinitionsFrame = Frame(root)
-chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
-chooseDefinitionsButtonFrame = Frame(chooseDefinitionsFrame)
+chooseDefinitionsButtonFrame = Frame(setupFrame)
 chooseDefinitionsButtonFrame.pack(fill=X)
 choose_definitions_button = ttk.Button(chooseDefinitionsButtonFrame, text="Choose Definitions", command=choose_definitions_clicked)
 choose_definitions_button.pack(side="left")
 
+chooseDefinitionsFrame = Frame(root)
+chooseDefinitionsFrame.grid_forget()
+
 chooseDefinitionsLabelFrame = Frame(chooseDefinitionsFrame)
 chooseDefinitionsLabelFrame.pack(fill=X)
-choose_definitions_label = ttk.Label(chooseDefinitionsLabelFrame, text='choose_definitions_label_text')
+choose_definitions_label = ttk.Label(chooseDefinitionsLabelFrame, 
+		bg = 'black', 
+		fg = 'white', 
+		borderwidth = 5,
+		relief="sunken",
+		wraplengt=200,
+		text='choose_definitions_label_text this is a test to see what \
+			lots of text will look like in this label box. so now i am \
+			just typing whatevr i want to. choose_definitions_label_text this\
+			choose_definitions_label_text this is a test to see what \
+			lots of text will look like in this label box. so now i am \
+			just typing whatevr i want to. choose_definitions_label_text this')
 choose_definitions_label.pack(side='left')
+choose_definitions_label_scroll = ttk.Scrollbar(chooseDefinitionsLabelFrame, 
+		orient='verticle',
+		command=choose_definitions_label.yview)
+choose_definitions_label.config(yscrollcommand=choose_definitions_label_scroll.set)
 
 createDeckFrame = Frame(root)
 createDeckFrame.grid(row=3, column=0, sticky=W)
