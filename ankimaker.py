@@ -283,6 +283,7 @@ def youtube_file_name_var_callback():
 def choose_definitions_clicked():
 	setupFrame.grid_forget()
 	chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
+	choose_definitions_entry.focus()
 	print('choose definitions')
 
 nameAndHelpFrame = Frame(root)
@@ -409,12 +410,14 @@ choose_definitions_text = ttk.Text(chooseDefinitionsTextFrame,
 		relief="sunken",
 		wrap='char',
 		yscrollcommand = scrollbar.set)
+
 choose_definitions_text.insert(END,'choose_definitions_text_text this is a test to see what \
 	lots of text will look like in this label box. so now i am \
 	just typing whatevr i want to. choose_definitions_text_text this\
 	choose_definitions_text_text this is a test to see what \
 	lots of text will look like in this label box. so now i am \
 	just typing whatevr i want to. choose_definitions_text_text this')
+choose_definitions_text.configure(state="disabled")
 choose_definitions_text.pack(side='left')
 scrollbar.config(command=choose_definitions_text.yview)
 
