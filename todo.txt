@@ -4,8 +4,6 @@ either find out how to run a program on pydroid and access the console and tkint
 		makes it all in tkinter
 
 new gui:
-	radiobuttons should be normal size
-	radiobuttons shouldnt show choose definitions frame
 	figure out why choose definitions label is the width it is
 	change name of choose definitions label
 	test nayout on phone
