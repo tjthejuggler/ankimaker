@@ -401,7 +401,7 @@ scrollbar = Scrollbar(chooseDefinitionsTextFrame)
 scrollbar.pack(side=RIGHT, fill = Y)
 
 choose_definitions_text = ttk.Text(chooseDefinitionsTextFrame, 
-		height = 4,
+		height = 28,
 		width = 55,
 		bg = 'black', 
 		fg = 'white', 
@@ -416,8 +416,22 @@ choose_definitions_text.insert(END,'choose_definitions_text_text this is a test 
 	lots of text will look like in this label box. so now i am \
 	just typing whatevr i want to. choose_definitions_text_text this')
 choose_definitions_text.pack(side='left')
-
 scrollbar.config(command=choose_definitions_text.yview)
+
+chooseDefinitionsEntryFrame = Frame(chooseDefinitionsFrame)
+chooseDefinitionsEntryFrame.pack(fill=X, pady = 4)
+choose_definitions_entry_var = StringVar(chooseDefinitionsEntryFrame, value='')
+choose_definitions_entry = Entry(chooseDefinitionsEntryFrame, 
+	textvariable = choose_definitions_entry_var,
+	width = 75,
+	bd =1, 
+	bg = 'black', 
+	fg = 'white', 
+	insertbackground = 'white',
+	borderwidth = 5,
+	relief="sunken",
+	insertwidth = "10")
+choose_definitions_entry.pack(side="left")
 
 createDeckFrame = Frame(root)
 createDeckFrame.grid(row=3, column=0, sticky=W, pady = 4)

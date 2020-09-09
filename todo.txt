@@ -4,12 +4,12 @@ either find out how to run a program on pydroid and access the console and tkint
 		makes it all in tkinter
 
 new gui:
-	figure out why choose definitions label is the width it is
-	change name of choose definitions label
-	test nayout on phone
+	create choose definitions entry
+		-focus on it automatically
+		-if asking a question, make it take a single keypress in entry as answer, just like in cmd
 	hide create button unless is usable
-	make cd label a set size and scrollable
-	make entry for cd to be used as # selector as well as word/def entry
+		if language is selected and a file has been selected
+		for article, if choose definitions has been completed
 
 make an option to run deck/anki after deck is created
 
