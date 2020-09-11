@@ -434,7 +434,7 @@ choose_definitions_entry = Entry(chooseDefinitionsEntryFrame,
 	borderwidth = 5,
 	relief="sunken",
 	insertwidth = "10")
-choose_definitions_entry.pack(side="left")
+choose_definitions_entry.pack(side="left", fill=X)
 
 createDeckFrame = Frame(root)
 createDeckFrame.grid(row=3, column=0, sticky=W, pady = 4)

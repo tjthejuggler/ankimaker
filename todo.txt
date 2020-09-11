@@ -3,10 +3,7 @@ either find out how to run a program on pydroid and access the console and tkint
 	this can also be done in a way that leaves everything as is for windows, but in pydroid 
 		makes it all in tkinter
 
-new gui:
-	create choose definitions entry
-		-focus on it automatically
-		-if asking a question, make it take a single keypress in entry as answer, just like in cmd
+-if asking a question, make it take a single keypress in entry as answer, just like in cmd
 	hide create button unless is usable
 		if language is selected and a file has been selected
 		for article, if choose definitions has been completed
