@@ -8,6 +8,10 @@ either find out how to run a program on pydroid and access the console and tkint
 		if language is selected and a file has been selected
 		for article, if choose definitions has been completed
 
+fix phone/pc size mismatch of choose def entry and text either by using a text as the entry
+	or by making a conditional that checks to see what device
+	or figure out if there is something like fill that can be used
+
 make an option to run deck/anki after deck is created
 
 move ankiarticle into a tkinter setup

@@ -80,27 +80,27 @@ def get_definitions(word):
 				definitions.append([google_def,word_form])
 	return definitions
 
-def show_definitions(word, definitions, article):
-	sentences = get_words_sentence_from_text(word, article, True)
-	if sentences:
-		print('\rUSAGE:',' '*30)
-	for sentence in sentences:
-		print(sentence+'\n')
-	definition_number = 0
-	if definitions:
-		for definition in definitions:
-			if definition:
-				definition_number += 1
-				if definition_number == 1:
-					print('\r'+str(definition_number)+'. '+definition[0])
-				else:
-					print(str(definition_number)+'. '+definition[0])
-	if definition_number == 0:
-		print('\r'+str(definition_number+1)+'. Create your own definition.               ')
-	else:
-		print(str(definition_number+1)+'. Create your own definition.               ')
-	print(str(definition_number+2)+'. Change word.')
-	print(str(definition_number+3)+'. Discard word.')	
+# def show_definitions(word, definitions, article):
+# 	sentences = get_words_sentence_from_text(word, article, True)
+# 	if sentences:
+# 		print('\rUSAGE:',' '*30)
+# 	for sentence in sentences:
+# 		print(sentence+'\n')
+# 	definition_number = 0
+# 	if definitions:
+# 		for definition in definitions:
+# 			if definition:
+# 				definition_number += 1
+# 				if definition_number == 1:
+# 					print('\r'+str(definition_number)+'. '+definition[0])
+# 				else:
+# 					print(str(definition_number)+'. '+definition[0])
+# 	if definition_number == 0:
+# 		print('\r'+str(definition_number+1)+'. Create your own definition.               ')
+# 	else:
+# 		print(str(definition_number+1)+'. Create your own definition.               ')
+# 	print(str(definition_number+2)+'. Change word.')
+# 	print(str(definition_number+3)+'. Discard word.')	
 
 def concatenate_all_definitions_to_string(dictionary):
 	dict_value_list = []
@@ -109,114 +109,117 @@ def concatenate_all_definitions_to_string(dictionary):
 			dict_value_list.append(dict_value[0].replace('\n', ' ') + ' ')#pretty sure this will have fixed my problem
 	return ''.join(dict_value_list)
 
-def animated_loading(loading_message):
-    chars = "/—\\|" 
-    for char in chars:
-        sys.stdout.write('\r'+loading_message+'...'+char)          
-        time.sleep(.1)
-        sys.stdout.flush()
+# def animated_loading(loading_message):
+#     chars = "/—\\|" 
+#     for char in chars:
+#         sys.stdout.write('\r'+loading_message+'...'+char)          
+#         time.sleep(.1)
+#         sys.stdout.flush()
 
 def convert_text_to_keywords(text, low_freq, src_lang):
 	clean = re.sub(r"[,.'`’'|—;:@#?¿!¡<>_\-\"”“&$\[\]\)\(\\\/]+\ *", " ", text)
 	lowerString = clean.lower()
-	words = lowerString.split()
+	words = lowerString.split(sep=None)
+	print('words c', words)
 	keywords = []
 	for word in words:
+		print('zipf_frequency(word, get_lang_code(src_lang))', zipf_frequency(word, get_lang_code(src_lang)))
+		print('low_freq', low_freq)
 		if (not word.isdigit() and 
 			"/" not in word and
 			"\\" not in word and
 			len(word) > 1 and
-			zipf_frequency(word, get_lang_code(src_lang)) < low_freq):
+			zipf_frequency(word, get_lang_code(src_lang)) >= low_freq):
 				keywords.append(word)
 	return keywords
 
-def show_loading_and_get_definitions(word):
-	que = queue.Queue()
-	getting_definitions_thread = Thread(target=lambda q, arg1: q.put(get_definitions(arg1)), args=(que, word))
-	getting_definitions_thread.start()
-	while getting_definitions_thread.isAlive():
-		animated_loading('Getting definitions')
-	getting_definitions_thread.join()
-	definitions = que.get()
-	return definitions
+# def show_loading_and_get_definitions(word):
+# 	que = queue.Queue()
+# 	getting_definitions_thread = Thread(target=lambda q, arg1: q.put(get_definitions(arg1)), args=(que, word))
+# 	getting_definitions_thread.start()
+# 	while getting_definitions_thread.isAlive():
+# 		animated_loading('Getting definitions')
+# 	getting_definitions_thread.join()
+# 	definitions = que.get()
+# 	return definitions
 
-def get_user_definition_decision_int(definitions):
-	possible_definition_decisions = []
-	for i in range(len(definitions)+3):
-		possible_definition_decisions.append(str(i+1))					
-	user_definition_decision = ''
-	while user_definition_decision not in possible_definition_decisions:
-		try:
-			if sys.platform == 'linux':
-				user_definition_decision = getch().decode('ASCII')
-			else:
-				user_definition_decision = msvcrt.getch().decode('ASCII') #ignore inputs that are not an appropriate number
-		except:
-			pass
-	return int(user_definition_decision)
+# def get_user_definition_decision_int(definitions):
+# 	possible_definition_decisions = []
+# 	for i in range(len(definitions)+3):
+# 		possible_definition_decisions.append(str(i+1))					
+# 	user_definition_decision = ''
+# 	while user_definition_decision not in possible_definition_decisions:
+# 		try:
+# 			if sys.platform == 'linux':
+# 				user_definition_decision = getch().decode('ASCII')
+# 			else:
+# 				user_definition_decision = msvcrt.getch().decode('ASCII') #ignore inputs that are not an appropriate number
+# 		except:
+# 			pass
+# 	return int(user_definition_decision)
 
-def get_users_definition_decision(word, article):
-	word_definition = ''
-	word_is_rejected = False
-	while word_definition == '' and not word_is_rejected:	
-		definitions = show_loading_and_get_definitions(word)
-		show_definitions(word, definitions, article)
-		word_definition = ''
-		word_is_rejected = False
-		user_definition_decision_int = get_user_definition_decision_int(definitions)
-		if user_definition_decision_int-1 == len(definitions):
-			print("Input definition:")
-			word_definition = [input(), word]
-			if not word_definition:
-				word_is_rejected = True
-				continue
-		elif user_definition_decision_int-2 == len(definitions):									
-			word = ''
-			while not word:
-				print("Input other word form:")
-				word = input()
-			continue						
-		elif user_definition_decision_int-3 == len(definitions):
-			word_is_rejected = True
-			continue							
-		else:
-			word_definition = definitions[int(user_definition_decision_int)-1]
+# def get_users_definition_decision(word, article):
+# 	word_definition = ''
+# 	word_is_rejected = False
+# 	while word_definition == '' and not word_is_rejected:	
+# 		definitions = show_loading_and_get_definitions(word)
+# 		show_definitions(word, definitions, article)
+# 		word_definition = ''
+# 		word_is_rejected = False
+# 		user_definition_decision_int = get_user_definition_decision_int(definitions)
+# 		if user_definition_decision_int-1 == len(definitions):
+# 			print("Input definition:")
+# 			word_definition = [input(), word]
+# 			if not word_definition:
+# 				word_is_rejected = True
+# 				continue
+# 		elif user_definition_decision_int-2 == len(definitions):									
+# 			word = ''
+# 			while not word:
+# 				print("Input other word form:")
+# 				word = input()
+# 			continue						
+# 		elif user_definition_decision_int-3 == len(definitions):
+# 			word_is_rejected = True
+# 			continue							
+# 		else:
+# 			word_definition = definitions[int(user_definition_decision_int)-1]
 
-	return word_definition, word_is_rejected, word
+# 	return word_definition, word_is_rejected, word
 
-def build_dictionary_with_user(dictionary, text, original_article, low_freq, src_lang):
-	words = convert_text_to_keywords(text, low_freq, src_lang)
-	more_words_to_define = False
-	for word in words:
-		if word not in dictionary:			
-			print(" \nShould we define ' " + word + " '?(y/n)")
-			user_decided_to_define = False
-			while user_decided_to_define == False:
-				try:
-					if sys.platform == 'linux':
-						users_decision_to_define = getch().decode('ASCII')
-					else:
-						users_decision_to_define = msvcrt.getch().decode('ASCII')
-				except:
-					pass
-				if users_decision_to_define.upper() == 'Y':
-					user_decided_to_define = True
-					word_definition, word_is_rejected, word = get_users_definition_decision(word, original_article)
-					if word_is_rejected:
-						dictionary[word] = 'rejected!'
-					elif word_definition:
-						dictionary[word_definition[1]] = [word_definition[0], word]
-						if word_definition[1] != word:
-							dictionary[word] = 'alt word form used.'
-						more_words_to_define = True
-				elif users_decision_to_define.upper() == 'N':
-					user_decided_to_define = True
-					dictionary[word] = 'rejected!'
-					word_is_rejected = True
-		else:
-			if not dictionary[word]:
-				dictionary[word] = 'rejected!'
-	return dictionary, more_words_to_define
+# def build_dictionary_with_user(dictionary, text, original_article, low_freq, src_lang):
+# 	words = convert_text_to_keywords(text, low_freq, src_lang)
+# 	more_words_to_define = False
+# 	for word in words:
+# 		if word not in dictionary:			
+# 			print(" \nShould we define ' " + word + " '?(y/n)")
+# 			user_decided_to_define = False
+# 			while user_decided_to_define == False:
+# 				try:
+# 					if sys.platform == 'linux':
+# 						users_decision_to_define = getch().decode('ASCII')
+# 					else:
+# 						users_decision_to_define = msvcrt.getch().decode('ASCII')
+# 				except:
+# 					pass
+# 				if users_decision_to_define.upper() == 'Y':
+# 					user_decided_to_define = True
+# 					word_definition, word_is_rejected, word = get_users_definition_decision(word, original_article)
+# 					if word_is_rejected:
+# 						dictionary[word] = 'rejected!'
+# 					elif word_definition:
+# 						dictionary[word_definition[1]] = [word_definition[0], word]
+# 						if word_definition[1] != word:
+# 							dictionary[word] = 'alt word form used.'
+# 						more_words_to_define = True
+# 				elif users_decision_to_define.upper() == 'N':
+# 					user_decided_to_define = True
+# 					dictionary[word] = 'rejected!'
+# 					word_is_rejected = True
+# 		else:
+# 			if not dictionary[word]:
+# 				dictionary[word] = 'rejected!'
+# 	return dictionary, more_words_to_define
 
 def create_definitions_cards(dictionary, text_filename):
 	definition_model = genanki.Model(
