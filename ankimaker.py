@@ -17,6 +17,7 @@ from youtube_title_parse import get_artist_title
 from youtube_transcript_api import YouTubeTranscriptApi
 #import pdftotext
 from tika import parser
+import queue
 
 from ankiarticle import *
 from langCodes import *
@@ -31,6 +32,8 @@ text_filename = 'sample'
 video_id = ''
 question_type = ''
 select_definition_options = []
+definition_dictionary = dict()
+key_in_question = ''
 
 root = Tk() 
 root.title('Miug')
@@ -282,45 +285,6 @@ def youtube_file_name_var_callback():
 	file_name_label.update()
 	print(youtube_file_name_var.get())
 
-def animated_loading(loading_message):
-    chars = "/—\\|" 
-    for char in chars:
-        sys.stdout.write('\r'+loading_message+'...'+char)          
-        time.sleep(.1)
-        sys.stdout.flush()
-
-def show_loading_and_get_definitions(word):
-	que = queue.Queue()
-	getting_definitions_thread = Thread(target=lambda q, arg1: q.put(get_definitions(arg1)), args=(que, word))
-	getting_definitions_thread.start()
-	while getting_definitions_thread.isAlive():
-		animated_loading('Getting definitions')
-	getting_definitions_thread.join()
-	definitions = que.get()
-	return definitions
-
-def show_definitions(word, definitions, article):
-	sentences = get_words_sentence_from_text(word, article, True)
-	if sentences:
-		print('\rUSAGE:',' '*30)
-	for sentence in sentences:
-		print(sentence+'\n')
-	definition_number = 0
-	if definitions:
-		for definition in definitions:
-			if definition:
-				definition_number += 1
-				if definition_number == 1:
-					print('\r'+str(definition_number)+'. '+definition[0])
-				else:
-					print(str(definition_number)+'. '+definition[0])
-	if definition_number == 0:
-		print('\r'+str(definition_number+1)+'. Create your own definition.               ')
-	else:
-		print(str(definition_number+1)+'. Create your own definition.               ')
-	print(str(definition_number+2)+'. Change word.')
-	print(str(definition_number+3)+'. Discard word.')
-
 #change prints and inputs in get_users_definition_decision to
 #choose_definitions_text.insert(END," \nShould we define ' " + word + " '?(y/n)")
 #and entry inputs
@@ -417,11 +381,71 @@ def build_dictionary_with_user(dictionary, text):
 
 def ask_if_should_define():
 	global question_type
+	global definition_dictionary
+	global key_in_question
 	question_type = 'should_define'
 	print('ask_if_should_define', question_type)
+	for word in definition_dictionary:
+		print('ask_if', word)
+		print('definition_dictionary[word][0][0]',definition_dictionary[word][0][0])
+		if definition_dictionary[word][0] == '!undefined':
+			key_in_question = word
+			choose_definitions_text.configure(state="normal")	
+			choose_definitions_text.insert(END," \nShould we define ' " + word + " '?(y/n)")
+			choose_definitions_text.configure(state="disabled")	
+			break
+
+def animated_loading(loading_message):
+	chars = "/—\\|" 
+	for char in chars:
+		choose_definitions_text.configure(state="normal")
+		choose_definitions_text.delete("end-1l","end")
+		choose_definitions_text.insert("end",u"\nLoading..."+char)
+		choose_definitions_text.configure(state="disabled")
+		root.update_idletasks()      
+		time.sleep(.1)
+		sys.stdout.flush()
+
+def show_loading_and_definitions():
+	global key_in_question
+	word = key_in_question
+	que = queue.Queue()
+	getting_definitions_thread = Thread(target=lambda q, arg1: q.put(get_definitions(arg1)), args=(que, word))
+	getting_definitions_thread.start()
+	while getting_definitions_thread.isAlive():
+		animated_loading('Getting definitions')
+	getting_definitions_thread.join()
+	definitions = que.get()
+	show_definitions(definitions)
+
+def show_definitions(definitions):
+	global key_in_question
+	word = key_in_question
+	article = get_text(text_filename)
+	sentences = get_words_sentence_from_text(word, article, True)
+	choose_definitions_text.configure(state="normal")	
+	if sentences:
+		print()
+		choose_definitions_text.insert(END,'\rUSAGE:',' '*30)
+	for sentence in sentences:
+		choose_definitions_text.insert(sentence+'\n')
+	choose_definitions_text.insert(END,"\n1. Change word.")
+	choose_definitions_text.insert(END,"\n2. Create your own definition.")
+	definition_number = 2
+	if definitions:
+		for definition in definitions:
+			if definition:
+				definition_number += 1
+				choose_definitions_text.insert(END,(str(definition_number)+'. '+definition[0]))
+	choose_definitions_text.configure(state="disabled")
 
 def ask_for_definition_selection():
 	question_type = 'select_definition'
+	#retreive definitions
+	definitions = show_loading_and_definitions()
+	#show loading animation while waiting
+	#show definitions
+	#fill temporary list with definitions
 	print('ask_for_definition_selection')
 
 def set_chosen_definition(chosen_definition):
@@ -451,6 +475,8 @@ def create_another_level_of_keywords():
 	print('create_another_level_of_keywords')
 
 def definition_callback():
+	global definition_dictionary
+	global key_in_question
 	global question_type
 	user_input = str(choose_definitions_entry_var.get())
 	print('user_input', user_input)
@@ -459,6 +485,7 @@ def definition_callback():
 		print('should_define')
 		if user_input.lower() == 'n':
 			#starting here, start putting in the guts of these functions that are just prints
+			definition_dictionary[key_in_question][0] = '!rejected'
 			ask_if_should_define()
 		elif user_input.lower() == 'y':
 			ask_for_definition_selection()
@@ -487,15 +514,25 @@ def choose_definitions_entry_enter_pressed():
 	else:
 		print('enter_test_worked')
 
+def add_words_to_dictionary(text):
+	global definition_dictionary
+	low_freq = float(frequency_low.get())
+	src_lang = str(src_language.get())
+	words = convert_text_to_keywords(text, low_freq, src_lang)
+	for word in words:
+		if not word in definition_dictionary:
+			definition_dictionary[word] = ['!undefined', '!no_alt']
+	print('dd',definition_dictionary)
+
 def choose_definitions_clicked():
-	ask_if_should_define()
 
 	setupFrame.grid_forget()
 	chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
 	choose_definitions_entry.focus()
-	complete_dictionary = dict()
 	article_text = get_text(text_filename)
-	print('article_text', article_text)
+	add_words_to_dictionary(article_text)
+	ask_if_should_define()
+
 
 			#todo
 			#	split the trace into different sections based on a value
@@ -646,12 +683,7 @@ choose_definitions_text = ttk.Text(chooseDefinitionsTextFrame,
 		wrap='char',
 		yscrollcommand = scrollbar.set)
 
-choose_definitions_text.insert(END,'choose_definitions_text_text this is a test to see what \
-	lots of text will look like in this label box. so now i am \
-	just typing whatevr i want to. choose_definitions_text_text this\
-	choose_definitions_text_text this is a test to see what \
-	lots of text will look like in this label box. so now i am \
-	just typing whatevr i want to. choose_definitions_text_text this')
+choose_definitions_text.insert(END,'Get ready to choose definitions!')
 choose_definitions_text.configure(state="disabled")
 choose_definitions_text.pack(side='left')
 scrollbar.config(command=choose_definitions_text.yview)
