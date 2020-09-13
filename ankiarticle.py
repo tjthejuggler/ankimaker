@@ -222,6 +222,7 @@ def convert_text_to_keywords(text, low_freq, src_lang):
 # 	return dictionary, more_words_to_define
 
 def create_definitions_cards(dictionary, text_filename):
+	global article_deck
 	definition_model = genanki.Model(
 		1607392319,
 		'Simple Model',
@@ -279,6 +280,7 @@ def get_words_sentence_from_text(word, article_text, show_word):
 	return sentences_with_word
 
 def create_fill_in_the_blank_cards(dictionary, article_text, text_filename):
+	global article_deck
 	definition_model = genanki.Model(
 		1607392320,
 		'Simple Model',
@@ -304,7 +306,9 @@ def create_fill_in_the_blank_cards(dictionary, article_text, text_filename):
 					fields=[sentence + ' ('+str(round(time.time()))+')', dictionary[word][1]])
 				article_deck.add_note(my_note)
 
-def create_anki_deck(dictionary, article_text, text_filename):
+def create_article_anki_deck(dictionary, article_text, text_filename):
+	global article_deck
+	article_deck = genanki.Deck(round(time.time()),text_filename)
 	create_definitions_cards(dictionary, text_filename)
 	create_fill_in_the_blank_cards(dictionary, article_text, text_filename)
 	genanki.Package(article_deck).write_to_file('ankidecks/'+text_filename+'.apkg')

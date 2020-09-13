@@ -29,6 +29,7 @@ from ankilang import *
 
 text_filename = 'podFoundmyfitnessCovid2'
 text_filename = 'sample'
+article_text = ''
 video_id = ''
 question_type = ''
 select_definition_options = []
@@ -37,10 +38,7 @@ key_in_question = ''
 
 root = Tk() 
 root.title('Miug')
-#root.geometry('400x400')
 root.resizable()
-#root.maxsize(500, 500) 
-
 
 def get_custom_splitters():
 	with open('custom_splitters.txt', 'r') as filehandle:
@@ -139,7 +137,6 @@ def url_button_clicked():
 		youtube_file_name_var.set('invalid url')
 	file_name_label.configure(text=text_filename)
 	file_name_label.update()
-	#print(get_text_from_youtube_transcription(video_id))
 
 def word_excluded(word):
 	should_exclude = False
@@ -285,11 +282,6 @@ def youtube_file_name_var_callback():
 	file_name_label.update()
 	print(youtube_file_name_var.get())
 
-#change prints and inputs in get_users_definition_decision to
-#choose_definitions_text.insert(END," \nShould we define ' " + word + " '?(y/n)")
-#and entry inputs
-#this also needs to be done for functions called by get_users_definition_decision
-
 def get_user_definition_decision_int(definitions):
 	possible_definition_decisions = []
 	for i in range(len(definitions)+3):
@@ -332,7 +324,6 @@ def get_users_definition_decision(word):
 			continue							
 		else:
 			word_definition = definitions[int(user_definition_decision_int)-1]
-
 	return word_definition, word_is_rejected, word
 
 def ask_if_should_define():
@@ -340,26 +331,16 @@ def ask_if_should_define():
 	global definition_dictionary
 	global key_in_question
 	question_type = 'should_define'
-	print('ask_if_should_define', question_type)
 	no_words_remaining = True
 	for word in definition_dictionary:
-		print('ask_if', word)
-		print('definition_dictionary[word][0][0]',definition_dictionary[word][0][0])
 		if definition_dictionary[word][0] == '!undefined':
 			no_words_remaining = False
 			key_in_question = word
 			tkprint("\nShould we define ' " + word + " '?(y/n)")
 			break
 	if no_words_remaining:
-		print('no words remaining', definition_dictionary)
-		#this is where we ask if we should go another level
-		#if Y we need to add stuff to dictionary and continue cycle
-		#	for usage here we can do nothing and it should work or we could use
-		#		the sentences from definition
-		#if N we need to make the deck
-		#clean up scattered todo lists
-		#clean up unused code and imports
-		#figure out if we can get rid of globals
+		tkprint('Do another level of definitions?(y/n)')
+		question_type = 'define_next_level'
 
 def animated_loading(loading_message):
 	chars = "/—\\|" 
@@ -465,11 +446,35 @@ def deal_with_user_selection(option):
 	else:
 		set_chosen_definition(4-int(option))
 
+def clean_dictionary():
+	global definition_dictionary
+	for word in list(definition_dictionary):
+		if definition_dictionary[word][0] == '!rejected':
+			definition_dictionary.pop(word)
+
 def create_deck():
+	global definition_dictionary
+	global article_text
 	print('create_deck')
+	clean_dictionary()
+	create_article_anki_deck(definition_dictionary, article_text, text_filename)
+	tkprint('Deck created! ('+text_filename+')')
 
 def create_another_level_of_keywords():
 	print('create_another_level_of_keywords')
+	global definition_dictionary
+	string_of_definitions = concatenate_all_definitions_to_string(definition_dictionary)
+	add_words_to_dictionary(string_of_definitions)
+	no_words_remaining = True
+	for word in definition_dictionary:
+		if definition_dictionary[word][0] == '!undefined':
+			no_words_remaining = False
+			break
+	if no_words_remaining:
+		tkprint("No more words to define.")
+		create_deck()
+	else:
+		ask_if_should_define()
 
 def definition_callback():
 	global definition_dictionary
@@ -529,6 +534,7 @@ def add_words_to_dictionary(text):
 	print('dd',definition_dictionary)
 
 def choose_definitions_clicked():
+	global article_text
 	setupFrame.grid_forget()
 	chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
 	choose_definitions_entry.focus()
