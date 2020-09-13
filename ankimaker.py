@@ -335,65 +335,31 @@ def get_users_definition_decision(word):
 
 	return word_definition, word_is_rejected, word
 
-def build_dictionary_with_user(dictionary, text):
-	low_freq = float(frequency_low.get())
-	src_lang = str(src_language.get())
-
-	words = convert_text_to_keywords(text, low_freq, src_lang)
-	print('words', words)
-	more_words_to_define = False
-	for word in words:
-		if word not in dictionary:
-			#todo, figure out why this print doesnt happen, then go up and find other todd list
-			print('word pr', word)
-			choose_definitions_text.configure(state="normal")	
-			choose_definitions_text.insert(END," \nShould we define ' " + word + " '?(y/n)")
-			choose_definitions_text.configure(state="disabled")			
-			#print(" \nShould we define ' " + word + " '?(y/n)")
-			user_decided_to_define = False
-
-			while user_decided_to_define == False:
-				try:
-					users_decision_to_define = str(choose_definitions_entry_var.get())
-				except:
-					pass
-				if users_decision_to_define.upper() == 'Y':
-					print('Y pressed')
-					# user_decided_to_define = True
-					# word_definition, word_is_rejected, word = get_users_definition_decision(word)
-					# if word_is_rejected:
-					# 	dictionary[word] = 'rejected!'
-					# elif word_definition:
-					# 	dictionary[word_definition[1]] = [word_definition[0], word]
-					# 	if word_definition[1] != word:
-					# 		dictionary[word] = 'alt word form used.'
-					# 	more_words_to_define = True
-				elif users_decision_to_define.upper() == 'N':
-					print('N pressed')
-					# user_decided_to_define = True
-					# dictionary[word] = 'rejected!'
-					# word_is_rejected = True
-				choose_definitions_entry_var.set('')
-		else:		
-			if not dictionary[word]:
-				dictionary[word] = 'rejected!'
-	return dictionary, more_words_to_define
-
 def ask_if_should_define():
 	global question_type
 	global definition_dictionary
 	global key_in_question
 	question_type = 'should_define'
 	print('ask_if_should_define', question_type)
+	no_words_remaining = True
 	for word in definition_dictionary:
 		print('ask_if', word)
 		print('definition_dictionary[word][0][0]',definition_dictionary[word][0][0])
 		if definition_dictionary[word][0] == '!undefined':
+			no_words_remaining = False
 			key_in_question = word
-			choose_definitions_text.configure(state="normal")	
-			choose_definitions_text.insert(END," \nShould we define ' " + word + " '?(y/n)")
-			choose_definitions_text.configure(state="disabled")	
+			tkprint("\nShould we define ' " + word + " '?(y/n)")
 			break
+	if no_words_remaining:
+		print('no words remaining', definition_dictionary)
+		#this is where we ask if we should go another level
+		#if Y we need to add stuff to dictionary and continue cycle
+		#	for usage here we can do nothing and it should work or we could use
+		#		the sentences from definition
+		#if N we need to make the deck
+		#clean up scattered todo lists
+		#clean up unused code and imports
+		#figure out if we can get rid of globals
 
 def animated_loading(loading_message):
 	chars = "/—\\|" 
@@ -401,6 +367,7 @@ def animated_loading(loading_message):
 		choose_definitions_text.configure(state="normal")
 		choose_definitions_text.delete("end-1l","end")
 		choose_definitions_text.insert("end",u"\nLoading..."+char)
+		choose_definitions_text.see("end")
 		choose_definitions_text.configure(state="disabled")
 		root.update_idletasks()      
 		time.sleep(.1)
@@ -412,11 +379,23 @@ def show_loading_and_definitions():
 	que = queue.Queue()
 	getting_definitions_thread = Thread(target=lambda q, arg1: q.put(get_definitions(arg1)), args=(que, word))
 	getting_definitions_thread.start()
+	choose_definitions_text.configure(state="normal")
+	choose_definitions_text.insert("end",u"\n")
+	choose_definitions_text.configure(state="disabled")
 	while getting_definitions_thread.isAlive():
 		animated_loading('Getting definitions')
+	choose_definitions_text.configure(state="normal")
+	choose_definitions_text.delete("end-1l","end")
+	choose_definitions_text.configure(state="disabled")
 	getting_definitions_thread.join()
 	definitions = que.get()
 	show_definitions(definitions)
+
+def tkprint(text):
+	choose_definitions_text.configure(state="normal")	
+	choose_definitions_text.insert(END,"\n"+text)
+	choose_definitions_text.see("end")
+	choose_definitions_text.configure(state="disabled")
 
 def show_definitions(definitions):
 	global key_in_question
@@ -427,15 +406,13 @@ def show_definitions(definitions):
 	word = key_in_question
 	article = get_text(text_filename)
 	sentences = get_words_sentence_from_text(word, article, True)
-	choose_definitions_text.configure(state="normal")	
 	if sentences:
-		print()
-		choose_definitions_text.insert(END,'\rUSAGE:',' '*30)
+		tkprint('USAGE:'+' '*30)
 	for sentence in sentences:
-		choose_definitions_text.insert(sentence+'\n')
-	choose_definitions_text.insert(END,"\n1. Change word.")
-	choose_definitions_text.insert(END,"\n2. Create your own definition.")
-	choose_definitions_text.insert(END,"\n2. Discard word.")
+		tkprint(sentence)
+	tkprint("1. Change word.")
+	tkprint("2. Create your own definition.")
+	tkprint("3. Discard word.")
 	definition_number = 3
 	definitions_in_question = []
 	if definitions:
@@ -443,13 +420,11 @@ def show_definitions(definitions):
 			if definition:
 				definition_number += 1
 				definitions_in_question.append(definition)
-				choose_definitions_text.insert(END,(str(definition_number)+'. '+definition[0]))
-	choose_definitions_text.configure(state="disabled")
+				tkprint((str(definition_number)+'. '+definition[0]))
 	for i in range(1,definition_number+1):
 		select_definition_options.append(str(i))
 	question_type = 'select_definition'
 	print('select_definition_options',select_definition_options)
-
 
 def ask_for_definition_selection():
 	question_type = 'select_definition'
@@ -458,30 +433,37 @@ def ask_for_definition_selection():
 
 def set_chosen_definition(chosen_definition):
 	print('set_chosen_definition', chosen_definition)
+	global definition_dictionary
+	global key_in_question
+	definition_dictionary[key_in_question] = definitions_in_question[chosen_definition]
+	ask_if_should_define()
 
 def ask_for_new_keyword():
+	global question_type
 	question_type = 'new_keyword'
 	print('ask_for_new_keyword')
+	tkprint('\nEnter new word:')
 
 def ask_for_user_definition():
+	global question_type
 	question_type = 'user_definition'
 	print('ask_for_user_definition')
+	tkprint('Enter definition:')
 
 def deal_with_user_selection(option):
-	# 1. Change word.")
-	# 2. Create your own definition.")
-	# 3. Discard word.")
-	# 4. definitions_in_question[0]
-	# 5. definitions_in_question[1]
 	print('option', option)
-	#use the key above, get rid of change_keword and create_definition and put numbers in
-	if option == 'change_keyword':
+	if option == '1':
 		ask_for_new_keyword()
 		print('change_keyword')
-	elif option == 'create_defintion':
+	elif option == '2':
+		ask_for_user_definition()
 		print('create_definition')
+	elif option == '3':
+		definition_dictionary[key_in_question] = ['!rejected', '!no_alt']
+		ask_if_should_define()
+		print('word rejected')
 	else:
-		set_chosen_definition(option)
+		set_chosen_definition(4-int(option))
 
 def create_deck():
 	print('create_deck')
@@ -499,7 +481,7 @@ def definition_callback():
 	if question_type == 'should_define':
 		print('should_define')
 		if user_input.lower() == 'n':
-			definition_dictionary[key_in_question][0] = '!rejected'
+			definition_dictionary[key_in_question] = ['!rejected', '!no_alt']
 			ask_if_should_define()
 		elif user_input.lower() == 'y':
 			ask_for_definition_selection()
@@ -519,14 +501,22 @@ def definition_callback():
 		else:
 			choose_definitions_entry_var.set('')
 
-def choose_definitions_entry_enter_pressed():
+def enter_pressed_in_entry():
+	global definition_dictionary
+	global key_in_question
+	global question_type	
 	user_input = str(choose_definitions_entry_var.get())
 	if question_type == 'new_keyword':
 		print('new_keyword_enter_pressed', user_input)
+		key_in_question = user_input
+		tkprint("Define ' "+user_input+" '")
+		choose_definitions_entry_var.set('')
+		show_loading_and_definitions()
 	elif question_type == 'input_definition':
+		definition_dictionary[key_in_question] = [user_input, '!no_alt']
 		print('user_definition_enter_pressed', user_input)
-	else:
-		print('enter_test_worked')
+		choose_definitions_entry_var.set('')
+		ask_if_should_define()
 
 def add_words_to_dictionary(text):
 	global definition_dictionary
@@ -539,35 +529,12 @@ def add_words_to_dictionary(text):
 	print('dd',definition_dictionary)
 
 def choose_definitions_clicked():
-
 	setupFrame.grid_forget()
 	chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
 	choose_definitions_entry.focus()
 	article_text = get_text(text_filename)
 	add_words_to_dictionary(article_text)
 	ask_if_should_define()
-
-
-			#todo
-			#	split the trace into different sections based on a value
-			#		of a variable 'question_type'
-			#	create the stuff below.
-
-			#instead of this function we just want set something in motion 
-			#	that inserts the question (define word y/n?)
-			#	sets a variable indicating which question has been asked(used in entry trace)
-			#once the question has been answered we
-			#	N)either go on to the next word
-			#	Y)show definitions
-			#		set dictionary that matches options(1,2,3,4) to actions
-			#		set variable that indicates new question being asked
-			#			-once this has been answered then we check if there are more words
-			#				if there are, then we go back to the begining
-			#				if there are not, then we ask if we should go a level deeper
-
-
-
-	#complete_dictionary, more_words_to_define = build_dictionary_with_user(complete_dictionary, article_text)
 	print('choose definitions')
 
 nameAndHelpFrame = Frame(root)
@@ -723,7 +690,7 @@ choose_definitions_entry = Entry(chooseDefinitionsEntryFrame,
 	relief="sunken",
 	insertwidth = "10")
 choose_definitions_entry.pack(side="left", fill=X)
-choose_definitions_entry.bind("<Return>", lambda x: choose_definitions_entry_enter_pressed())
+choose_definitions_entry.bind("<Return>", lambda x: enter_pressed_in_entry())
 
 createDeckFrame = Frame(root)
 createDeckFrame.grid(row=3, column=0, sticky=W, pady = 4)

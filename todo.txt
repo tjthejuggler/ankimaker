@@ -3,6 +3,11 @@ either find out how to run a program on pydroid and access the console and tkint
 	this can also be done in a way that leaves everything as is for windows, but in pydroid 
 		makes it all in tkinter
 
+in text box, make words being defined green and/or bold or something
+	maybe some other color coding would be in order as well
+
+when a definition is set, tkprint the word with its definition?
+
 -if asking a question, make it take a single keypress in entry as answer, just like in cmd
 	hide create button unless is usable
 		if language is selected and a file has been selected
