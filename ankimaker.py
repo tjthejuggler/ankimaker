@@ -420,6 +420,10 @@ def show_loading_and_definitions():
 
 def show_definitions(definitions):
 	global key_in_question
+	global definitions_in_question
+	global select_definition_options
+	global question_type
+	select_definition_options = []
 	word = key_in_question
 	article = get_text(text_filename)
 	sentences = get_words_sentence_from_text(word, article, True)
@@ -431,21 +435,25 @@ def show_definitions(definitions):
 		choose_definitions_text.insert(sentence+'\n')
 	choose_definitions_text.insert(END,"\n1. Change word.")
 	choose_definitions_text.insert(END,"\n2. Create your own definition.")
-	definition_number = 2
+	choose_definitions_text.insert(END,"\n2. Discard word.")
+	definition_number = 3
+	definitions_in_question = []
 	if definitions:
 		for definition in definitions:
 			if definition:
 				definition_number += 1
+				definitions_in_question.append(definition)
 				choose_definitions_text.insert(END,(str(definition_number)+'. '+definition[0]))
 	choose_definitions_text.configure(state="disabled")
+	for i in range(1,definition_number+1):
+		select_definition_options.append(str(i))
+	question_type = 'select_definition'
+	print('select_definition_options',select_definition_options)
+
 
 def ask_for_definition_selection():
 	question_type = 'select_definition'
-	#retreive definitions
 	definitions = show_loading_and_definitions()
-	#show loading animation while waiting
-	#show definitions
-	#fill temporary list with definitions
 	print('ask_for_definition_selection')
 
 def set_chosen_definition(chosen_definition):
@@ -460,6 +468,13 @@ def ask_for_user_definition():
 	print('ask_for_user_definition')
 
 def deal_with_user_selection(option):
+	# 1. Change word.")
+	# 2. Create your own definition.")
+	# 3. Discard word.")
+	# 4. definitions_in_question[0]
+	# 5. definitions_in_question[1]
+	print('option', option)
+	#use the key above, get rid of change_keword and create_definition and put numbers in
 	if option == 'change_keyword':
 		ask_for_new_keyword()
 		print('change_keyword')
@@ -484,7 +499,6 @@ def definition_callback():
 	if question_type == 'should_define':
 		print('should_define')
 		if user_input.lower() == 'n':
-			#starting here, start putting in the guts of these functions that are just prints
 			definition_dictionary[key_in_question][0] = '!rejected'
 			ask_if_should_define()
 		elif user_input.lower() == 'y':
@@ -493,7 +507,7 @@ def definition_callback():
 	elif question_type == 'select_definition':
 		print('select_definition')
 		for option in select_definition_options:
-			if user_input == str(select_definition_options.index(option)):
+			if user_input == option:
 				deal_with_user_selection(option)
 		choose_definitions_entry_var.set('')
 	elif question_type == 'define_next_level':
