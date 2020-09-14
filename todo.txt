@@ -1,4 +1,7 @@
 UP NEXT
+
+hook up platform.sysyem() to checkbox visibility so it only shows on windows
+
 test out the extra window that gets made for splitters on phone
 	if tis works well then maybe we want an extra window for 'show_frequencies'
 
