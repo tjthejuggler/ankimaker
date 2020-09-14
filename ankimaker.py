@@ -17,6 +17,7 @@ from youtube_title_parse import get_artist_title
 from youtube_transcript_api import YouTubeTranscriptApi
 from tika import parser
 import queue
+import platform
 
 from ankiarticle import *
 from langCodes import *
@@ -564,7 +565,9 @@ remove_spllitters.pack(side="left", padx = 4)
 autorunFrame = Frame(setupFrame)
 autorunFrame.pack(fill=X, pady = 4)
 autorun_var = IntVar()
-Checkbutton(setupFrame, text="Auto-run deck file", variable=autorun_var).pack(side="left", padx = 4)
+autorun_var = 0
+if platform.system() == 'Windows':
+	Checkbutton(setupFrame, text="Auto-run deck file", variable=autorun_var).pack(side="left", padx = 4)
 
 
 chooseDefinitionsFrame = Frame(root)
