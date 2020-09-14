@@ -189,6 +189,7 @@ def create_article_anki_deck(dictionary, article_text, text_filename):
 	create_definitions_cards(dictionary, text_filename)
 	create_fill_in_the_blank_cards(dictionary, article_text, text_filename)
 	genanki.Package(article_deck).write_to_file('ankidecks/'+text_filename+'.apkg')
+	sys.exit()
 
 def get_text(text_filename):
 	article_text = ''
