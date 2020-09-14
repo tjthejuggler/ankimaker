@@ -1,71 +1,77 @@
-either find out how to run a program on pydroid and access the console and tkinter
-	or move everything into tkinter
-	this can also be done in a way that leaves everything as is for windows, but in pydroid 
-		makes it all in tkinter
-
-		#clean up scattered todo lists
-		#clean up unused code and imports
-		#figure out if we can get rid of globals
-
-bring show_frequencies into tkinter
-	use the text widget and give it a 'back' button
-	help_clicked also needs to be done like this
+UP NEXT
+close app when deck is created
 
 test out the extra window that gets made for splitters on phone
 	if tis works well then maybe we want an extra window for 'show_frequencies'
 
-disable 'create_deck' button if youtube video is invalid or no text file is selected
-maybe make the youtube invalid message red
+bring show_frequencies into tkinter
+	use the text widget and give it a 'back' button
+	help_clicked also needs to be done like this
+________
 
-close app when article deck is created
-
-consolidate code,
-	the same create deck could be used for all 3 types of texts
-	there are a lot of unused functions in ankiarticle
-
+TEXT BOX STYLING/CLEANING
 in text box, make words being defined green and/or bold or something
 	maybe some other color coding would be in order as well
 
 when a definition is set, tkprint the word with its definition?
+	if we do this then maybe we could get rid of all the definition options out of the text box to make it easier to look through
 
--if asking a question, make it take a single keypress in entry as answer, just like in cmd
-	hide create button unless is usable
-		if language is selected and a file has been selected
-		for article, if choose definitions has been completed
 
 fix phone/pc size mismatch of choose def entry and text either by using a text as the entry
 	or by making a conditional that checks to see what device
 	or figure out if there is something like fill that can be used
+________
 
-make an option to run deck/anki after deck is created
+TESTING
 
-move ankiarticle into a tkinter setup
-	competely copy the file and then change it piece by piece, can probably make a scrolling label that behaves just like console and juust have buttons and/or an entry
+find out if word variations is being handled properly
 
 test new splitters system in language
 
 test pdf
 
+
+___________
+
+HOUSE CLEANING
+
+clean up imports
+
+figure out if we can get rid of globals
+	this would take a bit of refactoring, maybe isn't necessary
+
+___________
+
+NEW SETUP FEATURES
+
 make 'fill in the blank' cards a togglable option
 
-get splitters working with ankiarticle
-
 input for additional tags
+___________
 
-figure out why closing the main tkinter window after ankiarticle is used gives weird warning
+NEEDS SORTED
+
+disable 'create_deck' button if youtube video is invalid or no text file is selected
+maybe make the youtube invalid message red
+	should maybe make a label next to it that says why its disabled
+
+make an option to run deck/anki after deck is created
+	this can be a checkbox in setup
+	maybe use  subprocess.call
 
 make the list of characters to be re.subbed somewhere as a constant variable so we dont need to change it in both places(subtitles is different)
 
-THESE SHOULD ALL BE REMOVED EVEN WHEN SHOWING FREQ RATINGS
-?make a 'words that have been skipped' file
-	if we do this then we should show words that will be skipped due to it make optional
+persistent skipped list option
+	it is a checkbox in setup
+	it keeps an external list of words that have been skipped and skips them automatically
+	should be viewable/editable from inside tkinter
+
 make the option to exclude proper nouns(first letter capitalized and not at the begining of a sentence, make sure it doesnt exclude if the whole word is capital)
 
-#look into quillionz and python library question-generation for making questions
+investigate note in get_translation() in ankilang
 
 maybe split at 'are' in article like we did 'is'
 
-make many decks of foundmyfitness podcasts for when on the road
 redo 2,3,4 or club de cuervos
 
 scrape transcriptions:

@@ -585,11 +585,6 @@ scrollbar.config(command=choose_definitions_text.yview)
 chooseDefinitionsEntryFrame = Frame(chooseDefinitionsFrame)
 chooseDefinitionsEntryFrame.pack(fill=X, pady = 4)
 
-# youtube_file_name_var = StringVar(youtubeInfoFrame, value='')
-# youtube_file_name_var.trace("w", lambda name, index, mode, youtube_file_name_var=youtube_file_name_var: youtube_file_name_var_callback())
-# youtube_file_name_entry = ttk.Entry(youtubeInfoFrame, text=youtube_file_name_var,bd =1, width=45)
-# youtube_file_name_entry.grid(row=0, column=1, pady = 4)
-
 choose_definitions_entry_var = StringVar(chooseDefinitionsEntryFrame, value='')
 choose_definitions_entry_var.trace("w", lambda name, index, mode, choose_definitions_entry_var=choose_definitions_entry_var: definition_callback())
 choose_definitions_entry = Entry(chooseDefinitionsEntryFrame, 
@@ -611,5 +606,3 @@ run_button = ttk.Button(createDeckFrame, text="Create Deck", command=create_deck
 run_button.pack(side="left")
 
 root.mainloop()
-
-#create deck button(only visible when lang file is input or all definitions have been decided)

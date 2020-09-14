@@ -82,7 +82,7 @@ def concatenate_all_definitions_to_string(dictionary):
 	dict_value_list = []
 	for dict_value in dictionary.values():
 		if dict_value != 'rejected!' and dict_value != 'alt word form used.':
-			dict_value_list.append(dict_value[0].replace('\n', ' ') + ' ')#pretty sure this will have fixed my problem
+			dict_value_list.append(dict_value[0].replace('\n', ' ') + ' ')
 	return ''.join(dict_value_list)
 
 def convert_text_to_keywords(text, low_freq, src_lang):

@@ -81,14 +81,10 @@ def get_src_words_and_phrases(str,low_freq,high_freq,src_langcode,splitters):
 			current_episode = phrase
 		else:
 			if len(phrase.split()) > 1 and phrase:
-				#print('orig',phrase)
 				if phrase in src_list:
-					#print('p in src_list', phrase)
 					if current_episode not in src_list[phrase]:
-						#print('current_episode not in src_list[phrase]:',phrase)
 						src_list[phrase].append(current_episode)
 				else:
-					#print('trans',phrase)
 					if print_added == True:
 						print('phrase added', phrase)
 					src_list[phrase] = [current_episode]
