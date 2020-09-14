@@ -23,7 +23,6 @@ from os import path
 import math
 from tkinter import *
 import tkinter as ttk
-
 from langCodes import *
 
 article_deck = None
@@ -32,7 +31,6 @@ stemmer = SnowballStemmer("english")
 wiki_wiki = wikipediaapi.Wikipedia('en')
 
 def get_google_definition(word_to_define):
-	#print('getD',word_to_define)
 	first_definition = ''
 	try:
 		response = requests.get('https://api.dictionaryapi.dev/api/v1/entries/en/'+word_to_define)
@@ -80,41 +78,12 @@ def get_definitions(word):
 				definitions.append([google_def,word_form])
 	return definitions
 
-# def show_definitions(word, definitions, article):
-# 	sentences = get_words_sentence_from_text(word, article, True)
-# 	if sentences:
-# 		print('\rUSAGE:',' '*30)
-# 	for sentence in sentences:
-# 		print(sentence+'\n')
-# 	definition_number = 0
-# 	if definitions:
-# 		for definition in definitions:
-# 			if definition:
-# 				definition_number += 1
-# 				if definition_number == 1:
-# 					print('\r'+str(definition_number)+'. '+definition[0])
-# 				else:
-# 					print(str(definition_number)+'. '+definition[0])
-# 	if definition_number == 0:
-# 		print('\r'+str(definition_number+1)+'. Create your own definition.               ')
-# 	else:
-# 		print(str(definition_number+1)+'. Create your own definition.               ')
-# 	print(str(definition_number+2)+'. Change word.')
-# 	print(str(definition_number+3)+'. Discard word.')	
-
 def concatenate_all_definitions_to_string(dictionary):
 	dict_value_list = []
 	for dict_value in dictionary.values():
 		if dict_value != 'rejected!' and dict_value != 'alt word form used.':
 			dict_value_list.append(dict_value[0].replace('\n', ' ') + ' ')#pretty sure this will have fixed my problem
 	return ''.join(dict_value_list)
-
-# def animated_loading(loading_message):
-#     chars = "/—\\|" 
-#     for char in chars:
-#         sys.stdout.write('\r'+loading_message+'...'+char)          
-#         time.sleep(.1)
-#         sys.stdout.flush()
 
 def convert_text_to_keywords(text, low_freq, src_lang):
 	clean = re.sub(r"[,.'`’'|—;:@#?¿!¡<>_\-\"”“&$\[\]\)\(\\\/]+\ *", " ", text)
@@ -132,94 +101,6 @@ def convert_text_to_keywords(text, low_freq, src_lang):
 			zipf_frequency(word, get_lang_code(src_lang)) >= low_freq):
 				keywords.append(word)
 	return keywords
-
-# def show_loading_and_get_definitions(word):
-# 	que = queue.Queue()
-# 	getting_definitions_thread = Thread(target=lambda q, arg1: q.put(get_definitions(arg1)), args=(que, word))
-# 	getting_definitions_thread.start()
-# 	while getting_definitions_thread.isAlive():
-# 		animated_loading('Getting definitions')
-# 	getting_definitions_thread.join()
-# 	definitions = que.get()
-# 	return definitions
-
-# def get_user_definition_decision_int(definitions):
-# 	possible_definition_decisions = []
-# 	for i in range(len(definitions)+3):
-# 		possible_definition_decisions.append(str(i+1))					
-# 	user_definition_decision = ''
-# 	while user_definition_decision not in possible_definition_decisions:
-# 		try:
-# 			if sys.platform == 'linux':
-# 				user_definition_decision = getch().decode('ASCII')
-# 			else:
-# 				user_definition_decision = msvcrt.getch().decode('ASCII') #ignore inputs that are not an appropriate number
-# 		except:
-# 			pass
-# 	return int(user_definition_decision)
-
-# def get_users_definition_decision(word, article):
-# 	word_definition = ''
-# 	word_is_rejected = False
-# 	while word_definition == '' and not word_is_rejected:	
-# 		definitions = show_loading_and_get_definitions(word)
-# 		show_definitions(word, definitions, article)
-# 		word_definition = ''
-# 		word_is_rejected = False
-# 		user_definition_decision_int = get_user_definition_decision_int(definitions)
-# 		if user_definition_decision_int-1 == len(definitions):
-# 			print("Input definition:")
-# 			word_definition = [input(), word]
-# 			if not word_definition:
-# 				word_is_rejected = True
-# 				continue
-# 		elif user_definition_decision_int-2 == len(definitions):									
-# 			word = ''
-# 			while not word:
-# 				print("Input other word form:")
-# 				word = input()
-# 			continue						
-# 		elif user_definition_decision_int-3 == len(definitions):
-# 			word_is_rejected = True
-# 			continue							
-# 		else:
-# 			word_definition = definitions[int(user_definition_decision_int)-1]
-
-# 	return word_definition, word_is_rejected, word
-
-# def build_dictionary_with_user(dictionary, text, original_article, low_freq, src_lang):
-# 	words = convert_text_to_keywords(text, low_freq, src_lang)
-# 	more_words_to_define = False
-# 	for word in words:
-# 		if word not in dictionary:			
-# 			print(" \nShould we define ' " + word + " '?(y/n)")
-# 			user_decided_to_define = False
-# 			while user_decided_to_define == False:
-# 				try:
-# 					if sys.platform == 'linux':
-# 						users_decision_to_define = getch().decode('ASCII')
-# 					else:
-# 						users_decision_to_define = msvcrt.getch().decode('ASCII')
-# 				except:
-# 					pass
-# 				if users_decision_to_define.upper() == 'Y':
-# 					user_decided_to_define = True
-# 					word_definition, word_is_rejected, word = get_users_definition_decision(word, original_article)
-# 					if word_is_rejected:
-# 						dictionary[word] = 'rejected!'
-# 					elif word_definition:
-# 						dictionary[word_definition[1]] = [word_definition[0], word]
-# 						if word_definition[1] != word:
-# 							dictionary[word] = 'alt word form used.'
-# 						more_words_to_define = True
-# 				elif users_decision_to_define.upper() == 'N':
-# 					user_decided_to_define = True
-# 					dictionary[word] = 'rejected!'
-# 					word_is_rejected = True
-# 		else:
-# 			if not dictionary[word]:
-# 				dictionary[word] = 'rejected!'
-# 	return dictionary, more_words_to_define
 
 def create_definitions_cards(dictionary, text_filename):
 	global article_deck
@@ -251,11 +132,7 @@ def create_definitions_cards(dictionary, text_filename):
 				fields=[word + ' ('+str(round(time.time()))+')', dictionary[word][0]])
 			article_deck.add_note(my_note)
 
-def reduce_sentence_length(word, sentence):
-	print('sentence too long')
-
 def get_words_sentence_from_text(word, article_text, show_word):
-	#article_text = article_text.lower()
 	all_sentences = article_text.split('.')
 	sentences_with_word = []
 	for sentence in all_sentences:
@@ -313,17 +190,6 @@ def create_article_anki_deck(dictionary, article_text, text_filename):
 	create_fill_in_the_blank_cards(dictionary, article_text, text_filename)
 	genanki.Package(article_deck).write_to_file('ankidecks/'+text_filename+'.apkg')
 
-def set_global_variables(deck, src_lang):
-	global article_deck
-	article_deck = deck
-	global stemmer
-	try:
-		stemmer = SnowballStemmer(src_language)
-	except:
-		stemmer = SnowballStemmer('english')
-	global wiki_wiki
-	wiki_wiki = wikipediaapi.Wikipedia(get_lang_code(src_lang))
-
 def get_text(text_filename):
 	article_text = ''
 	if path.exists('sources/'+text_filename+".txt"):
@@ -339,37 +205,6 @@ def get_text(text_filename):
 		article_text = raw['content']
 	return article_text
 
-def run_article_program(text_filename, deck, src_lang, low_freq, splitters):
-	set_global_variables(deck, src_lang)
-	complete_dictionary = dict()
-	article_text = get_text(text_filename)
-	complete_dictionary, more_words_to_define = build_dictionary_with_user(complete_dictionary, article_text, article_text, low_freq, src_lang)
-	still_building_dictionary = True
-	while still_building_dictionary and more_words_to_define:
-		print(" \nDefine keywords from next level of definitions?(y/n)")
-		user_decision_definition_made = False
-		while user_decision_definition_made == False:
-			try:
-				if sys.platform == 'linux':
-					user_decision_definition = getch().decode('ASCII')
-				else:
-					user_decision_definition = msvcrt.getch().decode('ASCII')
-			except:
-				pass
-			if user_decision_definition.upper() == 'Y':
-				user_decision_definition_made = True
-				string_of_definitions = concatenate_all_definitions_to_string(complete_dictionary)
-				dictionary_additions, more_words_to_define = build_dictionary_with_user(complete_dictionary, string_of_definitions, article_text, low_freq, src_lang)
-				complete_dictionary = {**complete_dictionary, **dictionary_additions}
-			elif user_decision_definition.upper() == 'N':
-				user_decision_definition_made = True
-				still_building_dictionary = False
-	create_anki_deck(complete_dictionary, article_text, text_filename)
-	for word in complete_dictionary:
-		if complete_dictionary[word] != "rejected!" and complete_dictionary[word] != 'alt word form used.':
-			print('\n',word.upper(), '=', complete_dictionary[word][0])
-	print('\n','Deck created:',text_filename)
-	sys.exit()
 
 
 

@@ -15,17 +15,12 @@ import urllib.request
 import urllib
 from youtube_title_parse import get_artist_title
 from youtube_transcript_api import YouTubeTranscriptApi
-#import pdftotext
 from tika import parser
 import queue
 
 from ankiarticle import *
 from langCodes import *
 from ankilang import *
-
-#freq_threshold = 7 #7 is probably good for spanish, #10 for turkish
-#rare_freq_threshold = -1 #1 is probably good for spanish, -1 for turkish
-
 
 text_filename = 'podFoundmyfitnessCovid2'
 text_filename = 'sample'
@@ -53,7 +48,6 @@ def browseFiles():
                                                         "*.*"),("Text files", 
                                                         "*.txt*"))) 	
 	filename_string = filename.split(':')[1]
-	print(filename_string)
 	text_filename = os.path.splitext(os.path.basename(filename_string))[0]
 	return text_filename
 
@@ -74,7 +68,6 @@ def show_url_entry():
 
 def text_type_radiobutton_changed(*args):
 	if text_type.get() == 'language':
-		print('language')
 		show_file_browser_widgets()
 		src_language.set('spanish')
 		dest_lang.set('english')
@@ -83,7 +76,6 @@ def text_type_radiobutton_changed(*args):
 		frequency_thresholds_low_entry.configure(state='normal')
 		exclude_var_entry.configure(state='disable')
 	if text_type.get() == 'article':
-		print('article')
 		show_file_browser_widgets()
 		src_language.set('english')
 		destination_language_optionmenu.configure(state='disable')
@@ -91,7 +83,6 @@ def text_type_radiobutton_changed(*args):
 		chooseDefinitionsButtonFrame.pack(side='left')
 		exclude_var_entry.configure(state='normal')
 	if text_type.get() == 'youtube':
-		print('youtube')
 		show_url_entry()
 		src_language.set('english')
 		chooseDefinitionsButtonFrame.pack(side='left')
@@ -108,11 +99,8 @@ def get_text_from_youtube_transcription(video_id):
 
 def youtubeTitleFormatted(title):
 	lower_title = title.lower()
-	print('lowe', lower_title)
 	no_symbol_title = re.sub(r"[,.'`’'|—;:@#?¿!¡<>_\-\"”“&$\[\]\)\(\\\/]+\ *", " ", lower_title)
-	print(no_symbol_title)
 	split_title = no_symbol_title.split(sep=None)
-	print(split_title)
 	formatted_title = ''
 	for word in split_title:
 		formatted_title = formatted_title + word.capitalize()
@@ -131,7 +119,6 @@ def url_button_clicked():
 			response_text = response.read()
 			data = json.loads(response_text.decode())
 			artist, title = get_artist_title(data['title'])
-			print('title', title)
 			youtube_file_name_var.set(youtubeTitleFormatted(title)) #data['title'] is the whole title
 	except:
 		youtube_file_name_var.set('invalid url')
@@ -165,7 +152,6 @@ def show_frequencies():
 		source_text = ' '.join(convertedBook)
 	elif path.exists('sources/'+text_filename+".pdf"):
 		raw = parser.from_file('sources/'+text_filename+".pdf")
-		print(raw['content'])
 		source_text = raw['content']
 	if source_text:
 		source_text = source_text.lower()
@@ -196,7 +182,6 @@ def show_frequencies():
 def createTextFileFromYoutube():
 	global video_id
 	text = get_text_from_youtube_transcription(video_id)
-	print('cr',text_filename)
 	fileToWrite = open('sources/'+text_filename+'.txt',"w+", encoding="utf8")
 	fileToWrite.write(text)
 	fileToWrite.close()
@@ -205,26 +190,30 @@ def change_name_label(change_to):
 	file_name_label.configure(text=change_to)
 	file_name_label.update()
 
+def begin_choose_definitions_cycle():
+	global article_text
+	setupFrame.grid_forget()
+	chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
+	choose_definitions_entry.focus()
+	article_text = get_text(text_filename)
+	add_words_to_dictionary(article_text)
+	ask_if_should_define()
+
 def create_deck_clicked():
 	deck = genanki.Deck(round(time.time()),text_filename)
-	print('create_deck_clicked', text_type.get())
 	src_lng = str(src_language.get())
 	dst_lng = str(src_language.get())
 	frq_l = float(frequency_low.get())
 	frq_h = float(frequency_high.get())
 	splitters = splitters_var.get().split(',')
 	if text_type.get() == 'language':
-		print('language')
 		run_language_program(text_filename, deck, src_lng, dst_lng, frq_l, frq_h, splitters)
 	elif text_type.get() == 'article':
-		print('article')
-		root.destroy()
-		run_article_program(text_filename, deck, src_lng, frq_h, splitters)		
+		begin_choose_definitions_cycle()		
 	elif text_type.get() == 'youtube':
 		if text_filename != 'invalid url':
-			print('youtube valid')
 			createTextFileFromYoutube()
-			run_article_program(text_filename, deck, src_lng, frq_h, splitters)
+			begin_choose_definitions_cycle()
 		else:
 			print('youtube not valid')
 
@@ -244,7 +233,6 @@ def help_clicked():
 	print('commas.')
 
 def add_to_custom_splitters(splitters_to_add, this_window):
-	print('add_to_custom_splitters'+splitters_to_add)
 	all_splitters = get_custom_splitters()
 	all_splitters.append(splitters_to_add)	
 	with open('custom_splitters.txt', 'w') as filehandle:
@@ -280,51 +268,6 @@ def youtube_file_name_var_callback():
 	text_filename = youtube_file_name_var.get()
 	file_name_label.configure(text=text_filename)
 	file_name_label.update()
-	print(youtube_file_name_var.get())
-
-def get_user_definition_decision_int(definitions):
-	possible_definition_decisions = []
-	for i in range(len(definitions)+3):
-		possible_definition_decisions.append(str(i+1))					
-	user_definition_decision = ''
-	while user_definition_decision not in possible_definition_decisions:
-		try:
-			if sys.platform == 'linux':
-				user_definition_decision = getch().decode('ASCII')
-			else:
-				user_definition_decision = msvcrt.getch().decode('ASCII') #ignore inputs that are not an appropriate number
-		except:
-			pass
-	return int(user_definition_decision)
-
-def get_users_definition_decision(word):
-	article = get_text(text_filename)
-	word_definition = ''
-	word_is_rejected = False
-	while word_definition == '' and not word_is_rejected:	
-		definitions = show_loading_and_get_definitions(word)
-		show_definitions(word, definitions, article)
-		word_definition = ''
-		word_is_rejected = False
-		user_definition_decision_int = get_user_definition_decision_int(definitions)
-		if user_definition_decision_int-1 == len(definitions):
-			print("Input definition:")
-			word_definition = [input(), word]
-			if not word_definition:
-				word_is_rejected = True
-				continue
-		elif user_definition_decision_int-2 == len(definitions):									
-			word = ''
-			while not word:
-				print("Input other word form:")
-				word = input()
-			continue						
-		elif user_definition_decision_int-3 == len(definitions):
-			word_is_rejected = True
-			continue							
-		else:
-			word_definition = definitions[int(user_definition_decision_int)-1]
-	return word_definition, word_is_rejected, word
 
 def ask_if_should_define():
 	global question_type
@@ -362,7 +305,6 @@ def show_loading_and_definitions():
 	getting_definitions_thread.start()
 	choose_definitions_text.configure(state="normal")
 	choose_definitions_text.insert("end",u"\n")
-	choose_definitions_text.configure(state="disabled")
 	while getting_definitions_thread.isAlive():
 		animated_loading('Getting definitions')
 	choose_definitions_text.configure(state="normal")
@@ -410,10 +352,8 @@ def show_definitions(definitions):
 def ask_for_definition_selection():
 	question_type = 'select_definition'
 	definitions = show_loading_and_definitions()
-	print('ask_for_definition_selection')
 
 def set_chosen_definition(chosen_definition):
-	print('set_chosen_definition', chosen_definition)
 	global definition_dictionary
 	global key_in_question
 	definition_dictionary[key_in_question] = definitions_in_question[chosen_definition]
@@ -422,27 +362,21 @@ def set_chosen_definition(chosen_definition):
 def ask_for_new_keyword():
 	global question_type
 	question_type = 'new_keyword'
-	print('ask_for_new_keyword')
 	tkprint('\nEnter new word:')
 
 def ask_for_user_definition():
 	global question_type
 	question_type = 'user_definition'
-	print('ask_for_user_definition')
 	tkprint('Enter definition:')
 
 def deal_with_user_selection(option):
-	print('option', option)
 	if option == '1':
 		ask_for_new_keyword()
-		print('change_keyword')
 	elif option == '2':
 		ask_for_user_definition()
-		print('create_definition')
 	elif option == '3':
 		definition_dictionary[key_in_question] = ['!rejected', '!no_alt']
 		ask_if_should_define()
-		print('word rejected')
 	else:
 		set_chosen_definition(4-int(option))
 
@@ -455,13 +389,11 @@ def clean_dictionary():
 def create_deck():
 	global definition_dictionary
 	global article_text
-	print('create_deck')
 	clean_dictionary()
 	create_article_anki_deck(definition_dictionary, article_text, text_filename)
 	tkprint('Deck created! ('+text_filename+')')
 
 def create_another_level_of_keywords():
-	print('create_another_level_of_keywords')
 	global definition_dictionary
 	string_of_definitions = concatenate_all_definitions_to_string(definition_dictionary)
 	add_words_to_dictionary(string_of_definitions)
@@ -481,10 +413,7 @@ def definition_callback():
 	global key_in_question
 	global question_type
 	user_input = str(choose_definitions_entry_var.get())
-	print('user_input', user_input)
-	print('question_type', question_type)
 	if question_type == 'should_define':
-		print('should_define')
 		if user_input.lower() == 'n':
 			definition_dictionary[key_in_question] = ['!rejected', '!no_alt']
 			ask_if_should_define()
@@ -492,13 +421,11 @@ def definition_callback():
 			ask_for_definition_selection()
 		choose_definitions_entry_var.set('')
 	elif question_type == 'select_definition':
-		print('select_definition')
 		for option in select_definition_options:
 			if user_input == option:
 				deal_with_user_selection(option)
 		choose_definitions_entry_var.set('')
 	elif question_type == 'define_next_level':
-		print('define_next_level')
 		if user_input.lower() == 'n':
 			create_deck()
 		elif user_input.lower() == 'y':
@@ -512,14 +439,12 @@ def enter_pressed_in_entry():
 	global question_type	
 	user_input = str(choose_definitions_entry_var.get())
 	if question_type == 'new_keyword':
-		print('new_keyword_enter_pressed', user_input)
 		key_in_question = user_input
 		tkprint("Define ' "+user_input+" '")
 		choose_definitions_entry_var.set('')
 		show_loading_and_definitions()
 	elif question_type == 'input_definition':
 		definition_dictionary[key_in_question] = [user_input, '!no_alt']
-		print('user_definition_enter_pressed', user_input)
 		choose_definitions_entry_var.set('')
 		ask_if_should_define()
 
@@ -531,17 +456,6 @@ def add_words_to_dictionary(text):
 	for word in words:
 		if not word in definition_dictionary:
 			definition_dictionary[word] = ['!undefined', '!no_alt']
-	print('dd',definition_dictionary)
-
-def choose_definitions_clicked():
-	global article_text
-	setupFrame.grid_forget()
-	chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
-	choose_definitions_entry.focus()
-	article_text = get_text(text_filename)
-	add_words_to_dictionary(article_text)
-	ask_if_should_define()
-	print('choose definitions')
 
 nameAndHelpFrame = Frame(root)
 nameAndHelpFrame.grid(row=0, column=0, sticky="ew", pady = 4)
@@ -643,13 +557,6 @@ add_splitters = ttk.Button(splittersFrame, text="+", command=open_add_splitters)
 add_splitters.pack(side="left", padx = 4)
 remove_spllitters = ttk.Button(splittersFrame, text=" - ", command=remove_from_custom_splitters)
 remove_spllitters.pack(side="left", padx = 4)
-
-chooseDefinitionsButtonFrame = Frame(setupFrame)
-chooseDefinitionsButtonFrame.pack(fill=X, pady = 4)
-choose_definitions_button = ttk.Button(chooseDefinitionsButtonFrame, 
-	text="Choose Definitions", 
-	command=choose_definitions_clicked)
-choose_definitions_button.pack(side="left")
 
 chooseDefinitionsFrame = Frame(root)
 chooseDefinitionsFrame.grid_forget()

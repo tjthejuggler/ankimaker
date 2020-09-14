@@ -7,6 +7,16 @@ either find out how to run a program on pydroid and access the console and tkint
 		#clean up unused code and imports
 		#figure out if we can get rid of globals
 
+bring show_frequencies into tkinter
+	use the text widget and give it a 'back' button
+	help_clicked also needs to be done like this
+
+test out the extra window that gets made for splitters on phone
+	if tis works well then maybe we want an extra window for 'show_frequencies'
+
+disable 'create_deck' button if youtube video is invalid or no text file is selected
+maybe make the youtube invalid message red
+
 close app when article deck is created
 
 consolidate code,
