@@ -1,9 +1,10 @@
 UP NEXT
 
-hook up platform.sysyem() to checkbox visibility so it only shows on windows
+remove 'create deck' button after its clicked
 
-test out the extra window that gets made for splitters on phone
-	if tis works well then maybe we want an extra window for 'show_frequencies'
+use packs or grids or whatever on splitters window
+
+an extra window for 'show_frequencies'
 
 make an option to run deck/anki after deck is created
 	this can be a checkbox in setup

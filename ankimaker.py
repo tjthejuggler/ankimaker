@@ -201,6 +201,7 @@ def begin_choose_definitions_cycle():
 	ask_if_should_define()
 
 def create_deck_clicked():
+	createDeckFrame.grid_forget()
 	deck = genanki.Deck(round(time.time()),text_filename)
 	src_lng = str(src_language.get())
 	dst_lng = str(src_language.get())
@@ -574,7 +575,7 @@ chooseDefinitionsFrame = Frame(root)
 chooseDefinitionsFrame.grid_forget()
 
 chooseDefinitionsTextFrame = Frame(chooseDefinitionsFrame)
-chooseDefinitionsTextFrame.pack(fill=X, pady = 4)
+chooseDefinitionsTextFrame.pack(fill=X, pady = 4, padx = 8)
 
 scrollbar = Scrollbar(chooseDefinitionsTextFrame)
 scrollbar.pack(side=RIGHT, fill = Y)
@@ -595,13 +596,17 @@ choose_definitions_text.pack(side='left')
 scrollbar.config(command=choose_definitions_text.yview)
 
 chooseDefinitionsEntryFrame = Frame(chooseDefinitionsFrame)
-chooseDefinitionsEntryFrame.pack(fill=X, pady = 4)
+chooseDefinitionsEntryFrame.pack(fill=X, pady = 4, padx = 8)
+
+entry_width = 47
+if platform.system() == 'Windows':
+	entry_width = 73
 
 choose_definitions_entry_var = StringVar(chooseDefinitionsEntryFrame, value='')
 choose_definitions_entry_var.trace("w", lambda name, index, mode, choose_definitions_entry_var=choose_definitions_entry_var: definition_callback())
 choose_definitions_entry = Entry(chooseDefinitionsEntryFrame, 
 	textvariable = choose_definitions_entry_var,
-	width = 65,
+	width = entry_width,
 	bd =1, 
 	bg = 'black', 
 	fg = 'white', 
@@ -614,7 +619,7 @@ choose_definitions_entry.bind("<Return>", lambda x: enter_pressed_in_entry())
 
 createDeckFrame = Frame(root)
 createDeckFrame.grid(row=3, column=0, sticky=W, pady = 4)
-run_button = ttk.Button(createDeckFrame, text="Create Deck", command=create_deck_clicked)
-run_button.pack(side="left")
+create_deck_button = ttk.Button(createDeckFrame, text="Create Deck", command=create_deck_clicked)
+create_deck_button.pack(side="left")
 
 root.mainloop()
