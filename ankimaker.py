@@ -389,8 +389,11 @@ def clean_dictionary():
 def create_deck():
 	global definition_dictionary
 	global article_text
+	should_autorun = False
+	if autorun_var.get() == 1:
+		should_autorun = True
 	clean_dictionary()
-	create_article_anki_deck(definition_dictionary, article_text, text_filename)
+	create_article_anki_deck(definition_dictionary, article_text, text_filename, should_autorun)
 	tkprint('Deck created! ('+text_filename+')')
 
 def create_another_level_of_keywords():
@@ -557,6 +560,12 @@ add_splitters = ttk.Button(splittersFrame, text="+", command=open_add_splitters)
 add_splitters.pack(side="left", padx = 4)
 remove_spllitters = ttk.Button(splittersFrame, text=" - ", command=remove_from_custom_splitters)
 remove_spllitters.pack(side="left", padx = 4)
+
+autorunFrame = Frame(setupFrame)
+autorunFrame.pack(fill=X, pady = 4)
+autorun_var = IntVar()
+Checkbutton(setupFrame, text="Auto-run deck file", variable=autorun_var).pack(side="left", padx = 4)
+
 
 chooseDefinitionsFrame = Frame(root)
 chooseDefinitionsFrame.grid_forget()

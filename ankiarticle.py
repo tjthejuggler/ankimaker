@@ -24,6 +24,7 @@ import math
 from tkinter import *
 import tkinter as ttk
 from langCodes import *
+import subprocess
 
 article_deck = None
 lemmatizer = WordNetLemmatizer()
@@ -183,12 +184,17 @@ def create_fill_in_the_blank_cards(dictionary, article_text, text_filename):
 					fields=[sentence + ' ('+str(round(time.time()))+')', dictionary[word][1]])
 				article_deck.add_note(my_note)
 
-def create_article_anki_deck(dictionary, article_text, text_filename):
+def create_article_anki_deck(dictionary, article_text, text_filename, should_autorun):
 	global article_deck
 	article_deck = genanki.Deck(round(time.time()),text_filename)
 	create_definitions_cards(dictionary, text_filename)
 	create_fill_in_the_blank_cards(dictionary, article_text, text_filename)
 	genanki.Package(article_deck).write_to_file('ankidecks/'+text_filename+'.apkg')
+	cwd = os.getcwd()
+	print(cwd)
+	if should_autorun:
+		os.startfile(cwd+'\\ankidecks\\'+text_filename+'.apkg')
+	#os.system(['C:\\Program Files\\Anki\\Anki.exe','ankidecks/'+text_filename+'.apkg'])
 	sys.exit()
 
 def get_text(text_filename):
