@@ -129,7 +129,7 @@ def create_definitions_cards(dictionary, text_filename):
 		if dictionary[word] != 'rejected!' and dictionary[word] != 'alt word form used.':
 			my_note = genanki.Note(
 				model=definition_model,
-				tags=text_filename,
+				tags=[text_filename],
 				fields=[word + ' ('+str(round(time.time()))+')', dictionary[word][0]])
 			article_deck.add_note(my_note)
 
@@ -180,7 +180,7 @@ def create_fill_in_the_blank_cards(dictionary, article_text, text_filename):
 			for sentence in sentences_with_word:
 				my_note = genanki.Note(
 					model=definition_model,
-					tags=text_filename,
+					tags=[text_filename],
 					fields=[sentence + ' ('+str(round(time.time()))+')', dictionary[word][1]])
 				article_deck.add_note(my_note)
 
