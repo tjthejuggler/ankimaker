@@ -246,12 +246,11 @@ def add_to_custom_splitters(splitters_to_add, this_window):
 def open_add_splitters():
 	add_splitters_window = Toplevel(root)
 	add_splitters_window.title("Add splitters") 
-	add_splitters_window.geometry("600x60")
 	splitters_to_add = StringVar(add_splitters_window, value='')
-	add_splitters_entry = Entry(add_splitters_window, textvariable = splitters_to_add, bd =1, width=100)
-	add_splitters_entry.place(x=10,y=20)	
+	add_splitters_entry = Entry(add_splitters_window, textvariable = splitters_to_add, bd =1, width=70)
+	add_splitters_entry.pack(anchor=W)
 	add_splitters_button = ttk.Button(add_splitters_window, text="Add", command=lambda : add_to_custom_splitters(splitters_to_add.get(), add_splitters_window))
-	add_splitters_button.place(x=10,y=40)
+	add_splitters_button.pack(anchor=W)
 
 def remove_from_custom_splitters():
 	all_splitters = get_custom_splitters()
