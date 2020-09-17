@@ -1,5 +1,7 @@
 UP NEXT
 
+clicking language radiobutton causes error
+
 remove 'create deck' button after its clicked
 
 use packs or grids or whatever on splitters window

@@ -72,7 +72,6 @@ def text_type_radiobutton_changed(*args):
 		show_file_browser_widgets()
 		src_language.set('spanish')
 		dest_lang.set('english')
-		chooseDefinitionsButtonFrame.pack_forget()
 		destination_language_optionmenu.configure(state='normal')
 		frequency_thresholds_low_entry.configure(state='normal')
 		exclude_var_entry.configure(state='disable')
@@ -81,12 +80,10 @@ def text_type_radiobutton_changed(*args):
 		src_language.set('english')
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
-		chooseDefinitionsButtonFrame.pack(side='left')
 		exclude_var_entry.configure(state='normal')
 	if text_type.get() == 'youtube':
 		show_url_entry()
 		src_language.set('english')
-		chooseDefinitionsButtonFrame.pack(side='left')
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
@@ -201,6 +198,7 @@ def begin_choose_definitions_cycle():
 	ask_if_should_define()
 
 def create_deck_clicked():
+	create_deck_button.pack_forget()
 	createDeckFrame.grid_forget()
 	deck = genanki.Deck(round(time.time()),text_filename)
 	src_lng = str(src_language.get())
