@@ -32,6 +32,10 @@ select_definition_options = []
 definition_dictionary = dict()
 key_in_question = ''
 
+entry_width = 47
+if platform.system() == 'Windows':
+	entry_width = 73
+
 root = Tk() 
 root.title('Miug')
 root.resizable()
@@ -247,7 +251,7 @@ def open_add_splitters():
 	add_splitters_window = Toplevel(root)
 	add_splitters_window.title("Add splitters") 
 	splitters_to_add = StringVar(add_splitters_window, value='')
-	add_splitters_entry = Entry(add_splitters_window, textvariable = splitters_to_add, bd =1, width=70)
+	add_splitters_entry = Entry(add_splitters_window, textvariable = splitters_to_add, bd =1, width=entry_width)
 	add_splitters_entry.pack(anchor=W)
 	add_splitters_button = ttk.Button(add_splitters_window, text="Add", command=lambda : add_to_custom_splitters(splitters_to_add.get(), add_splitters_window))
 	add_splitters_button.pack(anchor=W)
@@ -594,10 +598,6 @@ scrollbar.config(command=choose_definitions_text.yview)
 
 chooseDefinitionsEntryFrame = Frame(chooseDefinitionsFrame)
 chooseDefinitionsEntryFrame.pack(fill=X, pady = 4, padx = 8)
-
-entry_width = 47
-if platform.system() == 'Windows':
-	entry_width = 73
 
 choose_definitions_entry_var = StringVar(chooseDefinitionsEntryFrame, value='')
 choose_definitions_entry_var.trace("w", lambda name, index, mode, choose_definitions_entry_var=choose_definitions_entry_var: definition_callback())
