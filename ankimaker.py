@@ -31,6 +31,7 @@ question_type = ''
 select_definition_options = []
 definition_dictionary = dict()
 key_in_question = ''
+current_word_usage_sentences = []
 
 entry_width = 47
 if platform.system() == 'Windows':
@@ -247,18 +248,6 @@ def help_clicked():
 	tkprint('Excludes - Enter a pattern to be ignored using *s, for example to ignore CH01,'
 		'CH02, CH03.. input CH**. You can input as many patterns as you want seperated by'
 		'commas.')
-	word= 'and'
-	start = '1.0'
-	while 1:
-		tag_start = choose_definitions_text.search(word, start, stopindex=END, regexp=True)       
-		if not tag_start: break
-		tag_end = '%s+%dc' % (tag_start, len(word))
-		choose_definitions_text.tag_add('bold', tag_start, tag_end)
-		choose_definitions_text.tag_configure('bold', foreground="red",font='TkDefaultFont 9 bold')
-		start = tag_start + "+1c"
-	#pos = textwidget.index("end")
-	#this gets the index of the current end and may be useful if we are going to color code
-	#definitions. maybe even would be a good way to do keyword coloring
 
 def hide_info_text():
 	setupFrame.grid(row=1, column=0, sticky=W)
@@ -359,13 +348,15 @@ def show_definitions(definitions):
 	global definitions_in_question
 	global select_definition_options
 	global question_type
+	global current_word_usage_sentences
 	select_definition_options = []
 	word = key_in_question
 	article = get_text(text_filename)
-	sentences = get_words_sentence_from_text(word, article, True)
-	if sentences:
+	tkprint("Choose definition for ' "+key_in_question+" '")
+	current_word_usage_sentences = get_words_sentence_from_text(word, article, True)
+	if current_word_usage_sentences:
 		tkprint('USAGE:'+' '*30)
-	for sentence in sentences:
+	for sentence in current_word_usage_sentences:
 		tkprint(sentence)
 	tkprint("1. Change word.")
 	tkprint("2. Create your own definition.")
@@ -391,17 +382,20 @@ def set_chosen_definition(chosen_definition):
 	global definition_dictionary
 	global key_in_question
 	definition_dictionary[key_in_question] = definitions_in_question[chosen_definition]
+	show_chosen_definition(key_in_question)
 	ask_if_should_define()
 
 def ask_for_new_keyword():
 	global question_type
+	global key_in_question
 	question_type = 'new_keyword'
-	tkprint('\nEnter new word:')
+	tkprint("\nEnter replacement word for ' "+key_in_question+" ':")
 
 def ask_for_user_definition():
 	global question_type
+	global key_in_question
 	question_type = 'input_definition'
-	tkprint('Enter definition:')
+	tkprint("Enter definition for ' "+key_in_question+" ':" )
 
 def tkprint_delete_lines(number_of_lines):
 	choose_definitions_text.configure(state="normal")
@@ -409,7 +403,11 @@ def tkprint_delete_lines(number_of_lines):
 	choose_definitions_text.configure(state="disabled")
 
 def deal_with_user_selection(option):
-	tkprint_delete_lines(len(definitions_in_question)+3)
+	global current_word_usage_sentences
+	usage_lines = 0
+	if current_word_usage_sentences:
+		usage_lines = len(current_word_usage_sentences) + 1
+	tkprint_delete_lines(len(definitions_in_question)+usage_lines+4)
 	if option == '1':
 		ask_for_new_keyword()
 	elif option == '2':
@@ -459,8 +457,10 @@ def definition_callback():
 	if question_type == 'should_define':
 		if user_input.lower() == 'n':
 			definition_dictionary[key_in_question] = ['!rejected', '!no_alt']
+			tkprint_delete_lines(1)
 			ask_if_should_define()
 		elif user_input.lower() == 'y':
+			tkprint_delete_lines(1)
 			ask_for_definition_selection()
 		choose_definitions_entry_var.set('')
 	elif question_type == 'select_definition':
@@ -476,6 +476,23 @@ def definition_callback():
 		else:
 			choose_definitions_entry_var.set('')
 
+def show_chosen_definition(key):
+	global definition_dictionary
+	global current_word_usage_sentences
+	tkprint("\n"+key+" - "+definition_dictionary[key][0])
+	if current_word_usage_sentences:
+		tkprint('USAGE:')
+		for sentence in current_word_usage_sentences:
+			tkprint(sentence)
+	start = '1.0'
+	while 1:
+		tag_start = choose_definitions_text.search(key, start, stopindex=END, regexp=True)       
+		if not tag_start: break
+		tag_end = '%s+%dc' % (tag_start, len(key))
+		choose_definitions_text.tag_add('bold', tag_start, tag_end)
+		choose_definitions_text.tag_configure('bold', foreground="green",font='TkDefaultFont 9 bold')
+		start = tag_start + "+1c"
+
 def enter_pressed_in_entry():
 	global definition_dictionary
 	global key_in_question
@@ -488,6 +505,8 @@ def enter_pressed_in_entry():
 		show_loading_and_definitions()
 	elif question_type == 'input_definition':
 		definition_dictionary[key_in_question] = [user_input, '!no_alt']
+		tkprint_delete_lines(1)
+		show_chosen_definition(key_in_question)
 		choose_definitions_entry_var.set('')
 		ask_if_should_define()
 
