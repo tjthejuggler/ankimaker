@@ -247,6 +247,18 @@ def help_clicked():
 	tkprint('Excludes - Enter a pattern to be ignored using *s, for example to ignore CH01,'
 		'CH02, CH03.. input CH**. You can input as many patterns as you want seperated by'
 		'commas.')
+	word= 'and'
+	start = '1.0'
+	while 1:
+		tag_start = choose_definitions_text.search(word, start, stopindex=END, regexp=True)       
+		if not tag_start: break
+		tag_end = '%s+%dc' % (tag_start, len(word))
+		choose_definitions_text.tag_add('bold', tag_start, tag_end)
+		choose_definitions_text.tag_configure('bold', foreground="red",font='TkDefaultFont 9 bold')
+		start = tag_start + "+1c"
+	#pos = textwidget.index("end")
+	#this gets the index of the current end and may be useful if we are going to color code
+	#definitions. maybe even would be a good way to do keyword coloring
 
 def hide_info_text():
 	setupFrame.grid(row=1, column=0, sticky=W)

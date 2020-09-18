@@ -1,12 +1,8 @@
-UP NEXT
-convert splitters to a toggleable frame like setup and do the same for'show_frequencies' and 'help'
-	maybe can even reuse the current text widget for the 2nd two
-
-________
-
 TEXT BOX STYLING/CLEANING
 in text box, make words being defined green and/or bold or something
 	maybe some other color coding would be in order as well
+	color coding can probably be done with a function like
+	tkprintColor('text', color) and then just make it the same but no /n
 
 when a definition is set, tkprint the word with its definition?
 	if we do this then maybe we could get rid of all the definition options out of the text box to make it easier to look through
