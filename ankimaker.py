@@ -142,6 +142,7 @@ def word_excluded(word):
 	return should_exclude
 
 def show_frequencies():
+	show_info_text()
 	if text_type.get() == 'youtube':
 		createTextFileFromYoutube()
 	source_text = None
@@ -175,11 +176,11 @@ def show_frequencies():
 				if freq == x:
 					words_with_x_freq.append(word)
 			if words_with_x_freq:
-				print(clean_x)
-				print(words_with_x_freq)
+				tkprint(str(clean_x))
+				tkprint(str(words_with_x_freq))
 		if excluded_words:
-			print('EXCLUDED:')
-			print(excluded_words)
+			tkprint('EXCLUDED:')
+			tkprint(str(excluded_words))
 
 def createTextFileFromYoutube():
 	global video_id
@@ -195,7 +196,8 @@ def change_name_label(change_to):
 def begin_choose_definitions_cycle():
 	global article_text
 	setupFrame.grid_forget()
-	chooseDefinitionsFrame.grid(row=2, column=0, sticky=W)
+	showInfoTextOuterFrame.grid(row=2, column=0, sticky=W)
+	chooseDefinitionsEntryFrame.grid(row=3, column=0, sticky=W, pady = 4)
 	choose_definitions_entry.focus()
 	article_text = get_text(text_filename)
 	add_words_to_dictionary(article_text)
@@ -203,7 +205,8 @@ def begin_choose_definitions_cycle():
 
 def create_deck_clicked():
 	create_deck_button.pack_forget()
-	createDeckFrame.grid_forget()
+	createDeckButtonFrame.grid_forget()
+	showInfoTextOkButtonFrame.pack_forget()
 	deck = genanki.Deck(round(time.time()),text_filename)
 	src_lng = str(src_language.get())
 	dst_lng = str(src_language.get())
@@ -221,20 +224,35 @@ def create_deck_clicked():
 		else:
 			print('youtube not valid')
 
+def show_info_text():
+	setupFrame.grid_forget()
+	showInfoTextOuterFrame.grid(row=2, column=0, sticky=W)
+	createDeckButtonFrame.grid_forget()
+	showInfoTextOkButtonFrame.pack(side='left', pady = 4, padx = 8)
+	clear_tkprint()
+
+
 def help_clicked():
-	print('Article: copy and paste an article into a txt file and then browse to it.')
-	print('Language: copy and paste subtitles from a show/movie in a txt file, if it is')
-	print('a show, seperate every episode with .ep#. where # is the episode number. This')
-	print('is to make anki tags for each episode. If the filename is showCheers, then the')
-	print('tag for episode 1 will be showCheersEp1.')
-	print('In both cases, article and language, the name of the .apkg will be the same as')
-	print('the original text file. You can use the threshold inputs to limit which words')
-	print('will be used, the first threshold filters out rare words, and the second threshold')
-	print('filters common words. Click the button next to the threshold inputs to see all')
-	print('threshold numbers.')
-	print('Excludes - Enter a pattern to be ignored using *s, for example to ignore CH01,')
-	print('CH02, CH03.. input CH**. You can input as many patterns as you want seperated by')
-	print('commas.')
+	show_info_text()
+	tkprint('Article: Copy and paste an article into a txt file and then browse to it.')
+	tkprint('Language: Copy and paste foreign text in a txt file.')
+	tkprint('Splitters: Indicate words that will be used to seperate the text into sections. This'
+		'is to make anki tags for each episode. For example, if the filename is showCheers, then the'
+		'tag for episode 1 will be showCheersEp1.'
+		'In both cases, article and language, the name of the .apkg will be the same as'
+		'the original text file. You can use the threshold inputs to limit which words'
+		'will be used, the first threshold filters out rare words, and the second threshold'
+		'filters common words. Click the button next to the threshold inputs to see all'
+		'threshold numbers.')
+	tkprint('Excludes - Enter a pattern to be ignored using *s, for example to ignore CH01,'
+		'CH02, CH03.. input CH**. You can input as many patterns as you want seperated by'
+		'commas.')
+
+def hide_info_text():
+	setupFrame.grid(row=1, column=0, sticky=W)
+	showInfoTextOuterFrame.grid_forget()
+	createDeckButtonFrame.grid(row=3, column=0, sticky=W, pady = 4)
+	showInfoTextOkButtonFrame.pack_forget()	
 
 def add_to_custom_splitters(splitters_to_add):
 	all_splitters = get_custom_splitters()
@@ -247,11 +265,11 @@ def add_to_custom_splitters(splitters_to_add):
 		splitters_optionmenu['menu'].add_command(label=splitter_choice, command=ttk._setit(splitters_var, splitter_choice))
 	setupFrame.grid(row=1, column=0, sticky=W)
 	inputSplittersFrame.grid_forget()
-	createDeckFrame.grid(row=3, column=0, sticky=W, pady = 4)
+	createDeckButtonFrame.grid(row=3, column=0, sticky=W, pady = 4)
 
 def open_add_splitters():
 	setupFrame.grid_forget()
-	createDeckFrame.grid_forget()
+	createDeckButtonFrame.grid_forget()
 	inputSplittersFrame.grid(row=2, column=0, sticky=W)
 
 def remove_from_custom_splitters():
@@ -320,6 +338,11 @@ def tkprint(text):
 	choose_definitions_text.insert(END,"\n"+text)
 	choose_definitions_text.see("end")
 	choose_definitions_text.configure(state="disabled")
+
+def clear_tkprint():
+	choose_definitions_text.configure(state="normal")	
+	choose_definitions_text.delete('1.0', END)
+	choose_definitions_text.configure(state="disabled")	
 
 def show_definitions(definitions):
 	global key_in_question
@@ -577,17 +600,16 @@ add_splitters_entry.pack(anchor=W)
 add_splitters_button = ttk.Button(inputSplittersFrame, text="Add", command=lambda : add_to_custom_splitters(splitters_to_add.get()))
 add_splitters_button.pack(anchor=W)
 
+showInfoTextOuterFrame = Frame(root)
+showInfoTextOuterFrame.grid_forget()
 
-chooseDefinitionsFrame = Frame(root)
-chooseDefinitionsFrame.grid_forget()
+showInfoTextInnerFrame = Frame(showInfoTextOuterFrame)
+showInfoTextInnerFrame.pack(fill=X, pady = 4, padx = 8)
 
-chooseDefinitionsTextFrame = Frame(chooseDefinitionsFrame)
-chooseDefinitionsTextFrame.pack(fill=X, pady = 4, padx = 8)
-
-scrollbar = Scrollbar(chooseDefinitionsTextFrame)
+scrollbar = Scrollbar(showInfoTextInnerFrame)
 scrollbar.pack(side=RIGHT, fill = Y)
 
-choose_definitions_text = ttk.Text(chooseDefinitionsTextFrame, 
+choose_definitions_text = ttk.Text(showInfoTextInnerFrame, 
 		height = 28,
 		width = 55,
 		bg = 'black', 
@@ -602,8 +624,11 @@ choose_definitions_text.configure(state="disabled")
 choose_definitions_text.pack(side='left')
 scrollbar.config(command=choose_definitions_text.yview)
 
-chooseDefinitionsEntryFrame = Frame(chooseDefinitionsFrame)
-chooseDefinitionsEntryFrame.pack(fill=X, pady = 4, padx = 8)
+showInfoTextOkButtonFrame = ttk.Button(showInfoTextOuterFrame, text="OK", command=hide_info_text)
+showInfoTextOkButtonFrame.pack_forget()
+
+chooseDefinitionsEntryFrame = Frame(root)
+chooseDefinitionsEntryFrame.grid_forget()
 
 choose_definitions_entry_var = StringVar(chooseDefinitionsEntryFrame, value='')
 choose_definitions_entry_var.trace("w", lambda name, index, mode, choose_definitions_entry_var=choose_definitions_entry_var: definition_callback())
@@ -620,9 +645,9 @@ choose_definitions_entry = Entry(chooseDefinitionsEntryFrame,
 choose_definitions_entry.pack(side="left", fill=X)
 choose_definitions_entry.bind("<Return>", lambda x: enter_pressed_in_entry())
 
-createDeckFrame = Frame(root)
-createDeckFrame.grid(row=3, column=0, sticky=W, pady = 4)
-create_deck_button = ttk.Button(createDeckFrame, text="Create Deck", command=create_deck_clicked)
+createDeckButtonFrame = Frame(root)
+createDeckButtonFrame.grid(row=4, column=0, sticky=W, pady = 4)
+create_deck_button = ttk.Button(createDeckButtonFrame, text="Create Deck", command=create_deck_clicked)
 create_deck_button.pack(side="left")
 
 root.mainloop()
