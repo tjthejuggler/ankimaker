@@ -1,5 +1,8 @@
 UP NEXT
 
+See if we can run article program on entire pdf books
+
+
 use packs or grids or whatever on splitters window
 
 an extra window for 'show_frequencies'
