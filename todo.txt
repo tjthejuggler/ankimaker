@@ -1,16 +1,7 @@
 UP NEXT
+convert splitters to a toggleable frame like setup and do the same for'show_frequencies' and 'help'
+	maybe can even reuse the current text widget for the 2nd two
 
-use packs or grids or whatever on splitters window
-
-an extra window for 'show_frequencies'
-
-make an option to run deck/anki after deck is created
-	this can be a checkbox in setup
-	maybe use  subprocess.call
-
-bring show_frequencies into tkinter
-	use the text widget and give it a 'back' button
-	help_clicked also needs to be done like this
 ________
 
 TEXT BOX STYLING/CLEANING

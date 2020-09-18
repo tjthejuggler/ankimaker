@@ -236,7 +236,7 @@ def help_clicked():
 	print('CH02, CH03.. input CH**. You can input as many patterns as you want seperated by')
 	print('commas.')
 
-def add_to_custom_splitters(splitters_to_add, this_window):
+def add_to_custom_splitters(splitters_to_add):
 	all_splitters = get_custom_splitters()
 	all_splitters.append(splitters_to_add)	
 	with open('custom_splitters.txt', 'w') as filehandle:
@@ -245,16 +245,14 @@ def add_to_custom_splitters(splitters_to_add, this_window):
 	splitters_optionmenu['menu'].delete(0, 'end')
 	for splitter_choice in all_splitters:
 		splitters_optionmenu['menu'].add_command(label=splitter_choice, command=ttk._setit(splitters_var, splitter_choice))
-	this_window.destroy()
+	setupFrame.grid(row=1, column=0, sticky=W)
+	inputSplittersFrame.grid_forget()
+	createDeckFrame.grid(row=3, column=0, sticky=W, pady = 4)
 
 def open_add_splitters():
-	add_splitters_window = Toplevel(root)
-	add_splitters_window.title("Add splitters") 
-	splitters_to_add = StringVar(add_splitters_window, value='')
-	add_splitters_entry = Entry(add_splitters_window, textvariable = splitters_to_add, bd =1, width=entry_width)
-	add_splitters_entry.pack(anchor=W)
-	add_splitters_button = ttk.Button(add_splitters_window, text="Add", command=lambda : add_to_custom_splitters(splitters_to_add.get(), add_splitters_window))
-	add_splitters_button.pack(anchor=W)
+	setupFrame.grid_forget()
+	createDeckFrame.grid_forget()
+	inputSplittersFrame.grid(row=2, column=0, sticky=W)
 
 def remove_from_custom_splitters():
 	all_splitters = get_custom_splitters()
@@ -570,6 +568,14 @@ autorun_var = IntVar()
 autorun_var = 0
 if platform.system() == 'Windows':
 	Checkbutton(setupFrame, text="Auto-run deck file", variable=autorun_var).pack(side="left", padx = 4)
+
+inputSplittersFrame = Frame(root)
+inputSplittersFrame.grid_forget()
+splitters_to_add = StringVar(inputSplittersFrame, value='')
+add_splitters_entry = Entry(inputSplittersFrame, textvariable = splitters_to_add, bd =1, width=entry_width)
+add_splitters_entry.pack(anchor=W)
+add_splitters_button = ttk.Button(inputSplittersFrame, text="Add", command=lambda : add_to_custom_splitters(splitters_to_add.get()))
+add_splitters_button.pack(anchor=W)
 
 
 chooseDefinitionsFrame = Frame(root)
