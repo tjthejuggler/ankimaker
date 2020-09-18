@@ -604,7 +604,7 @@ remove_spllitters.pack(side="left", padx = 4)
 autorunFrame = Frame(setupFrame)
 autorunFrame.pack(fill=X, pady = 4)
 autorun_var = IntVar()
-autorun_var = 0
+autorun_var.set(0)
 if platform.system() == 'Windows':
 	Checkbutton(setupFrame, text="Auto-run deck file", variable=autorun_var).pack(side="left", padx = 4)
 
