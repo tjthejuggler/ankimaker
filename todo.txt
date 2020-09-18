@@ -1,24 +1,4 @@
-<<<<<<< HEAD
-=======
-UP NEXT
 
-See if we can run article program on entire pdf books
-
-
-use packs or grids or whatever on splitters window
-
-an extra window for 'show_frequencies'
-
-make an option to run deck/anki after deck is created
-	this can be a checkbox in setup
-	maybe use  subprocess.call
-
-bring show_frequencies into tkinter
-	use the text widget and give it a 'back' button
-	help_clicked also needs to be done like this
-________
-
->>>>>>> 0c2a2a3e98274457582a8e36ad6a5f820c347cc2
 TEXT BOX STYLING/CLEANING
 in text box, make words being defined green and/or bold or something
 	maybe some other color coding would be in order as well
@@ -28,10 +8,6 @@ in text box, make words being defined green and/or bold or something
 when a definition is set, tkprint the word with its definition?
 	if we do this then maybe we could get rid of all the definition options out of the text box to make it easier to look through
 
-
-fix phone/pc size mismatch of choose def entry and text either by using a text as the entry
-	or by making a conditional that checks to see what device
-	or figure out if there is something like fill that can be used
 ________
 
 TESTING
@@ -51,7 +27,6 @@ clean up imports
 
 figure out if we can get rid of globals
 	this would take a bit of refactoring, maybe isn't necessary
-
 ___________
 
 NEW SETUP FEATURES

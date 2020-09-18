@@ -338,9 +338,7 @@ def show_loading_and_definitions():
 	choose_definitions_text.insert("end",u"\n")
 	while getting_definitions_thread.isAlive():
 		animated_loading('Getting definitions')
-	choose_definitions_text.configure(state="normal")
-	choose_definitions_text.delete("end-1l","end")
-	choose_definitions_text.configure(state="disabled")
+	tkprint_delete_lines(1)
 	getting_definitions_thread.join()
 	definitions = que.get()
 	show_definitions(definitions)
@@ -402,10 +400,16 @@ def ask_for_new_keyword():
 
 def ask_for_user_definition():
 	global question_type
-	question_type = 'user_definition'
+	question_type = 'input_definition'
 	tkprint('Enter definition:')
 
+def tkprint_delete_lines(number_of_lines):
+	choose_definitions_text.configure(state="normal")
+	choose_definitions_text.delete("end-"+str(number_of_lines)+"l","end")
+	choose_definitions_text.configure(state="disabled")
+
 def deal_with_user_selection(option):
+	tkprint_delete_lines(len(definitions_in_question)+3)
 	if option == '1':
 		ask_for_new_keyword()
 	elif option == '2':
