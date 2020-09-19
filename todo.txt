@@ -1,20 +1,7 @@
 
 TEXT BOX STYLING/CLEANING
-keywords in other words definitions are being colored,
-	they should probably be white
-
-there are 2 spaces between chunks that define keywords after they have been set
-	maybe we can solve this by at certain places checking to see how many blank lines there are before the current end line and add/delete lines accordingly
 
 test out stuff to see if formatting is working as desired
-
-in text box, make words being defined green and/or bold or something
-	maybe some other color coding would be in order as well
-	color coding can probably be done with a function like
-	tkprintColor('text', color) and then just make it the same but no /n
-
-when a definition is set, tkprint the word with its definition?
-	if we do this then maybe we could get rid of all the definition options out of the text box to make it easier to look through
 
 ________
 
@@ -25,7 +12,6 @@ find out if word variations is being handled properly
 test new splitters system in language
 
 test pdf
-
 
 ___________
 

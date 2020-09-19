@@ -502,7 +502,7 @@ def show_chosen_definition(key):
 		tkprint('USAGE:')
 		for sentence in current_word_usage_sentences:
 			tkprint(sentence)
-	start = '1.0'
+	start = 'end -'+str(len(current_word_usage_sentences)+3)+'l'
 	while 1:
 		tag_start = choose_definitions_text.search(key, start, stopindex=END, regexp=True)       
 		if not tag_start: break
