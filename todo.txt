@@ -1,4 +1,7 @@
 
+https://medium.com/better-programming/alternatives-to-using-globals-in-python-a3b2a7d5411b
+
+
 TEXT BOX STYLING/CLEANING
 
 test out stuff to see if formatting is working as desired
