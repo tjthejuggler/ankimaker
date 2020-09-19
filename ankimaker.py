@@ -299,7 +299,8 @@ def ask_if_should_define():
 		if definition_dictionary[word][0] == '!undefined':
 			no_words_remaining = False
 			key_in_question = word
-			tkprint("\nShould we define ' " + word + " '?(y/n)")
+			tkprint_create_spacer()
+			tkprint("Should we define ' " + word + " '?(y/n)")
 			break
 	if no_words_remaining:
 		tkprint('Do another level of definitions?(y/n)')
@@ -333,7 +334,7 @@ def show_loading_and_definitions():
 	show_definitions(definitions)
 
 def tkprint(text):
-	choose_definitions_text.configure(state="normal")	
+	choose_definitions_text.configure(state="normal")
 	choose_definitions_text.insert(END,"\n"+text)
 	choose_definitions_text.see("end")
 	choose_definitions_text.configure(state="disabled")
@@ -389,13 +390,29 @@ def ask_for_new_keyword():
 	global question_type
 	global key_in_question
 	question_type = 'new_keyword'
-	tkprint("\nEnter replacement word for ' "+key_in_question+" ':")
+	tkprint_create_spacer()
+	tkprint("Enter replacement word for ' "+key_in_question+" ':")
 
 def ask_for_user_definition():
 	global question_type
 	global key_in_question
 	question_type = 'input_definition'
 	tkprint("Enter definition for ' "+key_in_question+" ':" )
+
+def tkprint_create_spacer():
+	print('end',re.search('[a-zA-Z]', choose_definitions_text.get("end","end")))
+	print('end -1l',re.search('[a-zA-Z]', choose_definitions_text.get("end -1l","end")))
+	print('end -2l',re.search('[a-zA-Z]', choose_definitions_text.get("end -2l","end")))
+	print('end -3l',re.search('[a-zA-Z]', choose_definitions_text.get("end -3l","end")))
+	print('end -4l',re.search('[a-zA-Z]', choose_definitions_text.get("end -4l","end")))
+	print('end -5l',re.search('[a-zA-Z]', choose_definitions_text.get("end -5l","end")))
+	if re.search('[a-zA-Z]', choose_definitions_text.get("end -1l","end")) is None:
+		choose_definitions_text.configure(state="normal")
+		choose_definitions_text.delete("end","end")
+		choose_definitions_text.configure(state="disabled")
+	if re.search('[a-zA-Z]', choose_definitions_text.get("end -1l","end")) is not None:
+		print('should make spacer')
+		tkprint('')
 
 def tkprint_delete_lines(number_of_lines):
 	choose_definitions_text.configure(state="normal")
@@ -479,7 +496,8 @@ def definition_callback():
 def show_chosen_definition(key):
 	global definition_dictionary
 	global current_word_usage_sentences
-	tkprint("\n"+key+" - "+definition_dictionary[key][0])
+	tkprint_create_spacer()
+	tkprint(key+" - "+definition_dictionary[key][0])
 	if current_word_usage_sentences:
 		tkprint('USAGE:')
 		for sentence in current_word_usage_sentences:
