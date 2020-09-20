@@ -22,16 +22,9 @@ import platform
 from ankiarticle import *
 from langCodes import *
 from ankilang import *
+from USERDATA import *
 
-text_filename = 'podFoundmyfitnessCovid2'
-text_filename = 'sample'
-article_text = ''
-video_id = ''
-question_type = ''
-select_definition_options = []
-definition_dictionary = dict()
-key_in_question = ''
-current_word_usage_sentences = []
+USERDATA_ = USERDATA() # Can also use initialization arguments
 
 entry_width = 47
 if platform.system() == 'Windows':
@@ -54,13 +47,12 @@ def browseFiles():
                                                         "*.*"),("Text files", 
                                                         "*.txt*"))) 	
 	filename_string = filename.split(':')[1]
-	text_filename = os.path.splitext(os.path.basename(filename_string))[0]
-	return text_filename
+	USERDATA_.text_filename = os.path.splitext(os.path.basename(filename_string))[0]
+	return USERDATA_.text_filename
 
 def file_browse_button_clicked():
 	file_name = browseFiles()
-	global text_filename
-	text_filename = file_name
+	USERDATA_.text_filename = file_name
 	file_name_label.configure(text=file_name)
 	file_name_label.update()
 
@@ -93,9 +85,9 @@ def text_type_radiobutton_changed(*args):
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
 
-def get_text_from_youtube_transcription(video_id):
+def get_text_from_youtube_transcription(vid_id):
 	transcription_text = ''
-	transcription = YouTubeTranscriptApi.get_transcript(video_id)
+	transcription = YouTubeTranscriptApi.get_transcript(vid_id)
 	for line in transcription:
 		transcription_text = transcription_text + line['text'] + ' '
 	return transcription_text
@@ -110,11 +102,9 @@ def youtubeTitleFormatted(title):
 	return formatted_title
 
 def url_button_clicked():
-	global text_filename
-	global video_id
 	try:
-		video_id = url_entry.get().split('=')[1]
-		params = {"format": "json", "url": "https://www.youtube.com/watch?v=%s" % video_id}
+		USERDATA_.video_id = url_entry.get().split('=')[1]
+		params = {"format": "json", "url": "https://www.youtube.com/watch?v=%s" % USERDATA_.video_id}
 		url = "https://www.youtube.com/oembed"
 		query_string = urllib.parse.urlencode(params)
 		url = url + "?" + query_string
@@ -125,7 +115,7 @@ def url_button_clicked():
 			youtube_file_name_var.set(youtubeTitleFormatted(title)) #data['title'] is the whole title
 	except:
 		youtube_file_name_var.set('invalid url')
-	file_name_label.configure(text=text_filename)
+	file_name_label.configure(text=USERDATA_.text_filename)
 	file_name_label.update()
 
 def word_excluded(word):
@@ -147,15 +137,15 @@ def show_frequencies():
 	if text_type.get() == 'youtube':
 		createTextFileFromYoutube()
 	source_text = None
-	if path.exists('sources/'+text_filename+".txt"):
-		with open('sources/'+text_filename+'.txt', encoding="utf8") as file:
+	if path.exists('sources/'+USERDATA_.text_filename+".txt"):
+		with open('sources/'+USERDATA_.text_filename+'.txt', encoding="utf8") as file:
 			source_text = file.read().replace('\n', ' ')
-	elif path.exists('sources/'+text_filename+".epub"):
-		book = open_book('sources/'+text_filename+".epub")
+	elif path.exists('sources/'+USERDATA_.text_filename+".epub"):
+		book = open_book('sources/'+USERDATA_.text_filename+".epub")
 		convertedBook = convert_epub_to_lines(book)
 		source_text = ' '.join(convertedBook)
-	elif path.exists('sources/'+text_filename+".pdf"):
-		raw = parser.from_file('sources/'+text_filename+".pdf")
+	elif path.exists('sources/'+USERDATA_.text_filename+".pdf"):
+		raw = parser.from_file('sources/'+USERDATA_.text_filename+".pdf")
 		source_text = raw['content']
 	if source_text:
 		source_text = source_text.lower()
@@ -184,9 +174,8 @@ def show_frequencies():
 			tkprint(str(excluded_words))
 
 def createTextFileFromYoutube():
-	global video_id
-	text = get_text_from_youtube_transcription(video_id)
-	fileToWrite = open('sources/'+text_filename+'.txt',"w+", encoding="utf8")
+	text = get_text_from_youtube_transcription(USERDATA_.video_id)
+	fileToWrite = open('sources/'+USERDATA_.text_filename+'.txt',"w+", encoding="utf8")
 	fileToWrite.write(text)
 	fileToWrite.close()
 
@@ -195,31 +184,30 @@ def change_name_label(change_to):
 	file_name_label.update()
 
 def begin_choose_definitions_cycle():
-	global article_text
 	setupFrame.grid_forget()
 	showInfoTextOuterFrame.grid(row=2, column=0, sticky=W)
 	chooseDefinitionsEntryFrame.grid(row=3, column=0, sticky=W, pady = 4)
 	choose_definitions_entry.focus()
-	article_text = get_text(text_filename)
-	add_words_to_dictionary(article_text)
+	USERDATA_.article_text = get_text(USERDATA_.text_filename)
+	add_words_to_dictionary(USERDATA_.article_text)
 	ask_if_should_define()
 
 def create_deck_clicked():
 	create_deck_button.pack_forget()
 	createDeckButtonFrame.grid_forget()
 	showInfoTextOkButtonFrame.pack_forget()
-	deck = genanki.Deck(round(time.time()),text_filename)
+	deck = genanki.Deck(round(time.time()),USERDATA_.text_filename)
 	src_lng = str(src_language.get())
 	dst_lng = str(src_language.get())
 	frq_l = float(frequency_low.get())
 	frq_h = float(frequency_high.get())
 	splitters = splitters_var.get().split(',')
 	if text_type.get() == 'language':
-		run_language_program(text_filename, deck, src_lng, dst_lng, frq_l, frq_h, splitters)
+		run_language_program(USERDATA_.text_filename, deck, src_lng, dst_lng, frq_l, frq_h, splitters)
 	elif text_type.get() == 'article':
 		begin_choose_definitions_cycle()		
 	elif text_type.get() == 'youtube':
-		if text_filename != 'invalid url':
+		if USERDATA_.text_filename != 'invalid url':
 			createTextFileFromYoutube()
 			begin_choose_definitions_cycle()
 		else:
@@ -284,27 +272,23 @@ def remove_from_custom_splitters():
 		splitters_optionmenu['menu'].add_command(label=splitter_choice, command=ttk._setit(splitters_var, splitter_choice))
 
 def youtube_file_name_var_callback():
-	global text_filename
-	text_filename = youtube_file_name_var.get()
-	file_name_label.configure(text=text_filename)
+	USERDATA_.text_filename = youtube_file_name_var.get()
+	file_name_label.configure(text=USERDATA_.text_filename)
 	file_name_label.update()
 
 def ask_if_should_define():
-	global question_type
-	global definition_dictionary
-	global key_in_question
-	question_type = 'should_define'
+	USERDATA_.question_type = 'should_define'
 	no_words_remaining = True
-	for word in definition_dictionary:
-		if definition_dictionary[word][0] == '!undefined':
+	for word in USERDATA_.definition_dictionary:
+		if USERDATA_.definition_dictionary[word][0] == '!undefined':
 			no_words_remaining = False
-			key_in_question = word
+			USERDATA_.key_in_question = word
 			tkprint_create_spacer()
 			tkprint("Should we define ' " + word + " '?(y/n)")
 			break
 	if no_words_remaining:
 		tkprint('Do another level of definitions?(y/n)')
-		question_type = 'define_next_level'
+		USERDATA_.question_type = 'define_next_level'
 
 def animated_loading(loading_message):
 	chars = "/—\\|" 
@@ -319,8 +303,7 @@ def animated_loading(loading_message):
 		sys.stdout.flush()
 
 def show_loading_and_definitions():
-	global key_in_question
-	word = key_in_question
+	word = USERDATA_.key_in_question
 	que = queue.Queue()
 	getting_definitions_thread = Thread(target=lambda q, arg1: q.put(get_definitions(arg1)), args=(que, word))
 	getting_definitions_thread.start()
@@ -345,59 +328,48 @@ def clear_tkprint():
 	choose_definitions_text.configure(state="disabled")	
 
 def show_definitions(definitions):
-	global key_in_question
-	global definitions_in_question
-	global select_definition_options
-	global question_type
-	global current_word_usage_sentences
-	select_definition_options = []
-	word = key_in_question
-	article = get_text(text_filename)
-	tkprint("Choose definition for ' "+key_in_question+" '")
-	current_word_usage_sentences = get_words_sentence_from_text(word, article, True)
-	if current_word_usage_sentences:
+	USERDATA_.select_definition_options = []
+	word = USERDATA_.key_in_question
+	article = get_text(USERDATA_.text_filename)
+	tkprint("Choose definition for ' "+USERDATA_.key_in_question+" '")
+	USERDATA_.current_word_usage_sentences = get_words_sentence_from_text(word, article, True)
+	if USERDATA_.current_word_usage_sentences:
 		tkprint('USAGE:'+' '*30)
-	for sentence in current_word_usage_sentences:
+	for sentence in USERDATA_.current_word_usage_sentences:
 		tkprint(sentence)
 	tkprint("1. Change word.")
 	tkprint("2. Create your own definition.")
 	tkprint("3. Discard word.")
 	definition_number = 3
-	definitions_in_question = []
+	USERDATA_.definitions_in_question = []
 	if definitions:
 		for definition in definitions:
 			if definition:
 				definition_number += 1
-				definitions_in_question.append(definition)
+				USERDATA_.definitions_in_question.append(definition)
 				tkprint((str(definition_number)+'. '+definition[0]))
 	for i in range(1,definition_number+1):
-		select_definition_options.append(str(i))
-	question_type = 'select_definition'
-	print('select_definition_options',select_definition_options)
+		USERDATA_.select_definition_options.append(str(i))
+	USERDATA_.question_type = 'select_definition'
+	print('USERDATA_.select_definition_options',USERDATA_.select_definition_options)
 
 def ask_for_definition_selection():
-	question_type = 'select_definition'
+	USERDATA_.question_type = 'select_definition'
 	definitions = show_loading_and_definitions()
 
 def set_chosen_definition(chosen_definition):
-	global definition_dictionary
-	global key_in_question
-	definition_dictionary[key_in_question] = definitions_in_question[chosen_definition]
-	show_chosen_definition(key_in_question)
+	USERDATA_.definition_dictionary[USERDATA_.key_in_question] = USERDATA_.definitions_in_question[chosen_definition]
+	show_chosen_definition(USERDATA_.key_in_question)
 	ask_if_should_define()
 
 def ask_for_new_keyword():
-	global question_type
-	global key_in_question
-	question_type = 'new_keyword'
+	USERDATA_.question_type = 'new_keyword'
 	tkprint_create_spacer()
-	tkprint("Enter replacement word for ' "+key_in_question+" ':")
+	tkprint("Enter replacement word for ' "+USERDATA_.key_in_question+" ':")
 
 def ask_for_user_definition():
-	global question_type
-	global key_in_question
-	question_type = 'input_definition'
-	tkprint("Enter definition for ' "+key_in_question+" ':" )
+	USERDATA_.question_type = 'input_definition'
+	tkprint("Enter definition for ' "+USERDATA_.key_in_question+" ':" )
 
 def tkprint_create_spacer():
 	print('end',re.search('[a-zA-Z]', choose_definitions_text.get("end","end")))
@@ -420,44 +392,39 @@ def tkprint_delete_lines(number_of_lines):
 	choose_definitions_text.configure(state="disabled")
 
 def deal_with_user_selection(option):
-	global current_word_usage_sentences
 	usage_lines = 0
-	if current_word_usage_sentences:
-		usage_lines = len(current_word_usage_sentences) + 1
-	tkprint_delete_lines(len(definitions_in_question)+usage_lines+4)
+	if USERDATA_.current_word_usage_sentences:
+		usage_lines = len(USERDATA_.current_word_usage_sentences) + 1
+	tkprint_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
 	if option == '1':
 		ask_for_new_keyword()
 	elif option == '2':
 		ask_for_user_definition()
 	elif option == '3':
-		definition_dictionary[key_in_question] = ['!rejected', '!no_alt']
+		USERDATA_.definition_dictionary[USERDATA_.key_in_question] = ['!rejected', '!no_alt']
 		ask_if_should_define()
 	else:
 		set_chosen_definition(4-int(option))
 
 def clean_dictionary():
-	global definition_dictionary
-	for word in list(definition_dictionary):
-		if definition_dictionary[word][0] == '!rejected':
-			definition_dictionary.pop(word)
+	for word in list(USERDATA_.definition_dictionary):
+		if USERDATA_.definition_dictionary[word][0] == '!rejected':
+			USERDATA_.definition_dictionary.pop(word)
 
 def create_deck():
-	global definition_dictionary
-	global article_text
 	should_autorun = False
 	if autorun_var.get() == 1:
 		should_autorun = True
 	clean_dictionary()
-	create_article_anki_deck(definition_dictionary, article_text, text_filename, should_autorun)
-	tkprint('Deck created! ('+text_filename+')')
+	create_article_anki_deck(USERDATA_.definition_dictionary, USERDATA_.article_text, USERDATA_.text_filename, should_autorun)
+	tkprint('Deck created! ('+USERDATA_.text_filename+')')
 
 def create_another_level_of_keywords():
-	global definition_dictionary
-	string_of_definitions = concatenate_all_definitions_to_string(definition_dictionary)
+	string_of_definitions = concatenate_all_definitions_to_string(USERDATA_.definition_dictionary)
 	add_words_to_dictionary(string_of_definitions)
 	no_words_remaining = True
-	for word in definition_dictionary:
-		if definition_dictionary[word][0] == '!undefined':
+	for word in USERDATA_.definition_dictionary:
+		if USERDATA_.definition_dictionary[word][0] == '!undefined':
 			no_words_remaining = False
 			break
 	if no_words_remaining:
@@ -467,25 +434,22 @@ def create_another_level_of_keywords():
 		ask_if_should_define()
 
 def definition_callback():
-	global definition_dictionary
-	global key_in_question
-	global question_type
 	user_input = str(choose_definitions_entry_var.get())
-	if question_type == 'should_define':
+	if USERDATA_.question_type == 'should_define':
 		if user_input.lower() == 'n':
-			definition_dictionary[key_in_question] = ['!rejected', '!no_alt']
+			USERDATA_.definition_dictionary[USERDATA_.key_in_question] = ['!rejected', '!no_alt']
 			tkprint_delete_lines(1)
 			ask_if_should_define()
 		elif user_input.lower() == 'y':
 			tkprint_delete_lines(1)
 			ask_for_definition_selection()
 		choose_definitions_entry_var.set('')
-	elif question_type == 'select_definition':
-		for option in select_definition_options:
+	elif USERDATA_.question_type == 'select_definition':
+		for option in USERDATA_.select_definition_options:
 			if user_input == option:
 				deal_with_user_selection(option)
 		choose_definitions_entry_var.set('')
-	elif question_type == 'define_next_level':
+	elif USERDATA_.question_type == 'define_next_level':
 		if user_input.lower() == 'n':
 			create_deck()
 		elif user_input.lower() == 'y':
@@ -494,15 +458,13 @@ def definition_callback():
 			choose_definitions_entry_var.set('')
 
 def show_chosen_definition(key):
-	global definition_dictionary
-	global current_word_usage_sentences
 	tkprint_create_spacer()
-	tkprint(key+" - "+definition_dictionary[key][0])
-	if current_word_usage_sentences:
+	tkprint(key+" - "+USERDATA_.definition_dictionary[key][0])
+	if USERDATA_.current_word_usage_sentences:
 		tkprint('USAGE:')
-		for sentence in current_word_usage_sentences:
+		for sentence in USERDATA_.current_word_usage_sentences:
 			tkprint(sentence)
-	start = 'end -'+str(len(current_word_usage_sentences)+3)+'l'
+	start = 'end -'+str(len(USERDATA_.current_word_usage_sentences)+3)+'l'
 	while 1:
 		tag_start = choose_definitions_text.search(key, start, stopindex=END, regexp=True)       
 		if not tag_start: break
@@ -511,35 +473,31 @@ def show_chosen_definition(key):
 		choose_definitions_text.tag_configure('bold', foreground="green",font='TkDefaultFont 9 bold')
 		start = tag_start + "+1c"
 
-def enter_pressed_in_entry():
-	global definition_dictionary
-	global key_in_question
-	global question_type	
+def enter_pressed_in_entry():	
 	user_input = str(choose_definitions_entry_var.get())
-	if question_type == 'new_keyword':
-		key_in_question = user_input
+	if USERDATA_.question_type == 'new_keyword':
+		USERDATA_.key_in_question = user_input
 		tkprint("Define ' "+user_input+" '")
 		choose_definitions_entry_var.set('')
 		show_loading_and_definitions()
-	elif question_type == 'input_definition':
-		definition_dictionary[key_in_question] = [user_input, '!no_alt']
+	elif USERDATA_.question_type == 'input_definition':
+		USERDATA_.definition_dictionary[USERDATA_.key_in_question] = [user_input, '!no_alt']
 		tkprint_delete_lines(1)
-		show_chosen_definition(key_in_question)
+		show_chosen_definition(USERDATA_.key_in_question)
 		choose_definitions_entry_var.set('')
 		ask_if_should_define()
 
 def add_words_to_dictionary(text):
-	global definition_dictionary
 	low_freq = float(frequency_low.get())
 	src_lang = str(src_language.get())
 	words = convert_text_to_keywords(text, low_freq, src_lang)
 	for word in words:
-		if not word in definition_dictionary:
-			definition_dictionary[word] = ['!undefined', '!no_alt']
+		if not word in USERDATA_.definition_dictionary:
+			USERDATA_.definition_dictionary[word] = ['!undefined', '!no_alt']
 
 nameAndHelpFrame = Frame(root)
 nameAndHelpFrame.grid(row=0, column=0, sticky="ew", pady = 4)
-file_name_label = ttk.Label(nameAndHelpFrame, text=text_filename)
+file_name_label = ttk.Label(nameAndHelpFrame, text=USERDATA_.text_filename)
 file_name_label.pack(side='left', anchor=W)
 help_button = ttk.Button(nameAndHelpFrame, text="?", command=help_clicked)
 help_button.pack(side='right', anchor=E)
