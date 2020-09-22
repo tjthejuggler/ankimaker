@@ -203,7 +203,10 @@ def create_deck_clicked():
 	frq_h = float(frequency_high.get())
 	splitters = splitters_var.get().split(',')
 	if text_type.get() == 'language':
-		run_language_program(USERDATA_.text_filename, deck, src_lng, dst_lng, frq_l, frq_h, splitters)
+		should_autorun = False
+		if autorun_var.get() == 1:
+			should_autorun = True
+		run_language_program(USERDATA_.text_filename, deck, src_lng, dst_lng, frq_l, frq_h, splitters, should_autorun)
 	elif text_type.get() == 'article':
 		begin_choose_definitions_cycle()		
 	elif text_type.get() == 'youtube':

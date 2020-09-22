@@ -1,9 +1,11 @@
 
+autorun doesnt work for languages
+
+make a progress bar for language deck creation (and maybe article)
+
 TESTING
 
 find out if word variations is being handled properly
-
-test new splitters system in language
 
 test pdf
 
@@ -27,8 +29,6 @@ NEEDS SORTED
 disable 'create_deck' button if youtube video is invalid or no text file is selected
 maybe make the youtube invalid message red
 	should maybe make a label next to it that says why its disabled
-
-
 
 make the list of characters to be re.subbed somewhere as a constant variable so we dont need to change it in both places(subtitles is different)
 

@@ -138,7 +138,7 @@ def create_anki_note(episode_count, filename, item, src_text, dest_text, dupe_co
 		print(word_tags)
 	return dupe_counter, translations_counter, language_deck
 
-def run_language_program(filename, language_deck, src_lang, dest_lang, low_freq, high_freq, splitters):
+def run_language_program(filename, language_deck, src_lang, dest_lang, low_freq, high_freq, splitters, should_autorun):
 	translator = Translator()
 	src_langcode = get_lang_code(src_lang)
 	dest_langcode = get_lang_code(dest_lang)
@@ -157,4 +157,7 @@ def run_language_program(filename, language_deck, src_lang, dest_lang, low_freq,
 	print("translations",translations_counter)
 	print("My program took", time.time() - start_time, "to run")
 	genanki.Package(language_deck).write_to_file('ankidecks/'+filename+'.apkg')
+	if should_autorun:
+		cwd = os.getcwd()
+		os.startfile(cwd+'\\ankidecks\\'+filename+'.apkg')
 	sys.exit()
