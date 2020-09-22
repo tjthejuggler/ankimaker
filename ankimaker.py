@@ -9,6 +9,7 @@ import os
 from os import path
 from tkinter import *
 import tkinter as ttk
+from tkinter import filedialog
 from epub_conversion.utils import open_book, convert_epub_to_lines
 import urllib.request
 import urllib
@@ -72,18 +73,21 @@ def text_type_radiobutton_changed(*args):
 		destination_language_optionmenu.configure(state='normal')
 		frequency_thresholds_low_entry.configure(state='normal')
 		exclude_var_entry.configure(state='disable')
+		shouldCreateFillInBlankCardsCheck.pack_forget()
 	if text_type.get() == 'article':
 		show_file_browser_widgets()
 		src_language.set('english')
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
+		shouldCreateFillInBlankCardsCheck.pack(side="left", padx = 4)
 	if text_type.get() == 'youtube':
 		show_url_entry()
 		src_language.set('english')
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
+		shouldCreateFillInBlankCardsCheck.pack(side="left", padx = 4)
 
 def get_text_from_youtube_transcription(vid_id):
 	transcription_text = ''
@@ -202,6 +206,10 @@ def create_deck_clicked():
 	frq_l = float(frequency_low.get())
 	frq_h = float(frequency_high.get())
 	splitters = splitters_var.get().split(',')
+	if fill_in_blanks_var.get() == 1:
+		USERDATA_.should_create_fill_in_blanks = True
+	else:
+		USERDATA_.should_create_fill_in_blanks = False
 	if text_type.get() == 'language':
 		should_autorun = False
 		if autorun_var.get() == 1:
@@ -413,7 +421,7 @@ def create_deck():
 	if autorun_var.get() == 1:
 		should_autorun = True
 	clean_dictionary()
-	create_article_anki_deck(USERDATA_.definition_dictionary, USERDATA_.article_text, USERDATA_.text_filename, should_autorun)
+	create_article_anki_deck(USERDATA_.definition_dictionary, USERDATA_.article_text, USERDATA_.text_filename, should_autorun, USERDATA_.should_create_fill_in_blanks)
 	printtk('Deck created! ('+USERDATA_.text_filename+')')
 
 def create_another_level_of_keywords():
@@ -542,6 +550,15 @@ fileBrowseFrame = Frame(outsideDataFrame)
 fileBrowseFrame.pack(fill=X)
 file_browse_button = ttk.Button(fileBrowseFrame, text="Select file", command=file_browse_button_clicked)
 file_browse_button.pack(side="left")
+
+shouldCreateFillInBlankCardsFrame = Frame(setupFrame)
+shouldCreateFillInBlankCardsFrame.pack(fill=X, pady = 4)
+fill_in_blanks_var = IntVar()
+fill_in_blanks_var.set(0)
+if platform.system() == 'Windows':
+	shouldCreateFillInBlankCardsCheck = Checkbutton(shouldCreateFillInBlankCardsFrame, text="Create fill in the blank cards", variable=fill_in_blanks_var)
+	shouldCreateFillInBlankCardsCheck.pack(side="left", padx = 4)
+
 
 languageFrame = Frame(setupFrame)
 languageFrame.pack(fill=X)

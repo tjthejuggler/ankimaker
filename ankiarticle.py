@@ -175,11 +175,13 @@ def create_fill_in_the_blank_cards(dictionary, article_text, text_filename):
 					fields=[sentence + ' ('+str(round(time.time()))+')', dictionary[word][1]])
 				article_deck.add_note(my_note)
 
-def create_article_anki_deck(dictionary, article_text, text_filename, should_autorun):
+def create_article_anki_deck(dictionary, article_text, text_filename, should_autorun, should_create_fill_in_blanks):
 	global article_deck
 	article_deck = genanki.Deck(round(time.time()),text_filename)
 	create_definitions_cards(dictionary, text_filename)
-	create_fill_in_the_blank_cards(dictionary, article_text, text_filename)
+	if should_create_fill_in_blanks:
+		print('should_create_fill_in_blanks')
+		create_fill_in_the_blank_cards(dictionary, article_text, text_filename)
 	genanki.Package(article_deck).write_to_file('ankidecks/'+text_filename+'.apkg')
 	cwd = os.getcwd()
 	print(cwd)

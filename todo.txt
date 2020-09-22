@@ -1,7 +1,7 @@
 
-autorun doesnt work for languages
-
 make a progress bar for language deck creation (and maybe article)
+
+coloring of text green should work even if char cases dont match
 
 TESTING
 
@@ -13,8 +13,6 @@ ___________
 
 HOUSE CLEANING
 
-figure out if we can get rid of globals
-	this would take a bit of refactoring, maybe isn't necessary
 ___________
 
 NEW SETUP FEATURES

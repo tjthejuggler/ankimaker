@@ -9,3 +9,4 @@ class USERDATA:
 		self.article_text = ''
 		self.text_filename = 'sample'
 		self.video_id = ''
+		self.should_create_fill_in_blanks = False
