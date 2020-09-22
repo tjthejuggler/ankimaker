@@ -633,7 +633,7 @@ choose_definitions_text = ttk.Text(showInfoTextInnerFrame,
 		fg = 'white', 
 		borderwidth = 5,
 		relief="sunken",
-		wrap='char',
+		wrap=ttk.WORD,
 		yscrollcommand = scrollbar.set)
 
 choose_definitions_text.insert(END,'Get ready to choose definitions!')

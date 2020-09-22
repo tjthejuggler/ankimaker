@@ -1,5 +1,3 @@
-make words stick together when wrapping in text widget
-
 when you input your own word it should afterwards erase the lines that say
 Enter replacement word for ' microbiome ':
 Define ' microbiome '
@@ -7,8 +5,6 @@ Define ' microbiome '
 TESTING
 
 test out stuff to see if formatting is working as desired
-
-check to see if new class system is working
 
 find out if word variations is being handled properly
 
