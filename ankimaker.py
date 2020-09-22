@@ -6,11 +6,10 @@ import time
 from wordfreq import zipf_frequency
 import json
 import os
+from os import path
 from tkinter import *
 import tkinter as ttk
 from epub_conversion.utils import open_book, convert_epub_to_lines
-import os.path
-from os import path
 import urllib.request
 import urllib
 from youtube_title_parse import get_artist_title
@@ -18,6 +17,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from tika import parser
 import queue
 import platform
+from threading import Thread
 
 from ankiarticle import *
 from langCodes import *
@@ -167,11 +167,11 @@ def show_frequencies():
 				if freq == x:
 					words_with_x_freq.append(word)
 			if words_with_x_freq:
-				tkprint(str(clean_x))
-				tkprint(str(words_with_x_freq))
+				printtk(str(clean_x))
+				printtk(str(words_with_x_freq))
 		if excluded_words:
-			tkprint('EXCLUDED:')
-			tkprint(str(excluded_words))
+			printtk('EXCLUDED:')
+			printtk(str(excluded_words))
 
 def createTextFileFromYoutube():
 	text = get_text_from_youtube_transcription(USERDATA_.video_id)
@@ -218,14 +218,14 @@ def show_info_text():
 	showInfoTextOuterFrame.grid(row=2, column=0, sticky=W)
 	createDeckButtonFrame.grid_forget()
 	showInfoTextOkButtonFrame.pack(side='left', pady = 4, padx = 8)
-	clear_tkprint()
+	clear_printtk()
 
 
 def help_clicked():
 	show_info_text()
-	tkprint('Article: Copy and paste an article into a txt file and then browse to it.')
-	tkprint('Language: Copy and paste foreign text in a txt file.')
-	tkprint('Splitters: Indicate words that will be used to seperate the text into sections. This'
+	printtk('Article: Copy and paste an article into a txt file and then browse to it.')
+	printtk('Language: Copy and paste foreign text in a txt file.')
+	printtk('Splitters: Indicate words that will be used to seperate the text into sections. This'
 		'is to make anki tags for each episode. For example, if the filename is showCheers, then the'
 		'tag for episode 1 will be showCheersEp1.'
 		'In both cases, article and language, the name of the .apkg will be the same as'
@@ -233,7 +233,7 @@ def help_clicked():
 		'will be used, the first threshold filters out rare words, and the second threshold'
 		'filters common words. Click the button next to the threshold inputs to see all'
 		'threshold numbers.')
-	tkprint('Excludes - Enter a pattern to be ignored using *s, for example to ignore CH01,'
+	printtk('Excludes - Enter a pattern to be ignored using *s, for example to ignore CH01,'
 		'CH02, CH03.. input CH**. You can input as many patterns as you want seperated by'
 		'commas.')
 
@@ -283,11 +283,11 @@ def ask_if_should_define():
 		if USERDATA_.definition_dictionary[word][0] == '!undefined':
 			no_words_remaining = False
 			USERDATA_.key_in_question = word
-			tkprint_create_spacer()
-			tkprint("Should we define ' " + word + " '?(y/n)")
+			printtk_create_spacer()
+			printtk("Should we define ' " + word + " '?(y/n)")
 			break
 	if no_words_remaining:
-		tkprint('Do another level of definitions?(y/n)')
+		printtk('Do another level of definitions?(y/n)')
 		USERDATA_.question_type = 'define_next_level'
 
 def animated_loading(loading_message):
@@ -311,18 +311,18 @@ def show_loading_and_definitions():
 	choose_definitions_text.insert("end",u"\n")
 	while getting_definitions_thread.isAlive():
 		animated_loading('Getting definitions')
-	tkprint_delete_lines(1)
+	printtk_delete_lines(1)
 	getting_definitions_thread.join()
 	definitions = que.get()
 	show_definitions(definitions)
 
-def tkprint(text):
+def printtk(text):
 	choose_definitions_text.configure(state="normal")
 	choose_definitions_text.insert(END,"\n"+text)
 	choose_definitions_text.see("end")
 	choose_definitions_text.configure(state="disabled")
 
-def clear_tkprint():
+def clear_printtk():
 	choose_definitions_text.configure(state="normal")	
 	choose_definitions_text.delete('1.0', END)
 	choose_definitions_text.configure(state="disabled")	
@@ -331,15 +331,15 @@ def show_definitions(definitions):
 	USERDATA_.select_definition_options = []
 	word = USERDATA_.key_in_question
 	article = get_text(USERDATA_.text_filename)
-	tkprint("Choose definition for ' "+USERDATA_.key_in_question+" '")
+	printtk("Choose definition for ' "+USERDATA_.key_in_question+" '")
 	USERDATA_.current_word_usage_sentences = get_words_sentence_from_text(word, article, True)
 	if USERDATA_.current_word_usage_sentences:
-		tkprint('USAGE:'+' '*30)
+		printtk('USAGE:'+' '*30)
 	for sentence in USERDATA_.current_word_usage_sentences:
-		tkprint(sentence)
-	tkprint("1. Change word.")
-	tkprint("2. Create your own definition.")
-	tkprint("3. Discard word.")
+		printtk(sentence)
+	printtk("1. Change word.")
+	printtk("2. Create your own definition.")
+	printtk("3. Discard word.")
 	definition_number = 3
 	USERDATA_.definitions_in_question = []
 	if definitions:
@@ -347,11 +347,10 @@ def show_definitions(definitions):
 			if definition:
 				definition_number += 1
 				USERDATA_.definitions_in_question.append(definition)
-				tkprint((str(definition_number)+'. '+definition[0]))
+				printtk((str(definition_number)+'. '+definition[0]))
 	for i in range(1,definition_number+1):
 		USERDATA_.select_definition_options.append(str(i))
 	USERDATA_.question_type = 'select_definition'
-	print('USERDATA_.select_definition_options',USERDATA_.select_definition_options)
 
 def ask_for_definition_selection():
 	USERDATA_.question_type = 'select_definition'
@@ -364,29 +363,22 @@ def set_chosen_definition(chosen_definition):
 
 def ask_for_new_keyword():
 	USERDATA_.question_type = 'new_keyword'
-	tkprint_create_spacer()
-	tkprint("Enter replacement word for ' "+USERDATA_.key_in_question+" ':")
+	printtk_create_spacer()
+	printtk("Enter replacement word for ' "+USERDATA_.key_in_question+" ':")
 
 def ask_for_user_definition():
 	USERDATA_.question_type = 'input_definition'
-	tkprint("Enter definition for ' "+USERDATA_.key_in_question+" ':" )
+	printtk("Enter definition for ' "+USERDATA_.key_in_question+" ':" )
 
-def tkprint_create_spacer():
-	print('end',re.search('[a-zA-Z]', choose_definitions_text.get("end","end")))
-	print('end -1l',re.search('[a-zA-Z]', choose_definitions_text.get("end -1l","end")))
-	print('end -2l',re.search('[a-zA-Z]', choose_definitions_text.get("end -2l","end")))
-	print('end -3l',re.search('[a-zA-Z]', choose_definitions_text.get("end -3l","end")))
-	print('end -4l',re.search('[a-zA-Z]', choose_definitions_text.get("end -4l","end")))
-	print('end -5l',re.search('[a-zA-Z]', choose_definitions_text.get("end -5l","end")))
+def printtk_create_spacer():
 	if re.search('[a-zA-Z]', choose_definitions_text.get("end -1l","end")) is None:
 		choose_definitions_text.configure(state="normal")
 		choose_definitions_text.delete("end","end")
 		choose_definitions_text.configure(state="disabled")
 	if re.search('[a-zA-Z]', choose_definitions_text.get("end -1l","end")) is not None:
-		print('should make spacer')
-		tkprint('')
+		printtk('')
 
-def tkprint_delete_lines(number_of_lines):
+def printtk_delete_lines(number_of_lines):
 	choose_definitions_text.configure(state="normal")
 	choose_definitions_text.delete("end-"+str(number_of_lines)+"l","end")
 	choose_definitions_text.configure(state="disabled")
@@ -396,16 +388,16 @@ def deal_with_user_selection(option):
 	if USERDATA_.current_word_usage_sentences:
 		usage_lines = len(USERDATA_.current_word_usage_sentences) + 1
 	if option == '1':
-		tkprint_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
+		printtk_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
 		ask_for_new_keyword()
 	elif option == '2':
 		ask_for_user_definition()
 	elif option == '3':
-		tkprint_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
+		printtk_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
 		USERDATA_.definition_dictionary[USERDATA_.key_in_question] = ['!rejected', '!no_alt']
 		ask_if_should_define()
 	else:
-		tkprint_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
+		printtk_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
 		set_chosen_definition(4-int(option))
 
 def clean_dictionary():
@@ -419,7 +411,7 @@ def create_deck():
 		should_autorun = True
 	clean_dictionary()
 	create_article_anki_deck(USERDATA_.definition_dictionary, USERDATA_.article_text, USERDATA_.text_filename, should_autorun)
-	tkprint('Deck created! ('+USERDATA_.text_filename+')')
+	printtk('Deck created! ('+USERDATA_.text_filename+')')
 
 def create_another_level_of_keywords():
 	string_of_definitions = concatenate_all_definitions_to_string(USERDATA_.definition_dictionary)
@@ -430,7 +422,7 @@ def create_another_level_of_keywords():
 			no_words_remaining = False
 			break
 	if no_words_remaining:
-		tkprint("No more words to define.")
+		printtk("No more words to define.")
 		create_deck()
 	else:
 		ask_if_should_define()
@@ -440,10 +432,10 @@ def definition_callback():
 	if USERDATA_.question_type == 'should_define':
 		if user_input.lower() == 'n':
 			USERDATA_.definition_dictionary[USERDATA_.key_in_question] = ['!rejected', '!no_alt']
-			tkprint_delete_lines(1)
+			printtk_delete_lines(1)
 			ask_if_should_define()
 		elif user_input.lower() == 'y':
-			tkprint_delete_lines(1)
+			printtk_delete_lines(1)
 			ask_for_definition_selection()
 		choose_definitions_entry_var.set('')
 	elif USERDATA_.question_type == 'select_definition':
@@ -460,12 +452,12 @@ def definition_callback():
 			choose_definitions_entry_var.set('')
 
 def show_chosen_definition(key):
-	tkprint_create_spacer()
-	tkprint(key+" - "+USERDATA_.definition_dictionary[key][0])
+	printtk_create_spacer()
+	printtk(key+" - "+USERDATA_.definition_dictionary[key][0])
 	if USERDATA_.current_word_usage_sentences:
-		tkprint('USAGE:')
+		printtk('USAGE:')
 		for sentence in USERDATA_.current_word_usage_sentences:
-			tkprint(sentence)
+			printtk(sentence)
 	start = 'end -'+str(len(USERDATA_.current_word_usage_sentences)+3)+'l'
 	while 1:
 		tag_start = choose_definitions_text.search(key, start, stopindex=END, regexp=True)       
@@ -479,17 +471,17 @@ def enter_pressed_in_entry():
 	user_input = str(choose_definitions_entry_var.get())
 	if USERDATA_.question_type == 'new_keyword':
 		USERDATA_.key_in_question = user_input
-		#tkprint("Define ' "+user_input+" '")
-		tkprint_delete_lines(1)
+		#printtk("Define ' "+user_input+" '")
+		printtk_delete_lines(1)
 		choose_definitions_entry_var.set('')
 		show_loading_and_definitions()
 	elif USERDATA_.question_type == 'input_definition':
 		usage_lines = 0
 		if USERDATA_.current_word_usage_sentences:
 			usage_lines = len(USERDATA_.current_word_usage_sentences) + 1
-		tkprint_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
+		printtk_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
 		USERDATA_.definition_dictionary[USERDATA_.key_in_question] = [user_input, '!no_alt']
-		tkprint_delete_lines(1)
+		printtk_delete_lines(1)
 		show_chosen_definition(USERDATA_.key_in_question)
 		choose_definitions_entry_var.set('')
 		ask_if_should_define()

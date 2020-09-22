@@ -12,19 +12,10 @@ else:
 import wikipediaapi
 from nltk.stem.snowball import SnowballStemmer
 from nltk.stem import WordNetLemmatizer
-import queue
-from threading import Thread
-from tkinter import filedialog 
-from tkinter import Tk 
 import os
 from epub_conversion.utils import open_book, convert_epub_to_lines
-import os.path
 from os import path
-import math
-from tkinter import *
-import tkinter as ttk
 from langCodes import *
-import subprocess
 
 article_deck = None
 lemmatizer = WordNetLemmatizer()
