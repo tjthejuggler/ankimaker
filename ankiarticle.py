@@ -86,7 +86,7 @@ def concatenate_all_definitions_to_string(dictionary):
 			dict_value_list.append(dict_value[0].replace('\n', ' ') + ' ')
 	return ''.join(dict_value_list)
 
-def convert_text_to_keywords(text, low_freq, src_lang):
+def convert_text_to_keywords(text, high_freq, src_lang):
 	clean = re.sub(r"[,.'`’'|—;:@#?¿!¡<>_\-\"”“&$\[\]\)\(\\\/]+\ *", " ", text)
 	lowerString = clean.lower()
 	words = lowerString.split(sep=None)
@@ -94,12 +94,12 @@ def convert_text_to_keywords(text, low_freq, src_lang):
 	keywords = []
 	for word in words:
 		print('zipf_frequency(word, get_lang_code(src_lang))', zipf_frequency(word, get_lang_code(src_lang)))
-		print('low_freq', low_freq)
+		print('high_freq', high_freq)
 		if (not word.isdigit() and 
 			"/" not in word and
 			"\\" not in word and
 			len(word) > 1 and
-			zipf_frequency(word, get_lang_code(src_lang)) >= low_freq):
+			zipf_frequency(word, get_lang_code(src_lang)) <= high_freq):
 				keywords.append(word)
 	return keywords
 

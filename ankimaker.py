@@ -395,15 +395,17 @@ def deal_with_user_selection(option):
 	usage_lines = 0
 	if USERDATA_.current_word_usage_sentences:
 		usage_lines = len(USERDATA_.current_word_usage_sentences) + 1
-	tkprint_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
 	if option == '1':
+		tkprint_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
 		ask_for_new_keyword()
 	elif option == '2':
 		ask_for_user_definition()
 	elif option == '3':
+		tkprint_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
 		USERDATA_.definition_dictionary[USERDATA_.key_in_question] = ['!rejected', '!no_alt']
 		ask_if_should_define()
 	else:
+		tkprint_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
 		set_chosen_definition(4-int(option))
 
 def clean_dictionary():
@@ -481,6 +483,10 @@ def enter_pressed_in_entry():
 		choose_definitions_entry_var.set('')
 		show_loading_and_definitions()
 	elif USERDATA_.question_type == 'input_definition':
+		usage_lines = 0
+		if USERDATA_.current_word_usage_sentences:
+			usage_lines = len(USERDATA_.current_word_usage_sentences) + 1
+		tkprint_delete_lines(len(USERDATA_.definitions_in_question)+usage_lines+4)
 		USERDATA_.definition_dictionary[USERDATA_.key_in_question] = [user_input, '!no_alt']
 		tkprint_delete_lines(1)
 		show_chosen_definition(USERDATA_.key_in_question)
@@ -488,9 +494,9 @@ def enter_pressed_in_entry():
 		ask_if_should_define()
 
 def add_words_to_dictionary(text):
-	low_freq = float(frequency_low.get())
+	high_freq = float(frequency_high.get())
 	src_lang = str(src_language.get())
-	words = convert_text_to_keywords(text, low_freq, src_lang)
+	words = convert_text_to_keywords(text, high_freq, src_lang)
 	for word in words:
 		if not word in USERDATA_.definition_dictionary:
 			USERDATA_.definition_dictionary[word] = ['!undefined', '!no_alt']
