@@ -1,10 +1,5 @@
-when you input your own word it should afterwards erase the lines that say
-Enter replacement word for ' microbiome ':
-Define ' microbiome '
 
 TESTING
-
-test out stuff to see if formatting is working as desired
 
 find out if word variations is being handled properly
 

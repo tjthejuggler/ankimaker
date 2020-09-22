@@ -479,7 +479,8 @@ def enter_pressed_in_entry():
 	user_input = str(choose_definitions_entry_var.get())
 	if USERDATA_.question_type == 'new_keyword':
 		USERDATA_.key_in_question = user_input
-		tkprint("Define ' "+user_input+" '")
+		#tkprint("Define ' "+user_input+" '")
+		tkprint_delete_lines(1)
 		choose_definitions_entry_var.set('')
 		show_loading_and_definitions()
 	elif USERDATA_.question_type == 'input_definition':
