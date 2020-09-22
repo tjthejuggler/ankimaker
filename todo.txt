@@ -3,6 +3,8 @@ make a progress bar for language deck creation (and maybe article)
 
 coloring of text green should work even if char cases dont match
 
+get rid of the gap that is left when fill in the blanks checkbox is pack_forgotten
+
 TESTING
 
 find out if word variations is being handled properly
