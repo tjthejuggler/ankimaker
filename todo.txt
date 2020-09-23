@@ -1,7 +1,7 @@
 
 make a progress bar for language deck creation (and maybe article)
-
-coloring of text green should work even if char cases dont match
+	looks like in order to do this we would need to move part of ankilang into ankimaker
+		so we can keep updating the progress bar
 
 get rid of the gap that is left when fill in the blanks checkbox is pack_forgotten
 

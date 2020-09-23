@@ -471,7 +471,11 @@ def show_chosen_definition(key):
 			printtk(sentence)
 	start = 'end -'+str(len(USERDATA_.current_word_usage_sentences)+3)+'l'
 	while 1:
-		tag_start = choose_definitions_text.search(key, start, stopindex=END, regexp=True)       
+		tag_start = choose_definitions_text.search(key, start, stopindex=END, regexp=True)
+		if not tag_start:
+			tag_start = choose_definitions_text.search(key.title(), start, stopindex=END, regexp=True)
+		if not tag_start:
+			tag_start = choose_definitions_text.search(key.upper(), start, stopindex=END, regexp=True)
 		if not tag_start: break
 		tag_end = '%s+%dc' % (tag_start, len(key))
 		choose_definitions_text.tag_add('bold', tag_start, tag_end)
