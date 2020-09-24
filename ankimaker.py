@@ -25,6 +25,7 @@ from langCodes import *
 from ankilang import *
 from USERDATA import *
 
+
 USERDATA_ = USERDATA() # Can also use initialization arguments
 
 entry_width = 47
@@ -73,21 +74,21 @@ def text_type_radiobutton_changed(*args):
 		destination_language_optionmenu.configure(state='normal')
 		frequency_thresholds_low_entry.configure(state='normal')
 		exclude_var_entry.configure(state='disable')
-		shouldCreateFillInBlankCardsCheck.pack_forget()
+		shouldCreateFillInBlankCardsCheck.configure(state='disable')
 	if text_type.get() == 'article':
 		show_file_browser_widgets()
 		src_language.set('english')
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
-		shouldCreateFillInBlankCardsCheck.pack(side="left", padx = 4)
+		shouldCreateFillInBlankCardsCheck.configure(state='normal')
 	if text_type.get() == 'youtube':
 		show_url_entry()
 		src_language.set('english')
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
-		shouldCreateFillInBlankCardsCheck.pack(side="left", padx = 4)
+		shouldCreateFillInBlankCardsCheck.configure(state='normal')
 
 def get_text_from_youtube_transcription(vid_id):
 	transcription_text = ''
