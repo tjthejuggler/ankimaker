@@ -9,6 +9,9 @@ import os
 from os import path
 from tkinter import *
 import tkinter as ttk
+from tkinter import ttk
+#from tkinter.ttk import *
+from tkinter.ttk import Progressbar
 from tkinter import filedialog
 from epub_conversion.utils import open_book, convert_epub_to_lines
 import urllib.request
@@ -19,6 +22,7 @@ from tika import parser
 import queue
 import platform
 from threading import Thread
+import math
 
 from ankiarticle import *
 from langCodes import *
@@ -197,9 +201,6 @@ def begin_choose_definitions_cycle():
 	add_words_to_dictionary(USERDATA_.article_text)
 	ask_if_should_define()
 
-def update_progress_bar():
-	print('update_progress_bar')
-
 def run_language_deck_creation_loop(language_deck):
 	filename = USERDATA_.text_filename
 	low_freq = float(frequency_low.get())
@@ -214,12 +215,17 @@ def run_language_deck_creation_loop(language_deck):
 	print('begin making cards',time.time() - start_time)
 	dupe_counter = 0
 	translations_counter = 0
+	items_done = 1
+	progress_bar.grid(row=4, column=0, sticky=W, pady = 4)
+	setupFrame.grid_forget()
 	for item in src_words_and_phrases:
 		src_text = item[0]
 		dest_text = get_translation(src_text, dest_langcode, src_langcode)
 		if dest_text:
 			dupe_counter, translations_counter, language_deck = create_anki_note(episode_count, filename, item, src_text, dest_text, dupe_counter, translations_counter, language_deck)
-		update_progress_bar()
+		progress_bar['value'] = math.ceil(items_done/len(src_words_and_phrases) * 100)
+		root.update_idletasks()
+		items_done += 1
 	print("dupes",dupe_counter)
 	print("translations",translations_counter)
 	print("My program took", time.time() - start_time, "to run")
@@ -536,6 +542,7 @@ def add_words_to_dictionary(text):
 
 nameAndHelpFrame = Frame(root)
 nameAndHelpFrame.grid(row=0, column=0, sticky="ew", pady = 4)
+
 file_name_label = ttk.Label(nameAndHelpFrame, text=USERDATA_.text_filename)
 file_name_label.pack(side='left', anchor=W)
 help_button = ttk.Button(nameAndHelpFrame, text="?", command=help_clicked)
@@ -708,5 +715,7 @@ createDeckButtonFrame = Frame(root)
 createDeckButtonFrame.grid(row=4, column=0, sticky=W, pady = 4)
 create_deck_button = ttk.Button(createDeckButtonFrame, text="Create Deck", command=create_deck_clicked)
 create_deck_button.pack(side="left")
+
+progress_bar = Progressbar(root, orient="horizontal", length=200, mode="determinate")
 
 root.mainloop()
