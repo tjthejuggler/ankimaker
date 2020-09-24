@@ -197,25 +197,49 @@ def begin_choose_definitions_cycle():
 	add_words_to_dictionary(USERDATA_.article_text)
 	ask_if_should_define()
 
+def update_progress_bar():
+	print('update_progress_bar')
+
+def run_language_deck_creation_loop(language_deck):
+	filename = USERDATA_.text_filename
+	low_freq = float(frequency_low.get())
+	high_freq = float(frequency_high.get())
+	translator = Translator()
+	src_langcode = get_lang_code(src_language.get())
+	dest_langcode = get_lang_code(dest_lang.get())
+	splitters = splitters_var.get().split(',')
+	with open('sources/'+filename+'.txt', encoding="utf8") as file:
+		data = file.read().replace('\n', ' ')
+	episode_count, src_words_and_phrases = get_src_words_and_phrases(data, low_freq, high_freq, src_langcode, splitters)
+	print('begin making cards',time.time() - start_time)
+	dupe_counter = 0
+	translations_counter = 0
+	for item in src_words_and_phrases:
+		src_text = item[0]
+		dest_text = get_translation(src_text, dest_langcode, src_langcode)
+		if dest_text:
+			dupe_counter, translations_counter, language_deck = create_anki_note(episode_count, filename, item, src_text, dest_text, dupe_counter, translations_counter, language_deck)
+		update_progress_bar()
+	print("dupes",dupe_counter)
+	print("translations",translations_counter)
+	print("My program took", time.time() - start_time, "to run")
+	genanki.Package(language_deck).write_to_file('ankidecks/'+filename+'.apkg')
+	if autorun_var.get() == 1:
+		cwd = os.getcwd()
+		os.startfile(cwd+'\\ankidecks\\'+filename+'.apkg')
+	sys.exit()
+
 def create_deck_clicked():
 	create_deck_button.pack_forget()
 	createDeckButtonFrame.grid_forget()
 	showInfoTextOkButtonFrame.pack_forget()
 	deck = genanki.Deck(round(time.time()),USERDATA_.text_filename)
-	src_lng = str(src_language.get())
-	dst_lng = str(src_language.get())
-	frq_l = float(frequency_low.get())
-	frq_h = float(frequency_high.get())
-	splitters = splitters_var.get().split(',')
 	if fill_in_blanks_var.get() == 1:
 		USERDATA_.should_create_fill_in_blanks = True
 	else:
 		USERDATA_.should_create_fill_in_blanks = False
 	if text_type.get() == 'language':
-		should_autorun = False
-		if autorun_var.get() == 1:
-			should_autorun = True
-		run_language_program(USERDATA_.text_filename, deck, src_lng, dst_lng, frq_l, frq_h, splitters, should_autorun)
+		run_language_deck_creation_loop(deck)
 	elif text_type.get() == 'article':
 		begin_choose_definitions_cycle()		
 	elif text_type.get() == 'youtube':

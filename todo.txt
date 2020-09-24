@@ -1,3 +1,4 @@
+set up a try/catch to tel user if anki isnt installed with autorun
 
 make a progress bar for language deck creation (and maybe article)
 	looks like in order to do this we would need to move part of ankilang into ankimaker
