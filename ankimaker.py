@@ -37,7 +37,7 @@ if platform.system() == 'Windows':
 	entry_width = 73
 
 root = Tk() 
-root.title('Miug')
+root.title('Ankimaker')
 root.resizable()
 
 def get_custom_splitters():
