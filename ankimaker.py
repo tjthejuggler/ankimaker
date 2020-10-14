@@ -51,7 +51,8 @@ def browseFiles():
                                           title = "Select a File", 
                                           filetypes = (("all files", 
                                                         "*.*"),("Text files", 
-                                                        "*.txt*"))) 	
+                                                        "*.txt*"))) 
+	print('fn',filename)     	
 	filename_string = filename.split(':')[1]
 	USERDATA_.text_filename = os.path.splitext(os.path.basename(filename_string))[0]
 	return USERDATA_.text_filename
