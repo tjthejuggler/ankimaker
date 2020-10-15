@@ -215,7 +215,7 @@ python-plugin-sdk == 6.0.1
 
 # C:\Users\Thursday\Projects\ankimaker\env\Lib\site-packages\pip\_vendor\appdirs.py: 497
 # C:\Users\Thursday\Projects\ankimaker\env\Lib\site-packages\pkg_resources\_vendor\appdirs.py: 497
-pywin32 == 227
+#pywin32 == 227
 
 # C:\Users\Thursday\Projects\ankimaker\ankiarticle.py: 6,7
 # C:\Users\Thursday\Projects\ankimaker\env\Lib\site-packages\pip\_vendor\requests\adapters.py: 84
@@ -273,7 +273,7 @@ selenium == 3.141.0
 # C:\Users\Thursday\Projects\ankimaker\env\Lib\site-packages\setuptools\unicode_utils.py: 4
 # C:\Users\Thursday\Projects\ankimaker\env\Lib\site-packages\setuptools\version.py: 1
 # C:\Users\Thursday\Projects\ankimaker\env\Lib\site-packages\setuptools\wheel.py: 11,12,13,14,15,16
-setuptools == 49.2.0.post20200714
+setuptools # == 49.2.0.post20200714
 
 # C:\Users\Thursday\Projects\ankimaker\ankimaker.py: 18
 tika == 1.24
@@ -292,3 +292,6 @@ youtube_title_parse == 1.0.0
 
 # C:\Users\Thursday\Projects\ankimaker\ankimaker.py: 17
 youtube_transcript_api == 0.3.1
+
+#added manually
+xml_cleaner

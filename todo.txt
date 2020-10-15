@@ -4,6 +4,8 @@ make a progress bar for language deck creation (and maybe article)
 	looks like in order to do this we would need to move part of ankilang into ankimaker
 		so we can keep updating the progress bar
 
+pip install requirements.txt didn't work for me on windows.
+
 TESTING
 
 find out if word variations is being handled properly
