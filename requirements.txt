@@ -273,8 +273,12 @@ selenium == 3.141.0
 # C:\Users\Thursday\Projects\ankimaker\env\Lib\site-packages\setuptools\unicode_utils.py: 4
 # C:\Users\Thursday\Projects\ankimaker\env\Lib\site-packages\setuptools\version.py: 1
 # C:\Users\Thursday\Projects\ankimaker\env\Lib\site-packages\setuptools\wheel.py: 11,12,13,14,15,16
+<<<<<<< HEAD
 #setuptools == 49.2.0.post20200714
 setupTools
+=======
+setuptools # == 49.2.0.post20200714
+>>>>>>> 72080777f452d18fa95dc2507b55b03c61a8310c
 
 # C:\Users\Thursday\Projects\ankimaker\ankimaker.py: 18
 tika == 1.24
@@ -293,3 +297,6 @@ youtube_title_parse == 1.0.0
 
 # C:\Users\Thursday\Projects\ankimaker\ankimaker.py: 17
 youtube_transcript_api == 0.3.1
+
+#added manually
+xml_cleaner
