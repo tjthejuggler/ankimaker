@@ -52,14 +52,22 @@ def browseFiles():
                                           filetypes = (("all files", 
                                                         "*.*"),("Text files", 
                                                         "*.txt*"))) 
-	print('fn',filename)     	
-	filename_string = filename.split(':')[1]
+	print('fn',filename)
+	print('os',os.name)
+
+
+	if os.name == 'nt':     	
+		filename_string = filename.split(':')[1]
+	else:
+		filename_string = filename
+	#if os.name == 
 	USERDATA_.text_filename = os.path.splitext(os.path.basename(filename_string))[0]
 	return USERDATA_.text_filename
 
 def file_browse_button_clicked():
 	file_name = browseFiles()
 	USERDATA_.text_filename = file_name
+	print('fn',file_name)
 	file_name_label.configure(text=file_name)
 	file_name_label.update()
 
@@ -79,21 +87,24 @@ def text_type_radiobutton_changed(*args):
 		destination_language_optionmenu.configure(state='normal')
 		frequency_thresholds_low_entry.configure(state='normal')
 		exclude_var_entry.configure(state='disable')
-		shouldCreateFillInBlankCardsCheck.configure(state='disable')
+		if platform.system() == 'Windows':
+			shouldCreateFillInBlankCardsCheck.configure(state='disable')
 	if text_type.get() == 'article':
 		show_file_browser_widgets()
 		src_language.set('english')
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
-		shouldCreateFillInBlankCardsCheck.configure(state='normal')
+		if platform.system() == 'Windows':
+			shouldCreateFillInBlankCardsCheck.configure(state='normal')
 	if text_type.get() == 'youtube':
 		show_url_entry()
 		src_language.set('english')
 		destination_language_optionmenu.configure(state='disable')
 		frequency_thresholds_low_entry.configure(state='disable')
 		exclude_var_entry.configure(state='normal')
-		shouldCreateFillInBlankCardsCheck.configure(state='normal')
+		if platform.system() == 'Windows':
+			shouldCreateFillInBlankCardsCheck.configure(state='normal')
 
 def get_text_from_youtube_transcription(vid_id):
 	transcription_text = ''
@@ -142,6 +153,19 @@ def word_excluded(word):
 							should_exclude = False
 	return should_exclude
 
+def convert_srt_to_text(filename):
+    # read file line by line
+    file = open( filename, "r")
+    lines = file.readlines()
+    file.close()
+
+    text = ''
+    for line in lines:
+        if re.search('^[0-9]+$', line) is None and re.search('^[0-9]{2}:[0-9]{2}:[0-9]{2}', line) is None and re.search('^$', line) is None:
+            text += ' ' + line.rstrip('\n')
+        text = text.lstrip()
+    return text
+
 def show_frequencies():
 	show_info_text()
 	if text_type.get() == 'youtube':
@@ -157,6 +181,8 @@ def show_frequencies():
 	elif path.exists('sources/'+USERDATA_.text_filename+".pdf"):
 		raw = parser.from_file('sources/'+USERDATA_.text_filename+".pdf")
 		source_text = raw['content']
+	elif path.exists('sources/'+USERDATA_.text_filename+".srt"):
+		source_text = convert_srt_to_text('sources/'+USERDATA_.text_filename+".srt")
 	if source_text:
 		source_text = source_text.lower()
 		excluded_words = []
@@ -210,8 +236,11 @@ def run_language_deck_creation_loop(language_deck):
 	src_langcode = get_lang_code(src_language.get())
 	dest_langcode = get_lang_code(dest_lang.get())
 	splitters = splitters_var.get().split(',')
-	with open('sources/'+filename+'.txt', encoding="utf8") as file:
-		data = file.read().replace('\n', ' ')
+	if path.exists('sources/'+filename+".txt"):
+		with open('sources/'+filename+'.txt', encoding="utf8") as file:
+			data = file.read().replace('\n', ' ')
+	elif path.exists('sources/'+filename+".srt"):
+		data = convert_srt_to_text('sources/'+filename+".srt").replace('\n', ' ')
 	episode_count, src_words_and_phrases = get_src_words_and_phrases(data, low_freq, high_freq, src_langcode, splitters)
 	print('begin making cards',time.time() - start_time)
 	dupe_counter = 0
