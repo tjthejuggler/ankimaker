@@ -1,5 +1,6 @@
 import re
-from googletrans import Translator
+#from googletrans import Translator
+from translate import Translator
 import genanki
 import time
 from wordfreq import zipf_frequency
@@ -11,7 +12,8 @@ from langCodes import *
 
 start_time = time.time()
 
-translator = Translator()
+
+translator = Translator(to_lang="en")
 
 print_rejected_words = True
 print_added = True
@@ -92,7 +94,13 @@ def get_src_words_and_phrases(str,low_freq,high_freq,src_langcode,splitters):
 	return episode_count, sortedDict
 
 def get_translation(src_text, dest_langcode, src_langcode):
-	dest_text = str(translator.translate(src_text, dest=dest_langcode, src=src_langcode).text)
+	translator = Translator(to_lang=dest_langcode)
+	# print('get_translation')
+	# dest_text_plain = translator.translate(src_text)
+	# print('dest_text_plain',dest_text_plain)
+	# dest_text = str(translator.translate(src_text, dest=dest_langcode, src=src_langcode).text)
+	# print('dest_text',dest_text)
+	dest_text = translator.translate(src_text)
 	word_src_freq = 0
 	word_dest_freq = 0
 	should_make_note = True
@@ -103,7 +111,7 @@ def get_translation(src_text, dest_langcode, src_langcode):
 		if word_src_freq >= word_dest_freq:
 			while translation_attempt < 5:
 				time.sleep(translation_attempt)
-				dest_text = str(translator.translate(src_text, dest=dest_langcode, src=src_langcode).text)
+				dest_text = translator.translate(src_text)
 				if src_text == dest_text:
 					translation_attempt += translation_attempt
 				else:

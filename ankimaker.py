@@ -232,7 +232,6 @@ def run_language_deck_creation_loop(language_deck):
 	filename = USERDATA_.text_filename
 	low_freq = float(frequency_low.get())
 	high_freq = float(frequency_high.get())
-	translator = Translator()
 	src_langcode = get_lang_code(src_language.get())
 	dest_langcode = get_lang_code(dest_lang.get())
 	splitters = splitters_var.get().split(',')
