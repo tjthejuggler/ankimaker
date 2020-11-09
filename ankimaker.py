@@ -47,18 +47,19 @@ def get_custom_splitters():
 
 def browseFiles(): 
 	Tk().withdraw()
-	filename = filedialog.askopenfilename(initialdir = "/", 
-                                          title = "Select a File", 
-                                          filetypes = (("all files", 
-                                                        "*.*"),("Text files", 
-                                                        "*.txt*"))) 
-	print('fn',filename)
-	print('os',os.name)
-
-
-	if os.name == 'nt':     	
+	if os.name == 'nt':   
+		filename = filedialog.askopenfilename(initialdir = "/", 
+	                                          title = "Select a File", 
+	                                          filetypes = (("all files", 
+	                                                        "*.*"),("Text files", 
+	                                                        "*.txt*"))) 	
 		filename_string = filename.split(':')[1]
 	else:
+		filename = filedialog.askopenfilename(initialdir = "/home/projects/ankimaker/sources/", 
+	                                          title = "Select a File", 
+	                                          filetypes = (("all files", 
+	                                                        "*.*"),("Text files", 
+	                                                        "*.txt*"))) 	
 		filename_string = filename
 	#if os.name == 
 	USERDATA_.text_filename = os.path.splitext(os.path.basename(filename_string))[0]
@@ -247,9 +248,14 @@ def run_language_deck_creation_loop(language_deck):
 	items_done = 1
 	progress_bar.grid(row=4, column=0, sticky=W, pady = 4)
 	setupFrame.grid_forget()
+	print('src_words_and_phrases',len(src_words_and_phrases))
+	temp_counter = 0
 	for item in src_words_and_phrases:
+		temp_counter += 1
+		print('temp_counter', str(temp_counter))
 		src_text = item[0]
 		dest_text = get_translation(src_text, dest_langcode, src_langcode)
+		print(src_text, dest_text)
 		if dest_text:
 			dupe_counter, translations_counter, language_deck = create_anki_note(episode_count, filename, item, src_text, dest_text, dupe_counter, translations_counter, language_deck)
 		progress_bar['value'] = math.ceil(items_done/len(src_words_and_phrases) * 100)

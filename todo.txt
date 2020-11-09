@@ -1,14 +1,24 @@
+
+FIX TRANSLATION ISSUE:
+in language, whenever a word/phrase is translated from web add it a local dictionary json file
+	if this is the first time translating for that language pair then make a new json dictionary
+we need to make sure that we know if all our online translators are crapping out so we can stop and change ip
+cycle through each online translation service so we don't make too many requests from a single one
+
 set up a try/catch to tell user if anki isnt installed with autorun
 
 make a progress bar for language deck creation (and maybe article)
 	looks like in order to do this we would need to move part of ankilang into ankimaker
 		so we can keep updating the progress bar
 
-<<<<<<< HEAD
+see if there is a way to make it go faster
+
+see if we can go directly to a particular folder when file browser is opened
+
 in text_type_radiobutton_changed(), maybe the windows check should be for linux as well or something simlar
 =======
 pip install requirements.txt didn't work for me on windows.
->>>>>>> 72080777f452d18fa95dc2507b55b03c61a8310c
+
 
 TESTING
 

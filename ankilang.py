@@ -1,19 +1,25 @@
 import re
 #from googletrans import Translator
-from translate import Translator
+#from translate import Translator
+from deep_translator import (GoogleTranslator,MyMemoryTranslator,QCRI,LingueeTranslator)
 import genanki
 import time
 from wordfreq import zipf_frequency
 import os
+import os.path
+from os import path
 import sys
 import tkinter as ttk
+import json
 
 from langCodes import *
 
 start_time = time.time()
 
 
-translator = Translator(to_lang="en")
+#translator = Translator(to_lang="en")
+
+translator_to_use = 'google'
 
 print_rejected_words = True
 print_added = True
@@ -93,25 +99,98 @@ def get_src_words_and_phrases(str,low_freq,high_freq,src_langcode,splitters):
 	sortedDict = sorted(src_list.items(), key=lambda x: x[1])
 	return episode_count, sortedDict
 
+#todo
+#look into downloading dictionary and querry that for individual words
+#maybe programatically changing vpn is option
+#figure out a way to get translations reliably
+#	maybe somehow cycling through each one that works will keep them from overloading
+#	keeping my own dictionary of definitions that I check first so that repeats don't need to bother servers
+
+def translate(src_text, dest_langcode, src_langcode):
+	global translator_to_use
+	print('translator_to_use', translator_to_use)
+	#check if there is a local .json dictionary
+	cwd = os.getcwd()
+	local_dict_file = src_langcode+'_'+dest_langcode+'.json'
+	dest_text = ''
+	if path.exists(cwd+'/local_dictionaries/'+local_dict_file):			
+		with open(cwd+'/local_dictionaries/'+local_dict_file) as json_file:
+			local_dict = json.load(json_file)
+			if src_text in local_dict:
+				dest_text = local_dict[src_text]
+	if dest_text == '':
+		if translator_to_use == 'google':
+			translator_to_use = 'linguee'
+			try:
+				
+				print('goog')
+				dest_text = GoogleTranslator(source=src_langcode, target=dest_langcode).translate(src_text)
+			except:
+				pass			
+	if dest_text == '':
+		if translator_to_use == 'linguee':
+			translator_to_use = 'myMemory'
+			try:
+				
+				print('lingue')
+				dest_text = LingueeTranslator(source=src_langcode, target=dest_langcode).translate(src_text)
+			except:
+				pass
+	if dest_text == '':
+		if translator_to_use == 'myMemory':
+			translator_to_use = 'google'
+			try:
+				
+				print('myMemory')
+				dest_text = MyMemoryTranslator(source=src_langcode, target=dest_langcode).translate(src_text)
+			except:
+				pass
+	return dest_text
+
+
+def add_translation_to_local_dictionary(src_text, dest_text, dest_langcode, src_langcode):
+	print('add_translation_to_local_dictionary', dest_text)
+	cwd = os.getcwd()
+	local_dict_file = src_langcode+'_'+dest_langcode+'.json'
+	local_dict = {}
+	if path.exists(cwd+'/local_dictionaries/'+local_dict_file):			
+		with open(cwd+'/local_dictionaries/'+local_dict_file) as json_file:
+			local_dict = json.load(json_file)
+
+	if not src_text in local_dict:
+		print('!!!',src_text,dest_text)
+		local_dict[src_text] = dest_text
+		my_json = json.dumps(local_dict)
+		f = open(cwd+'/local_dictionaries/'+local_dict_file,"w")
+		f.write(my_json)
+		f.close()
+
+
+
+
 def get_translation(src_text, dest_langcode, src_langcode):
-	translator = Translator(to_lang=dest_langcode)
+	#translator = Translator(from_lang=src_langcode,to_lang=dest_langcode)
+
 	# print('get_translation')
 	# dest_text_plain = translator.translate(src_text)
 	# print('dest_text_plain',dest_text_plain)
 	# dest_text = str(translator.translate(src_text, dest=dest_langcode, src=src_langcode).text)
 	# print('dest_text',dest_text)
-	dest_text = translator.translate(src_text)
+	#dest_text = translator.translate(src_text)
+	dest_text = translate(src_text, dest_langcode, src_langcode)
+	#translated = GoogleTranslator(source='auto', target='de').translate("keep it up, you are awesome")
+	print('dest_text',dest_text)
 	word_src_freq = 0
 	word_dest_freq = 0
 	should_make_note = True
-	if src_text == dest_text:
+	if src_text == dest_text or dest_text == '':
 		translation_attempt = 1#look into using turkey vpn instead of this sleep
 		word_src_freq = zipf_frequency(src_text, src_langcode)
 		word_dest_freq = zipf_frequency(src_text, dest_langcode)
 		if word_src_freq >= word_dest_freq:
 			while translation_attempt < 5:
 				time.sleep(translation_attempt)
-				dest_text = translator.translate(src_text)
+				dest_text = translate(src_text, dest_langcode, src_langcode)
 				if src_text == dest_text:
 					translation_attempt += translation_attempt
 				else:
@@ -119,6 +198,10 @@ def get_translation(src_text, dest_langcode, src_langcode):
 		else:
 			should_make_note = False
 			print('rejected because more common in dest:', src_text, word_src_freq,word_dest_freq )
+
+	if dest_text != '':	
+		add_translation_to_local_dictionary(src_text, dest_text, dest_langcode, src_langcode)
+
 	if not should_make_note:
 		dest_text = ''
 	return dest_text
