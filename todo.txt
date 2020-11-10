@@ -1,9 +1,10 @@
 
-FIX TRANSLATION ISSUE:
-in language, whenever a word/phrase is translated from web add it a local dictionary json file
-	if this is the first time translating for that language pair then make a new json dictionary
-we need to make sure that we know if all our online translators are crapping out so we can stop and change ip
-cycle through each online translation service so we don't make too many requests from a single one
+
+add more translation services
+
+clean prints to make them more usefull (put in there which translation services were successful)
+
+maybe exclude names from being translated (detected with caps)
 
 set up a try/catch to tell user if anki isnt installed with autorun
 

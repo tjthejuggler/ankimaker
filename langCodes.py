@@ -8,3 +8,10 @@ def get_lang_code(lang_submitted):
         if language_name == lang_submitted:
             lang_code_to_return = lang_code
     return lang_code_to_return
+
+def get_lang_from_code(lang_code_submitted):
+    lang_to_return = ''
+    for lang_code, language_name in lang_pairs.items(): 
+        if lang_code == lang_code_submitted:
+            lang_to_return = language_name
+    return lang_to_return

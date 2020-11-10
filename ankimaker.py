@@ -23,6 +23,8 @@ import queue
 import platform
 from threading import Thread
 import math
+import random
+from deep_translator import single_detection
 
 from ankiarticle import *
 from langCodes import *
@@ -65,12 +67,33 @@ def browseFiles():
 	USERDATA_.text_filename = os.path.splitext(os.path.basename(filename_string))[0]
 	return USERDATA_.text_filename
 
+def get_random_word_from_text(text):
+	all_words = text.split()
+	random_word_id = random.randint(1, len(all_words)-1)
+	whitelist = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+	random_word = ''.join(filter(whitelist.__contains__, all_words[random_word_id]))
+	return random_word
+
+def automatically_detect_and_set_language():
+	consecutive_same_language = 0
+	current_lang = ''
+	previous_lang = ''
+	source_text = get_source_text()
+	random_string_of_words = ''
+	for i in range(10):
+		random_string_of_words = random_string_of_words + get_random_word_from_text(source_text) + ' '
+	current_lang = single_detection(random_string_of_words, api_key='d2622fa37138e442e74a786d2ca28084')
+	if current_lang != '':
+		src_language.set(get_lang_from_code(current_lang))
+
 def file_browse_button_clicked():
 	file_name = browseFiles()
 	USERDATA_.text_filename = file_name
 	print('fn',file_name)
 	file_name_label.configure(text=file_name)
 	file_name_label.update()
+	if text_type.get() == 'language':
+		automatically_detect_and_set_language()
 
 def show_file_browser_widgets():
 	youtubeInfoFrame.pack_forget()
@@ -83,7 +106,7 @@ def show_url_entry():
 def text_type_radiobutton_changed(*args):
 	if text_type.get() == 'language':
 		show_file_browser_widgets()
-		src_language.set('spanish')
+		automatically_detect_and_set_language()
 		dest_lang.set('english')
 		destination_language_optionmenu.configure(state='normal')
 		frequency_thresholds_low_entry.configure(state='normal')
@@ -167,11 +190,7 @@ def convert_srt_to_text(filename):
         text = text.lstrip()
     return text
 
-def show_frequencies():
-	show_info_text()
-	if text_type.get() == 'youtube':
-		createTextFileFromYoutube()
-	source_text = None
+def get_source_text():
 	if path.exists('sources/'+USERDATA_.text_filename+".txt"):
 		with open('sources/'+USERDATA_.text_filename+'.txt', encoding="utf8") as file:
 			source_text = file.read().replace('\n', ' ')
@@ -184,6 +203,14 @@ def show_frequencies():
 		source_text = raw['content']
 	elif path.exists('sources/'+USERDATA_.text_filename+".srt"):
 		source_text = convert_srt_to_text('sources/'+USERDATA_.text_filename+".srt")
+	return source_text
+
+def show_frequencies():
+	show_info_text()
+	if text_type.get() == 'youtube':
+		createTextFileFromYoutube()
+	source_text = None
+	source_text = get_source_text()
 	if source_text:
 		source_text = source_text.lower()
 		excluded_words = []
