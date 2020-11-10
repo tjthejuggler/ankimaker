@@ -1,4 +1,4 @@
-
+a try/catch for language detection setup
 
 add more translation services
 

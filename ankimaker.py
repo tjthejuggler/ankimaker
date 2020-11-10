@@ -75,16 +75,19 @@ def get_random_word_from_text(text):
 	return random_word
 
 def automatically_detect_and_set_language():
-	consecutive_same_language = 0
-	current_lang = ''
-	previous_lang = ''
-	source_text = get_source_text()
-	random_string_of_words = ''
-	for i in range(10):
-		random_string_of_words = random_string_of_words + get_random_word_from_text(source_text) + ' '
-	current_lang = single_detection(random_string_of_words, api_key='d2622fa37138e442e74a786d2ca28084')
-	if current_lang != '':
-		src_language.set(get_lang_from_code(current_lang))
+	try:
+		consecutive_same_language = 0
+		current_lang = ''
+		previous_lang = ''
+		source_text = get_source_text()
+		random_string_of_words = ''
+		for i in range(10):
+			random_string_of_words = random_string_of_words + get_random_word_from_text(source_text) + ' '
+		current_lang = single_detection(random_string_of_words, api_key='d2622fa37138e442e74a786d2ca28084')
+		if current_lang != '':
+			src_language.set(get_lang_from_code(current_lang))
+	except:
+		pass
 
 def file_browse_button_clicked():
 	file_name = browseFiles()
